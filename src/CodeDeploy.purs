@@ -20,207 +20,285 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "CodeDeploy" :: String
-
 
 -- | <p>Adds tags to on-premises instances.</p>
 addTagsToOnPremisesInstances :: forall eff. AddTagsToOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-addTagsToOnPremisesInstances = Request.request serviceName "addTagsToOnPremisesInstances" 
+addTagsToOnPremisesInstances = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "addTagsToOnPremisesInstances"
 
 
 -- | <p>Gets information about one or more application revisions.</p>
 batchGetApplicationRevisions :: forall eff. BatchGetApplicationRevisionsInput -> Aff (exception :: EXCEPTION | eff) BatchGetApplicationRevisionsOutput
-batchGetApplicationRevisions = Request.request serviceName "batchGetApplicationRevisions" 
+batchGetApplicationRevisions = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "batchGetApplicationRevisions"
 
 
 -- | <p>Gets information about one or more applications.</p>
 batchGetApplications :: forall eff. BatchGetApplicationsInput -> Aff (exception :: EXCEPTION | eff) BatchGetApplicationsOutput
-batchGetApplications = Request.request serviceName "batchGetApplications" 
+batchGetApplications = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "batchGetApplications"
 
 
 -- | <p>Gets information about one or more deployment groups.</p>
 batchGetDeploymentGroups :: forall eff. BatchGetDeploymentGroupsInput -> Aff (exception :: EXCEPTION | eff) BatchGetDeploymentGroupsOutput
-batchGetDeploymentGroups = Request.request serviceName "batchGetDeploymentGroups" 
+batchGetDeploymentGroups = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "batchGetDeploymentGroups"
 
 
 -- | <p>Gets information about one or more instance that are part of a deployment group.</p>
 batchGetDeploymentInstances :: forall eff. BatchGetDeploymentInstancesInput -> Aff (exception :: EXCEPTION | eff) BatchGetDeploymentInstancesOutput
-batchGetDeploymentInstances = Request.request serviceName "batchGetDeploymentInstances" 
+batchGetDeploymentInstances = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "batchGetDeploymentInstances"
 
 
 -- | <p>Gets information about one or more deployments.</p>
 batchGetDeployments :: forall eff. BatchGetDeploymentsInput -> Aff (exception :: EXCEPTION | eff) BatchGetDeploymentsOutput
-batchGetDeployments = Request.request serviceName "batchGetDeployments" 
+batchGetDeployments = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "batchGetDeployments"
 
 
 -- | <p>Gets information about one or more on-premises instances.</p>
 batchGetOnPremisesInstances :: forall eff. BatchGetOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) BatchGetOnPremisesInstancesOutput
-batchGetOnPremisesInstances = Request.request serviceName "batchGetOnPremisesInstances" 
+batchGetOnPremisesInstances = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "batchGetOnPremisesInstances"
 
 
 -- | <p>For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>
 continueDeployment :: forall eff. ContinueDeploymentInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-continueDeployment = Request.request serviceName "continueDeployment" 
+continueDeployment = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "continueDeployment"
 
 
 -- | <p>Creates an application.</p>
 createApplication :: forall eff. CreateApplicationInput -> Aff (exception :: EXCEPTION | eff) CreateApplicationOutput
-createApplication = Request.request serviceName "createApplication" 
+createApplication = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "createApplication"
 
 
 -- | <p>Deploys an application revision through the specified deployment group.</p>
 createDeployment :: forall eff. CreateDeploymentInput -> Aff (exception :: EXCEPTION | eff) CreateDeploymentOutput
-createDeployment = Request.request serviceName "createDeployment" 
+createDeployment = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "createDeployment"
 
 
 -- | <p>Creates a deployment configuration.</p>
 createDeploymentConfig :: forall eff. CreateDeploymentConfigInput -> Aff (exception :: EXCEPTION | eff) CreateDeploymentConfigOutput
-createDeploymentConfig = Request.request serviceName "createDeploymentConfig" 
+createDeploymentConfig = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "createDeploymentConfig"
 
 
 -- | <p>Creates a deployment group to which application revisions will be deployed.</p>
 createDeploymentGroup :: forall eff. CreateDeploymentGroupInput -> Aff (exception :: EXCEPTION | eff) CreateDeploymentGroupOutput
-createDeploymentGroup = Request.request serviceName "createDeploymentGroup" 
+createDeploymentGroup = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "createDeploymentGroup"
 
 
 -- | <p>Deletes an application.</p>
 deleteApplication :: forall eff. DeleteApplicationInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteApplication = Request.request serviceName "deleteApplication" 
+deleteApplication = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "deleteApplication"
 
 
 -- | <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration cannot be deleted if it is currently in use. Predefined configurations cannot be deleted.</p> </note>
 deleteDeploymentConfig :: forall eff. DeleteDeploymentConfigInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteDeploymentConfig = Request.request serviceName "deleteDeploymentConfig" 
+deleteDeploymentConfig = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "deleteDeploymentConfig"
 
 
 -- | <p>Deletes a deployment group.</p>
 deleteDeploymentGroup :: forall eff. DeleteDeploymentGroupInput -> Aff (exception :: EXCEPTION | eff) DeleteDeploymentGroupOutput
-deleteDeploymentGroup = Request.request serviceName "deleteDeploymentGroup" 
+deleteDeploymentGroup = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "deleteDeploymentGroup"
 
 
 -- | <p>Deletes a GitHub account connection.</p>
 deleteGitHubAccountToken :: forall eff. DeleteGitHubAccountTokenInput -> Aff (exception :: EXCEPTION | eff) DeleteGitHubAccountTokenOutput
-deleteGitHubAccountToken = Request.request serviceName "deleteGitHubAccountToken" 
+deleteGitHubAccountToken = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "deleteGitHubAccountToken"
 
 
 -- | <p>Deregisters an on-premises instance.</p>
 deregisterOnPremisesInstance :: forall eff. DeregisterOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deregisterOnPremisesInstance = Request.request serviceName "deregisterOnPremisesInstance" 
+deregisterOnPremisesInstance = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "deregisterOnPremisesInstance"
 
 
 -- | <p>Gets information about an application.</p>
 getApplication :: forall eff. GetApplicationInput -> Aff (exception :: EXCEPTION | eff) GetApplicationOutput
-getApplication = Request.request serviceName "getApplication" 
+getApplication = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "getApplication"
 
 
 -- | <p>Gets information about an application revision.</p>
 getApplicationRevision :: forall eff. GetApplicationRevisionInput -> Aff (exception :: EXCEPTION | eff) GetApplicationRevisionOutput
-getApplicationRevision = Request.request serviceName "getApplicationRevision" 
+getApplicationRevision = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "getApplicationRevision"
 
 
 -- | <p>Gets information about a deployment.</p>
 getDeployment :: forall eff. GetDeploymentInput -> Aff (exception :: EXCEPTION | eff) GetDeploymentOutput
-getDeployment = Request.request serviceName "getDeployment" 
+getDeployment = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "getDeployment"
 
 
 -- | <p>Gets information about a deployment configuration.</p>
 getDeploymentConfig :: forall eff. GetDeploymentConfigInput -> Aff (exception :: EXCEPTION | eff) GetDeploymentConfigOutput
-getDeploymentConfig = Request.request serviceName "getDeploymentConfig" 
+getDeploymentConfig = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "getDeploymentConfig"
 
 
 -- | <p>Gets information about a deployment group.</p>
 getDeploymentGroup :: forall eff. GetDeploymentGroupInput -> Aff (exception :: EXCEPTION | eff) GetDeploymentGroupOutput
-getDeploymentGroup = Request.request serviceName "getDeploymentGroup" 
+getDeploymentGroup = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "getDeploymentGroup"
 
 
 -- | <p>Gets information about an instance as part of a deployment.</p>
 getDeploymentInstance :: forall eff. GetDeploymentInstanceInput -> Aff (exception :: EXCEPTION | eff) GetDeploymentInstanceOutput
-getDeploymentInstance = Request.request serviceName "getDeploymentInstance" 
+getDeploymentInstance = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "getDeploymentInstance"
 
 
 -- | <p>Gets information about an on-premises instance.</p>
 getOnPremisesInstance :: forall eff. GetOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) GetOnPremisesInstanceOutput
-getOnPremisesInstance = Request.request serviceName "getOnPremisesInstance" 
+getOnPremisesInstance = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "getOnPremisesInstance"
 
 
 -- | <p>Lists information about revisions for an application.</p>
 listApplicationRevisions :: forall eff. ListApplicationRevisionsInput -> Aff (exception :: EXCEPTION | eff) ListApplicationRevisionsOutput
-listApplicationRevisions = Request.request serviceName "listApplicationRevisions" 
+listApplicationRevisions = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "listApplicationRevisions"
 
 
 -- | <p>Lists the applications registered with the applicable IAM user or AWS account.</p>
 listApplications :: forall eff. ListApplicationsInput -> Aff (exception :: EXCEPTION | eff) ListApplicationsOutput
-listApplications = Request.request serviceName "listApplications" 
+listApplications = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "listApplications"
 
 
 -- | <p>Lists the deployment configurations with the applicable IAM user or AWS account.</p>
 listDeploymentConfigs :: forall eff. ListDeploymentConfigsInput -> Aff (exception :: EXCEPTION | eff) ListDeploymentConfigsOutput
-listDeploymentConfigs = Request.request serviceName "listDeploymentConfigs" 
+listDeploymentConfigs = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "listDeploymentConfigs"
 
 
 -- | <p>Lists the deployment groups for an application registered with the applicable IAM user or AWS account.</p>
 listDeploymentGroups :: forall eff. ListDeploymentGroupsInput -> Aff (exception :: EXCEPTION | eff) ListDeploymentGroupsOutput
-listDeploymentGroups = Request.request serviceName "listDeploymentGroups" 
+listDeploymentGroups = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "listDeploymentGroups"
 
 
 -- | <p>Lists the instance for a deployment associated with the applicable IAM user or AWS account.</p>
 listDeploymentInstances :: forall eff. ListDeploymentInstancesInput -> Aff (exception :: EXCEPTION | eff) ListDeploymentInstancesOutput
-listDeploymentInstances = Request.request serviceName "listDeploymentInstances" 
+listDeploymentInstances = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "listDeploymentInstances"
 
 
 -- | <p>Lists the deployments in a deployment group for an application registered with the applicable IAM user or AWS account.</p>
 listDeployments :: forall eff. ListDeploymentsInput -> Aff (exception :: EXCEPTION | eff) ListDeploymentsOutput
-listDeployments = Request.request serviceName "listDeployments" 
+listDeployments = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "listDeployments"
 
 
 -- | <p>Lists the names of stored connections to GitHub accounts.</p>
 listGitHubAccountTokenNames :: forall eff. ListGitHubAccountTokenNamesInput -> Aff (exception :: EXCEPTION | eff) ListGitHubAccountTokenNamesOutput
-listGitHubAccountTokenNames = Request.request serviceName "listGitHubAccountTokenNames" 
+listGitHubAccountTokenNames = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "listGitHubAccountTokenNames"
 
 
 -- | <p>Gets a list of names for one or more on-premises instances.</p> <p>Unless otherwise specified, both registered and deregistered on-premises instance names will be listed. To list only registered or deregistered on-premises instance names, use the registration status parameter.</p>
 listOnPremisesInstances :: forall eff. ListOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) ListOnPremisesInstancesOutput
-listOnPremisesInstances = Request.request serviceName "listOnPremisesInstances" 
+listOnPremisesInstances = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "listOnPremisesInstances"
 
 
 -- | <p>Sets the result of a Lambda validation function. The function validates one or both lifecycle events (<code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or <code>Failed</code>.</p>
 putLifecycleEventHookExecutionStatus :: forall eff. PutLifecycleEventHookExecutionStatusInput -> Aff (exception :: EXCEPTION | eff) PutLifecycleEventHookExecutionStatusOutput
-putLifecycleEventHookExecutionStatus = Request.request serviceName "putLifecycleEventHookExecutionStatus" 
+putLifecycleEventHookExecutionStatus = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "putLifecycleEventHookExecutionStatus"
 
 
 -- | <p>Registers with AWS CodeDeploy a revision for the specified application.</p>
 registerApplicationRevision :: forall eff. RegisterApplicationRevisionInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-registerApplicationRevision = Request.request serviceName "registerApplicationRevision" 
+registerApplicationRevision = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "registerApplicationRevision"
 
 
 -- | <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.</p> </note>
 registerOnPremisesInstance :: forall eff. RegisterOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-registerOnPremisesInstance = Request.request serviceName "registerOnPremisesInstance" 
+registerOnPremisesInstance = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "registerOnPremisesInstance"
 
 
 -- | <p>Removes one or more tags from one or more on-premises instances.</p>
 removeTagsFromOnPremisesInstances :: forall eff. RemoveTagsFromOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-removeTagsFromOnPremisesInstances = Request.request serviceName "removeTagsFromOnPremisesInstances" 
+removeTagsFromOnPremisesInstances = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "removeTagsFromOnPremisesInstances"
 
 
 -- | <p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is completed.</p>
 skipWaitTimeForInstanceTermination :: forall eff. SkipWaitTimeForInstanceTerminationInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-skipWaitTimeForInstanceTermination = Request.request serviceName "skipWaitTimeForInstanceTermination" 
+skipWaitTimeForInstanceTermination = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "skipWaitTimeForInstanceTermination"
 
 
 -- | <p>Attempts to stop an ongoing deployment.</p>
 stopDeployment :: forall eff. StopDeploymentInput -> Aff (exception :: EXCEPTION | eff) StopDeploymentOutput
-stopDeployment = Request.request serviceName "stopDeployment" 
+stopDeployment = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "stopDeployment"
 
 
 -- | <p>Changes the name of an application.</p>
 updateApplication :: forall eff. UpdateApplicationInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-updateApplication = Request.request serviceName "updateApplication" 
+updateApplication = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "updateApplication"
 
 
 -- | <p>Changes information about a deployment group.</p>
 updateDeploymentGroup :: forall eff. UpdateDeploymentGroupInput -> Aff (exception :: EXCEPTION | eff) UpdateDeploymentGroupOutput
-updateDeploymentGroup = Request.request serviceName "updateDeploymentGroup" 
+updateDeploymentGroup = Request.request service method  where
+    service = Request.ServiceName "CodeDeploy"
+    method = Request.MethodName "updateDeploymentGroup"
 
 
 -- | <p>Represents the input of, and adds tags to, an on-premises instance operation.</p>
