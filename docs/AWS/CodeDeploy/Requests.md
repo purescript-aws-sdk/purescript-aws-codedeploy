@@ -3,7 +3,7 @@
 #### `addTagsToOnPremisesInstances`
 
 ``` purescript
-addTagsToOnPremisesInstances :: forall eff. Service -> AddTagsToOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+addTagsToOnPremisesInstances :: forall eff. Service -> AddTagsToOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Adds tags to on-premises instances.</p>
@@ -59,7 +59,7 @@ batchGetOnPremisesInstances :: forall eff. Service -> BatchGetOnPremisesInstance
 #### `continueDeployment`
 
 ``` purescript
-continueDeployment :: forall eff. Service -> ContinueDeploymentInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+continueDeployment :: forall eff. Service -> ContinueDeploymentInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>
@@ -99,7 +99,7 @@ createDeploymentGroup :: forall eff. Service -> CreateDeploymentGroupInput -> Af
 #### `deleteApplication`
 
 ``` purescript
-deleteApplication :: forall eff. Service -> DeleteApplicationInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteApplication :: forall eff. Service -> DeleteApplicationInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes an application.</p>
@@ -107,7 +107,7 @@ deleteApplication :: forall eff. Service -> DeleteApplicationInput -> Aff (excep
 #### `deleteDeploymentConfig`
 
 ``` purescript
-deleteDeploymentConfig :: forall eff. Service -> DeleteDeploymentConfigInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteDeploymentConfig :: forall eff. Service -> DeleteDeploymentConfigInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration cannot be deleted if it is currently in use. Predefined configurations cannot be deleted.</p> </note>
@@ -131,7 +131,7 @@ deleteGitHubAccountToken :: forall eff. Service -> DeleteGitHubAccountTokenInput
 #### `deregisterOnPremisesInstance`
 
 ``` purescript
-deregisterOnPremisesInstance :: forall eff. Service -> DeregisterOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+deregisterOnPremisesInstance :: forall eff. Service -> DeregisterOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deregisters an on-premises instance.</p>
@@ -267,7 +267,7 @@ putLifecycleEventHookExecutionStatus :: forall eff. Service -> PutLifecycleEvent
 #### `registerApplicationRevision`
 
 ``` purescript
-registerApplicationRevision :: forall eff. Service -> RegisterApplicationRevisionInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+registerApplicationRevision :: forall eff. Service -> RegisterApplicationRevisionInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Registers with AWS CodeDeploy a revision for the specified application.</p>
@@ -275,7 +275,7 @@ registerApplicationRevision :: forall eff. Service -> RegisterApplicationRevisio
 #### `registerOnPremisesInstance`
 
 ``` purescript
-registerOnPremisesInstance :: forall eff. Service -> RegisterOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+registerOnPremisesInstance :: forall eff. Service -> RegisterOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.</p> </note>
@@ -283,7 +283,7 @@ registerOnPremisesInstance :: forall eff. Service -> RegisterOnPremisesInstanceI
 #### `removeTagsFromOnPremisesInstances`
 
 ``` purescript
-removeTagsFromOnPremisesInstances :: forall eff. Service -> RemoveTagsFromOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+removeTagsFromOnPremisesInstances :: forall eff. Service -> RemoveTagsFromOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Removes one or more tags from one or more on-premises instances.</p>
@@ -291,7 +291,7 @@ removeTagsFromOnPremisesInstances :: forall eff. Service -> RemoveTagsFromOnPrem
 #### `skipWaitTimeForInstanceTermination`
 
 ``` purescript
-skipWaitTimeForInstanceTermination :: forall eff. Service -> SkipWaitTimeForInstanceTerminationInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+skipWaitTimeForInstanceTermination :: forall eff. Service -> SkipWaitTimeForInstanceTerminationInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is completed.</p>
@@ -307,7 +307,7 @@ stopDeployment :: forall eff. Service -> StopDeploymentInput -> Aff (exception :
 #### `updateApplication`
 
 ``` purescript
-updateApplication :: forall eff. Service -> UpdateApplicationInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateApplication :: forall eff. Service -> UpdateApplicationInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Changes the name of an application.</p>

@@ -13,7 +13,7 @@ import AWS.CodeDeploy.Types as CodeDeployTypes
 
 
 -- | <p>Adds tags to on-premises instances.</p>
-addTagsToOnPremisesInstances :: forall eff. CodeDeploy.Service -> CodeDeployTypes.AddTagsToOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+addTagsToOnPremisesInstances :: forall eff. CodeDeploy.Service -> CodeDeployTypes.AddTagsToOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) Unit
 addTagsToOnPremisesInstances (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "addTagsToOnPremisesInstances"
 
@@ -55,7 +55,7 @@ batchGetOnPremisesInstances (CodeDeploy.Service serviceImpl) = AWS.request servi
 
 
 -- | <p>For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>
-continueDeployment :: forall eff. CodeDeploy.Service -> CodeDeployTypes.ContinueDeploymentInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+continueDeployment :: forall eff. CodeDeploy.Service -> CodeDeployTypes.ContinueDeploymentInput -> Aff (exception :: EXCEPTION | eff) Unit
 continueDeployment (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "continueDeployment"
 
@@ -85,13 +85,13 @@ createDeploymentGroup (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl
 
 
 -- | <p>Deletes an application.</p>
-deleteApplication :: forall eff. CodeDeploy.Service -> CodeDeployTypes.DeleteApplicationInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteApplication :: forall eff. CodeDeploy.Service -> CodeDeployTypes.DeleteApplicationInput -> Aff (exception :: EXCEPTION | eff) Unit
 deleteApplication (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteApplication"
 
 
 -- | <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration cannot be deleted if it is currently in use. Predefined configurations cannot be deleted.</p> </note>
-deleteDeploymentConfig :: forall eff. CodeDeploy.Service -> CodeDeployTypes.DeleteDeploymentConfigInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteDeploymentConfig :: forall eff. CodeDeploy.Service -> CodeDeployTypes.DeleteDeploymentConfigInput -> Aff (exception :: EXCEPTION | eff) Unit
 deleteDeploymentConfig (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteDeploymentConfig"
 
@@ -109,7 +109,7 @@ deleteGitHubAccountToken (CodeDeploy.Service serviceImpl) = AWS.request serviceI
 
 
 -- | <p>Deregisters an on-premises instance.</p>
-deregisterOnPremisesInstance :: forall eff. CodeDeploy.Service -> CodeDeployTypes.DeregisterOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deregisterOnPremisesInstance :: forall eff. CodeDeploy.Service -> CodeDeployTypes.DeregisterOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) Unit
 deregisterOnPremisesInstance (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deregisterOnPremisesInstance"
 
@@ -211,25 +211,25 @@ putLifecycleEventHookExecutionStatus (CodeDeploy.Service serviceImpl) = AWS.requ
 
 
 -- | <p>Registers with AWS CodeDeploy a revision for the specified application.</p>
-registerApplicationRevision :: forall eff. CodeDeploy.Service -> CodeDeployTypes.RegisterApplicationRevisionInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+registerApplicationRevision :: forall eff. CodeDeploy.Service -> CodeDeployTypes.RegisterApplicationRevisionInput -> Aff (exception :: EXCEPTION | eff) Unit
 registerApplicationRevision (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "registerApplicationRevision"
 
 
 -- | <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.</p> </note>
-registerOnPremisesInstance :: forall eff. CodeDeploy.Service -> CodeDeployTypes.RegisterOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+registerOnPremisesInstance :: forall eff. CodeDeploy.Service -> CodeDeployTypes.RegisterOnPremisesInstanceInput -> Aff (exception :: EXCEPTION | eff) Unit
 registerOnPremisesInstance (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "registerOnPremisesInstance"
 
 
 -- | <p>Removes one or more tags from one or more on-premises instances.</p>
-removeTagsFromOnPremisesInstances :: forall eff. CodeDeploy.Service -> CodeDeployTypes.RemoveTagsFromOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+removeTagsFromOnPremisesInstances :: forall eff. CodeDeploy.Service -> CodeDeployTypes.RemoveTagsFromOnPremisesInstancesInput -> Aff (exception :: EXCEPTION | eff) Unit
 removeTagsFromOnPremisesInstances (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "removeTagsFromOnPremisesInstances"
 
 
 -- | <p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is completed.</p>
-skipWaitTimeForInstanceTermination :: forall eff. CodeDeploy.Service -> CodeDeployTypes.SkipWaitTimeForInstanceTerminationInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+skipWaitTimeForInstanceTermination :: forall eff. CodeDeploy.Service -> CodeDeployTypes.SkipWaitTimeForInstanceTerminationInput -> Aff (exception :: EXCEPTION | eff) Unit
 skipWaitTimeForInstanceTermination (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "skipWaitTimeForInstanceTermination"
 
@@ -241,7 +241,7 @@ stopDeployment (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method
 
 
 -- | <p>Changes the name of an application.</p>
-updateApplication :: forall eff. CodeDeploy.Service -> CodeDeployTypes.UpdateApplicationInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateApplication :: forall eff. CodeDeploy.Service -> CodeDeployTypes.UpdateApplicationInput -> Aff (exception :: EXCEPTION | eff) Unit
 updateApplication (CodeDeploy.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateApplication"
 

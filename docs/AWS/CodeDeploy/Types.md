@@ -60,7 +60,7 @@ Encode AdditionalDeploymentStatusInfo
 
 ``` purescript
 newtype Alarm
-  = Alarm { name :: NullOrUndefined (AlarmName) }
+  = Alarm { name :: Maybe (AlarmName) }
 ```
 
 <p>Information about an alarm.</p>
@@ -85,7 +85,7 @@ Constructs Alarm from required parameters
 #### `newAlarm'`
 
 ``` purescript
-newAlarm' :: ({ name :: NullOrUndefined (AlarmName) } -> { name :: NullOrUndefined (AlarmName) }) -> Alarm
+newAlarm' :: ({ name :: Maybe (AlarmName) } -> { name :: Maybe (AlarmName) }) -> Alarm
 ```
 
 Constructs Alarm's fields from required parameters
@@ -94,7 +94,7 @@ Constructs Alarm's fields from required parameters
 
 ``` purescript
 newtype AlarmConfiguration
-  = AlarmConfiguration { enabled :: NullOrUndefined (Boolean), ignorePollAlarmFailure :: NullOrUndefined (Boolean), alarms :: NullOrUndefined (AlarmList) }
+  = AlarmConfiguration { enabled :: Maybe (Boolean), ignorePollAlarmFailure :: Maybe (Boolean), alarms :: Maybe (AlarmList) }
 ```
 
 <p>Information about alarms associated with the deployment group.</p>
@@ -119,7 +119,7 @@ Constructs AlarmConfiguration from required parameters
 #### `newAlarmConfiguration'`
 
 ``` purescript
-newAlarmConfiguration' :: ({ enabled :: NullOrUndefined (Boolean), ignorePollAlarmFailure :: NullOrUndefined (Boolean), alarms :: NullOrUndefined (AlarmList) } -> { enabled :: NullOrUndefined (Boolean), ignorePollAlarmFailure :: NullOrUndefined (Boolean), alarms :: NullOrUndefined (AlarmList) }) -> AlarmConfiguration
+newAlarmConfiguration' :: ({ enabled :: Maybe (Boolean), ignorePollAlarmFailure :: Maybe (Boolean), alarms :: Maybe (AlarmList) } -> { enabled :: Maybe (Boolean), ignorePollAlarmFailure :: Maybe (Boolean), alarms :: Maybe (AlarmList) }) -> AlarmConfiguration
 ```
 
 Constructs AlarmConfiguration's fields from required parameters
@@ -230,7 +230,7 @@ Encode ApplicationId
 
 ``` purescript
 newtype ApplicationInfo
-  = ApplicationInfo { applicationId :: NullOrUndefined (ApplicationId), applicationName :: NullOrUndefined (ApplicationName), createTime :: NullOrUndefined (Timestamp), linkedToGitHub :: NullOrUndefined (Boolean), gitHubAccountName :: NullOrUndefined (GitHubAccountTokenName), computePlatform :: NullOrUndefined (ComputePlatform) }
+  = ApplicationInfo { applicationId :: Maybe (ApplicationId), applicationName :: Maybe (ApplicationName), createTime :: Maybe (Timestamp), linkedToGitHub :: Maybe (Boolean), gitHubAccountName :: Maybe (GitHubAccountTokenName), computePlatform :: Maybe (ComputePlatform) }
 ```
 
 <p>Information about an application.</p>
@@ -255,7 +255,7 @@ Constructs ApplicationInfo from required parameters
 #### `newApplicationInfo'`
 
 ``` purescript
-newApplicationInfo' :: ({ applicationId :: NullOrUndefined (ApplicationId), applicationName :: NullOrUndefined (ApplicationName), createTime :: NullOrUndefined (Timestamp), linkedToGitHub :: NullOrUndefined (Boolean), gitHubAccountName :: NullOrUndefined (GitHubAccountTokenName), computePlatform :: NullOrUndefined (ComputePlatform) } -> { applicationId :: NullOrUndefined (ApplicationId), applicationName :: NullOrUndefined (ApplicationName), createTime :: NullOrUndefined (Timestamp), linkedToGitHub :: NullOrUndefined (Boolean), gitHubAccountName :: NullOrUndefined (GitHubAccountTokenName), computePlatform :: NullOrUndefined (ComputePlatform) }) -> ApplicationInfo
+newApplicationInfo' :: ({ applicationId :: Maybe (ApplicationId), applicationName :: Maybe (ApplicationName), createTime :: Maybe (Timestamp), linkedToGitHub :: Maybe (Boolean), gitHubAccountName :: Maybe (GitHubAccountTokenName), computePlatform :: Maybe (ComputePlatform) } -> { applicationId :: Maybe (ApplicationId), applicationName :: Maybe (ApplicationName), createTime :: Maybe (Timestamp), linkedToGitHub :: Maybe (Boolean), gitHubAccountName :: Maybe (GitHubAccountTokenName), computePlatform :: Maybe (ComputePlatform) }) -> ApplicationInfo
 ```
 
 Constructs ApplicationInfo's fields from required parameters
@@ -364,7 +364,7 @@ Encode ApplicationsList
 
 ``` purescript
 newtype AutoRollbackConfiguration
-  = AutoRollbackConfiguration { enabled :: NullOrUndefined (Boolean), events :: NullOrUndefined (AutoRollbackEventsList) }
+  = AutoRollbackConfiguration { enabled :: Maybe (Boolean), events :: Maybe (AutoRollbackEventsList) }
 ```
 
 <p>Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment doesn't complete successfully.</p>
@@ -389,7 +389,7 @@ Constructs AutoRollbackConfiguration from required parameters
 #### `newAutoRollbackConfiguration'`
 
 ``` purescript
-newAutoRollbackConfiguration' :: ({ enabled :: NullOrUndefined (Boolean), events :: NullOrUndefined (AutoRollbackEventsList) } -> { enabled :: NullOrUndefined (Boolean), events :: NullOrUndefined (AutoRollbackEventsList) }) -> AutoRollbackConfiguration
+newAutoRollbackConfiguration' :: ({ enabled :: Maybe (Boolean), events :: Maybe (AutoRollbackEventsList) } -> { enabled :: Maybe (Boolean), events :: Maybe (AutoRollbackEventsList) }) -> AutoRollbackConfiguration
 ```
 
 Constructs AutoRollbackConfiguration's fields from required parameters
@@ -430,7 +430,7 @@ Encode AutoRollbackEventsList
 
 ``` purescript
 newtype AutoScalingGroup
-  = AutoScalingGroup { name :: NullOrUndefined (AutoScalingGroupName), hook :: NullOrUndefined (AutoScalingGroupHook) }
+  = AutoScalingGroup { name :: Maybe (AutoScalingGroupName), hook :: Maybe (AutoScalingGroupHook) }
 ```
 
 <p>Information about an Auto Scaling group.</p>
@@ -455,7 +455,7 @@ Constructs AutoScalingGroup from required parameters
 #### `newAutoScalingGroup'`
 
 ``` purescript
-newAutoScalingGroup' :: ({ name :: NullOrUndefined (AutoScalingGroupName), hook :: NullOrUndefined (AutoScalingGroupHook) } -> { name :: NullOrUndefined (AutoScalingGroupName), hook :: NullOrUndefined (AutoScalingGroupHook) }) -> AutoScalingGroup
+newAutoScalingGroup' :: ({ name :: Maybe (AutoScalingGroupName), hook :: Maybe (AutoScalingGroupHook) } -> { name :: Maybe (AutoScalingGroupName), hook :: Maybe (AutoScalingGroupHook) }) -> AutoScalingGroup
 ```
 
 Constructs AutoScalingGroup's fields from required parameters
@@ -562,7 +562,7 @@ Constructs BatchGetApplicationRevisionsInput's fields from required parameters
 
 ``` purescript
 newtype BatchGetApplicationRevisionsOutput
-  = BatchGetApplicationRevisionsOutput { applicationName :: NullOrUndefined (ApplicationName), errorMessage :: NullOrUndefined (ErrorMessage), revisions :: NullOrUndefined (RevisionInfoList) }
+  = BatchGetApplicationRevisionsOutput { applicationName :: Maybe (ApplicationName), errorMessage :: Maybe (ErrorMessage), revisions :: Maybe (RevisionInfoList) }
 ```
 
 <p>Represents the output of a BatchGetApplicationRevisions operation.</p>
@@ -587,7 +587,7 @@ Constructs BatchGetApplicationRevisionsOutput from required parameters
 #### `newBatchGetApplicationRevisionsOutput'`
 
 ``` purescript
-newBatchGetApplicationRevisionsOutput' :: ({ applicationName :: NullOrUndefined (ApplicationName), errorMessage :: NullOrUndefined (ErrorMessage), revisions :: NullOrUndefined (RevisionInfoList) } -> { applicationName :: NullOrUndefined (ApplicationName), errorMessage :: NullOrUndefined (ErrorMessage), revisions :: NullOrUndefined (RevisionInfoList) }) -> BatchGetApplicationRevisionsOutput
+newBatchGetApplicationRevisionsOutput' :: ({ applicationName :: Maybe (ApplicationName), errorMessage :: Maybe (ErrorMessage), revisions :: Maybe (RevisionInfoList) } -> { applicationName :: Maybe (ApplicationName), errorMessage :: Maybe (ErrorMessage), revisions :: Maybe (RevisionInfoList) }) -> BatchGetApplicationRevisionsOutput
 ```
 
 Constructs BatchGetApplicationRevisionsOutput's fields from required parameters
@@ -630,7 +630,7 @@ Constructs BatchGetApplicationsInput's fields from required parameters
 
 ``` purescript
 newtype BatchGetApplicationsOutput
-  = BatchGetApplicationsOutput { applicationsInfo :: NullOrUndefined (ApplicationsInfoList) }
+  = BatchGetApplicationsOutput { applicationsInfo :: Maybe (ApplicationsInfoList) }
 ```
 
 <p>Represents the output of a BatchGetApplications operation.</p>
@@ -655,7 +655,7 @@ Constructs BatchGetApplicationsOutput from required parameters
 #### `newBatchGetApplicationsOutput'`
 
 ``` purescript
-newBatchGetApplicationsOutput' :: ({ applicationsInfo :: NullOrUndefined (ApplicationsInfoList) } -> { applicationsInfo :: NullOrUndefined (ApplicationsInfoList) }) -> BatchGetApplicationsOutput
+newBatchGetApplicationsOutput' :: ({ applicationsInfo :: Maybe (ApplicationsInfoList) } -> { applicationsInfo :: Maybe (ApplicationsInfoList) }) -> BatchGetApplicationsOutput
 ```
 
 Constructs BatchGetApplicationsOutput's fields from required parameters
@@ -698,7 +698,7 @@ Constructs BatchGetDeploymentGroupsInput's fields from required parameters
 
 ``` purescript
 newtype BatchGetDeploymentGroupsOutput
-  = BatchGetDeploymentGroupsOutput { deploymentGroupsInfo :: NullOrUndefined (DeploymentGroupInfoList), errorMessage :: NullOrUndefined (ErrorMessage) }
+  = BatchGetDeploymentGroupsOutput { deploymentGroupsInfo :: Maybe (DeploymentGroupInfoList), errorMessage :: Maybe (ErrorMessage) }
 ```
 
 <p>Represents the output of a BatchGetDeploymentGroups operation.</p>
@@ -723,7 +723,7 @@ Constructs BatchGetDeploymentGroupsOutput from required parameters
 #### `newBatchGetDeploymentGroupsOutput'`
 
 ``` purescript
-newBatchGetDeploymentGroupsOutput' :: ({ deploymentGroupsInfo :: NullOrUndefined (DeploymentGroupInfoList), errorMessage :: NullOrUndefined (ErrorMessage) } -> { deploymentGroupsInfo :: NullOrUndefined (DeploymentGroupInfoList), errorMessage :: NullOrUndefined (ErrorMessage) }) -> BatchGetDeploymentGroupsOutput
+newBatchGetDeploymentGroupsOutput' :: ({ deploymentGroupsInfo :: Maybe (DeploymentGroupInfoList), errorMessage :: Maybe (ErrorMessage) } -> { deploymentGroupsInfo :: Maybe (DeploymentGroupInfoList), errorMessage :: Maybe (ErrorMessage) }) -> BatchGetDeploymentGroupsOutput
 ```
 
 Constructs BatchGetDeploymentGroupsOutput's fields from required parameters
@@ -766,7 +766,7 @@ Constructs BatchGetDeploymentInstancesInput's fields from required parameters
 
 ``` purescript
 newtype BatchGetDeploymentInstancesOutput
-  = BatchGetDeploymentInstancesOutput { instancesSummary :: NullOrUndefined (InstanceSummaryList), errorMessage :: NullOrUndefined (ErrorMessage) }
+  = BatchGetDeploymentInstancesOutput { instancesSummary :: Maybe (InstanceSummaryList), errorMessage :: Maybe (ErrorMessage) }
 ```
 
 <p>Represents the output of a BatchGetDeploymentInstances operation.</p>
@@ -791,7 +791,7 @@ Constructs BatchGetDeploymentInstancesOutput from required parameters
 #### `newBatchGetDeploymentInstancesOutput'`
 
 ``` purescript
-newBatchGetDeploymentInstancesOutput' :: ({ instancesSummary :: NullOrUndefined (InstanceSummaryList), errorMessage :: NullOrUndefined (ErrorMessage) } -> { instancesSummary :: NullOrUndefined (InstanceSummaryList), errorMessage :: NullOrUndefined (ErrorMessage) }) -> BatchGetDeploymentInstancesOutput
+newBatchGetDeploymentInstancesOutput' :: ({ instancesSummary :: Maybe (InstanceSummaryList), errorMessage :: Maybe (ErrorMessage) } -> { instancesSummary :: Maybe (InstanceSummaryList), errorMessage :: Maybe (ErrorMessage) }) -> BatchGetDeploymentInstancesOutput
 ```
 
 Constructs BatchGetDeploymentInstancesOutput's fields from required parameters
@@ -834,7 +834,7 @@ Constructs BatchGetDeploymentsInput's fields from required parameters
 
 ``` purescript
 newtype BatchGetDeploymentsOutput
-  = BatchGetDeploymentsOutput { deploymentsInfo :: NullOrUndefined (DeploymentsInfoList) }
+  = BatchGetDeploymentsOutput { deploymentsInfo :: Maybe (DeploymentsInfoList) }
 ```
 
 <p>Represents the output of a BatchGetDeployments operation.</p>
@@ -859,7 +859,7 @@ Constructs BatchGetDeploymentsOutput from required parameters
 #### `newBatchGetDeploymentsOutput'`
 
 ``` purescript
-newBatchGetDeploymentsOutput' :: ({ deploymentsInfo :: NullOrUndefined (DeploymentsInfoList) } -> { deploymentsInfo :: NullOrUndefined (DeploymentsInfoList) }) -> BatchGetDeploymentsOutput
+newBatchGetDeploymentsOutput' :: ({ deploymentsInfo :: Maybe (DeploymentsInfoList) } -> { deploymentsInfo :: Maybe (DeploymentsInfoList) }) -> BatchGetDeploymentsOutput
 ```
 
 Constructs BatchGetDeploymentsOutput's fields from required parameters
@@ -902,7 +902,7 @@ Constructs BatchGetOnPremisesInstancesInput's fields from required parameters
 
 ``` purescript
 newtype BatchGetOnPremisesInstancesOutput
-  = BatchGetOnPremisesInstancesOutput { instanceInfos :: NullOrUndefined (InstanceInfoList) }
+  = BatchGetOnPremisesInstancesOutput { instanceInfos :: Maybe (InstanceInfoList) }
 ```
 
 <p>Represents the output of a BatchGetOnPremisesInstances operation.</p>
@@ -927,7 +927,7 @@ Constructs BatchGetOnPremisesInstancesOutput from required parameters
 #### `newBatchGetOnPremisesInstancesOutput'`
 
 ``` purescript
-newBatchGetOnPremisesInstancesOutput' :: ({ instanceInfos :: NullOrUndefined (InstanceInfoList) } -> { instanceInfos :: NullOrUndefined (InstanceInfoList) }) -> BatchGetOnPremisesInstancesOutput
+newBatchGetOnPremisesInstancesOutput' :: ({ instanceInfos :: Maybe (InstanceInfoList) } -> { instanceInfos :: Maybe (InstanceInfoList) }) -> BatchGetOnPremisesInstancesOutput
 ```
 
 Constructs BatchGetOnPremisesInstancesOutput's fields from required parameters
@@ -954,7 +954,7 @@ Encode BatchLimitExceededException
 
 ``` purescript
 newtype BlueGreenDeploymentConfiguration
-  = BlueGreenDeploymentConfiguration { terminateBlueInstancesOnDeploymentSuccess :: NullOrUndefined (BlueInstanceTerminationOption), deploymentReadyOption :: NullOrUndefined (DeploymentReadyOption), greenFleetProvisioningOption :: NullOrUndefined (GreenFleetProvisioningOption) }
+  = BlueGreenDeploymentConfiguration { terminateBlueInstancesOnDeploymentSuccess :: Maybe (BlueInstanceTerminationOption), deploymentReadyOption :: Maybe (DeploymentReadyOption), greenFleetProvisioningOption :: Maybe (GreenFleetProvisioningOption) }
 ```
 
 <p>Information about blue/green deployment options for a deployment group.</p>
@@ -979,7 +979,7 @@ Constructs BlueGreenDeploymentConfiguration from required parameters
 #### `newBlueGreenDeploymentConfiguration'`
 
 ``` purescript
-newBlueGreenDeploymentConfiguration' :: ({ terminateBlueInstancesOnDeploymentSuccess :: NullOrUndefined (BlueInstanceTerminationOption), deploymentReadyOption :: NullOrUndefined (DeploymentReadyOption), greenFleetProvisioningOption :: NullOrUndefined (GreenFleetProvisioningOption) } -> { terminateBlueInstancesOnDeploymentSuccess :: NullOrUndefined (BlueInstanceTerminationOption), deploymentReadyOption :: NullOrUndefined (DeploymentReadyOption), greenFleetProvisioningOption :: NullOrUndefined (GreenFleetProvisioningOption) }) -> BlueGreenDeploymentConfiguration
+newBlueGreenDeploymentConfiguration' :: ({ terminateBlueInstancesOnDeploymentSuccess :: Maybe (BlueInstanceTerminationOption), deploymentReadyOption :: Maybe (DeploymentReadyOption), greenFleetProvisioningOption :: Maybe (GreenFleetProvisioningOption) } -> { terminateBlueInstancesOnDeploymentSuccess :: Maybe (BlueInstanceTerminationOption), deploymentReadyOption :: Maybe (DeploymentReadyOption), greenFleetProvisioningOption :: Maybe (GreenFleetProvisioningOption) }) -> BlueGreenDeploymentConfiguration
 ```
 
 Constructs BlueGreenDeploymentConfiguration's fields from required parameters
@@ -988,7 +988,7 @@ Constructs BlueGreenDeploymentConfiguration's fields from required parameters
 
 ``` purescript
 newtype BlueInstanceTerminationOption
-  = BlueInstanceTerminationOption { action :: NullOrUndefined (InstanceAction), terminationWaitTimeInMinutes :: NullOrUndefined (Duration) }
+  = BlueInstanceTerminationOption { action :: Maybe (InstanceAction), terminationWaitTimeInMinutes :: Maybe (Duration) }
 ```
 
 <p>Information about whether instances in the original environment are terminated when a blue/green deployment is successful.</p>
@@ -1013,7 +1013,7 @@ Constructs BlueInstanceTerminationOption from required parameters
 #### `newBlueInstanceTerminationOption'`
 
 ``` purescript
-newBlueInstanceTerminationOption' :: ({ action :: NullOrUndefined (InstanceAction), terminationWaitTimeInMinutes :: NullOrUndefined (Duration) } -> { action :: NullOrUndefined (InstanceAction), terminationWaitTimeInMinutes :: NullOrUndefined (Duration) }) -> BlueInstanceTerminationOption
+newBlueInstanceTerminationOption' :: ({ action :: Maybe (InstanceAction), terminationWaitTimeInMinutes :: Maybe (Duration) } -> { action :: Maybe (InstanceAction), terminationWaitTimeInMinutes :: Maybe (Duration) }) -> BlueInstanceTerminationOption
 ```
 
 Constructs BlueInstanceTerminationOption's fields from required parameters
@@ -1088,7 +1088,7 @@ Encode ComputePlatform
 
 ``` purescript
 newtype ContinueDeploymentInput
-  = ContinueDeploymentInput { deploymentId :: NullOrUndefined (DeploymentId) }
+  = ContinueDeploymentInput { deploymentId :: Maybe (DeploymentId) }
 ```
 
 ##### Instances
@@ -1111,7 +1111,7 @@ Constructs ContinueDeploymentInput from required parameters
 #### `newContinueDeploymentInput'`
 
 ``` purescript
-newContinueDeploymentInput' :: ({ deploymentId :: NullOrUndefined (DeploymentId) } -> { deploymentId :: NullOrUndefined (DeploymentId) }) -> ContinueDeploymentInput
+newContinueDeploymentInput' :: ({ deploymentId :: Maybe (DeploymentId) } -> { deploymentId :: Maybe (DeploymentId) }) -> ContinueDeploymentInput
 ```
 
 Constructs ContinueDeploymentInput's fields from required parameters
@@ -1120,7 +1120,7 @@ Constructs ContinueDeploymentInput's fields from required parameters
 
 ``` purescript
 newtype CreateApplicationInput
-  = CreateApplicationInput { applicationName :: ApplicationName, computePlatform :: NullOrUndefined (ComputePlatform) }
+  = CreateApplicationInput { applicationName :: ApplicationName, computePlatform :: Maybe (ComputePlatform) }
 ```
 
 <p>Represents the input of a CreateApplication operation.</p>
@@ -1145,7 +1145,7 @@ Constructs CreateApplicationInput from required parameters
 #### `newCreateApplicationInput'`
 
 ``` purescript
-newCreateApplicationInput' :: ApplicationName -> ({ applicationName :: ApplicationName, computePlatform :: NullOrUndefined (ComputePlatform) } -> { applicationName :: ApplicationName, computePlatform :: NullOrUndefined (ComputePlatform) }) -> CreateApplicationInput
+newCreateApplicationInput' :: ApplicationName -> ({ applicationName :: ApplicationName, computePlatform :: Maybe (ComputePlatform) } -> { applicationName :: ApplicationName, computePlatform :: Maybe (ComputePlatform) }) -> CreateApplicationInput
 ```
 
 Constructs CreateApplicationInput's fields from required parameters
@@ -1154,7 +1154,7 @@ Constructs CreateApplicationInput's fields from required parameters
 
 ``` purescript
 newtype CreateApplicationOutput
-  = CreateApplicationOutput { applicationId :: NullOrUndefined (ApplicationId) }
+  = CreateApplicationOutput { applicationId :: Maybe (ApplicationId) }
 ```
 
 <p>Represents the output of a CreateApplication operation.</p>
@@ -1179,7 +1179,7 @@ Constructs CreateApplicationOutput from required parameters
 #### `newCreateApplicationOutput'`
 
 ``` purescript
-newCreateApplicationOutput' :: ({ applicationId :: NullOrUndefined (ApplicationId) } -> { applicationId :: NullOrUndefined (ApplicationId) }) -> CreateApplicationOutput
+newCreateApplicationOutput' :: ({ applicationId :: Maybe (ApplicationId) } -> { applicationId :: Maybe (ApplicationId) }) -> CreateApplicationOutput
 ```
 
 Constructs CreateApplicationOutput's fields from required parameters
@@ -1188,7 +1188,7 @@ Constructs CreateApplicationOutput's fields from required parameters
 
 ``` purescript
 newtype CreateDeploymentConfigInput
-  = CreateDeploymentConfigInput { deploymentConfigName :: DeploymentConfigName, minimumHealthyHosts :: NullOrUndefined (MinimumHealthyHosts), trafficRoutingConfig :: NullOrUndefined (TrafficRoutingConfig), computePlatform :: NullOrUndefined (ComputePlatform) }
+  = CreateDeploymentConfigInput { deploymentConfigName :: DeploymentConfigName, minimumHealthyHosts :: Maybe (MinimumHealthyHosts), trafficRoutingConfig :: Maybe (TrafficRoutingConfig), computePlatform :: Maybe (ComputePlatform) }
 ```
 
 <p>Represents the input of a CreateDeploymentConfig operation.</p>
@@ -1213,7 +1213,7 @@ Constructs CreateDeploymentConfigInput from required parameters
 #### `newCreateDeploymentConfigInput'`
 
 ``` purescript
-newCreateDeploymentConfigInput' :: DeploymentConfigName -> ({ deploymentConfigName :: DeploymentConfigName, minimumHealthyHosts :: NullOrUndefined (MinimumHealthyHosts), trafficRoutingConfig :: NullOrUndefined (TrafficRoutingConfig), computePlatform :: NullOrUndefined (ComputePlatform) } -> { deploymentConfigName :: DeploymentConfigName, minimumHealthyHosts :: NullOrUndefined (MinimumHealthyHosts), trafficRoutingConfig :: NullOrUndefined (TrafficRoutingConfig), computePlatform :: NullOrUndefined (ComputePlatform) }) -> CreateDeploymentConfigInput
+newCreateDeploymentConfigInput' :: DeploymentConfigName -> ({ deploymentConfigName :: DeploymentConfigName, minimumHealthyHosts :: Maybe (MinimumHealthyHosts), trafficRoutingConfig :: Maybe (TrafficRoutingConfig), computePlatform :: Maybe (ComputePlatform) } -> { deploymentConfigName :: DeploymentConfigName, minimumHealthyHosts :: Maybe (MinimumHealthyHosts), trafficRoutingConfig :: Maybe (TrafficRoutingConfig), computePlatform :: Maybe (ComputePlatform) }) -> CreateDeploymentConfigInput
 ```
 
 Constructs CreateDeploymentConfigInput's fields from required parameters
@@ -1222,7 +1222,7 @@ Constructs CreateDeploymentConfigInput's fields from required parameters
 
 ``` purescript
 newtype CreateDeploymentConfigOutput
-  = CreateDeploymentConfigOutput { deploymentConfigId :: NullOrUndefined (DeploymentConfigId) }
+  = CreateDeploymentConfigOutput { deploymentConfigId :: Maybe (DeploymentConfigId) }
 ```
 
 <p>Represents the output of a CreateDeploymentConfig operation.</p>
@@ -1247,7 +1247,7 @@ Constructs CreateDeploymentConfigOutput from required parameters
 #### `newCreateDeploymentConfigOutput'`
 
 ``` purescript
-newCreateDeploymentConfigOutput' :: ({ deploymentConfigId :: NullOrUndefined (DeploymentConfigId) } -> { deploymentConfigId :: NullOrUndefined (DeploymentConfigId) }) -> CreateDeploymentConfigOutput
+newCreateDeploymentConfigOutput' :: ({ deploymentConfigId :: Maybe (DeploymentConfigId) } -> { deploymentConfigId :: Maybe (DeploymentConfigId) }) -> CreateDeploymentConfigOutput
 ```
 
 Constructs CreateDeploymentConfigOutput's fields from required parameters
@@ -1256,7 +1256,7 @@ Constructs CreateDeploymentConfigOutput's fields from required parameters
 
 ``` purescript
 newtype CreateDeploymentGroupInput
-  = CreateDeploymentGroupInput { applicationName :: ApplicationName, deploymentGroupName :: DeploymentGroupName, deploymentConfigName :: NullOrUndefined (DeploymentConfigName), ec2TagFilters :: NullOrUndefined (EC2TagFilterList), onPremisesInstanceTagFilters :: NullOrUndefined (TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupNameList), serviceRoleArn :: Role, triggerConfigurations :: NullOrUndefined (TriggerConfigList), alarmConfiguration :: NullOrUndefined (AlarmConfiguration), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), deploymentStyle :: NullOrUndefined (DeploymentStyle), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), ec2TagSet :: NullOrUndefined (EC2TagSet), onPremisesTagSet :: NullOrUndefined (OnPremisesTagSet) }
+  = CreateDeploymentGroupInput { applicationName :: ApplicationName, deploymentGroupName :: DeploymentGroupName, deploymentConfigName :: Maybe (DeploymentConfigName), ec2TagFilters :: Maybe (EC2TagFilterList), onPremisesInstanceTagFilters :: Maybe (TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupNameList), serviceRoleArn :: Role, triggerConfigurations :: Maybe (TriggerConfigList), alarmConfiguration :: Maybe (AlarmConfiguration), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), deploymentStyle :: Maybe (DeploymentStyle), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), ec2TagSet :: Maybe (EC2TagSet), onPremisesTagSet :: Maybe (OnPremisesTagSet) }
 ```
 
 <p>Represents the input of a CreateDeploymentGroup operation.</p>
@@ -1281,7 +1281,7 @@ Constructs CreateDeploymentGroupInput from required parameters
 #### `newCreateDeploymentGroupInput'`
 
 ``` purescript
-newCreateDeploymentGroupInput' :: ApplicationName -> DeploymentGroupName -> Role -> ({ applicationName :: ApplicationName, deploymentGroupName :: DeploymentGroupName, deploymentConfigName :: NullOrUndefined (DeploymentConfigName), ec2TagFilters :: NullOrUndefined (EC2TagFilterList), onPremisesInstanceTagFilters :: NullOrUndefined (TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupNameList), serviceRoleArn :: Role, triggerConfigurations :: NullOrUndefined (TriggerConfigList), alarmConfiguration :: NullOrUndefined (AlarmConfiguration), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), deploymentStyle :: NullOrUndefined (DeploymentStyle), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), ec2TagSet :: NullOrUndefined (EC2TagSet), onPremisesTagSet :: NullOrUndefined (OnPremisesTagSet) } -> { applicationName :: ApplicationName, deploymentGroupName :: DeploymentGroupName, deploymentConfigName :: NullOrUndefined (DeploymentConfigName), ec2TagFilters :: NullOrUndefined (EC2TagFilterList), onPremisesInstanceTagFilters :: NullOrUndefined (TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupNameList), serviceRoleArn :: Role, triggerConfigurations :: NullOrUndefined (TriggerConfigList), alarmConfiguration :: NullOrUndefined (AlarmConfiguration), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), deploymentStyle :: NullOrUndefined (DeploymentStyle), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), ec2TagSet :: NullOrUndefined (EC2TagSet), onPremisesTagSet :: NullOrUndefined (OnPremisesTagSet) }) -> CreateDeploymentGroupInput
+newCreateDeploymentGroupInput' :: ApplicationName -> DeploymentGroupName -> Role -> ({ applicationName :: ApplicationName, deploymentGroupName :: DeploymentGroupName, deploymentConfigName :: Maybe (DeploymentConfigName), ec2TagFilters :: Maybe (EC2TagFilterList), onPremisesInstanceTagFilters :: Maybe (TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupNameList), serviceRoleArn :: Role, triggerConfigurations :: Maybe (TriggerConfigList), alarmConfiguration :: Maybe (AlarmConfiguration), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), deploymentStyle :: Maybe (DeploymentStyle), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), ec2TagSet :: Maybe (EC2TagSet), onPremisesTagSet :: Maybe (OnPremisesTagSet) } -> { applicationName :: ApplicationName, deploymentGroupName :: DeploymentGroupName, deploymentConfigName :: Maybe (DeploymentConfigName), ec2TagFilters :: Maybe (EC2TagFilterList), onPremisesInstanceTagFilters :: Maybe (TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupNameList), serviceRoleArn :: Role, triggerConfigurations :: Maybe (TriggerConfigList), alarmConfiguration :: Maybe (AlarmConfiguration), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), deploymentStyle :: Maybe (DeploymentStyle), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), ec2TagSet :: Maybe (EC2TagSet), onPremisesTagSet :: Maybe (OnPremisesTagSet) }) -> CreateDeploymentGroupInput
 ```
 
 Constructs CreateDeploymentGroupInput's fields from required parameters
@@ -1290,7 +1290,7 @@ Constructs CreateDeploymentGroupInput's fields from required parameters
 
 ``` purescript
 newtype CreateDeploymentGroupOutput
-  = CreateDeploymentGroupOutput { deploymentGroupId :: NullOrUndefined (DeploymentGroupId) }
+  = CreateDeploymentGroupOutput { deploymentGroupId :: Maybe (DeploymentGroupId) }
 ```
 
 <p>Represents the output of a CreateDeploymentGroup operation.</p>
@@ -1315,7 +1315,7 @@ Constructs CreateDeploymentGroupOutput from required parameters
 #### `newCreateDeploymentGroupOutput'`
 
 ``` purescript
-newCreateDeploymentGroupOutput' :: ({ deploymentGroupId :: NullOrUndefined (DeploymentGroupId) } -> { deploymentGroupId :: NullOrUndefined (DeploymentGroupId) }) -> CreateDeploymentGroupOutput
+newCreateDeploymentGroupOutput' :: ({ deploymentGroupId :: Maybe (DeploymentGroupId) } -> { deploymentGroupId :: Maybe (DeploymentGroupId) }) -> CreateDeploymentGroupOutput
 ```
 
 Constructs CreateDeploymentGroupOutput's fields from required parameters
@@ -1324,7 +1324,7 @@ Constructs CreateDeploymentGroupOutput's fields from required parameters
 
 ``` purescript
 newtype CreateDeploymentInput
-  = CreateDeploymentInput { applicationName :: ApplicationName, deploymentGroupName :: NullOrUndefined (DeploymentGroupName), revision :: NullOrUndefined (RevisionLocation), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), description :: NullOrUndefined (Description), ignoreApplicationStopFailures :: NullOrUndefined (Boolean), targetInstances :: NullOrUndefined (TargetInstances), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: NullOrUndefined (Boolean), fileExistsBehavior :: NullOrUndefined (FileExistsBehavior) }
+  = CreateDeploymentInput { applicationName :: ApplicationName, deploymentGroupName :: Maybe (DeploymentGroupName), revision :: Maybe (RevisionLocation), deploymentConfigName :: Maybe (DeploymentConfigName), description :: Maybe (Description), ignoreApplicationStopFailures :: Maybe (Boolean), targetInstances :: Maybe (TargetInstances), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: Maybe (Boolean), fileExistsBehavior :: Maybe (FileExistsBehavior) }
 ```
 
 <p>Represents the input of a CreateDeployment operation.</p>
@@ -1349,7 +1349,7 @@ Constructs CreateDeploymentInput from required parameters
 #### `newCreateDeploymentInput'`
 
 ``` purescript
-newCreateDeploymentInput' :: ApplicationName -> ({ applicationName :: ApplicationName, deploymentGroupName :: NullOrUndefined (DeploymentGroupName), revision :: NullOrUndefined (RevisionLocation), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), description :: NullOrUndefined (Description), ignoreApplicationStopFailures :: NullOrUndefined (Boolean), targetInstances :: NullOrUndefined (TargetInstances), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: NullOrUndefined (Boolean), fileExistsBehavior :: NullOrUndefined (FileExistsBehavior) } -> { applicationName :: ApplicationName, deploymentGroupName :: NullOrUndefined (DeploymentGroupName), revision :: NullOrUndefined (RevisionLocation), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), description :: NullOrUndefined (Description), ignoreApplicationStopFailures :: NullOrUndefined (Boolean), targetInstances :: NullOrUndefined (TargetInstances), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: NullOrUndefined (Boolean), fileExistsBehavior :: NullOrUndefined (FileExistsBehavior) }) -> CreateDeploymentInput
+newCreateDeploymentInput' :: ApplicationName -> ({ applicationName :: ApplicationName, deploymentGroupName :: Maybe (DeploymentGroupName), revision :: Maybe (RevisionLocation), deploymentConfigName :: Maybe (DeploymentConfigName), description :: Maybe (Description), ignoreApplicationStopFailures :: Maybe (Boolean), targetInstances :: Maybe (TargetInstances), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: Maybe (Boolean), fileExistsBehavior :: Maybe (FileExistsBehavior) } -> { applicationName :: ApplicationName, deploymentGroupName :: Maybe (DeploymentGroupName), revision :: Maybe (RevisionLocation), deploymentConfigName :: Maybe (DeploymentConfigName), description :: Maybe (Description), ignoreApplicationStopFailures :: Maybe (Boolean), targetInstances :: Maybe (TargetInstances), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: Maybe (Boolean), fileExistsBehavior :: Maybe (FileExistsBehavior) }) -> CreateDeploymentInput
 ```
 
 Constructs CreateDeploymentInput's fields from required parameters
@@ -1358,7 +1358,7 @@ Constructs CreateDeploymentInput's fields from required parameters
 
 ``` purescript
 newtype CreateDeploymentOutput
-  = CreateDeploymentOutput { deploymentId :: NullOrUndefined (DeploymentId) }
+  = CreateDeploymentOutput { deploymentId :: Maybe (DeploymentId) }
 ```
 
 <p>Represents the output of a CreateDeployment operation.</p>
@@ -1383,7 +1383,7 @@ Constructs CreateDeploymentOutput from required parameters
 #### `newCreateDeploymentOutput'`
 
 ``` purescript
-newCreateDeploymentOutput' :: ({ deploymentId :: NullOrUndefined (DeploymentId) } -> { deploymentId :: NullOrUndefined (DeploymentId) }) -> CreateDeploymentOutput
+newCreateDeploymentOutput' :: ({ deploymentId :: Maybe (DeploymentId) } -> { deploymentId :: Maybe (DeploymentId) }) -> CreateDeploymentOutput
 ```
 
 Constructs CreateDeploymentOutput's fields from required parameters
@@ -1494,7 +1494,7 @@ Constructs DeleteDeploymentGroupInput's fields from required parameters
 
 ``` purescript
 newtype DeleteDeploymentGroupOutput
-  = DeleteDeploymentGroupOutput { hooksNotCleanedUp :: NullOrUndefined (AutoScalingGroupList) }
+  = DeleteDeploymentGroupOutput { hooksNotCleanedUp :: Maybe (AutoScalingGroupList) }
 ```
 
 <p>Represents the output of a DeleteDeploymentGroup operation.</p>
@@ -1519,7 +1519,7 @@ Constructs DeleteDeploymentGroupOutput from required parameters
 #### `newDeleteDeploymentGroupOutput'`
 
 ``` purescript
-newDeleteDeploymentGroupOutput' :: ({ hooksNotCleanedUp :: NullOrUndefined (AutoScalingGroupList) } -> { hooksNotCleanedUp :: NullOrUndefined (AutoScalingGroupList) }) -> DeleteDeploymentGroupOutput
+newDeleteDeploymentGroupOutput' :: ({ hooksNotCleanedUp :: Maybe (AutoScalingGroupList) } -> { hooksNotCleanedUp :: Maybe (AutoScalingGroupList) }) -> DeleteDeploymentGroupOutput
 ```
 
 Constructs DeleteDeploymentGroupOutput's fields from required parameters
@@ -1528,7 +1528,7 @@ Constructs DeleteDeploymentGroupOutput's fields from required parameters
 
 ``` purescript
 newtype DeleteGitHubAccountTokenInput
-  = DeleteGitHubAccountTokenInput { tokenName :: NullOrUndefined (GitHubAccountTokenName) }
+  = DeleteGitHubAccountTokenInput { tokenName :: Maybe (GitHubAccountTokenName) }
 ```
 
 <p>Represents the input of a DeleteGitHubAccount operation.</p>
@@ -1553,7 +1553,7 @@ Constructs DeleteGitHubAccountTokenInput from required parameters
 #### `newDeleteGitHubAccountTokenInput'`
 
 ``` purescript
-newDeleteGitHubAccountTokenInput' :: ({ tokenName :: NullOrUndefined (GitHubAccountTokenName) } -> { tokenName :: NullOrUndefined (GitHubAccountTokenName) }) -> DeleteGitHubAccountTokenInput
+newDeleteGitHubAccountTokenInput' :: ({ tokenName :: Maybe (GitHubAccountTokenName) } -> { tokenName :: Maybe (GitHubAccountTokenName) }) -> DeleteGitHubAccountTokenInput
 ```
 
 Constructs DeleteGitHubAccountTokenInput's fields from required parameters
@@ -1562,7 +1562,7 @@ Constructs DeleteGitHubAccountTokenInput's fields from required parameters
 
 ``` purescript
 newtype DeleteGitHubAccountTokenOutput
-  = DeleteGitHubAccountTokenOutput { tokenName :: NullOrUndefined (GitHubAccountTokenName) }
+  = DeleteGitHubAccountTokenOutput { tokenName :: Maybe (GitHubAccountTokenName) }
 ```
 
 <p>Represents the output of a DeleteGitHubAccountToken operation.</p>
@@ -1587,7 +1587,7 @@ Constructs DeleteGitHubAccountTokenOutput from required parameters
 #### `newDeleteGitHubAccountTokenOutput'`
 
 ``` purescript
-newDeleteGitHubAccountTokenOutput' :: ({ tokenName :: NullOrUndefined (GitHubAccountTokenName) } -> { tokenName :: NullOrUndefined (GitHubAccountTokenName) }) -> DeleteGitHubAccountTokenOutput
+newDeleteGitHubAccountTokenOutput' :: ({ tokenName :: Maybe (GitHubAccountTokenName) } -> { tokenName :: Maybe (GitHubAccountTokenName) }) -> DeleteGitHubAccountTokenOutput
 ```
 
 Constructs DeleteGitHubAccountTokenOutput's fields from required parameters
@@ -1684,7 +1684,7 @@ Encode DeploymentConfigInUseException
 
 ``` purescript
 newtype DeploymentConfigInfo
-  = DeploymentConfigInfo { deploymentConfigId :: NullOrUndefined (DeploymentConfigId), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), minimumHealthyHosts :: NullOrUndefined (MinimumHealthyHosts), createTime :: NullOrUndefined (Timestamp), computePlatform :: NullOrUndefined (ComputePlatform), trafficRoutingConfig :: NullOrUndefined (TrafficRoutingConfig) }
+  = DeploymentConfigInfo { deploymentConfigId :: Maybe (DeploymentConfigId), deploymentConfigName :: Maybe (DeploymentConfigName), minimumHealthyHosts :: Maybe (MinimumHealthyHosts), createTime :: Maybe (Timestamp), computePlatform :: Maybe (ComputePlatform), trafficRoutingConfig :: Maybe (TrafficRoutingConfig) }
 ```
 
 <p>Information about a deployment configuration.</p>
@@ -1709,7 +1709,7 @@ Constructs DeploymentConfigInfo from required parameters
 #### `newDeploymentConfigInfo'`
 
 ``` purescript
-newDeploymentConfigInfo' :: ({ deploymentConfigId :: NullOrUndefined (DeploymentConfigId), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), minimumHealthyHosts :: NullOrUndefined (MinimumHealthyHosts), createTime :: NullOrUndefined (Timestamp), computePlatform :: NullOrUndefined (ComputePlatform), trafficRoutingConfig :: NullOrUndefined (TrafficRoutingConfig) } -> { deploymentConfigId :: NullOrUndefined (DeploymentConfigId), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), minimumHealthyHosts :: NullOrUndefined (MinimumHealthyHosts), createTime :: NullOrUndefined (Timestamp), computePlatform :: NullOrUndefined (ComputePlatform), trafficRoutingConfig :: NullOrUndefined (TrafficRoutingConfig) }) -> DeploymentConfigInfo
+newDeploymentConfigInfo' :: ({ deploymentConfigId :: Maybe (DeploymentConfigId), deploymentConfigName :: Maybe (DeploymentConfigName), minimumHealthyHosts :: Maybe (MinimumHealthyHosts), createTime :: Maybe (Timestamp), computePlatform :: Maybe (ComputePlatform), trafficRoutingConfig :: Maybe (TrafficRoutingConfig) } -> { deploymentConfigId :: Maybe (DeploymentConfigId), deploymentConfigName :: Maybe (DeploymentConfigName), minimumHealthyHosts :: Maybe (MinimumHealthyHosts), createTime :: Maybe (Timestamp), computePlatform :: Maybe (ComputePlatform), trafficRoutingConfig :: Maybe (TrafficRoutingConfig) }) -> DeploymentConfigInfo
 ```
 
 Constructs DeploymentConfigInfo's fields from required parameters
@@ -1872,7 +1872,7 @@ Encode DeploymentGroupId
 
 ``` purescript
 newtype DeploymentGroupInfo
-  = DeploymentGroupInfo { applicationName :: NullOrUndefined (ApplicationName), deploymentGroupId :: NullOrUndefined (DeploymentGroupId), deploymentGroupName :: NullOrUndefined (DeploymentGroupName), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), ec2TagFilters :: NullOrUndefined (EC2TagFilterList), onPremisesInstanceTagFilters :: NullOrUndefined (TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupList), serviceRoleArn :: NullOrUndefined (Role), targetRevision :: NullOrUndefined (RevisionLocation), triggerConfigurations :: NullOrUndefined (TriggerConfigList), alarmConfiguration :: NullOrUndefined (AlarmConfiguration), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), deploymentStyle :: NullOrUndefined (DeploymentStyle), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), lastSuccessfulDeployment :: NullOrUndefined (LastDeploymentInfo), lastAttemptedDeployment :: NullOrUndefined (LastDeploymentInfo), ec2TagSet :: NullOrUndefined (EC2TagSet), onPremisesTagSet :: NullOrUndefined (OnPremisesTagSet), computePlatform :: NullOrUndefined (ComputePlatform) }
+  = DeploymentGroupInfo { applicationName :: Maybe (ApplicationName), deploymentGroupId :: Maybe (DeploymentGroupId), deploymentGroupName :: Maybe (DeploymentGroupName), deploymentConfigName :: Maybe (DeploymentConfigName), ec2TagFilters :: Maybe (EC2TagFilterList), onPremisesInstanceTagFilters :: Maybe (TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupList), serviceRoleArn :: Maybe (Role), targetRevision :: Maybe (RevisionLocation), triggerConfigurations :: Maybe (TriggerConfigList), alarmConfiguration :: Maybe (AlarmConfiguration), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), deploymentStyle :: Maybe (DeploymentStyle), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), lastSuccessfulDeployment :: Maybe (LastDeploymentInfo), lastAttemptedDeployment :: Maybe (LastDeploymentInfo), ec2TagSet :: Maybe (EC2TagSet), onPremisesTagSet :: Maybe (OnPremisesTagSet), computePlatform :: Maybe (ComputePlatform) }
 ```
 
 <p>Information about a deployment group.</p>
@@ -1897,7 +1897,7 @@ Constructs DeploymentGroupInfo from required parameters
 #### `newDeploymentGroupInfo'`
 
 ``` purescript
-newDeploymentGroupInfo' :: ({ applicationName :: NullOrUndefined (ApplicationName), deploymentGroupId :: NullOrUndefined (DeploymentGroupId), deploymentGroupName :: NullOrUndefined (DeploymentGroupName), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), ec2TagFilters :: NullOrUndefined (EC2TagFilterList), onPremisesInstanceTagFilters :: NullOrUndefined (TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupList), serviceRoleArn :: NullOrUndefined (Role), targetRevision :: NullOrUndefined (RevisionLocation), triggerConfigurations :: NullOrUndefined (TriggerConfigList), alarmConfiguration :: NullOrUndefined (AlarmConfiguration), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), deploymentStyle :: NullOrUndefined (DeploymentStyle), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), lastSuccessfulDeployment :: NullOrUndefined (LastDeploymentInfo), lastAttemptedDeployment :: NullOrUndefined (LastDeploymentInfo), ec2TagSet :: NullOrUndefined (EC2TagSet), onPremisesTagSet :: NullOrUndefined (OnPremisesTagSet), computePlatform :: NullOrUndefined (ComputePlatform) } -> { applicationName :: NullOrUndefined (ApplicationName), deploymentGroupId :: NullOrUndefined (DeploymentGroupId), deploymentGroupName :: NullOrUndefined (DeploymentGroupName), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), ec2TagFilters :: NullOrUndefined (EC2TagFilterList), onPremisesInstanceTagFilters :: NullOrUndefined (TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupList), serviceRoleArn :: NullOrUndefined (Role), targetRevision :: NullOrUndefined (RevisionLocation), triggerConfigurations :: NullOrUndefined (TriggerConfigList), alarmConfiguration :: NullOrUndefined (AlarmConfiguration), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), deploymentStyle :: NullOrUndefined (DeploymentStyle), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), lastSuccessfulDeployment :: NullOrUndefined (LastDeploymentInfo), lastAttemptedDeployment :: NullOrUndefined (LastDeploymentInfo), ec2TagSet :: NullOrUndefined (EC2TagSet), onPremisesTagSet :: NullOrUndefined (OnPremisesTagSet), computePlatform :: NullOrUndefined (ComputePlatform) }) -> DeploymentGroupInfo
+newDeploymentGroupInfo' :: ({ applicationName :: Maybe (ApplicationName), deploymentGroupId :: Maybe (DeploymentGroupId), deploymentGroupName :: Maybe (DeploymentGroupName), deploymentConfigName :: Maybe (DeploymentConfigName), ec2TagFilters :: Maybe (EC2TagFilterList), onPremisesInstanceTagFilters :: Maybe (TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupList), serviceRoleArn :: Maybe (Role), targetRevision :: Maybe (RevisionLocation), triggerConfigurations :: Maybe (TriggerConfigList), alarmConfiguration :: Maybe (AlarmConfiguration), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), deploymentStyle :: Maybe (DeploymentStyle), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), lastSuccessfulDeployment :: Maybe (LastDeploymentInfo), lastAttemptedDeployment :: Maybe (LastDeploymentInfo), ec2TagSet :: Maybe (EC2TagSet), onPremisesTagSet :: Maybe (OnPremisesTagSet), computePlatform :: Maybe (ComputePlatform) } -> { applicationName :: Maybe (ApplicationName), deploymentGroupId :: Maybe (DeploymentGroupId), deploymentGroupName :: Maybe (DeploymentGroupName), deploymentConfigName :: Maybe (DeploymentConfigName), ec2TagFilters :: Maybe (EC2TagFilterList), onPremisesInstanceTagFilters :: Maybe (TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupList), serviceRoleArn :: Maybe (Role), targetRevision :: Maybe (RevisionLocation), triggerConfigurations :: Maybe (TriggerConfigList), alarmConfiguration :: Maybe (AlarmConfiguration), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), deploymentStyle :: Maybe (DeploymentStyle), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), lastSuccessfulDeployment :: Maybe (LastDeploymentInfo), lastAttemptedDeployment :: Maybe (LastDeploymentInfo), ec2TagSet :: Maybe (EC2TagSet), onPremisesTagSet :: Maybe (OnPremisesTagSet), computePlatform :: Maybe (ComputePlatform) }) -> DeploymentGroupInfo
 ```
 
 Constructs DeploymentGroupInfo's fields from required parameters
@@ -2024,7 +2024,7 @@ Encode DeploymentIdRequiredException
 
 ``` purescript
 newtype DeploymentInfo
-  = DeploymentInfo { applicationName :: NullOrUndefined (ApplicationName), deploymentGroupName :: NullOrUndefined (DeploymentGroupName), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), deploymentId :: NullOrUndefined (DeploymentId), previousRevision :: NullOrUndefined (RevisionLocation), revision :: NullOrUndefined (RevisionLocation), status :: NullOrUndefined (DeploymentStatus), errorInformation :: NullOrUndefined (ErrorInformation), createTime :: NullOrUndefined (Timestamp), startTime :: NullOrUndefined (Timestamp), completeTime :: NullOrUndefined (Timestamp), deploymentOverview :: NullOrUndefined (DeploymentOverview), description :: NullOrUndefined (Description), creator :: NullOrUndefined (DeploymentCreator), ignoreApplicationStopFailures :: NullOrUndefined (Boolean), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: NullOrUndefined (Boolean), rollbackInfo :: NullOrUndefined (RollbackInfo), deploymentStyle :: NullOrUndefined (DeploymentStyle), targetInstances :: NullOrUndefined (TargetInstances), instanceTerminationWaitTimeStarted :: NullOrUndefined (Boolean), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), additionalDeploymentStatusInfo :: NullOrUndefined (AdditionalDeploymentStatusInfo), fileExistsBehavior :: NullOrUndefined (FileExistsBehavior), deploymentStatusMessages :: NullOrUndefined (DeploymentStatusMessageList), computePlatform :: NullOrUndefined (ComputePlatform) }
+  = DeploymentInfo { applicationName :: Maybe (ApplicationName), deploymentGroupName :: Maybe (DeploymentGroupName), deploymentConfigName :: Maybe (DeploymentConfigName), deploymentId :: Maybe (DeploymentId), previousRevision :: Maybe (RevisionLocation), revision :: Maybe (RevisionLocation), status :: Maybe (DeploymentStatus), errorInformation :: Maybe (ErrorInformation), createTime :: Maybe (Timestamp), startTime :: Maybe (Timestamp), completeTime :: Maybe (Timestamp), deploymentOverview :: Maybe (DeploymentOverview), description :: Maybe (Description), creator :: Maybe (DeploymentCreator), ignoreApplicationStopFailures :: Maybe (Boolean), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: Maybe (Boolean), rollbackInfo :: Maybe (RollbackInfo), deploymentStyle :: Maybe (DeploymentStyle), targetInstances :: Maybe (TargetInstances), instanceTerminationWaitTimeStarted :: Maybe (Boolean), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), additionalDeploymentStatusInfo :: Maybe (AdditionalDeploymentStatusInfo), fileExistsBehavior :: Maybe (FileExistsBehavior), deploymentStatusMessages :: Maybe (DeploymentStatusMessageList), computePlatform :: Maybe (ComputePlatform) }
 ```
 
 <p>Information about a deployment.</p>
@@ -2049,7 +2049,7 @@ Constructs DeploymentInfo from required parameters
 #### `newDeploymentInfo'`
 
 ``` purescript
-newDeploymentInfo' :: ({ applicationName :: NullOrUndefined (ApplicationName), deploymentGroupName :: NullOrUndefined (DeploymentGroupName), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), deploymentId :: NullOrUndefined (DeploymentId), previousRevision :: NullOrUndefined (RevisionLocation), revision :: NullOrUndefined (RevisionLocation), status :: NullOrUndefined (DeploymentStatus), errorInformation :: NullOrUndefined (ErrorInformation), createTime :: NullOrUndefined (Timestamp), startTime :: NullOrUndefined (Timestamp), completeTime :: NullOrUndefined (Timestamp), deploymentOverview :: NullOrUndefined (DeploymentOverview), description :: NullOrUndefined (Description), creator :: NullOrUndefined (DeploymentCreator), ignoreApplicationStopFailures :: NullOrUndefined (Boolean), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: NullOrUndefined (Boolean), rollbackInfo :: NullOrUndefined (RollbackInfo), deploymentStyle :: NullOrUndefined (DeploymentStyle), targetInstances :: NullOrUndefined (TargetInstances), instanceTerminationWaitTimeStarted :: NullOrUndefined (Boolean), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), additionalDeploymentStatusInfo :: NullOrUndefined (AdditionalDeploymentStatusInfo), fileExistsBehavior :: NullOrUndefined (FileExistsBehavior), deploymentStatusMessages :: NullOrUndefined (DeploymentStatusMessageList), computePlatform :: NullOrUndefined (ComputePlatform) } -> { applicationName :: NullOrUndefined (ApplicationName), deploymentGroupName :: NullOrUndefined (DeploymentGroupName), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), deploymentId :: NullOrUndefined (DeploymentId), previousRevision :: NullOrUndefined (RevisionLocation), revision :: NullOrUndefined (RevisionLocation), status :: NullOrUndefined (DeploymentStatus), errorInformation :: NullOrUndefined (ErrorInformation), createTime :: NullOrUndefined (Timestamp), startTime :: NullOrUndefined (Timestamp), completeTime :: NullOrUndefined (Timestamp), deploymentOverview :: NullOrUndefined (DeploymentOverview), description :: NullOrUndefined (Description), creator :: NullOrUndefined (DeploymentCreator), ignoreApplicationStopFailures :: NullOrUndefined (Boolean), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: NullOrUndefined (Boolean), rollbackInfo :: NullOrUndefined (RollbackInfo), deploymentStyle :: NullOrUndefined (DeploymentStyle), targetInstances :: NullOrUndefined (TargetInstances), instanceTerminationWaitTimeStarted :: NullOrUndefined (Boolean), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), additionalDeploymentStatusInfo :: NullOrUndefined (AdditionalDeploymentStatusInfo), fileExistsBehavior :: NullOrUndefined (FileExistsBehavior), deploymentStatusMessages :: NullOrUndefined (DeploymentStatusMessageList), computePlatform :: NullOrUndefined (ComputePlatform) }) -> DeploymentInfo
+newDeploymentInfo' :: ({ applicationName :: Maybe (ApplicationName), deploymentGroupName :: Maybe (DeploymentGroupName), deploymentConfigName :: Maybe (DeploymentConfigName), deploymentId :: Maybe (DeploymentId), previousRevision :: Maybe (RevisionLocation), revision :: Maybe (RevisionLocation), status :: Maybe (DeploymentStatus), errorInformation :: Maybe (ErrorInformation), createTime :: Maybe (Timestamp), startTime :: Maybe (Timestamp), completeTime :: Maybe (Timestamp), deploymentOverview :: Maybe (DeploymentOverview), description :: Maybe (Description), creator :: Maybe (DeploymentCreator), ignoreApplicationStopFailures :: Maybe (Boolean), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: Maybe (Boolean), rollbackInfo :: Maybe (RollbackInfo), deploymentStyle :: Maybe (DeploymentStyle), targetInstances :: Maybe (TargetInstances), instanceTerminationWaitTimeStarted :: Maybe (Boolean), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), additionalDeploymentStatusInfo :: Maybe (AdditionalDeploymentStatusInfo), fileExistsBehavior :: Maybe (FileExistsBehavior), deploymentStatusMessages :: Maybe (DeploymentStatusMessageList), computePlatform :: Maybe (ComputePlatform) } -> { applicationName :: Maybe (ApplicationName), deploymentGroupName :: Maybe (DeploymentGroupName), deploymentConfigName :: Maybe (DeploymentConfigName), deploymentId :: Maybe (DeploymentId), previousRevision :: Maybe (RevisionLocation), revision :: Maybe (RevisionLocation), status :: Maybe (DeploymentStatus), errorInformation :: Maybe (ErrorInformation), createTime :: Maybe (Timestamp), startTime :: Maybe (Timestamp), completeTime :: Maybe (Timestamp), deploymentOverview :: Maybe (DeploymentOverview), description :: Maybe (Description), creator :: Maybe (DeploymentCreator), ignoreApplicationStopFailures :: Maybe (Boolean), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), updateOutdatedInstancesOnly :: Maybe (Boolean), rollbackInfo :: Maybe (RollbackInfo), deploymentStyle :: Maybe (DeploymentStyle), targetInstances :: Maybe (TargetInstances), instanceTerminationWaitTimeStarted :: Maybe (Boolean), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), additionalDeploymentStatusInfo :: Maybe (AdditionalDeploymentStatusInfo), fileExistsBehavior :: Maybe (FileExistsBehavior), deploymentStatusMessages :: Maybe (DeploymentStatusMessageList), computePlatform :: Maybe (ComputePlatform) }) -> DeploymentInfo
 ```
 
 Constructs DeploymentInfo's fields from required parameters
@@ -2128,7 +2128,7 @@ Encode DeploymentOption
 
 ``` purescript
 newtype DeploymentOverview
-  = DeploymentOverview { "Pending" :: NullOrUndefined (InstanceCount), "InProgress" :: NullOrUndefined (InstanceCount), "Succeeded" :: NullOrUndefined (InstanceCount), "Failed" :: NullOrUndefined (InstanceCount), "Skipped" :: NullOrUndefined (InstanceCount), "Ready" :: NullOrUndefined (InstanceCount) }
+  = DeploymentOverview { "Pending" :: Maybe (InstanceCount), "InProgress" :: Maybe (InstanceCount), "Succeeded" :: Maybe (InstanceCount), "Failed" :: Maybe (InstanceCount), "Skipped" :: Maybe (InstanceCount), "Ready" :: Maybe (InstanceCount) }
 ```
 
 <p>Information about the deployment status of the instances in the deployment.</p>
@@ -2153,7 +2153,7 @@ Constructs DeploymentOverview from required parameters
 #### `newDeploymentOverview'`
 
 ``` purescript
-newDeploymentOverview' :: ({ "Pending" :: NullOrUndefined (InstanceCount), "InProgress" :: NullOrUndefined (InstanceCount), "Succeeded" :: NullOrUndefined (InstanceCount), "Failed" :: NullOrUndefined (InstanceCount), "Skipped" :: NullOrUndefined (InstanceCount), "Ready" :: NullOrUndefined (InstanceCount) } -> { "Pending" :: NullOrUndefined (InstanceCount), "InProgress" :: NullOrUndefined (InstanceCount), "Succeeded" :: NullOrUndefined (InstanceCount), "Failed" :: NullOrUndefined (InstanceCount), "Skipped" :: NullOrUndefined (InstanceCount), "Ready" :: NullOrUndefined (InstanceCount) }) -> DeploymentOverview
+newDeploymentOverview' :: ({ "Pending" :: Maybe (InstanceCount), "InProgress" :: Maybe (InstanceCount), "Succeeded" :: Maybe (InstanceCount), "Failed" :: Maybe (InstanceCount), "Skipped" :: Maybe (InstanceCount), "Ready" :: Maybe (InstanceCount) } -> { "Pending" :: Maybe (InstanceCount), "InProgress" :: Maybe (InstanceCount), "Succeeded" :: Maybe (InstanceCount), "Failed" :: Maybe (InstanceCount), "Skipped" :: Maybe (InstanceCount), "Ready" :: Maybe (InstanceCount) }) -> DeploymentOverview
 ```
 
 Constructs DeploymentOverview's fields from required parameters
@@ -2178,7 +2178,7 @@ Encode DeploymentReadyAction
 
 ``` purescript
 newtype DeploymentReadyOption
-  = DeploymentReadyOption { actionOnTimeout :: NullOrUndefined (DeploymentReadyAction), waitTimeInMinutes :: NullOrUndefined (Duration) }
+  = DeploymentReadyOption { actionOnTimeout :: Maybe (DeploymentReadyAction), waitTimeInMinutes :: Maybe (Duration) }
 ```
 
 <p>Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.</p>
@@ -2203,7 +2203,7 @@ Constructs DeploymentReadyOption from required parameters
 #### `newDeploymentReadyOption'`
 
 ``` purescript
-newDeploymentReadyOption' :: ({ actionOnTimeout :: NullOrUndefined (DeploymentReadyAction), waitTimeInMinutes :: NullOrUndefined (Duration) } -> { actionOnTimeout :: NullOrUndefined (DeploymentReadyAction), waitTimeInMinutes :: NullOrUndefined (Duration) }) -> DeploymentReadyOption
+newDeploymentReadyOption' :: ({ actionOnTimeout :: Maybe (DeploymentReadyAction), waitTimeInMinutes :: Maybe (Duration) } -> { actionOnTimeout :: Maybe (DeploymentReadyAction), waitTimeInMinutes :: Maybe (Duration) }) -> DeploymentReadyOption
 ```
 
 Constructs DeploymentReadyOption's fields from required parameters
@@ -2260,7 +2260,7 @@ Encode DeploymentStatusMessageList
 
 ``` purescript
 newtype DeploymentStyle
-  = DeploymentStyle { deploymentType :: NullOrUndefined (DeploymentType), deploymentOption :: NullOrUndefined (DeploymentOption) }
+  = DeploymentStyle { deploymentType :: Maybe (DeploymentType), deploymentOption :: Maybe (DeploymentOption) }
 ```
 
 <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
@@ -2285,7 +2285,7 @@ Constructs DeploymentStyle from required parameters
 #### `newDeploymentStyle'`
 
 ``` purescript
-newDeploymentStyle' :: ({ deploymentType :: NullOrUndefined (DeploymentType), deploymentOption :: NullOrUndefined (DeploymentOption) } -> { deploymentType :: NullOrUndefined (DeploymentType), deploymentOption :: NullOrUndefined (DeploymentOption) }) -> DeploymentStyle
+newDeploymentStyle' :: ({ deploymentType :: Maybe (DeploymentType), deploymentOption :: Maybe (DeploymentOption) } -> { deploymentType :: Maybe (DeploymentType), deploymentOption :: Maybe (DeploymentOption) }) -> DeploymentStyle
 ```
 
 Constructs DeploymentStyle's fields from required parameters
@@ -2410,7 +2410,7 @@ Encode DescriptionTooLongException
 
 ``` purescript
 newtype Diagnostics
-  = Diagnostics { errorCode :: NullOrUndefined (LifecycleErrorCode), scriptName :: NullOrUndefined (ScriptName), message :: NullOrUndefined (LifecycleMessage), logTail :: NullOrUndefined (LogTail) }
+  = Diagnostics { errorCode :: Maybe (LifecycleErrorCode), scriptName :: Maybe (ScriptName), message :: Maybe (LifecycleMessage), logTail :: Maybe (LogTail) }
 ```
 
 <p>Diagnostic information about executable scripts that are part of a deployment.</p>
@@ -2435,7 +2435,7 @@ Constructs Diagnostics from required parameters
 #### `newDiagnostics'`
 
 ``` purescript
-newDiagnostics' :: ({ errorCode :: NullOrUndefined (LifecycleErrorCode), scriptName :: NullOrUndefined (ScriptName), message :: NullOrUndefined (LifecycleMessage), logTail :: NullOrUndefined (LogTail) } -> { errorCode :: NullOrUndefined (LifecycleErrorCode), scriptName :: NullOrUndefined (ScriptName), message :: NullOrUndefined (LifecycleMessage), logTail :: NullOrUndefined (LogTail) }) -> Diagnostics
+newDiagnostics' :: ({ errorCode :: Maybe (LifecycleErrorCode), scriptName :: Maybe (ScriptName), message :: Maybe (LifecycleMessage), logTail :: Maybe (LogTail) } -> { errorCode :: Maybe (LifecycleErrorCode), scriptName :: Maybe (ScriptName), message :: Maybe (LifecycleMessage), logTail :: Maybe (LogTail) }) -> Diagnostics
 ```
 
 Constructs Diagnostics's fields from required parameters
@@ -2460,7 +2460,7 @@ Encode Duration
 
 ``` purescript
 newtype EC2TagFilter
-  = EC2TagFilter { "Key" :: NullOrUndefined (Key), "Value" :: NullOrUndefined (Value), "Type" :: NullOrUndefined (EC2TagFilterType) }
+  = EC2TagFilter { "Key" :: Maybe (Key), "Value" :: Maybe (Value), "Type" :: Maybe (EC2TagFilterType) }
 ```
 
 <p>Information about an EC2 tag filter.</p>
@@ -2485,7 +2485,7 @@ Constructs EC2TagFilter from required parameters
 #### `newEC2TagFilter'`
 
 ``` purescript
-newEC2TagFilter' :: ({ "Key" :: NullOrUndefined (Key), "Value" :: NullOrUndefined (Value), "Type" :: NullOrUndefined (EC2TagFilterType) } -> { "Key" :: NullOrUndefined (Key), "Value" :: NullOrUndefined (Value), "Type" :: NullOrUndefined (EC2TagFilterType) }) -> EC2TagFilter
+newEC2TagFilter' :: ({ "Key" :: Maybe (Key), "Value" :: Maybe (Value), "Type" :: Maybe (EC2TagFilterType) } -> { "Key" :: Maybe (Key), "Value" :: Maybe (Value), "Type" :: Maybe (EC2TagFilterType) }) -> EC2TagFilter
 ```
 
 Constructs EC2TagFilter's fields from required parameters
@@ -2526,7 +2526,7 @@ Encode EC2TagFilterType
 
 ``` purescript
 newtype EC2TagSet
-  = EC2TagSet { ec2TagSetList :: NullOrUndefined (EC2TagSetList) }
+  = EC2TagSet { ec2TagSetList :: Maybe (EC2TagSetList) }
 ```
 
 <p>Information about groups of EC2 instance tags.</p>
@@ -2551,7 +2551,7 @@ Constructs EC2TagSet from required parameters
 #### `newEC2TagSet'`
 
 ``` purescript
-newEC2TagSet' :: ({ ec2TagSetList :: NullOrUndefined (EC2TagSetList) } -> { ec2TagSetList :: NullOrUndefined (EC2TagSetList) }) -> EC2TagSet
+newEC2TagSet' :: ({ ec2TagSetList :: Maybe (EC2TagSetList) } -> { ec2TagSetList :: Maybe (EC2TagSetList) }) -> EC2TagSet
 ```
 
 Constructs EC2TagSet's fields from required parameters
@@ -2576,7 +2576,7 @@ Encode EC2TagSetList
 
 ``` purescript
 newtype ELBInfo
-  = ELBInfo { name :: NullOrUndefined (ELBName) }
+  = ELBInfo { name :: Maybe (ELBName) }
 ```
 
 <p>Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.</p>
@@ -2601,7 +2601,7 @@ Constructs ELBInfo from required parameters
 #### `newELBInfo'`
 
 ``` purescript
-newELBInfo' :: ({ name :: NullOrUndefined (ELBName) } -> { name :: NullOrUndefined (ELBName) }) -> ELBInfo
+newELBInfo' :: ({ name :: Maybe (ELBName) } -> { name :: Maybe (ELBName) }) -> ELBInfo
 ```
 
 Constructs ELBInfo's fields from required parameters
@@ -2674,7 +2674,7 @@ Encode ErrorCode
 
 ``` purescript
 newtype ErrorInformation
-  = ErrorInformation { code :: NullOrUndefined (ErrorCode), message :: NullOrUndefined (ErrorMessage) }
+  = ErrorInformation { code :: Maybe (ErrorCode), message :: Maybe (ErrorMessage) }
 ```
 
 <p>Information about a deployment error.</p>
@@ -2699,7 +2699,7 @@ Constructs ErrorInformation from required parameters
 #### `newErrorInformation'`
 
 ``` purescript
-newErrorInformation' :: ({ code :: NullOrUndefined (ErrorCode), message :: NullOrUndefined (ErrorMessage) } -> { code :: NullOrUndefined (ErrorCode), message :: NullOrUndefined (ErrorMessage) }) -> ErrorInformation
+newErrorInformation' :: ({ code :: Maybe (ErrorCode), message :: Maybe (ErrorMessage) } -> { code :: Maybe (ErrorCode), message :: Maybe (ErrorMessage) }) -> ErrorInformation
 ```
 
 Constructs ErrorInformation's fields from required parameters
@@ -2740,7 +2740,7 @@ Encode FileExistsBehavior
 
 ``` purescript
 newtype GenericRevisionInfo
-  = GenericRevisionInfo { description :: NullOrUndefined (Description), deploymentGroups :: NullOrUndefined (DeploymentGroupsList), firstUsedTime :: NullOrUndefined (Timestamp), lastUsedTime :: NullOrUndefined (Timestamp), registerTime :: NullOrUndefined (Timestamp) }
+  = GenericRevisionInfo { description :: Maybe (Description), deploymentGroups :: Maybe (DeploymentGroupsList), firstUsedTime :: Maybe (Timestamp), lastUsedTime :: Maybe (Timestamp), registerTime :: Maybe (Timestamp) }
 ```
 
 <p>Information about an application revision.</p>
@@ -2765,7 +2765,7 @@ Constructs GenericRevisionInfo from required parameters
 #### `newGenericRevisionInfo'`
 
 ``` purescript
-newGenericRevisionInfo' :: ({ description :: NullOrUndefined (Description), deploymentGroups :: NullOrUndefined (DeploymentGroupsList), firstUsedTime :: NullOrUndefined (Timestamp), lastUsedTime :: NullOrUndefined (Timestamp), registerTime :: NullOrUndefined (Timestamp) } -> { description :: NullOrUndefined (Description), deploymentGroups :: NullOrUndefined (DeploymentGroupsList), firstUsedTime :: NullOrUndefined (Timestamp), lastUsedTime :: NullOrUndefined (Timestamp), registerTime :: NullOrUndefined (Timestamp) }) -> GenericRevisionInfo
+newGenericRevisionInfo' :: ({ description :: Maybe (Description), deploymentGroups :: Maybe (DeploymentGroupsList), firstUsedTime :: Maybe (Timestamp), lastUsedTime :: Maybe (Timestamp), registerTime :: Maybe (Timestamp) } -> { description :: Maybe (Description), deploymentGroups :: Maybe (DeploymentGroupsList), firstUsedTime :: Maybe (Timestamp), lastUsedTime :: Maybe (Timestamp), registerTime :: Maybe (Timestamp) }) -> GenericRevisionInfo
 ```
 
 Constructs GenericRevisionInfo's fields from required parameters
@@ -2808,7 +2808,7 @@ Constructs GetApplicationInput's fields from required parameters
 
 ``` purescript
 newtype GetApplicationOutput
-  = GetApplicationOutput { application :: NullOrUndefined (ApplicationInfo) }
+  = GetApplicationOutput { application :: Maybe (ApplicationInfo) }
 ```
 
 <p>Represents the output of a GetApplication operation.</p>
@@ -2833,7 +2833,7 @@ Constructs GetApplicationOutput from required parameters
 #### `newGetApplicationOutput'`
 
 ``` purescript
-newGetApplicationOutput' :: ({ application :: NullOrUndefined (ApplicationInfo) } -> { application :: NullOrUndefined (ApplicationInfo) }) -> GetApplicationOutput
+newGetApplicationOutput' :: ({ application :: Maybe (ApplicationInfo) } -> { application :: Maybe (ApplicationInfo) }) -> GetApplicationOutput
 ```
 
 Constructs GetApplicationOutput's fields from required parameters
@@ -2876,7 +2876,7 @@ Constructs GetApplicationRevisionInput's fields from required parameters
 
 ``` purescript
 newtype GetApplicationRevisionOutput
-  = GetApplicationRevisionOutput { applicationName :: NullOrUndefined (ApplicationName), revision :: NullOrUndefined (RevisionLocation), revisionInfo :: NullOrUndefined (GenericRevisionInfo) }
+  = GetApplicationRevisionOutput { applicationName :: Maybe (ApplicationName), revision :: Maybe (RevisionLocation), revisionInfo :: Maybe (GenericRevisionInfo) }
 ```
 
 <p>Represents the output of a GetApplicationRevision operation.</p>
@@ -2901,7 +2901,7 @@ Constructs GetApplicationRevisionOutput from required parameters
 #### `newGetApplicationRevisionOutput'`
 
 ``` purescript
-newGetApplicationRevisionOutput' :: ({ applicationName :: NullOrUndefined (ApplicationName), revision :: NullOrUndefined (RevisionLocation), revisionInfo :: NullOrUndefined (GenericRevisionInfo) } -> { applicationName :: NullOrUndefined (ApplicationName), revision :: NullOrUndefined (RevisionLocation), revisionInfo :: NullOrUndefined (GenericRevisionInfo) }) -> GetApplicationRevisionOutput
+newGetApplicationRevisionOutput' :: ({ applicationName :: Maybe (ApplicationName), revision :: Maybe (RevisionLocation), revisionInfo :: Maybe (GenericRevisionInfo) } -> { applicationName :: Maybe (ApplicationName), revision :: Maybe (RevisionLocation), revisionInfo :: Maybe (GenericRevisionInfo) }) -> GetApplicationRevisionOutput
 ```
 
 Constructs GetApplicationRevisionOutput's fields from required parameters
@@ -2944,7 +2944,7 @@ Constructs GetDeploymentConfigInput's fields from required parameters
 
 ``` purescript
 newtype GetDeploymentConfigOutput
-  = GetDeploymentConfigOutput { deploymentConfigInfo :: NullOrUndefined (DeploymentConfigInfo) }
+  = GetDeploymentConfigOutput { deploymentConfigInfo :: Maybe (DeploymentConfigInfo) }
 ```
 
 <p>Represents the output of a GetDeploymentConfig operation.</p>
@@ -2969,7 +2969,7 @@ Constructs GetDeploymentConfigOutput from required parameters
 #### `newGetDeploymentConfigOutput'`
 
 ``` purescript
-newGetDeploymentConfigOutput' :: ({ deploymentConfigInfo :: NullOrUndefined (DeploymentConfigInfo) } -> { deploymentConfigInfo :: NullOrUndefined (DeploymentConfigInfo) }) -> GetDeploymentConfigOutput
+newGetDeploymentConfigOutput' :: ({ deploymentConfigInfo :: Maybe (DeploymentConfigInfo) } -> { deploymentConfigInfo :: Maybe (DeploymentConfigInfo) }) -> GetDeploymentConfigOutput
 ```
 
 Constructs GetDeploymentConfigOutput's fields from required parameters
@@ -3012,7 +3012,7 @@ Constructs GetDeploymentGroupInput's fields from required parameters
 
 ``` purescript
 newtype GetDeploymentGroupOutput
-  = GetDeploymentGroupOutput { deploymentGroupInfo :: NullOrUndefined (DeploymentGroupInfo) }
+  = GetDeploymentGroupOutput { deploymentGroupInfo :: Maybe (DeploymentGroupInfo) }
 ```
 
 <p>Represents the output of a GetDeploymentGroup operation.</p>
@@ -3037,7 +3037,7 @@ Constructs GetDeploymentGroupOutput from required parameters
 #### `newGetDeploymentGroupOutput'`
 
 ``` purescript
-newGetDeploymentGroupOutput' :: ({ deploymentGroupInfo :: NullOrUndefined (DeploymentGroupInfo) } -> { deploymentGroupInfo :: NullOrUndefined (DeploymentGroupInfo) }) -> GetDeploymentGroupOutput
+newGetDeploymentGroupOutput' :: ({ deploymentGroupInfo :: Maybe (DeploymentGroupInfo) } -> { deploymentGroupInfo :: Maybe (DeploymentGroupInfo) }) -> GetDeploymentGroupOutput
 ```
 
 Constructs GetDeploymentGroupOutput's fields from required parameters
@@ -3114,7 +3114,7 @@ Constructs GetDeploymentInstanceInput's fields from required parameters
 
 ``` purescript
 newtype GetDeploymentInstanceOutput
-  = GetDeploymentInstanceOutput { instanceSummary :: NullOrUndefined (InstanceSummary) }
+  = GetDeploymentInstanceOutput { instanceSummary :: Maybe (InstanceSummary) }
 ```
 
 <p>Represents the output of a GetDeploymentInstance operation.</p>
@@ -3139,7 +3139,7 @@ Constructs GetDeploymentInstanceOutput from required parameters
 #### `newGetDeploymentInstanceOutput'`
 
 ``` purescript
-newGetDeploymentInstanceOutput' :: ({ instanceSummary :: NullOrUndefined (InstanceSummary) } -> { instanceSummary :: NullOrUndefined (InstanceSummary) }) -> GetDeploymentInstanceOutput
+newGetDeploymentInstanceOutput' :: ({ instanceSummary :: Maybe (InstanceSummary) } -> { instanceSummary :: Maybe (InstanceSummary) }) -> GetDeploymentInstanceOutput
 ```
 
 Constructs GetDeploymentInstanceOutput's fields from required parameters
@@ -3148,7 +3148,7 @@ Constructs GetDeploymentInstanceOutput's fields from required parameters
 
 ``` purescript
 newtype GetDeploymentOutput
-  = GetDeploymentOutput { deploymentInfo :: NullOrUndefined (DeploymentInfo) }
+  = GetDeploymentOutput { deploymentInfo :: Maybe (DeploymentInfo) }
 ```
 
 <p>Represents the output of a GetDeployment operation.</p>
@@ -3173,7 +3173,7 @@ Constructs GetDeploymentOutput from required parameters
 #### `newGetDeploymentOutput'`
 
 ``` purescript
-newGetDeploymentOutput' :: ({ deploymentInfo :: NullOrUndefined (DeploymentInfo) } -> { deploymentInfo :: NullOrUndefined (DeploymentInfo) }) -> GetDeploymentOutput
+newGetDeploymentOutput' :: ({ deploymentInfo :: Maybe (DeploymentInfo) } -> { deploymentInfo :: Maybe (DeploymentInfo) }) -> GetDeploymentOutput
 ```
 
 Constructs GetDeploymentOutput's fields from required parameters
@@ -3216,7 +3216,7 @@ Constructs GetOnPremisesInstanceInput's fields from required parameters
 
 ``` purescript
 newtype GetOnPremisesInstanceOutput
-  = GetOnPremisesInstanceOutput { instanceInfo :: NullOrUndefined (InstanceInfo) }
+  = GetOnPremisesInstanceOutput { instanceInfo :: Maybe (InstanceInfo) }
 ```
 
 <p>Represents the output of a GetOnPremisesInstance operation.</p>
@@ -3241,7 +3241,7 @@ Constructs GetOnPremisesInstanceOutput from required parameters
 #### `newGetOnPremisesInstanceOutput'`
 
 ``` purescript
-newGetOnPremisesInstanceOutput' :: ({ instanceInfo :: NullOrUndefined (InstanceInfo) } -> { instanceInfo :: NullOrUndefined (InstanceInfo) }) -> GetOnPremisesInstanceOutput
+newGetOnPremisesInstanceOutput' :: ({ instanceInfo :: Maybe (InstanceInfo) } -> { instanceInfo :: Maybe (InstanceInfo) }) -> GetOnPremisesInstanceOutput
 ```
 
 Constructs GetOnPremisesInstanceOutput's fields from required parameters
@@ -3318,7 +3318,7 @@ Encode GitHubAccountTokenNameRequiredException
 
 ``` purescript
 newtype GitHubLocation
-  = GitHubLocation { repository :: NullOrUndefined (Repository), commitId :: NullOrUndefined (CommitId) }
+  = GitHubLocation { repository :: Maybe (Repository), commitId :: Maybe (CommitId) }
 ```
 
 <p>Information about the location of application artifacts stored in GitHub.</p>
@@ -3343,7 +3343,7 @@ Constructs GitHubLocation from required parameters
 #### `newGitHubLocation'`
 
 ``` purescript
-newGitHubLocation' :: ({ repository :: NullOrUndefined (Repository), commitId :: NullOrUndefined (CommitId) } -> { repository :: NullOrUndefined (Repository), commitId :: NullOrUndefined (CommitId) }) -> GitHubLocation
+newGitHubLocation' :: ({ repository :: Maybe (Repository), commitId :: Maybe (CommitId) } -> { repository :: Maybe (Repository), commitId :: Maybe (CommitId) }) -> GitHubLocation
 ```
 
 Constructs GitHubLocation's fields from required parameters
@@ -3368,7 +3368,7 @@ Encode GreenFleetProvisioningAction
 
 ``` purescript
 newtype GreenFleetProvisioningOption
-  = GreenFleetProvisioningOption { action :: NullOrUndefined (GreenFleetProvisioningAction) }
+  = GreenFleetProvisioningOption { action :: Maybe (GreenFleetProvisioningAction) }
 ```
 
 <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
@@ -3393,7 +3393,7 @@ Constructs GreenFleetProvisioningOption from required parameters
 #### `newGreenFleetProvisioningOption'`
 
 ``` purescript
-newGreenFleetProvisioningOption' :: ({ action :: NullOrUndefined (GreenFleetProvisioningAction) } -> { action :: NullOrUndefined (GreenFleetProvisioningAction) }) -> GreenFleetProvisioningOption
+newGreenFleetProvisioningOption' :: ({ action :: Maybe (GreenFleetProvisioningAction) } -> { action :: Maybe (GreenFleetProvisioningAction) }) -> GreenFleetProvisioningOption
 ```
 
 Constructs GreenFleetProvisioningOption's fields from required parameters
@@ -3606,7 +3606,7 @@ Encode InstanceIdRequiredException
 
 ``` purescript
 newtype InstanceInfo
-  = InstanceInfo { instanceName :: NullOrUndefined (InstanceName), iamSessionArn :: NullOrUndefined (IamSessionArn), iamUserArn :: NullOrUndefined (IamUserArn), instanceArn :: NullOrUndefined (InstanceArn), registerTime :: NullOrUndefined (Timestamp), deregisterTime :: NullOrUndefined (Timestamp), tags :: NullOrUndefined (TagList) }
+  = InstanceInfo { instanceName :: Maybe (InstanceName), iamSessionArn :: Maybe (IamSessionArn), iamUserArn :: Maybe (IamUserArn), instanceArn :: Maybe (InstanceArn), registerTime :: Maybe (Timestamp), deregisterTime :: Maybe (Timestamp), tags :: Maybe (TagList) }
 ```
 
 <p>Information about an on-premises instance.</p>
@@ -3631,7 +3631,7 @@ Constructs InstanceInfo from required parameters
 #### `newInstanceInfo'`
 
 ``` purescript
-newInstanceInfo' :: ({ instanceName :: NullOrUndefined (InstanceName), iamSessionArn :: NullOrUndefined (IamSessionArn), iamUserArn :: NullOrUndefined (IamUserArn), instanceArn :: NullOrUndefined (InstanceArn), registerTime :: NullOrUndefined (Timestamp), deregisterTime :: NullOrUndefined (Timestamp), tags :: NullOrUndefined (TagList) } -> { instanceName :: NullOrUndefined (InstanceName), iamSessionArn :: NullOrUndefined (IamSessionArn), iamUserArn :: NullOrUndefined (IamUserArn), instanceArn :: NullOrUndefined (InstanceArn), registerTime :: NullOrUndefined (Timestamp), deregisterTime :: NullOrUndefined (Timestamp), tags :: NullOrUndefined (TagList) }) -> InstanceInfo
+newInstanceInfo' :: ({ instanceName :: Maybe (InstanceName), iamSessionArn :: Maybe (IamSessionArn), iamUserArn :: Maybe (IamUserArn), instanceArn :: Maybe (InstanceArn), registerTime :: Maybe (Timestamp), deregisterTime :: Maybe (Timestamp), tags :: Maybe (TagList) } -> { instanceName :: Maybe (InstanceName), iamSessionArn :: Maybe (IamSessionArn), iamUserArn :: Maybe (IamUserArn), instanceArn :: Maybe (InstanceArn), registerTime :: Maybe (Timestamp), deregisterTime :: Maybe (Timestamp), tags :: Maybe (TagList) }) -> InstanceInfo
 ```
 
 Constructs InstanceInfo's fields from required parameters
@@ -3792,7 +3792,7 @@ Encode InstanceStatusList
 
 ``` purescript
 newtype InstanceSummary
-  = InstanceSummary { deploymentId :: NullOrUndefined (DeploymentId), instanceId :: NullOrUndefined (InstanceId), status :: NullOrUndefined (InstanceStatus), lastUpdatedAt :: NullOrUndefined (Timestamp), lifecycleEvents :: NullOrUndefined (LifecycleEventList), instanceType :: NullOrUndefined (InstanceType) }
+  = InstanceSummary { deploymentId :: Maybe (DeploymentId), instanceId :: Maybe (InstanceId), status :: Maybe (InstanceStatus), lastUpdatedAt :: Maybe (Timestamp), lifecycleEvents :: Maybe (LifecycleEventList), instanceType :: Maybe (InstanceType) }
 ```
 
 <p>Information about an instance in a deployment.</p>
@@ -3817,7 +3817,7 @@ Constructs InstanceSummary from required parameters
 #### `newInstanceSummary'`
 
 ``` purescript
-newInstanceSummary' :: ({ deploymentId :: NullOrUndefined (DeploymentId), instanceId :: NullOrUndefined (InstanceId), status :: NullOrUndefined (InstanceStatus), lastUpdatedAt :: NullOrUndefined (Timestamp), lifecycleEvents :: NullOrUndefined (LifecycleEventList), instanceType :: NullOrUndefined (InstanceType) } -> { deploymentId :: NullOrUndefined (DeploymentId), instanceId :: NullOrUndefined (InstanceId), status :: NullOrUndefined (InstanceStatus), lastUpdatedAt :: NullOrUndefined (Timestamp), lifecycleEvents :: NullOrUndefined (LifecycleEventList), instanceType :: NullOrUndefined (InstanceType) }) -> InstanceSummary
+newInstanceSummary' :: ({ deploymentId :: Maybe (DeploymentId), instanceId :: Maybe (InstanceId), status :: Maybe (InstanceStatus), lastUpdatedAt :: Maybe (Timestamp), lifecycleEvents :: Maybe (LifecycleEventList), instanceType :: Maybe (InstanceType) } -> { deploymentId :: Maybe (DeploymentId), instanceId :: Maybe (InstanceId), status :: Maybe (InstanceStatus), lastUpdatedAt :: Maybe (Timestamp), lifecycleEvents :: Maybe (LifecycleEventList), instanceType :: Maybe (InstanceType) }) -> InstanceSummary
 ```
 
 Constructs InstanceSummary's fields from required parameters
@@ -4734,7 +4734,7 @@ Encode Key
 
 ``` purescript
 newtype LastDeploymentInfo
-  = LastDeploymentInfo { deploymentId :: NullOrUndefined (DeploymentId), status :: NullOrUndefined (DeploymentStatus), endTime :: NullOrUndefined (Timestamp), createTime :: NullOrUndefined (Timestamp) }
+  = LastDeploymentInfo { deploymentId :: Maybe (DeploymentId), status :: Maybe (DeploymentStatus), endTime :: Maybe (Timestamp), createTime :: Maybe (Timestamp) }
 ```
 
 <p>Information about the most recent attempted or successful deployment to a deployment group.</p>
@@ -4759,7 +4759,7 @@ Constructs LastDeploymentInfo from required parameters
 #### `newLastDeploymentInfo'`
 
 ``` purescript
-newLastDeploymentInfo' :: ({ deploymentId :: NullOrUndefined (DeploymentId), status :: NullOrUndefined (DeploymentStatus), endTime :: NullOrUndefined (Timestamp), createTime :: NullOrUndefined (Timestamp) } -> { deploymentId :: NullOrUndefined (DeploymentId), status :: NullOrUndefined (DeploymentStatus), endTime :: NullOrUndefined (Timestamp), createTime :: NullOrUndefined (Timestamp) }) -> LastDeploymentInfo
+newLastDeploymentInfo' :: ({ deploymentId :: Maybe (DeploymentId), status :: Maybe (DeploymentStatus), endTime :: Maybe (Timestamp), createTime :: Maybe (Timestamp) } -> { deploymentId :: Maybe (DeploymentId), status :: Maybe (DeploymentStatus), endTime :: Maybe (Timestamp), createTime :: Maybe (Timestamp) }) -> LastDeploymentInfo
 ```
 
 Constructs LastDeploymentInfo's fields from required parameters
@@ -4784,7 +4784,7 @@ Encode LifecycleErrorCode
 
 ``` purescript
 newtype LifecycleEvent
-  = LifecycleEvent { lifecycleEventName :: NullOrUndefined (LifecycleEventName), diagnostics :: NullOrUndefined (Diagnostics), startTime :: NullOrUndefined (Timestamp), endTime :: NullOrUndefined (Timestamp), status :: NullOrUndefined (LifecycleEventStatus) }
+  = LifecycleEvent { lifecycleEventName :: Maybe (LifecycleEventName), diagnostics :: Maybe (Diagnostics), startTime :: Maybe (Timestamp), endTime :: Maybe (Timestamp), status :: Maybe (LifecycleEventStatus) }
 ```
 
 <p>Information about a deployment lifecycle event.</p>
@@ -4809,7 +4809,7 @@ Constructs LifecycleEvent from required parameters
 #### `newLifecycleEvent'`
 
 ``` purescript
-newLifecycleEvent' :: ({ lifecycleEventName :: NullOrUndefined (LifecycleEventName), diagnostics :: NullOrUndefined (Diagnostics), startTime :: NullOrUndefined (Timestamp), endTime :: NullOrUndefined (Timestamp), status :: NullOrUndefined (LifecycleEventStatus) } -> { lifecycleEventName :: NullOrUndefined (LifecycleEventName), diagnostics :: NullOrUndefined (Diagnostics), startTime :: NullOrUndefined (Timestamp), endTime :: NullOrUndefined (Timestamp), status :: NullOrUndefined (LifecycleEventStatus) }) -> LifecycleEvent
+newLifecycleEvent' :: ({ lifecycleEventName :: Maybe (LifecycleEventName), diagnostics :: Maybe (Diagnostics), startTime :: Maybe (Timestamp), endTime :: Maybe (Timestamp), status :: Maybe (LifecycleEventStatus) } -> { lifecycleEventName :: Maybe (LifecycleEventName), diagnostics :: Maybe (Diagnostics), startTime :: Maybe (Timestamp), endTime :: Maybe (Timestamp), status :: Maybe (LifecycleEventStatus) }) -> LifecycleEvent
 ```
 
 Constructs LifecycleEvent's fields from required parameters
@@ -4934,7 +4934,7 @@ Encode LifecycleMessage
 
 ``` purescript
 newtype ListApplicationRevisionsInput
-  = ListApplicationRevisionsInput { applicationName :: ApplicationName, sortBy :: NullOrUndefined (ApplicationRevisionSortBy), sortOrder :: NullOrUndefined (SortOrder), s3Bucket :: NullOrUndefined (S3Bucket), s3KeyPrefix :: NullOrUndefined (S3Key), deployed :: NullOrUndefined (ListStateFilterAction), nextToken :: NullOrUndefined (NextToken) }
+  = ListApplicationRevisionsInput { applicationName :: ApplicationName, sortBy :: Maybe (ApplicationRevisionSortBy), sortOrder :: Maybe (SortOrder), s3Bucket :: Maybe (S3Bucket), s3KeyPrefix :: Maybe (S3Key), deployed :: Maybe (ListStateFilterAction), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a ListApplicationRevisions operation.</p>
@@ -4959,7 +4959,7 @@ Constructs ListApplicationRevisionsInput from required parameters
 #### `newListApplicationRevisionsInput'`
 
 ``` purescript
-newListApplicationRevisionsInput' :: ApplicationName -> ({ applicationName :: ApplicationName, sortBy :: NullOrUndefined (ApplicationRevisionSortBy), sortOrder :: NullOrUndefined (SortOrder), s3Bucket :: NullOrUndefined (S3Bucket), s3KeyPrefix :: NullOrUndefined (S3Key), deployed :: NullOrUndefined (ListStateFilterAction), nextToken :: NullOrUndefined (NextToken) } -> { applicationName :: ApplicationName, sortBy :: NullOrUndefined (ApplicationRevisionSortBy), sortOrder :: NullOrUndefined (SortOrder), s3Bucket :: NullOrUndefined (S3Bucket), s3KeyPrefix :: NullOrUndefined (S3Key), deployed :: NullOrUndefined (ListStateFilterAction), nextToken :: NullOrUndefined (NextToken) }) -> ListApplicationRevisionsInput
+newListApplicationRevisionsInput' :: ApplicationName -> ({ applicationName :: ApplicationName, sortBy :: Maybe (ApplicationRevisionSortBy), sortOrder :: Maybe (SortOrder), s3Bucket :: Maybe (S3Bucket), s3KeyPrefix :: Maybe (S3Key), deployed :: Maybe (ListStateFilterAction), nextToken :: Maybe (NextToken) } -> { applicationName :: ApplicationName, sortBy :: Maybe (ApplicationRevisionSortBy), sortOrder :: Maybe (SortOrder), s3Bucket :: Maybe (S3Bucket), s3KeyPrefix :: Maybe (S3Key), deployed :: Maybe (ListStateFilterAction), nextToken :: Maybe (NextToken) }) -> ListApplicationRevisionsInput
 ```
 
 Constructs ListApplicationRevisionsInput's fields from required parameters
@@ -4968,7 +4968,7 @@ Constructs ListApplicationRevisionsInput's fields from required parameters
 
 ``` purescript
 newtype ListApplicationRevisionsOutput
-  = ListApplicationRevisionsOutput { revisions :: NullOrUndefined (RevisionLocationList), nextToken :: NullOrUndefined (NextToken) }
+  = ListApplicationRevisionsOutput { revisions :: Maybe (RevisionLocationList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a ListApplicationRevisions operation.</p>
@@ -4993,7 +4993,7 @@ Constructs ListApplicationRevisionsOutput from required parameters
 #### `newListApplicationRevisionsOutput'`
 
 ``` purescript
-newListApplicationRevisionsOutput' :: ({ revisions :: NullOrUndefined (RevisionLocationList), nextToken :: NullOrUndefined (NextToken) } -> { revisions :: NullOrUndefined (RevisionLocationList), nextToken :: NullOrUndefined (NextToken) }) -> ListApplicationRevisionsOutput
+newListApplicationRevisionsOutput' :: ({ revisions :: Maybe (RevisionLocationList), nextToken :: Maybe (NextToken) } -> { revisions :: Maybe (RevisionLocationList), nextToken :: Maybe (NextToken) }) -> ListApplicationRevisionsOutput
 ```
 
 Constructs ListApplicationRevisionsOutput's fields from required parameters
@@ -5002,7 +5002,7 @@ Constructs ListApplicationRevisionsOutput's fields from required parameters
 
 ``` purescript
 newtype ListApplicationsInput
-  = ListApplicationsInput { nextToken :: NullOrUndefined (NextToken) }
+  = ListApplicationsInput { nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a ListApplications operation.</p>
@@ -5027,7 +5027,7 @@ Constructs ListApplicationsInput from required parameters
 #### `newListApplicationsInput'`
 
 ``` purescript
-newListApplicationsInput' :: ({ nextToken :: NullOrUndefined (NextToken) } -> { nextToken :: NullOrUndefined (NextToken) }) -> ListApplicationsInput
+newListApplicationsInput' :: ({ nextToken :: Maybe (NextToken) } -> { nextToken :: Maybe (NextToken) }) -> ListApplicationsInput
 ```
 
 Constructs ListApplicationsInput's fields from required parameters
@@ -5036,7 +5036,7 @@ Constructs ListApplicationsInput's fields from required parameters
 
 ``` purescript
 newtype ListApplicationsOutput
-  = ListApplicationsOutput { applications :: NullOrUndefined (ApplicationsList), nextToken :: NullOrUndefined (NextToken) }
+  = ListApplicationsOutput { applications :: Maybe (ApplicationsList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a ListApplications operation.</p>
@@ -5061,7 +5061,7 @@ Constructs ListApplicationsOutput from required parameters
 #### `newListApplicationsOutput'`
 
 ``` purescript
-newListApplicationsOutput' :: ({ applications :: NullOrUndefined (ApplicationsList), nextToken :: NullOrUndefined (NextToken) } -> { applications :: NullOrUndefined (ApplicationsList), nextToken :: NullOrUndefined (NextToken) }) -> ListApplicationsOutput
+newListApplicationsOutput' :: ({ applications :: Maybe (ApplicationsList), nextToken :: Maybe (NextToken) } -> { applications :: Maybe (ApplicationsList), nextToken :: Maybe (NextToken) }) -> ListApplicationsOutput
 ```
 
 Constructs ListApplicationsOutput's fields from required parameters
@@ -5070,7 +5070,7 @@ Constructs ListApplicationsOutput's fields from required parameters
 
 ``` purescript
 newtype ListDeploymentConfigsInput
-  = ListDeploymentConfigsInput { nextToken :: NullOrUndefined (NextToken) }
+  = ListDeploymentConfigsInput { nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a ListDeploymentConfigs operation.</p>
@@ -5095,7 +5095,7 @@ Constructs ListDeploymentConfigsInput from required parameters
 #### `newListDeploymentConfigsInput'`
 
 ``` purescript
-newListDeploymentConfigsInput' :: ({ nextToken :: NullOrUndefined (NextToken) } -> { nextToken :: NullOrUndefined (NextToken) }) -> ListDeploymentConfigsInput
+newListDeploymentConfigsInput' :: ({ nextToken :: Maybe (NextToken) } -> { nextToken :: Maybe (NextToken) }) -> ListDeploymentConfigsInput
 ```
 
 Constructs ListDeploymentConfigsInput's fields from required parameters
@@ -5104,7 +5104,7 @@ Constructs ListDeploymentConfigsInput's fields from required parameters
 
 ``` purescript
 newtype ListDeploymentConfigsOutput
-  = ListDeploymentConfigsOutput { deploymentConfigsList :: NullOrUndefined (DeploymentConfigsList), nextToken :: NullOrUndefined (NextToken) }
+  = ListDeploymentConfigsOutput { deploymentConfigsList :: Maybe (DeploymentConfigsList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a ListDeploymentConfigs operation.</p>
@@ -5129,7 +5129,7 @@ Constructs ListDeploymentConfigsOutput from required parameters
 #### `newListDeploymentConfigsOutput'`
 
 ``` purescript
-newListDeploymentConfigsOutput' :: ({ deploymentConfigsList :: NullOrUndefined (DeploymentConfigsList), nextToken :: NullOrUndefined (NextToken) } -> { deploymentConfigsList :: NullOrUndefined (DeploymentConfigsList), nextToken :: NullOrUndefined (NextToken) }) -> ListDeploymentConfigsOutput
+newListDeploymentConfigsOutput' :: ({ deploymentConfigsList :: Maybe (DeploymentConfigsList), nextToken :: Maybe (NextToken) } -> { deploymentConfigsList :: Maybe (DeploymentConfigsList), nextToken :: Maybe (NextToken) }) -> ListDeploymentConfigsOutput
 ```
 
 Constructs ListDeploymentConfigsOutput's fields from required parameters
@@ -5138,7 +5138,7 @@ Constructs ListDeploymentConfigsOutput's fields from required parameters
 
 ``` purescript
 newtype ListDeploymentGroupsInput
-  = ListDeploymentGroupsInput { applicationName :: ApplicationName, nextToken :: NullOrUndefined (NextToken) }
+  = ListDeploymentGroupsInput { applicationName :: ApplicationName, nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a ListDeploymentGroups operation.</p>
@@ -5163,7 +5163,7 @@ Constructs ListDeploymentGroupsInput from required parameters
 #### `newListDeploymentGroupsInput'`
 
 ``` purescript
-newListDeploymentGroupsInput' :: ApplicationName -> ({ applicationName :: ApplicationName, nextToken :: NullOrUndefined (NextToken) } -> { applicationName :: ApplicationName, nextToken :: NullOrUndefined (NextToken) }) -> ListDeploymentGroupsInput
+newListDeploymentGroupsInput' :: ApplicationName -> ({ applicationName :: ApplicationName, nextToken :: Maybe (NextToken) } -> { applicationName :: ApplicationName, nextToken :: Maybe (NextToken) }) -> ListDeploymentGroupsInput
 ```
 
 Constructs ListDeploymentGroupsInput's fields from required parameters
@@ -5172,7 +5172,7 @@ Constructs ListDeploymentGroupsInput's fields from required parameters
 
 ``` purescript
 newtype ListDeploymentGroupsOutput
-  = ListDeploymentGroupsOutput { applicationName :: NullOrUndefined (ApplicationName), deploymentGroups :: NullOrUndefined (DeploymentGroupsList), nextToken :: NullOrUndefined (NextToken) }
+  = ListDeploymentGroupsOutput { applicationName :: Maybe (ApplicationName), deploymentGroups :: Maybe (DeploymentGroupsList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a ListDeploymentGroups operation.</p>
@@ -5197,7 +5197,7 @@ Constructs ListDeploymentGroupsOutput from required parameters
 #### `newListDeploymentGroupsOutput'`
 
 ``` purescript
-newListDeploymentGroupsOutput' :: ({ applicationName :: NullOrUndefined (ApplicationName), deploymentGroups :: NullOrUndefined (DeploymentGroupsList), nextToken :: NullOrUndefined (NextToken) } -> { applicationName :: NullOrUndefined (ApplicationName), deploymentGroups :: NullOrUndefined (DeploymentGroupsList), nextToken :: NullOrUndefined (NextToken) }) -> ListDeploymentGroupsOutput
+newListDeploymentGroupsOutput' :: ({ applicationName :: Maybe (ApplicationName), deploymentGroups :: Maybe (DeploymentGroupsList), nextToken :: Maybe (NextToken) } -> { applicationName :: Maybe (ApplicationName), deploymentGroups :: Maybe (DeploymentGroupsList), nextToken :: Maybe (NextToken) }) -> ListDeploymentGroupsOutput
 ```
 
 Constructs ListDeploymentGroupsOutput's fields from required parameters
@@ -5206,7 +5206,7 @@ Constructs ListDeploymentGroupsOutput's fields from required parameters
 
 ``` purescript
 newtype ListDeploymentInstancesInput
-  = ListDeploymentInstancesInput { deploymentId :: DeploymentId, nextToken :: NullOrUndefined (NextToken), instanceStatusFilter :: NullOrUndefined (InstanceStatusList), instanceTypeFilter :: NullOrUndefined (InstanceTypeList) }
+  = ListDeploymentInstancesInput { deploymentId :: DeploymentId, nextToken :: Maybe (NextToken), instanceStatusFilter :: Maybe (InstanceStatusList), instanceTypeFilter :: Maybe (InstanceTypeList) }
 ```
 
 <p>Represents the input of a ListDeploymentInstances operation.</p>
@@ -5231,7 +5231,7 @@ Constructs ListDeploymentInstancesInput from required parameters
 #### `newListDeploymentInstancesInput'`
 
 ``` purescript
-newListDeploymentInstancesInput' :: DeploymentId -> ({ deploymentId :: DeploymentId, nextToken :: NullOrUndefined (NextToken), instanceStatusFilter :: NullOrUndefined (InstanceStatusList), instanceTypeFilter :: NullOrUndefined (InstanceTypeList) } -> { deploymentId :: DeploymentId, nextToken :: NullOrUndefined (NextToken), instanceStatusFilter :: NullOrUndefined (InstanceStatusList), instanceTypeFilter :: NullOrUndefined (InstanceTypeList) }) -> ListDeploymentInstancesInput
+newListDeploymentInstancesInput' :: DeploymentId -> ({ deploymentId :: DeploymentId, nextToken :: Maybe (NextToken), instanceStatusFilter :: Maybe (InstanceStatusList), instanceTypeFilter :: Maybe (InstanceTypeList) } -> { deploymentId :: DeploymentId, nextToken :: Maybe (NextToken), instanceStatusFilter :: Maybe (InstanceStatusList), instanceTypeFilter :: Maybe (InstanceTypeList) }) -> ListDeploymentInstancesInput
 ```
 
 Constructs ListDeploymentInstancesInput's fields from required parameters
@@ -5240,7 +5240,7 @@ Constructs ListDeploymentInstancesInput's fields from required parameters
 
 ``` purescript
 newtype ListDeploymentInstancesOutput
-  = ListDeploymentInstancesOutput { instancesList :: NullOrUndefined (InstancesList), nextToken :: NullOrUndefined (NextToken) }
+  = ListDeploymentInstancesOutput { instancesList :: Maybe (InstancesList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a ListDeploymentInstances operation.</p>
@@ -5265,7 +5265,7 @@ Constructs ListDeploymentInstancesOutput from required parameters
 #### `newListDeploymentInstancesOutput'`
 
 ``` purescript
-newListDeploymentInstancesOutput' :: ({ instancesList :: NullOrUndefined (InstancesList), nextToken :: NullOrUndefined (NextToken) } -> { instancesList :: NullOrUndefined (InstancesList), nextToken :: NullOrUndefined (NextToken) }) -> ListDeploymentInstancesOutput
+newListDeploymentInstancesOutput' :: ({ instancesList :: Maybe (InstancesList), nextToken :: Maybe (NextToken) } -> { instancesList :: Maybe (InstancesList), nextToken :: Maybe (NextToken) }) -> ListDeploymentInstancesOutput
 ```
 
 Constructs ListDeploymentInstancesOutput's fields from required parameters
@@ -5274,7 +5274,7 @@ Constructs ListDeploymentInstancesOutput's fields from required parameters
 
 ``` purescript
 newtype ListDeploymentsInput
-  = ListDeploymentsInput { applicationName :: NullOrUndefined (ApplicationName), deploymentGroupName :: NullOrUndefined (DeploymentGroupName), includeOnlyStatuses :: NullOrUndefined (DeploymentStatusList), createTimeRange :: NullOrUndefined (TimeRange), nextToken :: NullOrUndefined (NextToken) }
+  = ListDeploymentsInput { applicationName :: Maybe (ApplicationName), deploymentGroupName :: Maybe (DeploymentGroupName), includeOnlyStatuses :: Maybe (DeploymentStatusList), createTimeRange :: Maybe (TimeRange), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a ListDeployments operation.</p>
@@ -5299,7 +5299,7 @@ Constructs ListDeploymentsInput from required parameters
 #### `newListDeploymentsInput'`
 
 ``` purescript
-newListDeploymentsInput' :: ({ applicationName :: NullOrUndefined (ApplicationName), deploymentGroupName :: NullOrUndefined (DeploymentGroupName), includeOnlyStatuses :: NullOrUndefined (DeploymentStatusList), createTimeRange :: NullOrUndefined (TimeRange), nextToken :: NullOrUndefined (NextToken) } -> { applicationName :: NullOrUndefined (ApplicationName), deploymentGroupName :: NullOrUndefined (DeploymentGroupName), includeOnlyStatuses :: NullOrUndefined (DeploymentStatusList), createTimeRange :: NullOrUndefined (TimeRange), nextToken :: NullOrUndefined (NextToken) }) -> ListDeploymentsInput
+newListDeploymentsInput' :: ({ applicationName :: Maybe (ApplicationName), deploymentGroupName :: Maybe (DeploymentGroupName), includeOnlyStatuses :: Maybe (DeploymentStatusList), createTimeRange :: Maybe (TimeRange), nextToken :: Maybe (NextToken) } -> { applicationName :: Maybe (ApplicationName), deploymentGroupName :: Maybe (DeploymentGroupName), includeOnlyStatuses :: Maybe (DeploymentStatusList), createTimeRange :: Maybe (TimeRange), nextToken :: Maybe (NextToken) }) -> ListDeploymentsInput
 ```
 
 Constructs ListDeploymentsInput's fields from required parameters
@@ -5308,7 +5308,7 @@ Constructs ListDeploymentsInput's fields from required parameters
 
 ``` purescript
 newtype ListDeploymentsOutput
-  = ListDeploymentsOutput { deployments :: NullOrUndefined (DeploymentsList), nextToken :: NullOrUndefined (NextToken) }
+  = ListDeploymentsOutput { deployments :: Maybe (DeploymentsList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a ListDeployments operation.</p>
@@ -5333,7 +5333,7 @@ Constructs ListDeploymentsOutput from required parameters
 #### `newListDeploymentsOutput'`
 
 ``` purescript
-newListDeploymentsOutput' :: ({ deployments :: NullOrUndefined (DeploymentsList), nextToken :: NullOrUndefined (NextToken) } -> { deployments :: NullOrUndefined (DeploymentsList), nextToken :: NullOrUndefined (NextToken) }) -> ListDeploymentsOutput
+newListDeploymentsOutput' :: ({ deployments :: Maybe (DeploymentsList), nextToken :: Maybe (NextToken) } -> { deployments :: Maybe (DeploymentsList), nextToken :: Maybe (NextToken) }) -> ListDeploymentsOutput
 ```
 
 Constructs ListDeploymentsOutput's fields from required parameters
@@ -5342,7 +5342,7 @@ Constructs ListDeploymentsOutput's fields from required parameters
 
 ``` purescript
 newtype ListGitHubAccountTokenNamesInput
-  = ListGitHubAccountTokenNamesInput { nextToken :: NullOrUndefined (NextToken) }
+  = ListGitHubAccountTokenNamesInput { nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a ListGitHubAccountTokenNames operation.</p>
@@ -5367,7 +5367,7 @@ Constructs ListGitHubAccountTokenNamesInput from required parameters
 #### `newListGitHubAccountTokenNamesInput'`
 
 ``` purescript
-newListGitHubAccountTokenNamesInput' :: ({ nextToken :: NullOrUndefined (NextToken) } -> { nextToken :: NullOrUndefined (NextToken) }) -> ListGitHubAccountTokenNamesInput
+newListGitHubAccountTokenNamesInput' :: ({ nextToken :: Maybe (NextToken) } -> { nextToken :: Maybe (NextToken) }) -> ListGitHubAccountTokenNamesInput
 ```
 
 Constructs ListGitHubAccountTokenNamesInput's fields from required parameters
@@ -5376,7 +5376,7 @@ Constructs ListGitHubAccountTokenNamesInput's fields from required parameters
 
 ``` purescript
 newtype ListGitHubAccountTokenNamesOutput
-  = ListGitHubAccountTokenNamesOutput { tokenNameList :: NullOrUndefined (GitHubAccountTokenNameList), nextToken :: NullOrUndefined (NextToken) }
+  = ListGitHubAccountTokenNamesOutput { tokenNameList :: Maybe (GitHubAccountTokenNameList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a ListGitHubAccountTokenNames operation.</p>
@@ -5401,7 +5401,7 @@ Constructs ListGitHubAccountTokenNamesOutput from required parameters
 #### `newListGitHubAccountTokenNamesOutput'`
 
 ``` purescript
-newListGitHubAccountTokenNamesOutput' :: ({ tokenNameList :: NullOrUndefined (GitHubAccountTokenNameList), nextToken :: NullOrUndefined (NextToken) } -> { tokenNameList :: NullOrUndefined (GitHubAccountTokenNameList), nextToken :: NullOrUndefined (NextToken) }) -> ListGitHubAccountTokenNamesOutput
+newListGitHubAccountTokenNamesOutput' :: ({ tokenNameList :: Maybe (GitHubAccountTokenNameList), nextToken :: Maybe (NextToken) } -> { tokenNameList :: Maybe (GitHubAccountTokenNameList), nextToken :: Maybe (NextToken) }) -> ListGitHubAccountTokenNamesOutput
 ```
 
 Constructs ListGitHubAccountTokenNamesOutput's fields from required parameters
@@ -5410,7 +5410,7 @@ Constructs ListGitHubAccountTokenNamesOutput's fields from required parameters
 
 ``` purescript
 newtype ListOnPremisesInstancesInput
-  = ListOnPremisesInstancesInput { registrationStatus :: NullOrUndefined (RegistrationStatus), tagFilters :: NullOrUndefined (TagFilterList), nextToken :: NullOrUndefined (NextToken) }
+  = ListOnPremisesInstancesInput { registrationStatus :: Maybe (RegistrationStatus), tagFilters :: Maybe (TagFilterList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a ListOnPremisesInstances operation.</p>
@@ -5435,7 +5435,7 @@ Constructs ListOnPremisesInstancesInput from required parameters
 #### `newListOnPremisesInstancesInput'`
 
 ``` purescript
-newListOnPremisesInstancesInput' :: ({ registrationStatus :: NullOrUndefined (RegistrationStatus), tagFilters :: NullOrUndefined (TagFilterList), nextToken :: NullOrUndefined (NextToken) } -> { registrationStatus :: NullOrUndefined (RegistrationStatus), tagFilters :: NullOrUndefined (TagFilterList), nextToken :: NullOrUndefined (NextToken) }) -> ListOnPremisesInstancesInput
+newListOnPremisesInstancesInput' :: ({ registrationStatus :: Maybe (RegistrationStatus), tagFilters :: Maybe (TagFilterList), nextToken :: Maybe (NextToken) } -> { registrationStatus :: Maybe (RegistrationStatus), tagFilters :: Maybe (TagFilterList), nextToken :: Maybe (NextToken) }) -> ListOnPremisesInstancesInput
 ```
 
 Constructs ListOnPremisesInstancesInput's fields from required parameters
@@ -5444,7 +5444,7 @@ Constructs ListOnPremisesInstancesInput's fields from required parameters
 
 ``` purescript
 newtype ListOnPremisesInstancesOutput
-  = ListOnPremisesInstancesOutput { instanceNames :: NullOrUndefined (InstanceNameList), nextToken :: NullOrUndefined (NextToken) }
+  = ListOnPremisesInstancesOutput { instanceNames :: Maybe (InstanceNameList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of list on-premises instances operation.</p>
@@ -5469,7 +5469,7 @@ Constructs ListOnPremisesInstancesOutput from required parameters
 #### `newListOnPremisesInstancesOutput'`
 
 ``` purescript
-newListOnPremisesInstancesOutput' :: ({ instanceNames :: NullOrUndefined (InstanceNameList), nextToken :: NullOrUndefined (NextToken) } -> { instanceNames :: NullOrUndefined (InstanceNameList), nextToken :: NullOrUndefined (NextToken) }) -> ListOnPremisesInstancesOutput
+newListOnPremisesInstancesOutput' :: ({ instanceNames :: Maybe (InstanceNameList), nextToken :: Maybe (NextToken) } -> { instanceNames :: Maybe (InstanceNameList), nextToken :: Maybe (NextToken) }) -> ListOnPremisesInstancesOutput
 ```
 
 Constructs ListOnPremisesInstancesOutput's fields from required parameters
@@ -5494,7 +5494,7 @@ Encode ListStateFilterAction
 
 ``` purescript
 newtype LoadBalancerInfo
-  = LoadBalancerInfo { elbInfoList :: NullOrUndefined (ELBInfoList), targetGroupInfoList :: NullOrUndefined (TargetGroupInfoList) }
+  = LoadBalancerInfo { elbInfoList :: Maybe (ELBInfoList), targetGroupInfoList :: Maybe (TargetGroupInfoList) }
 ```
 
 <p>Information about the Elastic Load Balancing load balancer or target group used in a deployment.</p>
@@ -5519,7 +5519,7 @@ Constructs LoadBalancerInfo from required parameters
 #### `newLoadBalancerInfo'`
 
 ``` purescript
-newLoadBalancerInfo' :: ({ elbInfoList :: NullOrUndefined (ELBInfoList), targetGroupInfoList :: NullOrUndefined (TargetGroupInfoList) } -> { elbInfoList :: NullOrUndefined (ELBInfoList), targetGroupInfoList :: NullOrUndefined (TargetGroupInfoList) }) -> LoadBalancerInfo
+newLoadBalancerInfo' :: ({ elbInfoList :: Maybe (ELBInfoList), targetGroupInfoList :: Maybe (TargetGroupInfoList) } -> { elbInfoList :: Maybe (ELBInfoList), targetGroupInfoList :: Maybe (TargetGroupInfoList) }) -> LoadBalancerInfo
 ```
 
 Constructs LoadBalancerInfo's fields from required parameters
@@ -5560,7 +5560,7 @@ Encode Message
 
 ``` purescript
 newtype MinimumHealthyHosts
-  = MinimumHealthyHosts { value :: NullOrUndefined (MinimumHealthyHostsValue), "type" :: NullOrUndefined (MinimumHealthyHostsType) }
+  = MinimumHealthyHosts { value :: Maybe (MinimumHealthyHostsValue), "type" :: Maybe (MinimumHealthyHostsType) }
 ```
 
 <p>Information about minimum healthy instance.</p>
@@ -5585,7 +5585,7 @@ Constructs MinimumHealthyHosts from required parameters
 #### `newMinimumHealthyHosts'`
 
 ``` purescript
-newMinimumHealthyHosts' :: ({ value :: NullOrUndefined (MinimumHealthyHostsValue), "type" :: NullOrUndefined (MinimumHealthyHostsType) } -> { value :: NullOrUndefined (MinimumHealthyHostsValue), "type" :: NullOrUndefined (MinimumHealthyHostsType) }) -> MinimumHealthyHosts
+newMinimumHealthyHosts' :: ({ value :: Maybe (MinimumHealthyHostsValue), "type" :: Maybe (MinimumHealthyHostsType) } -> { value :: Maybe (MinimumHealthyHostsValue), "type" :: Maybe (MinimumHealthyHostsType) }) -> MinimumHealthyHosts
 ```
 
 Constructs MinimumHealthyHosts's fields from required parameters
@@ -5676,7 +5676,7 @@ Encode NullableBoolean
 
 ``` purescript
 newtype OnPremisesTagSet
-  = OnPremisesTagSet { onPremisesTagSetList :: NullOrUndefined (OnPremisesTagSetList) }
+  = OnPremisesTagSet { onPremisesTagSetList :: Maybe (OnPremisesTagSetList) }
 ```
 
 <p>Information about groups of on-premises instance tags.</p>
@@ -5701,7 +5701,7 @@ Constructs OnPremisesTagSet from required parameters
 #### `newOnPremisesTagSet'`
 
 ``` purescript
-newOnPremisesTagSet' :: ({ onPremisesTagSetList :: NullOrUndefined (OnPremisesTagSetList) } -> { onPremisesTagSetList :: NullOrUndefined (OnPremisesTagSetList) }) -> OnPremisesTagSet
+newOnPremisesTagSet' :: ({ onPremisesTagSetList :: Maybe (OnPremisesTagSetList) } -> { onPremisesTagSetList :: Maybe (OnPremisesTagSetList) }) -> OnPremisesTagSet
 ```
 
 Constructs OnPremisesTagSet's fields from required parameters
@@ -5760,7 +5760,7 @@ Encode Percentage
 
 ``` purescript
 newtype PutLifecycleEventHookExecutionStatusInput
-  = PutLifecycleEventHookExecutionStatusInput { deploymentId :: NullOrUndefined (DeploymentId), lifecycleEventHookExecutionId :: NullOrUndefined (LifecycleEventHookExecutionId), status :: NullOrUndefined (LifecycleEventStatus) }
+  = PutLifecycleEventHookExecutionStatusInput { deploymentId :: Maybe (DeploymentId), lifecycleEventHookExecutionId :: Maybe (LifecycleEventHookExecutionId), status :: Maybe (LifecycleEventStatus) }
 ```
 
 ##### Instances
@@ -5783,7 +5783,7 @@ Constructs PutLifecycleEventHookExecutionStatusInput from required parameters
 #### `newPutLifecycleEventHookExecutionStatusInput'`
 
 ``` purescript
-newPutLifecycleEventHookExecutionStatusInput' :: ({ deploymentId :: NullOrUndefined (DeploymentId), lifecycleEventHookExecutionId :: NullOrUndefined (LifecycleEventHookExecutionId), status :: NullOrUndefined (LifecycleEventStatus) } -> { deploymentId :: NullOrUndefined (DeploymentId), lifecycleEventHookExecutionId :: NullOrUndefined (LifecycleEventHookExecutionId), status :: NullOrUndefined (LifecycleEventStatus) }) -> PutLifecycleEventHookExecutionStatusInput
+newPutLifecycleEventHookExecutionStatusInput' :: ({ deploymentId :: Maybe (DeploymentId), lifecycleEventHookExecutionId :: Maybe (LifecycleEventHookExecutionId), status :: Maybe (LifecycleEventStatus) } -> { deploymentId :: Maybe (DeploymentId), lifecycleEventHookExecutionId :: Maybe (LifecycleEventHookExecutionId), status :: Maybe (LifecycleEventStatus) }) -> PutLifecycleEventHookExecutionStatusInput
 ```
 
 Constructs PutLifecycleEventHookExecutionStatusInput's fields from required parameters
@@ -5792,7 +5792,7 @@ Constructs PutLifecycleEventHookExecutionStatusInput's fields from required para
 
 ``` purescript
 newtype PutLifecycleEventHookExecutionStatusOutput
-  = PutLifecycleEventHookExecutionStatusOutput { lifecycleEventHookExecutionId :: NullOrUndefined (LifecycleEventHookExecutionId) }
+  = PutLifecycleEventHookExecutionStatusOutput { lifecycleEventHookExecutionId :: Maybe (LifecycleEventHookExecutionId) }
 ```
 
 ##### Instances
@@ -5815,7 +5815,7 @@ Constructs PutLifecycleEventHookExecutionStatusOutput from required parameters
 #### `newPutLifecycleEventHookExecutionStatusOutput'`
 
 ``` purescript
-newPutLifecycleEventHookExecutionStatusOutput' :: ({ lifecycleEventHookExecutionId :: NullOrUndefined (LifecycleEventHookExecutionId) } -> { lifecycleEventHookExecutionId :: NullOrUndefined (LifecycleEventHookExecutionId) }) -> PutLifecycleEventHookExecutionStatusOutput
+newPutLifecycleEventHookExecutionStatusOutput' :: ({ lifecycleEventHookExecutionId :: Maybe (LifecycleEventHookExecutionId) } -> { lifecycleEventHookExecutionId :: Maybe (LifecycleEventHookExecutionId) }) -> PutLifecycleEventHookExecutionStatusOutput
 ```
 
 Constructs PutLifecycleEventHookExecutionStatusOutput's fields from required parameters
@@ -5824,7 +5824,7 @@ Constructs PutLifecycleEventHookExecutionStatusOutput's fields from required par
 
 ``` purescript
 newtype RawString
-  = RawString { content :: NullOrUndefined (RawStringContent), sha256 :: NullOrUndefined (RawStringSha256) }
+  = RawString { content :: Maybe (RawStringContent), sha256 :: Maybe (RawStringSha256) }
 ```
 
 <p>A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.</p>
@@ -5849,7 +5849,7 @@ Constructs RawString from required parameters
 #### `newRawString'`
 
 ``` purescript
-newRawString' :: ({ content :: NullOrUndefined (RawStringContent), sha256 :: NullOrUndefined (RawStringSha256) } -> { content :: NullOrUndefined (RawStringContent), sha256 :: NullOrUndefined (RawStringSha256) }) -> RawString
+newRawString' :: ({ content :: Maybe (RawStringContent), sha256 :: Maybe (RawStringSha256) } -> { content :: Maybe (RawStringContent), sha256 :: Maybe (RawStringSha256) }) -> RawString
 ```
 
 Constructs RawString's fields from required parameters
@@ -5890,7 +5890,7 @@ Encode RawStringSha256
 
 ``` purescript
 newtype RegisterApplicationRevisionInput
-  = RegisterApplicationRevisionInput { applicationName :: ApplicationName, description :: NullOrUndefined (Description), revision :: RevisionLocation }
+  = RegisterApplicationRevisionInput { applicationName :: ApplicationName, description :: Maybe (Description), revision :: RevisionLocation }
 ```
 
 <p>Represents the input of a RegisterApplicationRevision operation.</p>
@@ -5915,7 +5915,7 @@ Constructs RegisterApplicationRevisionInput from required parameters
 #### `newRegisterApplicationRevisionInput'`
 
 ``` purescript
-newRegisterApplicationRevisionInput' :: ApplicationName -> RevisionLocation -> ({ applicationName :: ApplicationName, description :: NullOrUndefined (Description), revision :: RevisionLocation } -> { applicationName :: ApplicationName, description :: NullOrUndefined (Description), revision :: RevisionLocation }) -> RegisterApplicationRevisionInput
+newRegisterApplicationRevisionInput' :: ApplicationName -> RevisionLocation -> ({ applicationName :: ApplicationName, description :: Maybe (Description), revision :: RevisionLocation } -> { applicationName :: ApplicationName, description :: Maybe (Description), revision :: RevisionLocation }) -> RegisterApplicationRevisionInput
 ```
 
 Constructs RegisterApplicationRevisionInput's fields from required parameters
@@ -5924,7 +5924,7 @@ Constructs RegisterApplicationRevisionInput's fields from required parameters
 
 ``` purescript
 newtype RegisterOnPremisesInstanceInput
-  = RegisterOnPremisesInstanceInput { instanceName :: InstanceName, iamSessionArn :: NullOrUndefined (IamSessionArn), iamUserArn :: NullOrUndefined (IamUserArn) }
+  = RegisterOnPremisesInstanceInput { instanceName :: InstanceName, iamSessionArn :: Maybe (IamSessionArn), iamUserArn :: Maybe (IamUserArn) }
 ```
 
 <p>Represents the input of the register on-premises instance operation.</p>
@@ -5949,7 +5949,7 @@ Constructs RegisterOnPremisesInstanceInput from required parameters
 #### `newRegisterOnPremisesInstanceInput'`
 
 ``` purescript
-newRegisterOnPremisesInstanceInput' :: InstanceName -> ({ instanceName :: InstanceName, iamSessionArn :: NullOrUndefined (IamSessionArn), iamUserArn :: NullOrUndefined (IamUserArn) } -> { instanceName :: InstanceName, iamSessionArn :: NullOrUndefined (IamSessionArn), iamUserArn :: NullOrUndefined (IamUserArn) }) -> RegisterOnPremisesInstanceInput
+newRegisterOnPremisesInstanceInput' :: InstanceName -> ({ instanceName :: InstanceName, iamSessionArn :: Maybe (IamSessionArn), iamUserArn :: Maybe (IamUserArn) } -> { instanceName :: InstanceName, iamSessionArn :: Maybe (IamSessionArn), iamUserArn :: Maybe (IamUserArn) }) -> RegisterOnPremisesInstanceInput
 ```
 
 Constructs RegisterOnPremisesInstanceInput's fields from required parameters
@@ -6060,7 +6060,7 @@ Encode RevisionDoesNotExistException
 
 ``` purescript
 newtype RevisionInfo
-  = RevisionInfo { revisionLocation :: NullOrUndefined (RevisionLocation), genericRevisionInfo :: NullOrUndefined (GenericRevisionInfo) }
+  = RevisionInfo { revisionLocation :: Maybe (RevisionLocation), genericRevisionInfo :: Maybe (GenericRevisionInfo) }
 ```
 
 <p>Information about an application revision.</p>
@@ -6085,7 +6085,7 @@ Constructs RevisionInfo from required parameters
 #### `newRevisionInfo'`
 
 ``` purescript
-newRevisionInfo' :: ({ revisionLocation :: NullOrUndefined (RevisionLocation), genericRevisionInfo :: NullOrUndefined (GenericRevisionInfo) } -> { revisionLocation :: NullOrUndefined (RevisionLocation), genericRevisionInfo :: NullOrUndefined (GenericRevisionInfo) }) -> RevisionInfo
+newRevisionInfo' :: ({ revisionLocation :: Maybe (RevisionLocation), genericRevisionInfo :: Maybe (GenericRevisionInfo) } -> { revisionLocation :: Maybe (RevisionLocation), genericRevisionInfo :: Maybe (GenericRevisionInfo) }) -> RevisionInfo
 ```
 
 Constructs RevisionInfo's fields from required parameters
@@ -6110,7 +6110,7 @@ Encode RevisionInfoList
 
 ``` purescript
 newtype RevisionLocation
-  = RevisionLocation { revisionType :: NullOrUndefined (RevisionLocationType), s3Location :: NullOrUndefined (S3Location), gitHubLocation :: NullOrUndefined (GitHubLocation), string :: NullOrUndefined (RawString) }
+  = RevisionLocation { revisionType :: Maybe (RevisionLocationType), s3Location :: Maybe (S3Location), gitHubLocation :: Maybe (GitHubLocation), string :: Maybe (RawString) }
 ```
 
 <p>Information about the location of an application revision.</p>
@@ -6135,7 +6135,7 @@ Constructs RevisionLocation from required parameters
 #### `newRevisionLocation'`
 
 ``` purescript
-newRevisionLocation' :: ({ revisionType :: NullOrUndefined (RevisionLocationType), s3Location :: NullOrUndefined (S3Location), gitHubLocation :: NullOrUndefined (GitHubLocation), string :: NullOrUndefined (RawString) } -> { revisionType :: NullOrUndefined (RevisionLocationType), s3Location :: NullOrUndefined (S3Location), gitHubLocation :: NullOrUndefined (GitHubLocation), string :: NullOrUndefined (RawString) }) -> RevisionLocation
+newRevisionLocation' :: ({ revisionType :: Maybe (RevisionLocationType), s3Location :: Maybe (S3Location), gitHubLocation :: Maybe (GitHubLocation), string :: Maybe (RawString) } -> { revisionType :: Maybe (RevisionLocationType), s3Location :: Maybe (S3Location), gitHubLocation :: Maybe (GitHubLocation), string :: Maybe (RawString) }) -> RevisionLocation
 ```
 
 Constructs RevisionLocation's fields from required parameters
@@ -6228,7 +6228,7 @@ Encode RoleRequiredException
 
 ``` purescript
 newtype RollbackInfo
-  = RollbackInfo { rollbackDeploymentId :: NullOrUndefined (DeploymentId), rollbackTriggeringDeploymentId :: NullOrUndefined (DeploymentId), rollbackMessage :: NullOrUndefined (Description) }
+  = RollbackInfo { rollbackDeploymentId :: Maybe (DeploymentId), rollbackTriggeringDeploymentId :: Maybe (DeploymentId), rollbackMessage :: Maybe (Description) }
 ```
 
 <p>Information about a deployment rollback.</p>
@@ -6253,7 +6253,7 @@ Constructs RollbackInfo from required parameters
 #### `newRollbackInfo'`
 
 ``` purescript
-newRollbackInfo' :: ({ rollbackDeploymentId :: NullOrUndefined (DeploymentId), rollbackTriggeringDeploymentId :: NullOrUndefined (DeploymentId), rollbackMessage :: NullOrUndefined (Description) } -> { rollbackDeploymentId :: NullOrUndefined (DeploymentId), rollbackTriggeringDeploymentId :: NullOrUndefined (DeploymentId), rollbackMessage :: NullOrUndefined (Description) }) -> RollbackInfo
+newRollbackInfo' :: ({ rollbackDeploymentId :: Maybe (DeploymentId), rollbackTriggeringDeploymentId :: Maybe (DeploymentId), rollbackMessage :: Maybe (Description) } -> { rollbackDeploymentId :: Maybe (DeploymentId), rollbackTriggeringDeploymentId :: Maybe (DeploymentId), rollbackMessage :: Maybe (Description) }) -> RollbackInfo
 ```
 
 Constructs RollbackInfo's fields from required parameters
@@ -6294,7 +6294,7 @@ Encode S3Key
 
 ``` purescript
 newtype S3Location
-  = S3Location { bucket :: NullOrUndefined (S3Bucket), key :: NullOrUndefined (S3Key), bundleType :: NullOrUndefined (BundleType), version :: NullOrUndefined (VersionId), eTag :: NullOrUndefined (ETag) }
+  = S3Location { bucket :: Maybe (S3Bucket), key :: Maybe (S3Key), bundleType :: Maybe (BundleType), version :: Maybe (VersionId), eTag :: Maybe (ETag) }
 ```
 
 <p>Information about the location of application artifacts stored in Amazon S3.</p>
@@ -6319,7 +6319,7 @@ Constructs S3Location from required parameters
 #### `newS3Location'`
 
 ``` purescript
-newS3Location' :: ({ bucket :: NullOrUndefined (S3Bucket), key :: NullOrUndefined (S3Key), bundleType :: NullOrUndefined (BundleType), version :: NullOrUndefined (VersionId), eTag :: NullOrUndefined (ETag) } -> { bucket :: NullOrUndefined (S3Bucket), key :: NullOrUndefined (S3Key), bundleType :: NullOrUndefined (BundleType), version :: NullOrUndefined (VersionId), eTag :: NullOrUndefined (ETag) }) -> S3Location
+newS3Location' :: ({ bucket :: Maybe (S3Bucket), key :: Maybe (S3Key), bundleType :: Maybe (BundleType), version :: Maybe (VersionId), eTag :: Maybe (ETag) } -> { bucket :: Maybe (S3Bucket), key :: Maybe (S3Key), bundleType :: Maybe (BundleType), version :: Maybe (VersionId), eTag :: Maybe (ETag) }) -> S3Location
 ```
 
 Constructs S3Location's fields from required parameters
@@ -6344,7 +6344,7 @@ Encode ScriptName
 
 ``` purescript
 newtype SkipWaitTimeForInstanceTerminationInput
-  = SkipWaitTimeForInstanceTerminationInput { deploymentId :: NullOrUndefined (DeploymentId) }
+  = SkipWaitTimeForInstanceTerminationInput { deploymentId :: Maybe (DeploymentId) }
 ```
 
 ##### Instances
@@ -6367,7 +6367,7 @@ Constructs SkipWaitTimeForInstanceTerminationInput from required parameters
 #### `newSkipWaitTimeForInstanceTerminationInput'`
 
 ``` purescript
-newSkipWaitTimeForInstanceTerminationInput' :: ({ deploymentId :: NullOrUndefined (DeploymentId) } -> { deploymentId :: NullOrUndefined (DeploymentId) }) -> SkipWaitTimeForInstanceTerminationInput
+newSkipWaitTimeForInstanceTerminationInput' :: ({ deploymentId :: Maybe (DeploymentId) } -> { deploymentId :: Maybe (DeploymentId) }) -> SkipWaitTimeForInstanceTerminationInput
 ```
 
 Constructs SkipWaitTimeForInstanceTerminationInput's fields from required parameters
@@ -6392,7 +6392,7 @@ Encode SortOrder
 
 ``` purescript
 newtype StopDeploymentInput
-  = StopDeploymentInput { deploymentId :: DeploymentId, autoRollbackEnabled :: NullOrUndefined (NullableBoolean) }
+  = StopDeploymentInput { deploymentId :: DeploymentId, autoRollbackEnabled :: Maybe (NullableBoolean) }
 ```
 
 <p>Represents the input of a StopDeployment operation.</p>
@@ -6417,7 +6417,7 @@ Constructs StopDeploymentInput from required parameters
 #### `newStopDeploymentInput'`
 
 ``` purescript
-newStopDeploymentInput' :: DeploymentId -> ({ deploymentId :: DeploymentId, autoRollbackEnabled :: NullOrUndefined (NullableBoolean) } -> { deploymentId :: DeploymentId, autoRollbackEnabled :: NullOrUndefined (NullableBoolean) }) -> StopDeploymentInput
+newStopDeploymentInput' :: DeploymentId -> ({ deploymentId :: DeploymentId, autoRollbackEnabled :: Maybe (NullableBoolean) } -> { deploymentId :: DeploymentId, autoRollbackEnabled :: Maybe (NullableBoolean) }) -> StopDeploymentInput
 ```
 
 Constructs StopDeploymentInput's fields from required parameters
@@ -6426,7 +6426,7 @@ Constructs StopDeploymentInput's fields from required parameters
 
 ``` purescript
 newtype StopDeploymentOutput
-  = StopDeploymentOutput { status :: NullOrUndefined (StopStatus), statusMessage :: NullOrUndefined (Message) }
+  = StopDeploymentOutput { status :: Maybe (StopStatus), statusMessage :: Maybe (Message) }
 ```
 
 <p>Represents the output of a StopDeployment operation.</p>
@@ -6451,7 +6451,7 @@ Constructs StopDeploymentOutput from required parameters
 #### `newStopDeploymentOutput'`
 
 ``` purescript
-newStopDeploymentOutput' :: ({ status :: NullOrUndefined (StopStatus), statusMessage :: NullOrUndefined (Message) } -> { status :: NullOrUndefined (StopStatus), statusMessage :: NullOrUndefined (Message) }) -> StopDeploymentOutput
+newStopDeploymentOutput' :: ({ status :: Maybe (StopStatus), statusMessage :: Maybe (Message) } -> { status :: Maybe (StopStatus), statusMessage :: Maybe (Message) }) -> StopDeploymentOutput
 ```
 
 Constructs StopDeploymentOutput's fields from required parameters
@@ -6476,7 +6476,7 @@ Encode StopStatus
 
 ``` purescript
 newtype Tag
-  = Tag { "Key" :: NullOrUndefined (Key), "Value" :: NullOrUndefined (Value) }
+  = Tag { "Key" :: Maybe (Key), "Value" :: Maybe (Value) }
 ```
 
 <p>Information about a tag.</p>
@@ -6501,7 +6501,7 @@ Constructs Tag from required parameters
 #### `newTag'`
 
 ``` purescript
-newTag' :: ({ "Key" :: NullOrUndefined (Key), "Value" :: NullOrUndefined (Value) } -> { "Key" :: NullOrUndefined (Key), "Value" :: NullOrUndefined (Value) }) -> Tag
+newTag' :: ({ "Key" :: Maybe (Key), "Value" :: Maybe (Value) } -> { "Key" :: Maybe (Key), "Value" :: Maybe (Value) }) -> Tag
 ```
 
 Constructs Tag's fields from required parameters
@@ -6510,7 +6510,7 @@ Constructs Tag's fields from required parameters
 
 ``` purescript
 newtype TagFilter
-  = TagFilter { "Key" :: NullOrUndefined (Key), "Value" :: NullOrUndefined (Value), "Type" :: NullOrUndefined (TagFilterType) }
+  = TagFilter { "Key" :: Maybe (Key), "Value" :: Maybe (Value), "Type" :: Maybe (TagFilterType) }
 ```
 
 <p>Information about an on-premises instance tag filter.</p>
@@ -6535,7 +6535,7 @@ Constructs TagFilter from required parameters
 #### `newTagFilter'`
 
 ``` purescript
-newTagFilter' :: ({ "Key" :: NullOrUndefined (Key), "Value" :: NullOrUndefined (Value), "Type" :: NullOrUndefined (TagFilterType) } -> { "Key" :: NullOrUndefined (Key), "Value" :: NullOrUndefined (Value), "Type" :: NullOrUndefined (TagFilterType) }) -> TagFilter
+newTagFilter' :: ({ "Key" :: Maybe (Key), "Value" :: Maybe (Value), "Type" :: Maybe (TagFilterType) } -> { "Key" :: Maybe (Key), "Value" :: Maybe (Value), "Type" :: Maybe (TagFilterType) }) -> TagFilter
 ```
 
 Constructs TagFilter's fields from required parameters
@@ -6646,7 +6646,7 @@ Encode TagSetListLimitExceededException
 
 ``` purescript
 newtype TargetGroupInfo
-  = TargetGroupInfo { name :: NullOrUndefined (TargetGroupName) }
+  = TargetGroupInfo { name :: Maybe (TargetGroupName) }
 ```
 
 <p>Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.</p>
@@ -6671,7 +6671,7 @@ Constructs TargetGroupInfo from required parameters
 #### `newTargetGroupInfo'`
 
 ``` purescript
-newTargetGroupInfo' :: ({ name :: NullOrUndefined (TargetGroupName) } -> { name :: NullOrUndefined (TargetGroupName) }) -> TargetGroupInfo
+newTargetGroupInfo' :: ({ name :: Maybe (TargetGroupName) } -> { name :: Maybe (TargetGroupName) }) -> TargetGroupInfo
 ```
 
 Constructs TargetGroupInfo's fields from required parameters
@@ -6712,7 +6712,7 @@ Encode TargetGroupName
 
 ``` purescript
 newtype TargetInstances
-  = TargetInstances { tagFilters :: NullOrUndefined (EC2TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupNameList), ec2TagSet :: NullOrUndefined (EC2TagSet) }
+  = TargetInstances { tagFilters :: Maybe (EC2TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupNameList), ec2TagSet :: Maybe (EC2TagSet) }
 ```
 
 <p>Information about the instances to be used in the replacement environment in a blue/green deployment.</p>
@@ -6737,7 +6737,7 @@ Constructs TargetInstances from required parameters
 #### `newTargetInstances'`
 
 ``` purescript
-newTargetInstances' :: ({ tagFilters :: NullOrUndefined (EC2TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupNameList), ec2TagSet :: NullOrUndefined (EC2TagSet) } -> { tagFilters :: NullOrUndefined (EC2TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupNameList), ec2TagSet :: NullOrUndefined (EC2TagSet) }) -> TargetInstances
+newTargetInstances' :: ({ tagFilters :: Maybe (EC2TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupNameList), ec2TagSet :: Maybe (EC2TagSet) } -> { tagFilters :: Maybe (EC2TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupNameList), ec2TagSet :: Maybe (EC2TagSet) }) -> TargetInstances
 ```
 
 Constructs TargetInstances's fields from required parameters
@@ -6764,7 +6764,7 @@ Encode ThrottlingException
 
 ``` purescript
 newtype TimeBasedCanary
-  = TimeBasedCanary { canaryPercentage :: NullOrUndefined (Percentage), canaryInterval :: NullOrUndefined (WaitTimeInMins) }
+  = TimeBasedCanary { canaryPercentage :: Maybe (Percentage), canaryInterval :: Maybe (WaitTimeInMins) }
 ```
 
 <p>A configuration that shifts traffic from one version of a Lambda function to another in two increments. The original and target Lambda function versions are specified in the deployment's AppSpec file.</p>
@@ -6789,7 +6789,7 @@ Constructs TimeBasedCanary from required parameters
 #### `newTimeBasedCanary'`
 
 ``` purescript
-newTimeBasedCanary' :: ({ canaryPercentage :: NullOrUndefined (Percentage), canaryInterval :: NullOrUndefined (WaitTimeInMins) } -> { canaryPercentage :: NullOrUndefined (Percentage), canaryInterval :: NullOrUndefined (WaitTimeInMins) }) -> TimeBasedCanary
+newTimeBasedCanary' :: ({ canaryPercentage :: Maybe (Percentage), canaryInterval :: Maybe (WaitTimeInMins) } -> { canaryPercentage :: Maybe (Percentage), canaryInterval :: Maybe (WaitTimeInMins) }) -> TimeBasedCanary
 ```
 
 Constructs TimeBasedCanary's fields from required parameters
@@ -6798,7 +6798,7 @@ Constructs TimeBasedCanary's fields from required parameters
 
 ``` purescript
 newtype TimeBasedLinear
-  = TimeBasedLinear { linearPercentage :: NullOrUndefined (Percentage), linearInterval :: NullOrUndefined (WaitTimeInMins) }
+  = TimeBasedLinear { linearPercentage :: Maybe (Percentage), linearInterval :: Maybe (WaitTimeInMins) }
 ```
 
 <p>A configuration that shifts traffic from one version of a Lambda function to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions are specified in the deployment's AppSpec file.</p>
@@ -6823,7 +6823,7 @@ Constructs TimeBasedLinear from required parameters
 #### `newTimeBasedLinear'`
 
 ``` purescript
-newTimeBasedLinear' :: ({ linearPercentage :: NullOrUndefined (Percentage), linearInterval :: NullOrUndefined (WaitTimeInMins) } -> { linearPercentage :: NullOrUndefined (Percentage), linearInterval :: NullOrUndefined (WaitTimeInMins) }) -> TimeBasedLinear
+newTimeBasedLinear' :: ({ linearPercentage :: Maybe (Percentage), linearInterval :: Maybe (WaitTimeInMins) } -> { linearPercentage :: Maybe (Percentage), linearInterval :: Maybe (WaitTimeInMins) }) -> TimeBasedLinear
 ```
 
 Constructs TimeBasedLinear's fields from required parameters
@@ -6832,7 +6832,7 @@ Constructs TimeBasedLinear's fields from required parameters
 
 ``` purescript
 newtype TimeRange
-  = TimeRange { start :: NullOrUndefined (Timestamp), end :: NullOrUndefined (Timestamp) }
+  = TimeRange { start :: Maybe (Timestamp), end :: Maybe (Timestamp) }
 ```
 
 <p>Information about a time range.</p>
@@ -6857,7 +6857,7 @@ Constructs TimeRange from required parameters
 #### `newTimeRange'`
 
 ``` purescript
-newTimeRange' :: ({ start :: NullOrUndefined (Timestamp), end :: NullOrUndefined (Timestamp) } -> { start :: NullOrUndefined (Timestamp), end :: NullOrUndefined (Timestamp) }) -> TimeRange
+newTimeRange' :: ({ start :: Maybe (Timestamp), end :: Maybe (Timestamp) } -> { start :: Maybe (Timestamp), end :: Maybe (Timestamp) }) -> TimeRange
 ```
 
 Constructs TimeRange's fields from required parameters
@@ -6866,7 +6866,7 @@ Constructs TimeRange's fields from required parameters
 
 ``` purescript
 newtype TrafficRoutingConfig
-  = TrafficRoutingConfig { "type" :: NullOrUndefined (TrafficRoutingType), timeBasedCanary :: NullOrUndefined (TimeBasedCanary), timeBasedLinear :: NullOrUndefined (TimeBasedLinear) }
+  = TrafficRoutingConfig { "type" :: Maybe (TrafficRoutingType), timeBasedCanary :: Maybe (TimeBasedCanary), timeBasedLinear :: Maybe (TimeBasedLinear) }
 ```
 
 <p>The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment.</p>
@@ -6891,7 +6891,7 @@ Constructs TrafficRoutingConfig from required parameters
 #### `newTrafficRoutingConfig'`
 
 ``` purescript
-newTrafficRoutingConfig' :: ({ "type" :: NullOrUndefined (TrafficRoutingType), timeBasedCanary :: NullOrUndefined (TimeBasedCanary), timeBasedLinear :: NullOrUndefined (TimeBasedLinear) } -> { "type" :: NullOrUndefined (TrafficRoutingType), timeBasedCanary :: NullOrUndefined (TimeBasedCanary), timeBasedLinear :: NullOrUndefined (TimeBasedLinear) }) -> TrafficRoutingConfig
+newTrafficRoutingConfig' :: ({ "type" :: Maybe (TrafficRoutingType), timeBasedCanary :: Maybe (TimeBasedCanary), timeBasedLinear :: Maybe (TimeBasedLinear) } -> { "type" :: Maybe (TrafficRoutingType), timeBasedCanary :: Maybe (TimeBasedCanary), timeBasedLinear :: Maybe (TimeBasedLinear) }) -> TrafficRoutingConfig
 ```
 
 Constructs TrafficRoutingConfig's fields from required parameters
@@ -6916,7 +6916,7 @@ Encode TrafficRoutingType
 
 ``` purescript
 newtype TriggerConfig
-  = TriggerConfig { triggerName :: NullOrUndefined (TriggerName), triggerTargetArn :: NullOrUndefined (TriggerTargetArn), triggerEvents :: NullOrUndefined (TriggerEventTypeList) }
+  = TriggerConfig { triggerName :: Maybe (TriggerName), triggerTargetArn :: Maybe (TriggerTargetArn), triggerEvents :: Maybe (TriggerEventTypeList) }
 ```
 
 <p>Information about notification triggers for the deployment group.</p>
@@ -6941,7 +6941,7 @@ Constructs TriggerConfig from required parameters
 #### `newTriggerConfig'`
 
 ``` purescript
-newTriggerConfig' :: ({ triggerName :: NullOrUndefined (TriggerName), triggerTargetArn :: NullOrUndefined (TriggerTargetArn), triggerEvents :: NullOrUndefined (TriggerEventTypeList) } -> { triggerName :: NullOrUndefined (TriggerName), triggerTargetArn :: NullOrUndefined (TriggerTargetArn), triggerEvents :: NullOrUndefined (TriggerEventTypeList) }) -> TriggerConfig
+newTriggerConfig' :: ({ triggerName :: Maybe (TriggerName), triggerTargetArn :: Maybe (TriggerTargetArn), triggerEvents :: Maybe (TriggerEventTypeList) } -> { triggerName :: Maybe (TriggerName), triggerTargetArn :: Maybe (TriggerTargetArn), triggerEvents :: Maybe (TriggerEventTypeList) }) -> TriggerConfig
 ```
 
 Constructs TriggerConfig's fields from required parameters
@@ -7066,7 +7066,7 @@ Encode UnsupportedActionForDeploymentTypeException
 
 ``` purescript
 newtype UpdateApplicationInput
-  = UpdateApplicationInput { applicationName :: NullOrUndefined (ApplicationName), newApplicationName :: NullOrUndefined (ApplicationName) }
+  = UpdateApplicationInput { applicationName :: Maybe (ApplicationName), newApplicationName :: Maybe (ApplicationName) }
 ```
 
 <p>Represents the input of an UpdateApplication operation.</p>
@@ -7091,7 +7091,7 @@ Constructs UpdateApplicationInput from required parameters
 #### `newUpdateApplicationInput'`
 
 ``` purescript
-newUpdateApplicationInput' :: ({ applicationName :: NullOrUndefined (ApplicationName), newApplicationName :: NullOrUndefined (ApplicationName) } -> { applicationName :: NullOrUndefined (ApplicationName), newApplicationName :: NullOrUndefined (ApplicationName) }) -> UpdateApplicationInput
+newUpdateApplicationInput' :: ({ applicationName :: Maybe (ApplicationName), newApplicationName :: Maybe (ApplicationName) } -> { applicationName :: Maybe (ApplicationName), newApplicationName :: Maybe (ApplicationName) }) -> UpdateApplicationInput
 ```
 
 Constructs UpdateApplicationInput's fields from required parameters
@@ -7100,7 +7100,7 @@ Constructs UpdateApplicationInput's fields from required parameters
 
 ``` purescript
 newtype UpdateDeploymentGroupInput
-  = UpdateDeploymentGroupInput { applicationName :: ApplicationName, currentDeploymentGroupName :: DeploymentGroupName, newDeploymentGroupName :: NullOrUndefined (DeploymentGroupName), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), ec2TagFilters :: NullOrUndefined (EC2TagFilterList), onPremisesInstanceTagFilters :: NullOrUndefined (TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupNameList), serviceRoleArn :: NullOrUndefined (Role), triggerConfigurations :: NullOrUndefined (TriggerConfigList), alarmConfiguration :: NullOrUndefined (AlarmConfiguration), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), deploymentStyle :: NullOrUndefined (DeploymentStyle), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), ec2TagSet :: NullOrUndefined (EC2TagSet), onPremisesTagSet :: NullOrUndefined (OnPremisesTagSet) }
+  = UpdateDeploymentGroupInput { applicationName :: ApplicationName, currentDeploymentGroupName :: DeploymentGroupName, newDeploymentGroupName :: Maybe (DeploymentGroupName), deploymentConfigName :: Maybe (DeploymentConfigName), ec2TagFilters :: Maybe (EC2TagFilterList), onPremisesInstanceTagFilters :: Maybe (TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupNameList), serviceRoleArn :: Maybe (Role), triggerConfigurations :: Maybe (TriggerConfigList), alarmConfiguration :: Maybe (AlarmConfiguration), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), deploymentStyle :: Maybe (DeploymentStyle), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), ec2TagSet :: Maybe (EC2TagSet), onPremisesTagSet :: Maybe (OnPremisesTagSet) }
 ```
 
 <p>Represents the input of an UpdateDeploymentGroup operation.</p>
@@ -7125,7 +7125,7 @@ Constructs UpdateDeploymentGroupInput from required parameters
 #### `newUpdateDeploymentGroupInput'`
 
 ``` purescript
-newUpdateDeploymentGroupInput' :: ApplicationName -> DeploymentGroupName -> ({ applicationName :: ApplicationName, currentDeploymentGroupName :: DeploymentGroupName, newDeploymentGroupName :: NullOrUndefined (DeploymentGroupName), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), ec2TagFilters :: NullOrUndefined (EC2TagFilterList), onPremisesInstanceTagFilters :: NullOrUndefined (TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupNameList), serviceRoleArn :: NullOrUndefined (Role), triggerConfigurations :: NullOrUndefined (TriggerConfigList), alarmConfiguration :: NullOrUndefined (AlarmConfiguration), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), deploymentStyle :: NullOrUndefined (DeploymentStyle), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), ec2TagSet :: NullOrUndefined (EC2TagSet), onPremisesTagSet :: NullOrUndefined (OnPremisesTagSet) } -> { applicationName :: ApplicationName, currentDeploymentGroupName :: DeploymentGroupName, newDeploymentGroupName :: NullOrUndefined (DeploymentGroupName), deploymentConfigName :: NullOrUndefined (DeploymentConfigName), ec2TagFilters :: NullOrUndefined (EC2TagFilterList), onPremisesInstanceTagFilters :: NullOrUndefined (TagFilterList), autoScalingGroups :: NullOrUndefined (AutoScalingGroupNameList), serviceRoleArn :: NullOrUndefined (Role), triggerConfigurations :: NullOrUndefined (TriggerConfigList), alarmConfiguration :: NullOrUndefined (AlarmConfiguration), autoRollbackConfiguration :: NullOrUndefined (AutoRollbackConfiguration), deploymentStyle :: NullOrUndefined (DeploymentStyle), blueGreenDeploymentConfiguration :: NullOrUndefined (BlueGreenDeploymentConfiguration), loadBalancerInfo :: NullOrUndefined (LoadBalancerInfo), ec2TagSet :: NullOrUndefined (EC2TagSet), onPremisesTagSet :: NullOrUndefined (OnPremisesTagSet) }) -> UpdateDeploymentGroupInput
+newUpdateDeploymentGroupInput' :: ApplicationName -> DeploymentGroupName -> ({ applicationName :: ApplicationName, currentDeploymentGroupName :: DeploymentGroupName, newDeploymentGroupName :: Maybe (DeploymentGroupName), deploymentConfigName :: Maybe (DeploymentConfigName), ec2TagFilters :: Maybe (EC2TagFilterList), onPremisesInstanceTagFilters :: Maybe (TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupNameList), serviceRoleArn :: Maybe (Role), triggerConfigurations :: Maybe (TriggerConfigList), alarmConfiguration :: Maybe (AlarmConfiguration), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), deploymentStyle :: Maybe (DeploymentStyle), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), ec2TagSet :: Maybe (EC2TagSet), onPremisesTagSet :: Maybe (OnPremisesTagSet) } -> { applicationName :: ApplicationName, currentDeploymentGroupName :: DeploymentGroupName, newDeploymentGroupName :: Maybe (DeploymentGroupName), deploymentConfigName :: Maybe (DeploymentConfigName), ec2TagFilters :: Maybe (EC2TagFilterList), onPremisesInstanceTagFilters :: Maybe (TagFilterList), autoScalingGroups :: Maybe (AutoScalingGroupNameList), serviceRoleArn :: Maybe (Role), triggerConfigurations :: Maybe (TriggerConfigList), alarmConfiguration :: Maybe (AlarmConfiguration), autoRollbackConfiguration :: Maybe (AutoRollbackConfiguration), deploymentStyle :: Maybe (DeploymentStyle), blueGreenDeploymentConfiguration :: Maybe (BlueGreenDeploymentConfiguration), loadBalancerInfo :: Maybe (LoadBalancerInfo), ec2TagSet :: Maybe (EC2TagSet), onPremisesTagSet :: Maybe (OnPremisesTagSet) }) -> UpdateDeploymentGroupInput
 ```
 
 Constructs UpdateDeploymentGroupInput's fields from required parameters
@@ -7134,7 +7134,7 @@ Constructs UpdateDeploymentGroupInput's fields from required parameters
 
 ``` purescript
 newtype UpdateDeploymentGroupOutput
-  = UpdateDeploymentGroupOutput { hooksNotCleanedUp :: NullOrUndefined (AutoScalingGroupList) }
+  = UpdateDeploymentGroupOutput { hooksNotCleanedUp :: Maybe (AutoScalingGroupList) }
 ```
 
 <p>Represents the output of an UpdateDeploymentGroup operation.</p>
@@ -7159,7 +7159,7 @@ Constructs UpdateDeploymentGroupOutput from required parameters
 #### `newUpdateDeploymentGroupOutput'`
 
 ``` purescript
-newUpdateDeploymentGroupOutput' :: ({ hooksNotCleanedUp :: NullOrUndefined (AutoScalingGroupList) } -> { hooksNotCleanedUp :: NullOrUndefined (AutoScalingGroupList) }) -> UpdateDeploymentGroupOutput
+newUpdateDeploymentGroupOutput' :: ({ hooksNotCleanedUp :: Maybe (AutoScalingGroupList) } -> { hooksNotCleanedUp :: Maybe (AutoScalingGroupList) }) -> UpdateDeploymentGroupOutput
 ```
 
 Constructs UpdateDeploymentGroupOutput's fields from required parameters

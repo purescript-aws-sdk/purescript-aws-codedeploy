@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -51,7 +50,7 @@ instance encodeAdditionalDeploymentStatusInfo :: Encode AdditionalDeploymentStat
 
 -- | <p>Information about an alarm.</p>
 newtype Alarm = Alarm 
-  { "name" :: NullOrUndefined (AlarmName)
+  { "name" :: Maybe (AlarmName)
   }
 derive instance newtypeAlarm :: Newtype Alarm _
 derive instance repGenericAlarm :: Generic Alarm _
@@ -61,20 +60,20 @@ instance encodeAlarm :: Encode Alarm where encode = genericEncode options
 
 -- | Constructs Alarm from required parameters
 newAlarm :: Alarm
-newAlarm  = Alarm { "name": (NullOrUndefined Nothing) }
+newAlarm  = Alarm { "name": Nothing }
 
 -- | Constructs Alarm's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAlarm' :: ( { "name" :: NullOrUndefined (AlarmName) } -> {"name" :: NullOrUndefined (AlarmName) } ) -> Alarm
-newAlarm'  customize = (Alarm <<< customize) { "name": (NullOrUndefined Nothing) }
+newAlarm' :: ( { "name" :: Maybe (AlarmName) } -> {"name" :: Maybe (AlarmName) } ) -> Alarm
+newAlarm'  customize = (Alarm <<< customize) { "name": Nothing }
 
 
 
 -- | <p>Information about alarms associated with the deployment group.</p>
 newtype AlarmConfiguration = AlarmConfiguration 
-  { "enabled" :: NullOrUndefined (Boolean)
-  , "ignorePollAlarmFailure" :: NullOrUndefined (Boolean)
-  , "alarms" :: NullOrUndefined (AlarmList)
+  { "enabled" :: Maybe (Boolean)
+  , "ignorePollAlarmFailure" :: Maybe (Boolean)
+  , "alarms" :: Maybe (AlarmList)
   }
 derive instance newtypeAlarmConfiguration :: Newtype AlarmConfiguration _
 derive instance repGenericAlarmConfiguration :: Generic AlarmConfiguration _
@@ -84,12 +83,12 @@ instance encodeAlarmConfiguration :: Encode AlarmConfiguration where encode = ge
 
 -- | Constructs AlarmConfiguration from required parameters
 newAlarmConfiguration :: AlarmConfiguration
-newAlarmConfiguration  = AlarmConfiguration { "alarms": (NullOrUndefined Nothing), "enabled": (NullOrUndefined Nothing), "ignorePollAlarmFailure": (NullOrUndefined Nothing) }
+newAlarmConfiguration  = AlarmConfiguration { "alarms": Nothing, "enabled": Nothing, "ignorePollAlarmFailure": Nothing }
 
 -- | Constructs AlarmConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAlarmConfiguration' :: ( { "enabled" :: NullOrUndefined (Boolean) , "ignorePollAlarmFailure" :: NullOrUndefined (Boolean) , "alarms" :: NullOrUndefined (AlarmList) } -> {"enabled" :: NullOrUndefined (Boolean) , "ignorePollAlarmFailure" :: NullOrUndefined (Boolean) , "alarms" :: NullOrUndefined (AlarmList) } ) -> AlarmConfiguration
-newAlarmConfiguration'  customize = (AlarmConfiguration <<< customize) { "alarms": (NullOrUndefined Nothing), "enabled": (NullOrUndefined Nothing), "ignorePollAlarmFailure": (NullOrUndefined Nothing) }
+newAlarmConfiguration' :: ( { "enabled" :: Maybe (Boolean) , "ignorePollAlarmFailure" :: Maybe (Boolean) , "alarms" :: Maybe (AlarmList) } -> {"enabled" :: Maybe (Boolean) , "ignorePollAlarmFailure" :: Maybe (Boolean) , "alarms" :: Maybe (AlarmList) } ) -> AlarmConfiguration
+newAlarmConfiguration'  customize = (AlarmConfiguration <<< customize) { "alarms": Nothing, "enabled": Nothing, "ignorePollAlarmFailure": Nothing }
 
 
 
@@ -152,12 +151,12 @@ instance encodeApplicationId :: Encode ApplicationId where encode = genericEncod
 
 -- | <p>Information about an application.</p>
 newtype ApplicationInfo = ApplicationInfo 
-  { "applicationId" :: NullOrUndefined (ApplicationId)
-  , "applicationName" :: NullOrUndefined (ApplicationName)
-  , "createTime" :: NullOrUndefined (Types.Timestamp)
-  , "linkedToGitHub" :: NullOrUndefined (Boolean)
-  , "gitHubAccountName" :: NullOrUndefined (GitHubAccountTokenName)
-  , "computePlatform" :: NullOrUndefined (ComputePlatform)
+  { "applicationId" :: Maybe (ApplicationId)
+  , "applicationName" :: Maybe (ApplicationName)
+  , "createTime" :: Maybe (Types.Timestamp)
+  , "linkedToGitHub" :: Maybe (Boolean)
+  , "gitHubAccountName" :: Maybe (GitHubAccountTokenName)
+  , "computePlatform" :: Maybe (ComputePlatform)
   }
 derive instance newtypeApplicationInfo :: Newtype ApplicationInfo _
 derive instance repGenericApplicationInfo :: Generic ApplicationInfo _
@@ -167,12 +166,12 @@ instance encodeApplicationInfo :: Encode ApplicationInfo where encode = genericE
 
 -- | Constructs ApplicationInfo from required parameters
 newApplicationInfo :: ApplicationInfo
-newApplicationInfo  = ApplicationInfo { "applicationId": (NullOrUndefined Nothing), "applicationName": (NullOrUndefined Nothing), "computePlatform": (NullOrUndefined Nothing), "createTime": (NullOrUndefined Nothing), "gitHubAccountName": (NullOrUndefined Nothing), "linkedToGitHub": (NullOrUndefined Nothing) }
+newApplicationInfo  = ApplicationInfo { "applicationId": Nothing, "applicationName": Nothing, "computePlatform": Nothing, "createTime": Nothing, "gitHubAccountName": Nothing, "linkedToGitHub": Nothing }
 
 -- | Constructs ApplicationInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newApplicationInfo' :: ( { "applicationId" :: NullOrUndefined (ApplicationId) , "applicationName" :: NullOrUndefined (ApplicationName) , "createTime" :: NullOrUndefined (Types.Timestamp) , "linkedToGitHub" :: NullOrUndefined (Boolean) , "gitHubAccountName" :: NullOrUndefined (GitHubAccountTokenName) , "computePlatform" :: NullOrUndefined (ComputePlatform) } -> {"applicationId" :: NullOrUndefined (ApplicationId) , "applicationName" :: NullOrUndefined (ApplicationName) , "createTime" :: NullOrUndefined (Types.Timestamp) , "linkedToGitHub" :: NullOrUndefined (Boolean) , "gitHubAccountName" :: NullOrUndefined (GitHubAccountTokenName) , "computePlatform" :: NullOrUndefined (ComputePlatform) } ) -> ApplicationInfo
-newApplicationInfo'  customize = (ApplicationInfo <<< customize) { "applicationId": (NullOrUndefined Nothing), "applicationName": (NullOrUndefined Nothing), "computePlatform": (NullOrUndefined Nothing), "createTime": (NullOrUndefined Nothing), "gitHubAccountName": (NullOrUndefined Nothing), "linkedToGitHub": (NullOrUndefined Nothing) }
+newApplicationInfo' :: ( { "applicationId" :: Maybe (ApplicationId) , "applicationName" :: Maybe (ApplicationName) , "createTime" :: Maybe (Types.Timestamp) , "linkedToGitHub" :: Maybe (Boolean) , "gitHubAccountName" :: Maybe (GitHubAccountTokenName) , "computePlatform" :: Maybe (ComputePlatform) } -> {"applicationId" :: Maybe (ApplicationId) , "applicationName" :: Maybe (ApplicationName) , "createTime" :: Maybe (Types.Timestamp) , "linkedToGitHub" :: Maybe (Boolean) , "gitHubAccountName" :: Maybe (GitHubAccountTokenName) , "computePlatform" :: Maybe (ComputePlatform) } ) -> ApplicationInfo
+newApplicationInfo'  customize = (ApplicationInfo <<< customize) { "applicationId": Nothing, "applicationName": Nothing, "computePlatform": Nothing, "createTime": Nothing, "gitHubAccountName": Nothing, "linkedToGitHub": Nothing }
 
 
 
@@ -234,8 +233,8 @@ instance encodeApplicationsList :: Encode ApplicationsList where encode = generi
 
 -- | <p>Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment doesn't complete successfully.</p>
 newtype AutoRollbackConfiguration = AutoRollbackConfiguration 
-  { "enabled" :: NullOrUndefined (Boolean)
-  , "events" :: NullOrUndefined (AutoRollbackEventsList)
+  { "enabled" :: Maybe (Boolean)
+  , "events" :: Maybe (AutoRollbackEventsList)
   }
 derive instance newtypeAutoRollbackConfiguration :: Newtype AutoRollbackConfiguration _
 derive instance repGenericAutoRollbackConfiguration :: Generic AutoRollbackConfiguration _
@@ -245,12 +244,12 @@ instance encodeAutoRollbackConfiguration :: Encode AutoRollbackConfiguration whe
 
 -- | Constructs AutoRollbackConfiguration from required parameters
 newAutoRollbackConfiguration :: AutoRollbackConfiguration
-newAutoRollbackConfiguration  = AutoRollbackConfiguration { "enabled": (NullOrUndefined Nothing), "events": (NullOrUndefined Nothing) }
+newAutoRollbackConfiguration  = AutoRollbackConfiguration { "enabled": Nothing, "events": Nothing }
 
 -- | Constructs AutoRollbackConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutoRollbackConfiguration' :: ( { "enabled" :: NullOrUndefined (Boolean) , "events" :: NullOrUndefined (AutoRollbackEventsList) } -> {"enabled" :: NullOrUndefined (Boolean) , "events" :: NullOrUndefined (AutoRollbackEventsList) } ) -> AutoRollbackConfiguration
-newAutoRollbackConfiguration'  customize = (AutoRollbackConfiguration <<< customize) { "enabled": (NullOrUndefined Nothing), "events": (NullOrUndefined Nothing) }
+newAutoRollbackConfiguration' :: ( { "enabled" :: Maybe (Boolean) , "events" :: Maybe (AutoRollbackEventsList) } -> {"enabled" :: Maybe (Boolean) , "events" :: Maybe (AutoRollbackEventsList) } ) -> AutoRollbackConfiguration
+newAutoRollbackConfiguration'  customize = (AutoRollbackConfiguration <<< customize) { "enabled": Nothing, "events": Nothing }
 
 
 
@@ -274,8 +273,8 @@ instance encodeAutoRollbackEventsList :: Encode AutoRollbackEventsList where enc
 
 -- | <p>Information about an Auto Scaling group.</p>
 newtype AutoScalingGroup = AutoScalingGroup 
-  { "name" :: NullOrUndefined (AutoScalingGroupName)
-  , "hook" :: NullOrUndefined (AutoScalingGroupHook)
+  { "name" :: Maybe (AutoScalingGroupName)
+  , "hook" :: Maybe (AutoScalingGroupHook)
   }
 derive instance newtypeAutoScalingGroup :: Newtype AutoScalingGroup _
 derive instance repGenericAutoScalingGroup :: Generic AutoScalingGroup _
@@ -285,12 +284,12 @@ instance encodeAutoScalingGroup :: Encode AutoScalingGroup where encode = generi
 
 -- | Constructs AutoScalingGroup from required parameters
 newAutoScalingGroup :: AutoScalingGroup
-newAutoScalingGroup  = AutoScalingGroup { "hook": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newAutoScalingGroup  = AutoScalingGroup { "hook": Nothing, "name": Nothing }
 
 -- | Constructs AutoScalingGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutoScalingGroup' :: ( { "name" :: NullOrUndefined (AutoScalingGroupName) , "hook" :: NullOrUndefined (AutoScalingGroupHook) } -> {"name" :: NullOrUndefined (AutoScalingGroupName) , "hook" :: NullOrUndefined (AutoScalingGroupHook) } ) -> AutoScalingGroup
-newAutoScalingGroup'  customize = (AutoScalingGroup <<< customize) { "hook": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newAutoScalingGroup' :: ( { "name" :: Maybe (AutoScalingGroupName) , "hook" :: Maybe (AutoScalingGroupHook) } -> {"name" :: Maybe (AutoScalingGroupName) , "hook" :: Maybe (AutoScalingGroupHook) } ) -> AutoScalingGroup
+newAutoScalingGroup'  customize = (AutoScalingGroup <<< customize) { "hook": Nothing, "name": Nothing }
 
 
 
@@ -354,9 +353,9 @@ newBatchGetApplicationRevisionsInput' _applicationName _revisions customize = (B
 
 -- | <p>Represents the output of a BatchGetApplicationRevisions operation.</p>
 newtype BatchGetApplicationRevisionsOutput = BatchGetApplicationRevisionsOutput 
-  { "applicationName" :: NullOrUndefined (ApplicationName)
-  , "errorMessage" :: NullOrUndefined (ErrorMessage)
-  , "revisions" :: NullOrUndefined (RevisionInfoList)
+  { "applicationName" :: Maybe (ApplicationName)
+  , "errorMessage" :: Maybe (ErrorMessage)
+  , "revisions" :: Maybe (RevisionInfoList)
   }
 derive instance newtypeBatchGetApplicationRevisionsOutput :: Newtype BatchGetApplicationRevisionsOutput _
 derive instance repGenericBatchGetApplicationRevisionsOutput :: Generic BatchGetApplicationRevisionsOutput _
@@ -366,12 +365,12 @@ instance encodeBatchGetApplicationRevisionsOutput :: Encode BatchGetApplicationR
 
 -- | Constructs BatchGetApplicationRevisionsOutput from required parameters
 newBatchGetApplicationRevisionsOutput :: BatchGetApplicationRevisionsOutput
-newBatchGetApplicationRevisionsOutput  = BatchGetApplicationRevisionsOutput { "applicationName": (NullOrUndefined Nothing), "errorMessage": (NullOrUndefined Nothing), "revisions": (NullOrUndefined Nothing) }
+newBatchGetApplicationRevisionsOutput  = BatchGetApplicationRevisionsOutput { "applicationName": Nothing, "errorMessage": Nothing, "revisions": Nothing }
 
 -- | Constructs BatchGetApplicationRevisionsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetApplicationRevisionsOutput' :: ( { "applicationName" :: NullOrUndefined (ApplicationName) , "errorMessage" :: NullOrUndefined (ErrorMessage) , "revisions" :: NullOrUndefined (RevisionInfoList) } -> {"applicationName" :: NullOrUndefined (ApplicationName) , "errorMessage" :: NullOrUndefined (ErrorMessage) , "revisions" :: NullOrUndefined (RevisionInfoList) } ) -> BatchGetApplicationRevisionsOutput
-newBatchGetApplicationRevisionsOutput'  customize = (BatchGetApplicationRevisionsOutput <<< customize) { "applicationName": (NullOrUndefined Nothing), "errorMessage": (NullOrUndefined Nothing), "revisions": (NullOrUndefined Nothing) }
+newBatchGetApplicationRevisionsOutput' :: ( { "applicationName" :: Maybe (ApplicationName) , "errorMessage" :: Maybe (ErrorMessage) , "revisions" :: Maybe (RevisionInfoList) } -> {"applicationName" :: Maybe (ApplicationName) , "errorMessage" :: Maybe (ErrorMessage) , "revisions" :: Maybe (RevisionInfoList) } ) -> BatchGetApplicationRevisionsOutput
+newBatchGetApplicationRevisionsOutput'  customize = (BatchGetApplicationRevisionsOutput <<< customize) { "applicationName": Nothing, "errorMessage": Nothing, "revisions": Nothing }
 
 
 
@@ -398,7 +397,7 @@ newBatchGetApplicationsInput' _applicationNames customize = (BatchGetApplication
 
 -- | <p>Represents the output of a BatchGetApplications operation.</p>
 newtype BatchGetApplicationsOutput = BatchGetApplicationsOutput 
-  { "applicationsInfo" :: NullOrUndefined (ApplicationsInfoList)
+  { "applicationsInfo" :: Maybe (ApplicationsInfoList)
   }
 derive instance newtypeBatchGetApplicationsOutput :: Newtype BatchGetApplicationsOutput _
 derive instance repGenericBatchGetApplicationsOutput :: Generic BatchGetApplicationsOutput _
@@ -408,12 +407,12 @@ instance encodeBatchGetApplicationsOutput :: Encode BatchGetApplicationsOutput w
 
 -- | Constructs BatchGetApplicationsOutput from required parameters
 newBatchGetApplicationsOutput :: BatchGetApplicationsOutput
-newBatchGetApplicationsOutput  = BatchGetApplicationsOutput { "applicationsInfo": (NullOrUndefined Nothing) }
+newBatchGetApplicationsOutput  = BatchGetApplicationsOutput { "applicationsInfo": Nothing }
 
 -- | Constructs BatchGetApplicationsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetApplicationsOutput' :: ( { "applicationsInfo" :: NullOrUndefined (ApplicationsInfoList) } -> {"applicationsInfo" :: NullOrUndefined (ApplicationsInfoList) } ) -> BatchGetApplicationsOutput
-newBatchGetApplicationsOutput'  customize = (BatchGetApplicationsOutput <<< customize) { "applicationsInfo": (NullOrUndefined Nothing) }
+newBatchGetApplicationsOutput' :: ( { "applicationsInfo" :: Maybe (ApplicationsInfoList) } -> {"applicationsInfo" :: Maybe (ApplicationsInfoList) } ) -> BatchGetApplicationsOutput
+newBatchGetApplicationsOutput'  customize = (BatchGetApplicationsOutput <<< customize) { "applicationsInfo": Nothing }
 
 
 
@@ -441,8 +440,8 @@ newBatchGetDeploymentGroupsInput' _applicationName _deploymentGroupNames customi
 
 -- | <p>Represents the output of a BatchGetDeploymentGroups operation.</p>
 newtype BatchGetDeploymentGroupsOutput = BatchGetDeploymentGroupsOutput 
-  { "deploymentGroupsInfo" :: NullOrUndefined (DeploymentGroupInfoList)
-  , "errorMessage" :: NullOrUndefined (ErrorMessage)
+  { "deploymentGroupsInfo" :: Maybe (DeploymentGroupInfoList)
+  , "errorMessage" :: Maybe (ErrorMessage)
   }
 derive instance newtypeBatchGetDeploymentGroupsOutput :: Newtype BatchGetDeploymentGroupsOutput _
 derive instance repGenericBatchGetDeploymentGroupsOutput :: Generic BatchGetDeploymentGroupsOutput _
@@ -452,12 +451,12 @@ instance encodeBatchGetDeploymentGroupsOutput :: Encode BatchGetDeploymentGroups
 
 -- | Constructs BatchGetDeploymentGroupsOutput from required parameters
 newBatchGetDeploymentGroupsOutput :: BatchGetDeploymentGroupsOutput
-newBatchGetDeploymentGroupsOutput  = BatchGetDeploymentGroupsOutput { "deploymentGroupsInfo": (NullOrUndefined Nothing), "errorMessage": (NullOrUndefined Nothing) }
+newBatchGetDeploymentGroupsOutput  = BatchGetDeploymentGroupsOutput { "deploymentGroupsInfo": Nothing, "errorMessage": Nothing }
 
 -- | Constructs BatchGetDeploymentGroupsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetDeploymentGroupsOutput' :: ( { "deploymentGroupsInfo" :: NullOrUndefined (DeploymentGroupInfoList) , "errorMessage" :: NullOrUndefined (ErrorMessage) } -> {"deploymentGroupsInfo" :: NullOrUndefined (DeploymentGroupInfoList) , "errorMessage" :: NullOrUndefined (ErrorMessage) } ) -> BatchGetDeploymentGroupsOutput
-newBatchGetDeploymentGroupsOutput'  customize = (BatchGetDeploymentGroupsOutput <<< customize) { "deploymentGroupsInfo": (NullOrUndefined Nothing), "errorMessage": (NullOrUndefined Nothing) }
+newBatchGetDeploymentGroupsOutput' :: ( { "deploymentGroupsInfo" :: Maybe (DeploymentGroupInfoList) , "errorMessage" :: Maybe (ErrorMessage) } -> {"deploymentGroupsInfo" :: Maybe (DeploymentGroupInfoList) , "errorMessage" :: Maybe (ErrorMessage) } ) -> BatchGetDeploymentGroupsOutput
+newBatchGetDeploymentGroupsOutput'  customize = (BatchGetDeploymentGroupsOutput <<< customize) { "deploymentGroupsInfo": Nothing, "errorMessage": Nothing }
 
 
 
@@ -485,8 +484,8 @@ newBatchGetDeploymentInstancesInput' _deploymentId _instanceIds customize = (Bat
 
 -- | <p>Represents the output of a BatchGetDeploymentInstances operation.</p>
 newtype BatchGetDeploymentInstancesOutput = BatchGetDeploymentInstancesOutput 
-  { "instancesSummary" :: NullOrUndefined (InstanceSummaryList)
-  , "errorMessage" :: NullOrUndefined (ErrorMessage)
+  { "instancesSummary" :: Maybe (InstanceSummaryList)
+  , "errorMessage" :: Maybe (ErrorMessage)
   }
 derive instance newtypeBatchGetDeploymentInstancesOutput :: Newtype BatchGetDeploymentInstancesOutput _
 derive instance repGenericBatchGetDeploymentInstancesOutput :: Generic BatchGetDeploymentInstancesOutput _
@@ -496,12 +495,12 @@ instance encodeBatchGetDeploymentInstancesOutput :: Encode BatchGetDeploymentIns
 
 -- | Constructs BatchGetDeploymentInstancesOutput from required parameters
 newBatchGetDeploymentInstancesOutput :: BatchGetDeploymentInstancesOutput
-newBatchGetDeploymentInstancesOutput  = BatchGetDeploymentInstancesOutput { "errorMessage": (NullOrUndefined Nothing), "instancesSummary": (NullOrUndefined Nothing) }
+newBatchGetDeploymentInstancesOutput  = BatchGetDeploymentInstancesOutput { "errorMessage": Nothing, "instancesSummary": Nothing }
 
 -- | Constructs BatchGetDeploymentInstancesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetDeploymentInstancesOutput' :: ( { "instancesSummary" :: NullOrUndefined (InstanceSummaryList) , "errorMessage" :: NullOrUndefined (ErrorMessage) } -> {"instancesSummary" :: NullOrUndefined (InstanceSummaryList) , "errorMessage" :: NullOrUndefined (ErrorMessage) } ) -> BatchGetDeploymentInstancesOutput
-newBatchGetDeploymentInstancesOutput'  customize = (BatchGetDeploymentInstancesOutput <<< customize) { "errorMessage": (NullOrUndefined Nothing), "instancesSummary": (NullOrUndefined Nothing) }
+newBatchGetDeploymentInstancesOutput' :: ( { "instancesSummary" :: Maybe (InstanceSummaryList) , "errorMessage" :: Maybe (ErrorMessage) } -> {"instancesSummary" :: Maybe (InstanceSummaryList) , "errorMessage" :: Maybe (ErrorMessage) } ) -> BatchGetDeploymentInstancesOutput
+newBatchGetDeploymentInstancesOutput'  customize = (BatchGetDeploymentInstancesOutput <<< customize) { "errorMessage": Nothing, "instancesSummary": Nothing }
 
 
 
@@ -528,7 +527,7 @@ newBatchGetDeploymentsInput' _deploymentIds customize = (BatchGetDeploymentsInpu
 
 -- | <p>Represents the output of a BatchGetDeployments operation.</p>
 newtype BatchGetDeploymentsOutput = BatchGetDeploymentsOutput 
-  { "deploymentsInfo" :: NullOrUndefined (DeploymentsInfoList)
+  { "deploymentsInfo" :: Maybe (DeploymentsInfoList)
   }
 derive instance newtypeBatchGetDeploymentsOutput :: Newtype BatchGetDeploymentsOutput _
 derive instance repGenericBatchGetDeploymentsOutput :: Generic BatchGetDeploymentsOutput _
@@ -538,12 +537,12 @@ instance encodeBatchGetDeploymentsOutput :: Encode BatchGetDeploymentsOutput whe
 
 -- | Constructs BatchGetDeploymentsOutput from required parameters
 newBatchGetDeploymentsOutput :: BatchGetDeploymentsOutput
-newBatchGetDeploymentsOutput  = BatchGetDeploymentsOutput { "deploymentsInfo": (NullOrUndefined Nothing) }
+newBatchGetDeploymentsOutput  = BatchGetDeploymentsOutput { "deploymentsInfo": Nothing }
 
 -- | Constructs BatchGetDeploymentsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetDeploymentsOutput' :: ( { "deploymentsInfo" :: NullOrUndefined (DeploymentsInfoList) } -> {"deploymentsInfo" :: NullOrUndefined (DeploymentsInfoList) } ) -> BatchGetDeploymentsOutput
-newBatchGetDeploymentsOutput'  customize = (BatchGetDeploymentsOutput <<< customize) { "deploymentsInfo": (NullOrUndefined Nothing) }
+newBatchGetDeploymentsOutput' :: ( { "deploymentsInfo" :: Maybe (DeploymentsInfoList) } -> {"deploymentsInfo" :: Maybe (DeploymentsInfoList) } ) -> BatchGetDeploymentsOutput
+newBatchGetDeploymentsOutput'  customize = (BatchGetDeploymentsOutput <<< customize) { "deploymentsInfo": Nothing }
 
 
 
@@ -570,7 +569,7 @@ newBatchGetOnPremisesInstancesInput' _instanceNames customize = (BatchGetOnPremi
 
 -- | <p>Represents the output of a BatchGetOnPremisesInstances operation.</p>
 newtype BatchGetOnPremisesInstancesOutput = BatchGetOnPremisesInstancesOutput 
-  { "instanceInfos" :: NullOrUndefined (InstanceInfoList)
+  { "instanceInfos" :: Maybe (InstanceInfoList)
   }
 derive instance newtypeBatchGetOnPremisesInstancesOutput :: Newtype BatchGetOnPremisesInstancesOutput _
 derive instance repGenericBatchGetOnPremisesInstancesOutput :: Generic BatchGetOnPremisesInstancesOutput _
@@ -580,12 +579,12 @@ instance encodeBatchGetOnPremisesInstancesOutput :: Encode BatchGetOnPremisesIns
 
 -- | Constructs BatchGetOnPremisesInstancesOutput from required parameters
 newBatchGetOnPremisesInstancesOutput :: BatchGetOnPremisesInstancesOutput
-newBatchGetOnPremisesInstancesOutput  = BatchGetOnPremisesInstancesOutput { "instanceInfos": (NullOrUndefined Nothing) }
+newBatchGetOnPremisesInstancesOutput  = BatchGetOnPremisesInstancesOutput { "instanceInfos": Nothing }
 
 -- | Constructs BatchGetOnPremisesInstancesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetOnPremisesInstancesOutput' :: ( { "instanceInfos" :: NullOrUndefined (InstanceInfoList) } -> {"instanceInfos" :: NullOrUndefined (InstanceInfoList) } ) -> BatchGetOnPremisesInstancesOutput
-newBatchGetOnPremisesInstancesOutput'  customize = (BatchGetOnPremisesInstancesOutput <<< customize) { "instanceInfos": (NullOrUndefined Nothing) }
+newBatchGetOnPremisesInstancesOutput' :: ( { "instanceInfos" :: Maybe (InstanceInfoList) } -> {"instanceInfos" :: Maybe (InstanceInfoList) } ) -> BatchGetOnPremisesInstancesOutput
+newBatchGetOnPremisesInstancesOutput'  customize = (BatchGetOnPremisesInstancesOutput <<< customize) { "instanceInfos": Nothing }
 
 
 
@@ -601,9 +600,9 @@ instance encodeBatchLimitExceededException :: Encode BatchLimitExceededException
 
 -- | <p>Information about blue/green deployment options for a deployment group.</p>
 newtype BlueGreenDeploymentConfiguration = BlueGreenDeploymentConfiguration 
-  { "terminateBlueInstancesOnDeploymentSuccess" :: NullOrUndefined (BlueInstanceTerminationOption)
-  , "deploymentReadyOption" :: NullOrUndefined (DeploymentReadyOption)
-  , "greenFleetProvisioningOption" :: NullOrUndefined (GreenFleetProvisioningOption)
+  { "terminateBlueInstancesOnDeploymentSuccess" :: Maybe (BlueInstanceTerminationOption)
+  , "deploymentReadyOption" :: Maybe (DeploymentReadyOption)
+  , "greenFleetProvisioningOption" :: Maybe (GreenFleetProvisioningOption)
   }
 derive instance newtypeBlueGreenDeploymentConfiguration :: Newtype BlueGreenDeploymentConfiguration _
 derive instance repGenericBlueGreenDeploymentConfiguration :: Generic BlueGreenDeploymentConfiguration _
@@ -613,19 +612,19 @@ instance encodeBlueGreenDeploymentConfiguration :: Encode BlueGreenDeploymentCon
 
 -- | Constructs BlueGreenDeploymentConfiguration from required parameters
 newBlueGreenDeploymentConfiguration :: BlueGreenDeploymentConfiguration
-newBlueGreenDeploymentConfiguration  = BlueGreenDeploymentConfiguration { "deploymentReadyOption": (NullOrUndefined Nothing), "greenFleetProvisioningOption": (NullOrUndefined Nothing), "terminateBlueInstancesOnDeploymentSuccess": (NullOrUndefined Nothing) }
+newBlueGreenDeploymentConfiguration  = BlueGreenDeploymentConfiguration { "deploymentReadyOption": Nothing, "greenFleetProvisioningOption": Nothing, "terminateBlueInstancesOnDeploymentSuccess": Nothing }
 
 -- | Constructs BlueGreenDeploymentConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBlueGreenDeploymentConfiguration' :: ( { "terminateBlueInstancesOnDeploymentSuccess" :: NullOrUndefined (BlueInstanceTerminationOption) , "deploymentReadyOption" :: NullOrUndefined (DeploymentReadyOption) , "greenFleetProvisioningOption" :: NullOrUndefined (GreenFleetProvisioningOption) } -> {"terminateBlueInstancesOnDeploymentSuccess" :: NullOrUndefined (BlueInstanceTerminationOption) , "deploymentReadyOption" :: NullOrUndefined (DeploymentReadyOption) , "greenFleetProvisioningOption" :: NullOrUndefined (GreenFleetProvisioningOption) } ) -> BlueGreenDeploymentConfiguration
-newBlueGreenDeploymentConfiguration'  customize = (BlueGreenDeploymentConfiguration <<< customize) { "deploymentReadyOption": (NullOrUndefined Nothing), "greenFleetProvisioningOption": (NullOrUndefined Nothing), "terminateBlueInstancesOnDeploymentSuccess": (NullOrUndefined Nothing) }
+newBlueGreenDeploymentConfiguration' :: ( { "terminateBlueInstancesOnDeploymentSuccess" :: Maybe (BlueInstanceTerminationOption) , "deploymentReadyOption" :: Maybe (DeploymentReadyOption) , "greenFleetProvisioningOption" :: Maybe (GreenFleetProvisioningOption) } -> {"terminateBlueInstancesOnDeploymentSuccess" :: Maybe (BlueInstanceTerminationOption) , "deploymentReadyOption" :: Maybe (DeploymentReadyOption) , "greenFleetProvisioningOption" :: Maybe (GreenFleetProvisioningOption) } ) -> BlueGreenDeploymentConfiguration
+newBlueGreenDeploymentConfiguration'  customize = (BlueGreenDeploymentConfiguration <<< customize) { "deploymentReadyOption": Nothing, "greenFleetProvisioningOption": Nothing, "terminateBlueInstancesOnDeploymentSuccess": Nothing }
 
 
 
 -- | <p>Information about whether instances in the original environment are terminated when a blue/green deployment is successful.</p>
 newtype BlueInstanceTerminationOption = BlueInstanceTerminationOption 
-  { "action" :: NullOrUndefined (InstanceAction)
-  , "terminationWaitTimeInMinutes" :: NullOrUndefined (Duration)
+  { "action" :: Maybe (InstanceAction)
+  , "terminationWaitTimeInMinutes" :: Maybe (Duration)
   }
 derive instance newtypeBlueInstanceTerminationOption :: Newtype BlueInstanceTerminationOption _
 derive instance repGenericBlueInstanceTerminationOption :: Generic BlueInstanceTerminationOption _
@@ -635,12 +634,12 @@ instance encodeBlueInstanceTerminationOption :: Encode BlueInstanceTerminationOp
 
 -- | Constructs BlueInstanceTerminationOption from required parameters
 newBlueInstanceTerminationOption :: BlueInstanceTerminationOption
-newBlueInstanceTerminationOption  = BlueInstanceTerminationOption { "action": (NullOrUndefined Nothing), "terminationWaitTimeInMinutes": (NullOrUndefined Nothing) }
+newBlueInstanceTerminationOption  = BlueInstanceTerminationOption { "action": Nothing, "terminationWaitTimeInMinutes": Nothing }
 
 -- | Constructs BlueInstanceTerminationOption's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBlueInstanceTerminationOption' :: ( { "action" :: NullOrUndefined (InstanceAction) , "terminationWaitTimeInMinutes" :: NullOrUndefined (Duration) } -> {"action" :: NullOrUndefined (InstanceAction) , "terminationWaitTimeInMinutes" :: NullOrUndefined (Duration) } ) -> BlueInstanceTerminationOption
-newBlueInstanceTerminationOption'  customize = (BlueInstanceTerminationOption <<< customize) { "action": (NullOrUndefined Nothing), "terminationWaitTimeInMinutes": (NullOrUndefined Nothing) }
+newBlueInstanceTerminationOption' :: ( { "action" :: Maybe (InstanceAction) , "terminationWaitTimeInMinutes" :: Maybe (Duration) } -> {"action" :: Maybe (InstanceAction) , "terminationWaitTimeInMinutes" :: Maybe (Duration) } ) -> BlueInstanceTerminationOption
+newBlueInstanceTerminationOption'  customize = (BlueInstanceTerminationOption <<< customize) { "action": Nothing, "terminationWaitTimeInMinutes": Nothing }
 
 
 
@@ -682,7 +681,7 @@ instance encodeComputePlatform :: Encode ComputePlatform where encode = genericE
 
 
 newtype ContinueDeploymentInput = ContinueDeploymentInput 
-  { "deploymentId" :: NullOrUndefined (DeploymentId)
+  { "deploymentId" :: Maybe (DeploymentId)
   }
 derive instance newtypeContinueDeploymentInput :: Newtype ContinueDeploymentInput _
 derive instance repGenericContinueDeploymentInput :: Generic ContinueDeploymentInput _
@@ -692,19 +691,19 @@ instance encodeContinueDeploymentInput :: Encode ContinueDeploymentInput where e
 
 -- | Constructs ContinueDeploymentInput from required parameters
 newContinueDeploymentInput :: ContinueDeploymentInput
-newContinueDeploymentInput  = ContinueDeploymentInput { "deploymentId": (NullOrUndefined Nothing) }
+newContinueDeploymentInput  = ContinueDeploymentInput { "deploymentId": Nothing }
 
 -- | Constructs ContinueDeploymentInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newContinueDeploymentInput' :: ( { "deploymentId" :: NullOrUndefined (DeploymentId) } -> {"deploymentId" :: NullOrUndefined (DeploymentId) } ) -> ContinueDeploymentInput
-newContinueDeploymentInput'  customize = (ContinueDeploymentInput <<< customize) { "deploymentId": (NullOrUndefined Nothing) }
+newContinueDeploymentInput' :: ( { "deploymentId" :: Maybe (DeploymentId) } -> {"deploymentId" :: Maybe (DeploymentId) } ) -> ContinueDeploymentInput
+newContinueDeploymentInput'  customize = (ContinueDeploymentInput <<< customize) { "deploymentId": Nothing }
 
 
 
 -- | <p>Represents the input of a CreateApplication operation.</p>
 newtype CreateApplicationInput = CreateApplicationInput 
   { "applicationName" :: (ApplicationName)
-  , "computePlatform" :: NullOrUndefined (ComputePlatform)
+  , "computePlatform" :: Maybe (ComputePlatform)
   }
 derive instance newtypeCreateApplicationInput :: Newtype CreateApplicationInput _
 derive instance repGenericCreateApplicationInput :: Generic CreateApplicationInput _
@@ -714,18 +713,18 @@ instance encodeCreateApplicationInput :: Encode CreateApplicationInput where enc
 
 -- | Constructs CreateApplicationInput from required parameters
 newCreateApplicationInput :: ApplicationName -> CreateApplicationInput
-newCreateApplicationInput _applicationName = CreateApplicationInput { "applicationName": _applicationName, "computePlatform": (NullOrUndefined Nothing) }
+newCreateApplicationInput _applicationName = CreateApplicationInput { "applicationName": _applicationName, "computePlatform": Nothing }
 
 -- | Constructs CreateApplicationInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateApplicationInput' :: ApplicationName -> ( { "applicationName" :: (ApplicationName) , "computePlatform" :: NullOrUndefined (ComputePlatform) } -> {"applicationName" :: (ApplicationName) , "computePlatform" :: NullOrUndefined (ComputePlatform) } ) -> CreateApplicationInput
-newCreateApplicationInput' _applicationName customize = (CreateApplicationInput <<< customize) { "applicationName": _applicationName, "computePlatform": (NullOrUndefined Nothing) }
+newCreateApplicationInput' :: ApplicationName -> ( { "applicationName" :: (ApplicationName) , "computePlatform" :: Maybe (ComputePlatform) } -> {"applicationName" :: (ApplicationName) , "computePlatform" :: Maybe (ComputePlatform) } ) -> CreateApplicationInput
+newCreateApplicationInput' _applicationName customize = (CreateApplicationInput <<< customize) { "applicationName": _applicationName, "computePlatform": Nothing }
 
 
 
 -- | <p>Represents the output of a CreateApplication operation.</p>
 newtype CreateApplicationOutput = CreateApplicationOutput 
-  { "applicationId" :: NullOrUndefined (ApplicationId)
+  { "applicationId" :: Maybe (ApplicationId)
   }
 derive instance newtypeCreateApplicationOutput :: Newtype CreateApplicationOutput _
 derive instance repGenericCreateApplicationOutput :: Generic CreateApplicationOutput _
@@ -735,21 +734,21 @@ instance encodeCreateApplicationOutput :: Encode CreateApplicationOutput where e
 
 -- | Constructs CreateApplicationOutput from required parameters
 newCreateApplicationOutput :: CreateApplicationOutput
-newCreateApplicationOutput  = CreateApplicationOutput { "applicationId": (NullOrUndefined Nothing) }
+newCreateApplicationOutput  = CreateApplicationOutput { "applicationId": Nothing }
 
 -- | Constructs CreateApplicationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateApplicationOutput' :: ( { "applicationId" :: NullOrUndefined (ApplicationId) } -> {"applicationId" :: NullOrUndefined (ApplicationId) } ) -> CreateApplicationOutput
-newCreateApplicationOutput'  customize = (CreateApplicationOutput <<< customize) { "applicationId": (NullOrUndefined Nothing) }
+newCreateApplicationOutput' :: ( { "applicationId" :: Maybe (ApplicationId) } -> {"applicationId" :: Maybe (ApplicationId) } ) -> CreateApplicationOutput
+newCreateApplicationOutput'  customize = (CreateApplicationOutput <<< customize) { "applicationId": Nothing }
 
 
 
 -- | <p>Represents the input of a CreateDeploymentConfig operation.</p>
 newtype CreateDeploymentConfigInput = CreateDeploymentConfigInput 
   { "deploymentConfigName" :: (DeploymentConfigName)
-  , "minimumHealthyHosts" :: NullOrUndefined (MinimumHealthyHosts)
-  , "trafficRoutingConfig" :: NullOrUndefined (TrafficRoutingConfig)
-  , "computePlatform" :: NullOrUndefined (ComputePlatform)
+  , "minimumHealthyHosts" :: Maybe (MinimumHealthyHosts)
+  , "trafficRoutingConfig" :: Maybe (TrafficRoutingConfig)
+  , "computePlatform" :: Maybe (ComputePlatform)
   }
 derive instance newtypeCreateDeploymentConfigInput :: Newtype CreateDeploymentConfigInput _
 derive instance repGenericCreateDeploymentConfigInput :: Generic CreateDeploymentConfigInput _
@@ -759,18 +758,18 @@ instance encodeCreateDeploymentConfigInput :: Encode CreateDeploymentConfigInput
 
 -- | Constructs CreateDeploymentConfigInput from required parameters
 newCreateDeploymentConfigInput :: DeploymentConfigName -> CreateDeploymentConfigInput
-newCreateDeploymentConfigInput _deploymentConfigName = CreateDeploymentConfigInput { "deploymentConfigName": _deploymentConfigName, "computePlatform": (NullOrUndefined Nothing), "minimumHealthyHosts": (NullOrUndefined Nothing), "trafficRoutingConfig": (NullOrUndefined Nothing) }
+newCreateDeploymentConfigInput _deploymentConfigName = CreateDeploymentConfigInput { "deploymentConfigName": _deploymentConfigName, "computePlatform": Nothing, "minimumHealthyHosts": Nothing, "trafficRoutingConfig": Nothing }
 
 -- | Constructs CreateDeploymentConfigInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDeploymentConfigInput' :: DeploymentConfigName -> ( { "deploymentConfigName" :: (DeploymentConfigName) , "minimumHealthyHosts" :: NullOrUndefined (MinimumHealthyHosts) , "trafficRoutingConfig" :: NullOrUndefined (TrafficRoutingConfig) , "computePlatform" :: NullOrUndefined (ComputePlatform) } -> {"deploymentConfigName" :: (DeploymentConfigName) , "minimumHealthyHosts" :: NullOrUndefined (MinimumHealthyHosts) , "trafficRoutingConfig" :: NullOrUndefined (TrafficRoutingConfig) , "computePlatform" :: NullOrUndefined (ComputePlatform) } ) -> CreateDeploymentConfigInput
-newCreateDeploymentConfigInput' _deploymentConfigName customize = (CreateDeploymentConfigInput <<< customize) { "deploymentConfigName": _deploymentConfigName, "computePlatform": (NullOrUndefined Nothing), "minimumHealthyHosts": (NullOrUndefined Nothing), "trafficRoutingConfig": (NullOrUndefined Nothing) }
+newCreateDeploymentConfigInput' :: DeploymentConfigName -> ( { "deploymentConfigName" :: (DeploymentConfigName) , "minimumHealthyHosts" :: Maybe (MinimumHealthyHosts) , "trafficRoutingConfig" :: Maybe (TrafficRoutingConfig) , "computePlatform" :: Maybe (ComputePlatform) } -> {"deploymentConfigName" :: (DeploymentConfigName) , "minimumHealthyHosts" :: Maybe (MinimumHealthyHosts) , "trafficRoutingConfig" :: Maybe (TrafficRoutingConfig) , "computePlatform" :: Maybe (ComputePlatform) } ) -> CreateDeploymentConfigInput
+newCreateDeploymentConfigInput' _deploymentConfigName customize = (CreateDeploymentConfigInput <<< customize) { "deploymentConfigName": _deploymentConfigName, "computePlatform": Nothing, "minimumHealthyHosts": Nothing, "trafficRoutingConfig": Nothing }
 
 
 
 -- | <p>Represents the output of a CreateDeploymentConfig operation.</p>
 newtype CreateDeploymentConfigOutput = CreateDeploymentConfigOutput 
-  { "deploymentConfigId" :: NullOrUndefined (DeploymentConfigId)
+  { "deploymentConfigId" :: Maybe (DeploymentConfigId)
   }
 derive instance newtypeCreateDeploymentConfigOutput :: Newtype CreateDeploymentConfigOutput _
 derive instance repGenericCreateDeploymentConfigOutput :: Generic CreateDeploymentConfigOutput _
@@ -780,12 +779,12 @@ instance encodeCreateDeploymentConfigOutput :: Encode CreateDeploymentConfigOutp
 
 -- | Constructs CreateDeploymentConfigOutput from required parameters
 newCreateDeploymentConfigOutput :: CreateDeploymentConfigOutput
-newCreateDeploymentConfigOutput  = CreateDeploymentConfigOutput { "deploymentConfigId": (NullOrUndefined Nothing) }
+newCreateDeploymentConfigOutput  = CreateDeploymentConfigOutput { "deploymentConfigId": Nothing }
 
 -- | Constructs CreateDeploymentConfigOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDeploymentConfigOutput' :: ( { "deploymentConfigId" :: NullOrUndefined (DeploymentConfigId) } -> {"deploymentConfigId" :: NullOrUndefined (DeploymentConfigId) } ) -> CreateDeploymentConfigOutput
-newCreateDeploymentConfigOutput'  customize = (CreateDeploymentConfigOutput <<< customize) { "deploymentConfigId": (NullOrUndefined Nothing) }
+newCreateDeploymentConfigOutput' :: ( { "deploymentConfigId" :: Maybe (DeploymentConfigId) } -> {"deploymentConfigId" :: Maybe (DeploymentConfigId) } ) -> CreateDeploymentConfigOutput
+newCreateDeploymentConfigOutput'  customize = (CreateDeploymentConfigOutput <<< customize) { "deploymentConfigId": Nothing }
 
 
 
@@ -793,19 +792,19 @@ newCreateDeploymentConfigOutput'  customize = (CreateDeploymentConfigOutput <<< 
 newtype CreateDeploymentGroupInput = CreateDeploymentGroupInput 
   { "applicationName" :: (ApplicationName)
   , "deploymentGroupName" :: (DeploymentGroupName)
-  , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName)
-  , "ec2TagFilters" :: NullOrUndefined (EC2TagFilterList)
-  , "onPremisesInstanceTagFilters" :: NullOrUndefined (TagFilterList)
-  , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupNameList)
+  , "deploymentConfigName" :: Maybe (DeploymentConfigName)
+  , "ec2TagFilters" :: Maybe (EC2TagFilterList)
+  , "onPremisesInstanceTagFilters" :: Maybe (TagFilterList)
+  , "autoScalingGroups" :: Maybe (AutoScalingGroupNameList)
   , "serviceRoleArn" :: (Role)
-  , "triggerConfigurations" :: NullOrUndefined (TriggerConfigList)
-  , "alarmConfiguration" :: NullOrUndefined (AlarmConfiguration)
-  , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration)
-  , "deploymentStyle" :: NullOrUndefined (DeploymentStyle)
-  , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration)
-  , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo)
-  , "ec2TagSet" :: NullOrUndefined (EC2TagSet)
-  , "onPremisesTagSet" :: NullOrUndefined (OnPremisesTagSet)
+  , "triggerConfigurations" :: Maybe (TriggerConfigList)
+  , "alarmConfiguration" :: Maybe (AlarmConfiguration)
+  , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration)
+  , "deploymentStyle" :: Maybe (DeploymentStyle)
+  , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration)
+  , "loadBalancerInfo" :: Maybe (LoadBalancerInfo)
+  , "ec2TagSet" :: Maybe (EC2TagSet)
+  , "onPremisesTagSet" :: Maybe (OnPremisesTagSet)
   }
 derive instance newtypeCreateDeploymentGroupInput :: Newtype CreateDeploymentGroupInput _
 derive instance repGenericCreateDeploymentGroupInput :: Generic CreateDeploymentGroupInput _
@@ -815,18 +814,18 @@ instance encodeCreateDeploymentGroupInput :: Encode CreateDeploymentGroupInput w
 
 -- | Constructs CreateDeploymentGroupInput from required parameters
 newCreateDeploymentGroupInput :: ApplicationName -> DeploymentGroupName -> Role -> CreateDeploymentGroupInput
-newCreateDeploymentGroupInput _applicationName _deploymentGroupName _serviceRoleArn = CreateDeploymentGroupInput { "applicationName": _applicationName, "deploymentGroupName": _deploymentGroupName, "serviceRoleArn": _serviceRoleArn, "alarmConfiguration": (NullOrUndefined Nothing), "autoRollbackConfiguration": (NullOrUndefined Nothing), "autoScalingGroups": (NullOrUndefined Nothing), "blueGreenDeploymentConfiguration": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "deploymentStyle": (NullOrUndefined Nothing), "ec2TagFilters": (NullOrUndefined Nothing), "ec2TagSet": (NullOrUndefined Nothing), "loadBalancerInfo": (NullOrUndefined Nothing), "onPremisesInstanceTagFilters": (NullOrUndefined Nothing), "onPremisesTagSet": (NullOrUndefined Nothing), "triggerConfigurations": (NullOrUndefined Nothing) }
+newCreateDeploymentGroupInput _applicationName _deploymentGroupName _serviceRoleArn = CreateDeploymentGroupInput { "applicationName": _applicationName, "deploymentGroupName": _deploymentGroupName, "serviceRoleArn": _serviceRoleArn, "alarmConfiguration": Nothing, "autoRollbackConfiguration": Nothing, "autoScalingGroups": Nothing, "blueGreenDeploymentConfiguration": Nothing, "deploymentConfigName": Nothing, "deploymentStyle": Nothing, "ec2TagFilters": Nothing, "ec2TagSet": Nothing, "loadBalancerInfo": Nothing, "onPremisesInstanceTagFilters": Nothing, "onPremisesTagSet": Nothing, "triggerConfigurations": Nothing }
 
 -- | Constructs CreateDeploymentGroupInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDeploymentGroupInput' :: ApplicationName -> DeploymentGroupName -> Role -> ( { "applicationName" :: (ApplicationName) , "deploymentGroupName" :: (DeploymentGroupName) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "ec2TagFilters" :: NullOrUndefined (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: NullOrUndefined (TagFilterList) , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupNameList) , "serviceRoleArn" :: (Role) , "triggerConfigurations" :: NullOrUndefined (TriggerConfigList) , "alarmConfiguration" :: NullOrUndefined (AlarmConfiguration) , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration) , "deploymentStyle" :: NullOrUndefined (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo) , "ec2TagSet" :: NullOrUndefined (EC2TagSet) , "onPremisesTagSet" :: NullOrUndefined (OnPremisesTagSet) } -> {"applicationName" :: (ApplicationName) , "deploymentGroupName" :: (DeploymentGroupName) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "ec2TagFilters" :: NullOrUndefined (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: NullOrUndefined (TagFilterList) , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupNameList) , "serviceRoleArn" :: (Role) , "triggerConfigurations" :: NullOrUndefined (TriggerConfigList) , "alarmConfiguration" :: NullOrUndefined (AlarmConfiguration) , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration) , "deploymentStyle" :: NullOrUndefined (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo) , "ec2TagSet" :: NullOrUndefined (EC2TagSet) , "onPremisesTagSet" :: NullOrUndefined (OnPremisesTagSet) } ) -> CreateDeploymentGroupInput
-newCreateDeploymentGroupInput' _applicationName _deploymentGroupName _serviceRoleArn customize = (CreateDeploymentGroupInput <<< customize) { "applicationName": _applicationName, "deploymentGroupName": _deploymentGroupName, "serviceRoleArn": _serviceRoleArn, "alarmConfiguration": (NullOrUndefined Nothing), "autoRollbackConfiguration": (NullOrUndefined Nothing), "autoScalingGroups": (NullOrUndefined Nothing), "blueGreenDeploymentConfiguration": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "deploymentStyle": (NullOrUndefined Nothing), "ec2TagFilters": (NullOrUndefined Nothing), "ec2TagSet": (NullOrUndefined Nothing), "loadBalancerInfo": (NullOrUndefined Nothing), "onPremisesInstanceTagFilters": (NullOrUndefined Nothing), "onPremisesTagSet": (NullOrUndefined Nothing), "triggerConfigurations": (NullOrUndefined Nothing) }
+newCreateDeploymentGroupInput' :: ApplicationName -> DeploymentGroupName -> Role -> ( { "applicationName" :: (ApplicationName) , "deploymentGroupName" :: (DeploymentGroupName) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "ec2TagFilters" :: Maybe (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: Maybe (TagFilterList) , "autoScalingGroups" :: Maybe (AutoScalingGroupNameList) , "serviceRoleArn" :: (Role) , "triggerConfigurations" :: Maybe (TriggerConfigList) , "alarmConfiguration" :: Maybe (AlarmConfiguration) , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration) , "deploymentStyle" :: Maybe (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: Maybe (LoadBalancerInfo) , "ec2TagSet" :: Maybe (EC2TagSet) , "onPremisesTagSet" :: Maybe (OnPremisesTagSet) } -> {"applicationName" :: (ApplicationName) , "deploymentGroupName" :: (DeploymentGroupName) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "ec2TagFilters" :: Maybe (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: Maybe (TagFilterList) , "autoScalingGroups" :: Maybe (AutoScalingGroupNameList) , "serviceRoleArn" :: (Role) , "triggerConfigurations" :: Maybe (TriggerConfigList) , "alarmConfiguration" :: Maybe (AlarmConfiguration) , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration) , "deploymentStyle" :: Maybe (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: Maybe (LoadBalancerInfo) , "ec2TagSet" :: Maybe (EC2TagSet) , "onPremisesTagSet" :: Maybe (OnPremisesTagSet) } ) -> CreateDeploymentGroupInput
+newCreateDeploymentGroupInput' _applicationName _deploymentGroupName _serviceRoleArn customize = (CreateDeploymentGroupInput <<< customize) { "applicationName": _applicationName, "deploymentGroupName": _deploymentGroupName, "serviceRoleArn": _serviceRoleArn, "alarmConfiguration": Nothing, "autoRollbackConfiguration": Nothing, "autoScalingGroups": Nothing, "blueGreenDeploymentConfiguration": Nothing, "deploymentConfigName": Nothing, "deploymentStyle": Nothing, "ec2TagFilters": Nothing, "ec2TagSet": Nothing, "loadBalancerInfo": Nothing, "onPremisesInstanceTagFilters": Nothing, "onPremisesTagSet": Nothing, "triggerConfigurations": Nothing }
 
 
 
 -- | <p>Represents the output of a CreateDeploymentGroup operation.</p>
 newtype CreateDeploymentGroupOutput = CreateDeploymentGroupOutput 
-  { "deploymentGroupId" :: NullOrUndefined (DeploymentGroupId)
+  { "deploymentGroupId" :: Maybe (DeploymentGroupId)
   }
 derive instance newtypeCreateDeploymentGroupOutput :: Newtype CreateDeploymentGroupOutput _
 derive instance repGenericCreateDeploymentGroupOutput :: Generic CreateDeploymentGroupOutput _
@@ -836,27 +835,27 @@ instance encodeCreateDeploymentGroupOutput :: Encode CreateDeploymentGroupOutput
 
 -- | Constructs CreateDeploymentGroupOutput from required parameters
 newCreateDeploymentGroupOutput :: CreateDeploymentGroupOutput
-newCreateDeploymentGroupOutput  = CreateDeploymentGroupOutput { "deploymentGroupId": (NullOrUndefined Nothing) }
+newCreateDeploymentGroupOutput  = CreateDeploymentGroupOutput { "deploymentGroupId": Nothing }
 
 -- | Constructs CreateDeploymentGroupOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDeploymentGroupOutput' :: ( { "deploymentGroupId" :: NullOrUndefined (DeploymentGroupId) } -> {"deploymentGroupId" :: NullOrUndefined (DeploymentGroupId) } ) -> CreateDeploymentGroupOutput
-newCreateDeploymentGroupOutput'  customize = (CreateDeploymentGroupOutput <<< customize) { "deploymentGroupId": (NullOrUndefined Nothing) }
+newCreateDeploymentGroupOutput' :: ( { "deploymentGroupId" :: Maybe (DeploymentGroupId) } -> {"deploymentGroupId" :: Maybe (DeploymentGroupId) } ) -> CreateDeploymentGroupOutput
+newCreateDeploymentGroupOutput'  customize = (CreateDeploymentGroupOutput <<< customize) { "deploymentGroupId": Nothing }
 
 
 
 -- | <p>Represents the input of a CreateDeployment operation.</p>
 newtype CreateDeploymentInput = CreateDeploymentInput 
   { "applicationName" :: (ApplicationName)
-  , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName)
-  , "revision" :: NullOrUndefined (RevisionLocation)
-  , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName)
-  , "description" :: NullOrUndefined (Description)
-  , "ignoreApplicationStopFailures" :: NullOrUndefined (Boolean)
-  , "targetInstances" :: NullOrUndefined (TargetInstances)
-  , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration)
-  , "updateOutdatedInstancesOnly" :: NullOrUndefined (Boolean)
-  , "fileExistsBehavior" :: NullOrUndefined (FileExistsBehavior)
+  , "deploymentGroupName" :: Maybe (DeploymentGroupName)
+  , "revision" :: Maybe (RevisionLocation)
+  , "deploymentConfigName" :: Maybe (DeploymentConfigName)
+  , "description" :: Maybe (Description)
+  , "ignoreApplicationStopFailures" :: Maybe (Boolean)
+  , "targetInstances" :: Maybe (TargetInstances)
+  , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration)
+  , "updateOutdatedInstancesOnly" :: Maybe (Boolean)
+  , "fileExistsBehavior" :: Maybe (FileExistsBehavior)
   }
 derive instance newtypeCreateDeploymentInput :: Newtype CreateDeploymentInput _
 derive instance repGenericCreateDeploymentInput :: Generic CreateDeploymentInput _
@@ -866,18 +865,18 @@ instance encodeCreateDeploymentInput :: Encode CreateDeploymentInput where encod
 
 -- | Constructs CreateDeploymentInput from required parameters
 newCreateDeploymentInput :: ApplicationName -> CreateDeploymentInput
-newCreateDeploymentInput _applicationName = CreateDeploymentInput { "applicationName": _applicationName, "autoRollbackConfiguration": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "deploymentGroupName": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "fileExistsBehavior": (NullOrUndefined Nothing), "ignoreApplicationStopFailures": (NullOrUndefined Nothing), "revision": (NullOrUndefined Nothing), "targetInstances": (NullOrUndefined Nothing), "updateOutdatedInstancesOnly": (NullOrUndefined Nothing) }
+newCreateDeploymentInput _applicationName = CreateDeploymentInput { "applicationName": _applicationName, "autoRollbackConfiguration": Nothing, "deploymentConfigName": Nothing, "deploymentGroupName": Nothing, "description": Nothing, "fileExistsBehavior": Nothing, "ignoreApplicationStopFailures": Nothing, "revision": Nothing, "targetInstances": Nothing, "updateOutdatedInstancesOnly": Nothing }
 
 -- | Constructs CreateDeploymentInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDeploymentInput' :: ApplicationName -> ( { "applicationName" :: (ApplicationName) , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName) , "revision" :: NullOrUndefined (RevisionLocation) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "description" :: NullOrUndefined (Description) , "ignoreApplicationStopFailures" :: NullOrUndefined (Boolean) , "targetInstances" :: NullOrUndefined (TargetInstances) , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration) , "updateOutdatedInstancesOnly" :: NullOrUndefined (Boolean) , "fileExistsBehavior" :: NullOrUndefined (FileExistsBehavior) } -> {"applicationName" :: (ApplicationName) , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName) , "revision" :: NullOrUndefined (RevisionLocation) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "description" :: NullOrUndefined (Description) , "ignoreApplicationStopFailures" :: NullOrUndefined (Boolean) , "targetInstances" :: NullOrUndefined (TargetInstances) , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration) , "updateOutdatedInstancesOnly" :: NullOrUndefined (Boolean) , "fileExistsBehavior" :: NullOrUndefined (FileExistsBehavior) } ) -> CreateDeploymentInput
-newCreateDeploymentInput' _applicationName customize = (CreateDeploymentInput <<< customize) { "applicationName": _applicationName, "autoRollbackConfiguration": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "deploymentGroupName": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "fileExistsBehavior": (NullOrUndefined Nothing), "ignoreApplicationStopFailures": (NullOrUndefined Nothing), "revision": (NullOrUndefined Nothing), "targetInstances": (NullOrUndefined Nothing), "updateOutdatedInstancesOnly": (NullOrUndefined Nothing) }
+newCreateDeploymentInput' :: ApplicationName -> ( { "applicationName" :: (ApplicationName) , "deploymentGroupName" :: Maybe (DeploymentGroupName) , "revision" :: Maybe (RevisionLocation) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "description" :: Maybe (Description) , "ignoreApplicationStopFailures" :: Maybe (Boolean) , "targetInstances" :: Maybe (TargetInstances) , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration) , "updateOutdatedInstancesOnly" :: Maybe (Boolean) , "fileExistsBehavior" :: Maybe (FileExistsBehavior) } -> {"applicationName" :: (ApplicationName) , "deploymentGroupName" :: Maybe (DeploymentGroupName) , "revision" :: Maybe (RevisionLocation) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "description" :: Maybe (Description) , "ignoreApplicationStopFailures" :: Maybe (Boolean) , "targetInstances" :: Maybe (TargetInstances) , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration) , "updateOutdatedInstancesOnly" :: Maybe (Boolean) , "fileExistsBehavior" :: Maybe (FileExistsBehavior) } ) -> CreateDeploymentInput
+newCreateDeploymentInput' _applicationName customize = (CreateDeploymentInput <<< customize) { "applicationName": _applicationName, "autoRollbackConfiguration": Nothing, "deploymentConfigName": Nothing, "deploymentGroupName": Nothing, "description": Nothing, "fileExistsBehavior": Nothing, "ignoreApplicationStopFailures": Nothing, "revision": Nothing, "targetInstances": Nothing, "updateOutdatedInstancesOnly": Nothing }
 
 
 
 -- | <p>Represents the output of a CreateDeployment operation.</p>
 newtype CreateDeploymentOutput = CreateDeploymentOutput 
-  { "deploymentId" :: NullOrUndefined (DeploymentId)
+  { "deploymentId" :: Maybe (DeploymentId)
   }
 derive instance newtypeCreateDeploymentOutput :: Newtype CreateDeploymentOutput _
 derive instance repGenericCreateDeploymentOutput :: Generic CreateDeploymentOutput _
@@ -887,12 +886,12 @@ instance encodeCreateDeploymentOutput :: Encode CreateDeploymentOutput where enc
 
 -- | Constructs CreateDeploymentOutput from required parameters
 newCreateDeploymentOutput :: CreateDeploymentOutput
-newCreateDeploymentOutput  = CreateDeploymentOutput { "deploymentId": (NullOrUndefined Nothing) }
+newCreateDeploymentOutput  = CreateDeploymentOutput { "deploymentId": Nothing }
 
 -- | Constructs CreateDeploymentOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDeploymentOutput' :: ( { "deploymentId" :: NullOrUndefined (DeploymentId) } -> {"deploymentId" :: NullOrUndefined (DeploymentId) } ) -> CreateDeploymentOutput
-newCreateDeploymentOutput'  customize = (CreateDeploymentOutput <<< customize) { "deploymentId": (NullOrUndefined Nothing) }
+newCreateDeploymentOutput' :: ( { "deploymentId" :: Maybe (DeploymentId) } -> {"deploymentId" :: Maybe (DeploymentId) } ) -> CreateDeploymentOutput
+newCreateDeploymentOutput'  customize = (CreateDeploymentOutput <<< customize) { "deploymentId": Nothing }
 
 
 
@@ -962,7 +961,7 @@ newDeleteDeploymentGroupInput' _applicationName _deploymentGroupName customize =
 
 -- | <p>Represents the output of a DeleteDeploymentGroup operation.</p>
 newtype DeleteDeploymentGroupOutput = DeleteDeploymentGroupOutput 
-  { "hooksNotCleanedUp" :: NullOrUndefined (AutoScalingGroupList)
+  { "hooksNotCleanedUp" :: Maybe (AutoScalingGroupList)
   }
 derive instance newtypeDeleteDeploymentGroupOutput :: Newtype DeleteDeploymentGroupOutput _
 derive instance repGenericDeleteDeploymentGroupOutput :: Generic DeleteDeploymentGroupOutput _
@@ -972,18 +971,18 @@ instance encodeDeleteDeploymentGroupOutput :: Encode DeleteDeploymentGroupOutput
 
 -- | Constructs DeleteDeploymentGroupOutput from required parameters
 newDeleteDeploymentGroupOutput :: DeleteDeploymentGroupOutput
-newDeleteDeploymentGroupOutput  = DeleteDeploymentGroupOutput { "hooksNotCleanedUp": (NullOrUndefined Nothing) }
+newDeleteDeploymentGroupOutput  = DeleteDeploymentGroupOutput { "hooksNotCleanedUp": Nothing }
 
 -- | Constructs DeleteDeploymentGroupOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteDeploymentGroupOutput' :: ( { "hooksNotCleanedUp" :: NullOrUndefined (AutoScalingGroupList) } -> {"hooksNotCleanedUp" :: NullOrUndefined (AutoScalingGroupList) } ) -> DeleteDeploymentGroupOutput
-newDeleteDeploymentGroupOutput'  customize = (DeleteDeploymentGroupOutput <<< customize) { "hooksNotCleanedUp": (NullOrUndefined Nothing) }
+newDeleteDeploymentGroupOutput' :: ( { "hooksNotCleanedUp" :: Maybe (AutoScalingGroupList) } -> {"hooksNotCleanedUp" :: Maybe (AutoScalingGroupList) } ) -> DeleteDeploymentGroupOutput
+newDeleteDeploymentGroupOutput'  customize = (DeleteDeploymentGroupOutput <<< customize) { "hooksNotCleanedUp": Nothing }
 
 
 
 -- | <p>Represents the input of a DeleteGitHubAccount operation.</p>
 newtype DeleteGitHubAccountTokenInput = DeleteGitHubAccountTokenInput 
-  { "tokenName" :: NullOrUndefined (GitHubAccountTokenName)
+  { "tokenName" :: Maybe (GitHubAccountTokenName)
   }
 derive instance newtypeDeleteGitHubAccountTokenInput :: Newtype DeleteGitHubAccountTokenInput _
 derive instance repGenericDeleteGitHubAccountTokenInput :: Generic DeleteGitHubAccountTokenInput _
@@ -993,18 +992,18 @@ instance encodeDeleteGitHubAccountTokenInput :: Encode DeleteGitHubAccountTokenI
 
 -- | Constructs DeleteGitHubAccountTokenInput from required parameters
 newDeleteGitHubAccountTokenInput :: DeleteGitHubAccountTokenInput
-newDeleteGitHubAccountTokenInput  = DeleteGitHubAccountTokenInput { "tokenName": (NullOrUndefined Nothing) }
+newDeleteGitHubAccountTokenInput  = DeleteGitHubAccountTokenInput { "tokenName": Nothing }
 
 -- | Constructs DeleteGitHubAccountTokenInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteGitHubAccountTokenInput' :: ( { "tokenName" :: NullOrUndefined (GitHubAccountTokenName) } -> {"tokenName" :: NullOrUndefined (GitHubAccountTokenName) } ) -> DeleteGitHubAccountTokenInput
-newDeleteGitHubAccountTokenInput'  customize = (DeleteGitHubAccountTokenInput <<< customize) { "tokenName": (NullOrUndefined Nothing) }
+newDeleteGitHubAccountTokenInput' :: ( { "tokenName" :: Maybe (GitHubAccountTokenName) } -> {"tokenName" :: Maybe (GitHubAccountTokenName) } ) -> DeleteGitHubAccountTokenInput
+newDeleteGitHubAccountTokenInput'  customize = (DeleteGitHubAccountTokenInput <<< customize) { "tokenName": Nothing }
 
 
 
 -- | <p>Represents the output of a DeleteGitHubAccountToken operation.</p>
 newtype DeleteGitHubAccountTokenOutput = DeleteGitHubAccountTokenOutput 
-  { "tokenName" :: NullOrUndefined (GitHubAccountTokenName)
+  { "tokenName" :: Maybe (GitHubAccountTokenName)
   }
 derive instance newtypeDeleteGitHubAccountTokenOutput :: Newtype DeleteGitHubAccountTokenOutput _
 derive instance repGenericDeleteGitHubAccountTokenOutput :: Generic DeleteGitHubAccountTokenOutput _
@@ -1014,12 +1013,12 @@ instance encodeDeleteGitHubAccountTokenOutput :: Encode DeleteGitHubAccountToken
 
 -- | Constructs DeleteGitHubAccountTokenOutput from required parameters
 newDeleteGitHubAccountTokenOutput :: DeleteGitHubAccountTokenOutput
-newDeleteGitHubAccountTokenOutput  = DeleteGitHubAccountTokenOutput { "tokenName": (NullOrUndefined Nothing) }
+newDeleteGitHubAccountTokenOutput  = DeleteGitHubAccountTokenOutput { "tokenName": Nothing }
 
 -- | Constructs DeleteGitHubAccountTokenOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteGitHubAccountTokenOutput' :: ( { "tokenName" :: NullOrUndefined (GitHubAccountTokenName) } -> {"tokenName" :: NullOrUndefined (GitHubAccountTokenName) } ) -> DeleteGitHubAccountTokenOutput
-newDeleteGitHubAccountTokenOutput'  customize = (DeleteGitHubAccountTokenOutput <<< customize) { "tokenName": (NullOrUndefined Nothing) }
+newDeleteGitHubAccountTokenOutput' :: ( { "tokenName" :: Maybe (GitHubAccountTokenName) } -> {"tokenName" :: Maybe (GitHubAccountTokenName) } ) -> DeleteGitHubAccountTokenOutput
+newDeleteGitHubAccountTokenOutput'  customize = (DeleteGitHubAccountTokenOutput <<< customize) { "tokenName": Nothing }
 
 
 
@@ -1074,12 +1073,12 @@ instance encodeDeploymentConfigInUseException :: Encode DeploymentConfigInUseExc
 
 -- | <p>Information about a deployment configuration.</p>
 newtype DeploymentConfigInfo = DeploymentConfigInfo 
-  { "deploymentConfigId" :: NullOrUndefined (DeploymentConfigId)
-  , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName)
-  , "minimumHealthyHosts" :: NullOrUndefined (MinimumHealthyHosts)
-  , "createTime" :: NullOrUndefined (Types.Timestamp)
-  , "computePlatform" :: NullOrUndefined (ComputePlatform)
-  , "trafficRoutingConfig" :: NullOrUndefined (TrafficRoutingConfig)
+  { "deploymentConfigId" :: Maybe (DeploymentConfigId)
+  , "deploymentConfigName" :: Maybe (DeploymentConfigName)
+  , "minimumHealthyHosts" :: Maybe (MinimumHealthyHosts)
+  , "createTime" :: Maybe (Types.Timestamp)
+  , "computePlatform" :: Maybe (ComputePlatform)
+  , "trafficRoutingConfig" :: Maybe (TrafficRoutingConfig)
   }
 derive instance newtypeDeploymentConfigInfo :: Newtype DeploymentConfigInfo _
 derive instance repGenericDeploymentConfigInfo :: Generic DeploymentConfigInfo _
@@ -1089,12 +1088,12 @@ instance encodeDeploymentConfigInfo :: Encode DeploymentConfigInfo where encode 
 
 -- | Constructs DeploymentConfigInfo from required parameters
 newDeploymentConfigInfo :: DeploymentConfigInfo
-newDeploymentConfigInfo  = DeploymentConfigInfo { "computePlatform": (NullOrUndefined Nothing), "createTime": (NullOrUndefined Nothing), "deploymentConfigId": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "minimumHealthyHosts": (NullOrUndefined Nothing), "trafficRoutingConfig": (NullOrUndefined Nothing) }
+newDeploymentConfigInfo  = DeploymentConfigInfo { "computePlatform": Nothing, "createTime": Nothing, "deploymentConfigId": Nothing, "deploymentConfigName": Nothing, "minimumHealthyHosts": Nothing, "trafficRoutingConfig": Nothing }
 
 -- | Constructs DeploymentConfigInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeploymentConfigInfo' :: ( { "deploymentConfigId" :: NullOrUndefined (DeploymentConfigId) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "minimumHealthyHosts" :: NullOrUndefined (MinimumHealthyHosts) , "createTime" :: NullOrUndefined (Types.Timestamp) , "computePlatform" :: NullOrUndefined (ComputePlatform) , "trafficRoutingConfig" :: NullOrUndefined (TrafficRoutingConfig) } -> {"deploymentConfigId" :: NullOrUndefined (DeploymentConfigId) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "minimumHealthyHosts" :: NullOrUndefined (MinimumHealthyHosts) , "createTime" :: NullOrUndefined (Types.Timestamp) , "computePlatform" :: NullOrUndefined (ComputePlatform) , "trafficRoutingConfig" :: NullOrUndefined (TrafficRoutingConfig) } ) -> DeploymentConfigInfo
-newDeploymentConfigInfo'  customize = (DeploymentConfigInfo <<< customize) { "computePlatform": (NullOrUndefined Nothing), "createTime": (NullOrUndefined Nothing), "deploymentConfigId": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "minimumHealthyHosts": (NullOrUndefined Nothing), "trafficRoutingConfig": (NullOrUndefined Nothing) }
+newDeploymentConfigInfo' :: ( { "deploymentConfigId" :: Maybe (DeploymentConfigId) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "minimumHealthyHosts" :: Maybe (MinimumHealthyHosts) , "createTime" :: Maybe (Types.Timestamp) , "computePlatform" :: Maybe (ComputePlatform) , "trafficRoutingConfig" :: Maybe (TrafficRoutingConfig) } -> {"deploymentConfigId" :: Maybe (DeploymentConfigId) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "minimumHealthyHosts" :: Maybe (MinimumHealthyHosts) , "createTime" :: Maybe (Types.Timestamp) , "computePlatform" :: Maybe (ComputePlatform) , "trafficRoutingConfig" :: Maybe (TrafficRoutingConfig) } ) -> DeploymentConfigInfo
+newDeploymentConfigInfo'  customize = (DeploymentConfigInfo <<< customize) { "computePlatform": Nothing, "createTime": Nothing, "deploymentConfigId": Nothing, "deploymentConfigName": Nothing, "minimumHealthyHosts": Nothing, "trafficRoutingConfig": Nothing }
 
 
 
@@ -1186,26 +1185,26 @@ instance encodeDeploymentGroupId :: Encode DeploymentGroupId where encode = gene
 
 -- | <p>Information about a deployment group.</p>
 newtype DeploymentGroupInfo = DeploymentGroupInfo 
-  { "applicationName" :: NullOrUndefined (ApplicationName)
-  , "deploymentGroupId" :: NullOrUndefined (DeploymentGroupId)
-  , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName)
-  , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName)
-  , "ec2TagFilters" :: NullOrUndefined (EC2TagFilterList)
-  , "onPremisesInstanceTagFilters" :: NullOrUndefined (TagFilterList)
-  , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupList)
-  , "serviceRoleArn" :: NullOrUndefined (Role)
-  , "targetRevision" :: NullOrUndefined (RevisionLocation)
-  , "triggerConfigurations" :: NullOrUndefined (TriggerConfigList)
-  , "alarmConfiguration" :: NullOrUndefined (AlarmConfiguration)
-  , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration)
-  , "deploymentStyle" :: NullOrUndefined (DeploymentStyle)
-  , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration)
-  , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo)
-  , "lastSuccessfulDeployment" :: NullOrUndefined (LastDeploymentInfo)
-  , "lastAttemptedDeployment" :: NullOrUndefined (LastDeploymentInfo)
-  , "ec2TagSet" :: NullOrUndefined (EC2TagSet)
-  , "onPremisesTagSet" :: NullOrUndefined (OnPremisesTagSet)
-  , "computePlatform" :: NullOrUndefined (ComputePlatform)
+  { "applicationName" :: Maybe (ApplicationName)
+  , "deploymentGroupId" :: Maybe (DeploymentGroupId)
+  , "deploymentGroupName" :: Maybe (DeploymentGroupName)
+  , "deploymentConfigName" :: Maybe (DeploymentConfigName)
+  , "ec2TagFilters" :: Maybe (EC2TagFilterList)
+  , "onPremisesInstanceTagFilters" :: Maybe (TagFilterList)
+  , "autoScalingGroups" :: Maybe (AutoScalingGroupList)
+  , "serviceRoleArn" :: Maybe (Role)
+  , "targetRevision" :: Maybe (RevisionLocation)
+  , "triggerConfigurations" :: Maybe (TriggerConfigList)
+  , "alarmConfiguration" :: Maybe (AlarmConfiguration)
+  , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration)
+  , "deploymentStyle" :: Maybe (DeploymentStyle)
+  , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration)
+  , "loadBalancerInfo" :: Maybe (LoadBalancerInfo)
+  , "lastSuccessfulDeployment" :: Maybe (LastDeploymentInfo)
+  , "lastAttemptedDeployment" :: Maybe (LastDeploymentInfo)
+  , "ec2TagSet" :: Maybe (EC2TagSet)
+  , "onPremisesTagSet" :: Maybe (OnPremisesTagSet)
+  , "computePlatform" :: Maybe (ComputePlatform)
   }
 derive instance newtypeDeploymentGroupInfo :: Newtype DeploymentGroupInfo _
 derive instance repGenericDeploymentGroupInfo :: Generic DeploymentGroupInfo _
@@ -1215,12 +1214,12 @@ instance encodeDeploymentGroupInfo :: Encode DeploymentGroupInfo where encode = 
 
 -- | Constructs DeploymentGroupInfo from required parameters
 newDeploymentGroupInfo :: DeploymentGroupInfo
-newDeploymentGroupInfo  = DeploymentGroupInfo { "alarmConfiguration": (NullOrUndefined Nothing), "applicationName": (NullOrUndefined Nothing), "autoRollbackConfiguration": (NullOrUndefined Nothing), "autoScalingGroups": (NullOrUndefined Nothing), "blueGreenDeploymentConfiguration": (NullOrUndefined Nothing), "computePlatform": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "deploymentGroupId": (NullOrUndefined Nothing), "deploymentGroupName": (NullOrUndefined Nothing), "deploymentStyle": (NullOrUndefined Nothing), "ec2TagFilters": (NullOrUndefined Nothing), "ec2TagSet": (NullOrUndefined Nothing), "lastAttemptedDeployment": (NullOrUndefined Nothing), "lastSuccessfulDeployment": (NullOrUndefined Nothing), "loadBalancerInfo": (NullOrUndefined Nothing), "onPremisesInstanceTagFilters": (NullOrUndefined Nothing), "onPremisesTagSet": (NullOrUndefined Nothing), "serviceRoleArn": (NullOrUndefined Nothing), "targetRevision": (NullOrUndefined Nothing), "triggerConfigurations": (NullOrUndefined Nothing) }
+newDeploymentGroupInfo  = DeploymentGroupInfo { "alarmConfiguration": Nothing, "applicationName": Nothing, "autoRollbackConfiguration": Nothing, "autoScalingGroups": Nothing, "blueGreenDeploymentConfiguration": Nothing, "computePlatform": Nothing, "deploymentConfigName": Nothing, "deploymentGroupId": Nothing, "deploymentGroupName": Nothing, "deploymentStyle": Nothing, "ec2TagFilters": Nothing, "ec2TagSet": Nothing, "lastAttemptedDeployment": Nothing, "lastSuccessfulDeployment": Nothing, "loadBalancerInfo": Nothing, "onPremisesInstanceTagFilters": Nothing, "onPremisesTagSet": Nothing, "serviceRoleArn": Nothing, "targetRevision": Nothing, "triggerConfigurations": Nothing }
 
 -- | Constructs DeploymentGroupInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeploymentGroupInfo' :: ( { "applicationName" :: NullOrUndefined (ApplicationName) , "deploymentGroupId" :: NullOrUndefined (DeploymentGroupId) , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "ec2TagFilters" :: NullOrUndefined (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: NullOrUndefined (TagFilterList) , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupList) , "serviceRoleArn" :: NullOrUndefined (Role) , "targetRevision" :: NullOrUndefined (RevisionLocation) , "triggerConfigurations" :: NullOrUndefined (TriggerConfigList) , "alarmConfiguration" :: NullOrUndefined (AlarmConfiguration) , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration) , "deploymentStyle" :: NullOrUndefined (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo) , "lastSuccessfulDeployment" :: NullOrUndefined (LastDeploymentInfo) , "lastAttemptedDeployment" :: NullOrUndefined (LastDeploymentInfo) , "ec2TagSet" :: NullOrUndefined (EC2TagSet) , "onPremisesTagSet" :: NullOrUndefined (OnPremisesTagSet) , "computePlatform" :: NullOrUndefined (ComputePlatform) } -> {"applicationName" :: NullOrUndefined (ApplicationName) , "deploymentGroupId" :: NullOrUndefined (DeploymentGroupId) , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "ec2TagFilters" :: NullOrUndefined (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: NullOrUndefined (TagFilterList) , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupList) , "serviceRoleArn" :: NullOrUndefined (Role) , "targetRevision" :: NullOrUndefined (RevisionLocation) , "triggerConfigurations" :: NullOrUndefined (TriggerConfigList) , "alarmConfiguration" :: NullOrUndefined (AlarmConfiguration) , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration) , "deploymentStyle" :: NullOrUndefined (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo) , "lastSuccessfulDeployment" :: NullOrUndefined (LastDeploymentInfo) , "lastAttemptedDeployment" :: NullOrUndefined (LastDeploymentInfo) , "ec2TagSet" :: NullOrUndefined (EC2TagSet) , "onPremisesTagSet" :: NullOrUndefined (OnPremisesTagSet) , "computePlatform" :: NullOrUndefined (ComputePlatform) } ) -> DeploymentGroupInfo
-newDeploymentGroupInfo'  customize = (DeploymentGroupInfo <<< customize) { "alarmConfiguration": (NullOrUndefined Nothing), "applicationName": (NullOrUndefined Nothing), "autoRollbackConfiguration": (NullOrUndefined Nothing), "autoScalingGroups": (NullOrUndefined Nothing), "blueGreenDeploymentConfiguration": (NullOrUndefined Nothing), "computePlatform": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "deploymentGroupId": (NullOrUndefined Nothing), "deploymentGroupName": (NullOrUndefined Nothing), "deploymentStyle": (NullOrUndefined Nothing), "ec2TagFilters": (NullOrUndefined Nothing), "ec2TagSet": (NullOrUndefined Nothing), "lastAttemptedDeployment": (NullOrUndefined Nothing), "lastSuccessfulDeployment": (NullOrUndefined Nothing), "loadBalancerInfo": (NullOrUndefined Nothing), "onPremisesInstanceTagFilters": (NullOrUndefined Nothing), "onPremisesTagSet": (NullOrUndefined Nothing), "serviceRoleArn": (NullOrUndefined Nothing), "targetRevision": (NullOrUndefined Nothing), "triggerConfigurations": (NullOrUndefined Nothing) }
+newDeploymentGroupInfo' :: ( { "applicationName" :: Maybe (ApplicationName) , "deploymentGroupId" :: Maybe (DeploymentGroupId) , "deploymentGroupName" :: Maybe (DeploymentGroupName) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "ec2TagFilters" :: Maybe (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: Maybe (TagFilterList) , "autoScalingGroups" :: Maybe (AutoScalingGroupList) , "serviceRoleArn" :: Maybe (Role) , "targetRevision" :: Maybe (RevisionLocation) , "triggerConfigurations" :: Maybe (TriggerConfigList) , "alarmConfiguration" :: Maybe (AlarmConfiguration) , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration) , "deploymentStyle" :: Maybe (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: Maybe (LoadBalancerInfo) , "lastSuccessfulDeployment" :: Maybe (LastDeploymentInfo) , "lastAttemptedDeployment" :: Maybe (LastDeploymentInfo) , "ec2TagSet" :: Maybe (EC2TagSet) , "onPremisesTagSet" :: Maybe (OnPremisesTagSet) , "computePlatform" :: Maybe (ComputePlatform) } -> {"applicationName" :: Maybe (ApplicationName) , "deploymentGroupId" :: Maybe (DeploymentGroupId) , "deploymentGroupName" :: Maybe (DeploymentGroupName) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "ec2TagFilters" :: Maybe (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: Maybe (TagFilterList) , "autoScalingGroups" :: Maybe (AutoScalingGroupList) , "serviceRoleArn" :: Maybe (Role) , "targetRevision" :: Maybe (RevisionLocation) , "triggerConfigurations" :: Maybe (TriggerConfigList) , "alarmConfiguration" :: Maybe (AlarmConfiguration) , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration) , "deploymentStyle" :: Maybe (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: Maybe (LoadBalancerInfo) , "lastSuccessfulDeployment" :: Maybe (LastDeploymentInfo) , "lastAttemptedDeployment" :: Maybe (LastDeploymentInfo) , "ec2TagSet" :: Maybe (EC2TagSet) , "onPremisesTagSet" :: Maybe (OnPremisesTagSet) , "computePlatform" :: Maybe (ComputePlatform) } ) -> DeploymentGroupInfo
+newDeploymentGroupInfo'  customize = (DeploymentGroupInfo <<< customize) { "alarmConfiguration": Nothing, "applicationName": Nothing, "autoRollbackConfiguration": Nothing, "autoScalingGroups": Nothing, "blueGreenDeploymentConfiguration": Nothing, "computePlatform": Nothing, "deploymentConfigName": Nothing, "deploymentGroupId": Nothing, "deploymentGroupName": Nothing, "deploymentStyle": Nothing, "ec2TagFilters": Nothing, "ec2TagSet": Nothing, "lastAttemptedDeployment": Nothing, "lastSuccessfulDeployment": Nothing, "loadBalancerInfo": Nothing, "onPremisesInstanceTagFilters": Nothing, "onPremisesTagSet": Nothing, "serviceRoleArn": Nothing, "targetRevision": Nothing, "triggerConfigurations": Nothing }
 
 
 
@@ -1292,33 +1291,33 @@ instance encodeDeploymentIdRequiredException :: Encode DeploymentIdRequiredExcep
 
 -- | <p>Information about a deployment.</p>
 newtype DeploymentInfo = DeploymentInfo 
-  { "applicationName" :: NullOrUndefined (ApplicationName)
-  , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName)
-  , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName)
-  , "deploymentId" :: NullOrUndefined (DeploymentId)
-  , "previousRevision" :: NullOrUndefined (RevisionLocation)
-  , "revision" :: NullOrUndefined (RevisionLocation)
-  , "status" :: NullOrUndefined (DeploymentStatus)
-  , "errorInformation" :: NullOrUndefined (ErrorInformation)
-  , "createTime" :: NullOrUndefined (Types.Timestamp)
-  , "startTime" :: NullOrUndefined (Types.Timestamp)
-  , "completeTime" :: NullOrUndefined (Types.Timestamp)
-  , "deploymentOverview" :: NullOrUndefined (DeploymentOverview)
-  , "description" :: NullOrUndefined (Description)
-  , "creator" :: NullOrUndefined (DeploymentCreator)
-  , "ignoreApplicationStopFailures" :: NullOrUndefined (Boolean)
-  , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration)
-  , "updateOutdatedInstancesOnly" :: NullOrUndefined (Boolean)
-  , "rollbackInfo" :: NullOrUndefined (RollbackInfo)
-  , "deploymentStyle" :: NullOrUndefined (DeploymentStyle)
-  , "targetInstances" :: NullOrUndefined (TargetInstances)
-  , "instanceTerminationWaitTimeStarted" :: NullOrUndefined (Boolean)
-  , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration)
-  , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo)
-  , "additionalDeploymentStatusInfo" :: NullOrUndefined (AdditionalDeploymentStatusInfo)
-  , "fileExistsBehavior" :: NullOrUndefined (FileExistsBehavior)
-  , "deploymentStatusMessages" :: NullOrUndefined (DeploymentStatusMessageList)
-  , "computePlatform" :: NullOrUndefined (ComputePlatform)
+  { "applicationName" :: Maybe (ApplicationName)
+  , "deploymentGroupName" :: Maybe (DeploymentGroupName)
+  , "deploymentConfigName" :: Maybe (DeploymentConfigName)
+  , "deploymentId" :: Maybe (DeploymentId)
+  , "previousRevision" :: Maybe (RevisionLocation)
+  , "revision" :: Maybe (RevisionLocation)
+  , "status" :: Maybe (DeploymentStatus)
+  , "errorInformation" :: Maybe (ErrorInformation)
+  , "createTime" :: Maybe (Types.Timestamp)
+  , "startTime" :: Maybe (Types.Timestamp)
+  , "completeTime" :: Maybe (Types.Timestamp)
+  , "deploymentOverview" :: Maybe (DeploymentOverview)
+  , "description" :: Maybe (Description)
+  , "creator" :: Maybe (DeploymentCreator)
+  , "ignoreApplicationStopFailures" :: Maybe (Boolean)
+  , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration)
+  , "updateOutdatedInstancesOnly" :: Maybe (Boolean)
+  , "rollbackInfo" :: Maybe (RollbackInfo)
+  , "deploymentStyle" :: Maybe (DeploymentStyle)
+  , "targetInstances" :: Maybe (TargetInstances)
+  , "instanceTerminationWaitTimeStarted" :: Maybe (Boolean)
+  , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration)
+  , "loadBalancerInfo" :: Maybe (LoadBalancerInfo)
+  , "additionalDeploymentStatusInfo" :: Maybe (AdditionalDeploymentStatusInfo)
+  , "fileExistsBehavior" :: Maybe (FileExistsBehavior)
+  , "deploymentStatusMessages" :: Maybe (DeploymentStatusMessageList)
+  , "computePlatform" :: Maybe (ComputePlatform)
   }
 derive instance newtypeDeploymentInfo :: Newtype DeploymentInfo _
 derive instance repGenericDeploymentInfo :: Generic DeploymentInfo _
@@ -1328,12 +1327,12 @@ instance encodeDeploymentInfo :: Encode DeploymentInfo where encode = genericEnc
 
 -- | Constructs DeploymentInfo from required parameters
 newDeploymentInfo :: DeploymentInfo
-newDeploymentInfo  = DeploymentInfo { "additionalDeploymentStatusInfo": (NullOrUndefined Nothing), "applicationName": (NullOrUndefined Nothing), "autoRollbackConfiguration": (NullOrUndefined Nothing), "blueGreenDeploymentConfiguration": (NullOrUndefined Nothing), "completeTime": (NullOrUndefined Nothing), "computePlatform": (NullOrUndefined Nothing), "createTime": (NullOrUndefined Nothing), "creator": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "deploymentGroupName": (NullOrUndefined Nothing), "deploymentId": (NullOrUndefined Nothing), "deploymentOverview": (NullOrUndefined Nothing), "deploymentStatusMessages": (NullOrUndefined Nothing), "deploymentStyle": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "errorInformation": (NullOrUndefined Nothing), "fileExistsBehavior": (NullOrUndefined Nothing), "ignoreApplicationStopFailures": (NullOrUndefined Nothing), "instanceTerminationWaitTimeStarted": (NullOrUndefined Nothing), "loadBalancerInfo": (NullOrUndefined Nothing), "previousRevision": (NullOrUndefined Nothing), "revision": (NullOrUndefined Nothing), "rollbackInfo": (NullOrUndefined Nothing), "startTime": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "targetInstances": (NullOrUndefined Nothing), "updateOutdatedInstancesOnly": (NullOrUndefined Nothing) }
+newDeploymentInfo  = DeploymentInfo { "additionalDeploymentStatusInfo": Nothing, "applicationName": Nothing, "autoRollbackConfiguration": Nothing, "blueGreenDeploymentConfiguration": Nothing, "completeTime": Nothing, "computePlatform": Nothing, "createTime": Nothing, "creator": Nothing, "deploymentConfigName": Nothing, "deploymentGroupName": Nothing, "deploymentId": Nothing, "deploymentOverview": Nothing, "deploymentStatusMessages": Nothing, "deploymentStyle": Nothing, "description": Nothing, "errorInformation": Nothing, "fileExistsBehavior": Nothing, "ignoreApplicationStopFailures": Nothing, "instanceTerminationWaitTimeStarted": Nothing, "loadBalancerInfo": Nothing, "previousRevision": Nothing, "revision": Nothing, "rollbackInfo": Nothing, "startTime": Nothing, "status": Nothing, "targetInstances": Nothing, "updateOutdatedInstancesOnly": Nothing }
 
 -- | Constructs DeploymentInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeploymentInfo' :: ( { "applicationName" :: NullOrUndefined (ApplicationName) , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "deploymentId" :: NullOrUndefined (DeploymentId) , "previousRevision" :: NullOrUndefined (RevisionLocation) , "revision" :: NullOrUndefined (RevisionLocation) , "status" :: NullOrUndefined (DeploymentStatus) , "errorInformation" :: NullOrUndefined (ErrorInformation) , "createTime" :: NullOrUndefined (Types.Timestamp) , "startTime" :: NullOrUndefined (Types.Timestamp) , "completeTime" :: NullOrUndefined (Types.Timestamp) , "deploymentOverview" :: NullOrUndefined (DeploymentOverview) , "description" :: NullOrUndefined (Description) , "creator" :: NullOrUndefined (DeploymentCreator) , "ignoreApplicationStopFailures" :: NullOrUndefined (Boolean) , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration) , "updateOutdatedInstancesOnly" :: NullOrUndefined (Boolean) , "rollbackInfo" :: NullOrUndefined (RollbackInfo) , "deploymentStyle" :: NullOrUndefined (DeploymentStyle) , "targetInstances" :: NullOrUndefined (TargetInstances) , "instanceTerminationWaitTimeStarted" :: NullOrUndefined (Boolean) , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo) , "additionalDeploymentStatusInfo" :: NullOrUndefined (AdditionalDeploymentStatusInfo) , "fileExistsBehavior" :: NullOrUndefined (FileExistsBehavior) , "deploymentStatusMessages" :: NullOrUndefined (DeploymentStatusMessageList) , "computePlatform" :: NullOrUndefined (ComputePlatform) } -> {"applicationName" :: NullOrUndefined (ApplicationName) , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "deploymentId" :: NullOrUndefined (DeploymentId) , "previousRevision" :: NullOrUndefined (RevisionLocation) , "revision" :: NullOrUndefined (RevisionLocation) , "status" :: NullOrUndefined (DeploymentStatus) , "errorInformation" :: NullOrUndefined (ErrorInformation) , "createTime" :: NullOrUndefined (Types.Timestamp) , "startTime" :: NullOrUndefined (Types.Timestamp) , "completeTime" :: NullOrUndefined (Types.Timestamp) , "deploymentOverview" :: NullOrUndefined (DeploymentOverview) , "description" :: NullOrUndefined (Description) , "creator" :: NullOrUndefined (DeploymentCreator) , "ignoreApplicationStopFailures" :: NullOrUndefined (Boolean) , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration) , "updateOutdatedInstancesOnly" :: NullOrUndefined (Boolean) , "rollbackInfo" :: NullOrUndefined (RollbackInfo) , "deploymentStyle" :: NullOrUndefined (DeploymentStyle) , "targetInstances" :: NullOrUndefined (TargetInstances) , "instanceTerminationWaitTimeStarted" :: NullOrUndefined (Boolean) , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo) , "additionalDeploymentStatusInfo" :: NullOrUndefined (AdditionalDeploymentStatusInfo) , "fileExistsBehavior" :: NullOrUndefined (FileExistsBehavior) , "deploymentStatusMessages" :: NullOrUndefined (DeploymentStatusMessageList) , "computePlatform" :: NullOrUndefined (ComputePlatform) } ) -> DeploymentInfo
-newDeploymentInfo'  customize = (DeploymentInfo <<< customize) { "additionalDeploymentStatusInfo": (NullOrUndefined Nothing), "applicationName": (NullOrUndefined Nothing), "autoRollbackConfiguration": (NullOrUndefined Nothing), "blueGreenDeploymentConfiguration": (NullOrUndefined Nothing), "completeTime": (NullOrUndefined Nothing), "computePlatform": (NullOrUndefined Nothing), "createTime": (NullOrUndefined Nothing), "creator": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "deploymentGroupName": (NullOrUndefined Nothing), "deploymentId": (NullOrUndefined Nothing), "deploymentOverview": (NullOrUndefined Nothing), "deploymentStatusMessages": (NullOrUndefined Nothing), "deploymentStyle": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "errorInformation": (NullOrUndefined Nothing), "fileExistsBehavior": (NullOrUndefined Nothing), "ignoreApplicationStopFailures": (NullOrUndefined Nothing), "instanceTerminationWaitTimeStarted": (NullOrUndefined Nothing), "loadBalancerInfo": (NullOrUndefined Nothing), "previousRevision": (NullOrUndefined Nothing), "revision": (NullOrUndefined Nothing), "rollbackInfo": (NullOrUndefined Nothing), "startTime": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "targetInstances": (NullOrUndefined Nothing), "updateOutdatedInstancesOnly": (NullOrUndefined Nothing) }
+newDeploymentInfo' :: ( { "applicationName" :: Maybe (ApplicationName) , "deploymentGroupName" :: Maybe (DeploymentGroupName) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "deploymentId" :: Maybe (DeploymentId) , "previousRevision" :: Maybe (RevisionLocation) , "revision" :: Maybe (RevisionLocation) , "status" :: Maybe (DeploymentStatus) , "errorInformation" :: Maybe (ErrorInformation) , "createTime" :: Maybe (Types.Timestamp) , "startTime" :: Maybe (Types.Timestamp) , "completeTime" :: Maybe (Types.Timestamp) , "deploymentOverview" :: Maybe (DeploymentOverview) , "description" :: Maybe (Description) , "creator" :: Maybe (DeploymentCreator) , "ignoreApplicationStopFailures" :: Maybe (Boolean) , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration) , "updateOutdatedInstancesOnly" :: Maybe (Boolean) , "rollbackInfo" :: Maybe (RollbackInfo) , "deploymentStyle" :: Maybe (DeploymentStyle) , "targetInstances" :: Maybe (TargetInstances) , "instanceTerminationWaitTimeStarted" :: Maybe (Boolean) , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: Maybe (LoadBalancerInfo) , "additionalDeploymentStatusInfo" :: Maybe (AdditionalDeploymentStatusInfo) , "fileExistsBehavior" :: Maybe (FileExistsBehavior) , "deploymentStatusMessages" :: Maybe (DeploymentStatusMessageList) , "computePlatform" :: Maybe (ComputePlatform) } -> {"applicationName" :: Maybe (ApplicationName) , "deploymentGroupName" :: Maybe (DeploymentGroupName) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "deploymentId" :: Maybe (DeploymentId) , "previousRevision" :: Maybe (RevisionLocation) , "revision" :: Maybe (RevisionLocation) , "status" :: Maybe (DeploymentStatus) , "errorInformation" :: Maybe (ErrorInformation) , "createTime" :: Maybe (Types.Timestamp) , "startTime" :: Maybe (Types.Timestamp) , "completeTime" :: Maybe (Types.Timestamp) , "deploymentOverview" :: Maybe (DeploymentOverview) , "description" :: Maybe (Description) , "creator" :: Maybe (DeploymentCreator) , "ignoreApplicationStopFailures" :: Maybe (Boolean) , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration) , "updateOutdatedInstancesOnly" :: Maybe (Boolean) , "rollbackInfo" :: Maybe (RollbackInfo) , "deploymentStyle" :: Maybe (DeploymentStyle) , "targetInstances" :: Maybe (TargetInstances) , "instanceTerminationWaitTimeStarted" :: Maybe (Boolean) , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: Maybe (LoadBalancerInfo) , "additionalDeploymentStatusInfo" :: Maybe (AdditionalDeploymentStatusInfo) , "fileExistsBehavior" :: Maybe (FileExistsBehavior) , "deploymentStatusMessages" :: Maybe (DeploymentStatusMessageList) , "computePlatform" :: Maybe (ComputePlatform) } ) -> DeploymentInfo
+newDeploymentInfo'  customize = (DeploymentInfo <<< customize) { "additionalDeploymentStatusInfo": Nothing, "applicationName": Nothing, "autoRollbackConfiguration": Nothing, "blueGreenDeploymentConfiguration": Nothing, "completeTime": Nothing, "computePlatform": Nothing, "createTime": Nothing, "creator": Nothing, "deploymentConfigName": Nothing, "deploymentGroupName": Nothing, "deploymentId": Nothing, "deploymentOverview": Nothing, "deploymentStatusMessages": Nothing, "deploymentStyle": Nothing, "description": Nothing, "errorInformation": Nothing, "fileExistsBehavior": Nothing, "ignoreApplicationStopFailures": Nothing, "instanceTerminationWaitTimeStarted": Nothing, "loadBalancerInfo": Nothing, "previousRevision": Nothing, "revision": Nothing, "rollbackInfo": Nothing, "startTime": Nothing, "status": Nothing, "targetInstances": Nothing, "updateOutdatedInstancesOnly": Nothing }
 
 
 
@@ -1378,12 +1377,12 @@ instance encodeDeploymentOption :: Encode DeploymentOption where encode = generi
 
 -- | <p>Information about the deployment status of the instances in the deployment.</p>
 newtype DeploymentOverview = DeploymentOverview 
-  { "Pending" :: NullOrUndefined (InstanceCount)
-  , "InProgress" :: NullOrUndefined (InstanceCount)
-  , "Succeeded" :: NullOrUndefined (InstanceCount)
-  , "Failed" :: NullOrUndefined (InstanceCount)
-  , "Skipped" :: NullOrUndefined (InstanceCount)
-  , "Ready" :: NullOrUndefined (InstanceCount)
+  { "Pending" :: Maybe (InstanceCount)
+  , "InProgress" :: Maybe (InstanceCount)
+  , "Succeeded" :: Maybe (InstanceCount)
+  , "Failed" :: Maybe (InstanceCount)
+  , "Skipped" :: Maybe (InstanceCount)
+  , "Ready" :: Maybe (InstanceCount)
   }
 derive instance newtypeDeploymentOverview :: Newtype DeploymentOverview _
 derive instance repGenericDeploymentOverview :: Generic DeploymentOverview _
@@ -1393,12 +1392,12 @@ instance encodeDeploymentOverview :: Encode DeploymentOverview where encode = ge
 
 -- | Constructs DeploymentOverview from required parameters
 newDeploymentOverview :: DeploymentOverview
-newDeploymentOverview  = DeploymentOverview { "Failed": (NullOrUndefined Nothing), "InProgress": (NullOrUndefined Nothing), "Pending": (NullOrUndefined Nothing), "Ready": (NullOrUndefined Nothing), "Skipped": (NullOrUndefined Nothing), "Succeeded": (NullOrUndefined Nothing) }
+newDeploymentOverview  = DeploymentOverview { "Failed": Nothing, "InProgress": Nothing, "Pending": Nothing, "Ready": Nothing, "Skipped": Nothing, "Succeeded": Nothing }
 
 -- | Constructs DeploymentOverview's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeploymentOverview' :: ( { "Pending" :: NullOrUndefined (InstanceCount) , "InProgress" :: NullOrUndefined (InstanceCount) , "Succeeded" :: NullOrUndefined (InstanceCount) , "Failed" :: NullOrUndefined (InstanceCount) , "Skipped" :: NullOrUndefined (InstanceCount) , "Ready" :: NullOrUndefined (InstanceCount) } -> {"Pending" :: NullOrUndefined (InstanceCount) , "InProgress" :: NullOrUndefined (InstanceCount) , "Succeeded" :: NullOrUndefined (InstanceCount) , "Failed" :: NullOrUndefined (InstanceCount) , "Skipped" :: NullOrUndefined (InstanceCount) , "Ready" :: NullOrUndefined (InstanceCount) } ) -> DeploymentOverview
-newDeploymentOverview'  customize = (DeploymentOverview <<< customize) { "Failed": (NullOrUndefined Nothing), "InProgress": (NullOrUndefined Nothing), "Pending": (NullOrUndefined Nothing), "Ready": (NullOrUndefined Nothing), "Skipped": (NullOrUndefined Nothing), "Succeeded": (NullOrUndefined Nothing) }
+newDeploymentOverview' :: ( { "Pending" :: Maybe (InstanceCount) , "InProgress" :: Maybe (InstanceCount) , "Succeeded" :: Maybe (InstanceCount) , "Failed" :: Maybe (InstanceCount) , "Skipped" :: Maybe (InstanceCount) , "Ready" :: Maybe (InstanceCount) } -> {"Pending" :: Maybe (InstanceCount) , "InProgress" :: Maybe (InstanceCount) , "Succeeded" :: Maybe (InstanceCount) , "Failed" :: Maybe (InstanceCount) , "Skipped" :: Maybe (InstanceCount) , "Ready" :: Maybe (InstanceCount) } ) -> DeploymentOverview
+newDeploymentOverview'  customize = (DeploymentOverview <<< customize) { "Failed": Nothing, "InProgress": Nothing, "Pending": Nothing, "Ready": Nothing, "Skipped": Nothing, "Succeeded": Nothing }
 
 
 
@@ -1413,8 +1412,8 @@ instance encodeDeploymentReadyAction :: Encode DeploymentReadyAction where encod
 
 -- | <p>Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.</p>
 newtype DeploymentReadyOption = DeploymentReadyOption 
-  { "actionOnTimeout" :: NullOrUndefined (DeploymentReadyAction)
-  , "waitTimeInMinutes" :: NullOrUndefined (Duration)
+  { "actionOnTimeout" :: Maybe (DeploymentReadyAction)
+  , "waitTimeInMinutes" :: Maybe (Duration)
   }
 derive instance newtypeDeploymentReadyOption :: Newtype DeploymentReadyOption _
 derive instance repGenericDeploymentReadyOption :: Generic DeploymentReadyOption _
@@ -1424,12 +1423,12 @@ instance encodeDeploymentReadyOption :: Encode DeploymentReadyOption where encod
 
 -- | Constructs DeploymentReadyOption from required parameters
 newDeploymentReadyOption :: DeploymentReadyOption
-newDeploymentReadyOption  = DeploymentReadyOption { "actionOnTimeout": (NullOrUndefined Nothing), "waitTimeInMinutes": (NullOrUndefined Nothing) }
+newDeploymentReadyOption  = DeploymentReadyOption { "actionOnTimeout": Nothing, "waitTimeInMinutes": Nothing }
 
 -- | Constructs DeploymentReadyOption's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeploymentReadyOption' :: ( { "actionOnTimeout" :: NullOrUndefined (DeploymentReadyAction) , "waitTimeInMinutes" :: NullOrUndefined (Duration) } -> {"actionOnTimeout" :: NullOrUndefined (DeploymentReadyAction) , "waitTimeInMinutes" :: NullOrUndefined (Duration) } ) -> DeploymentReadyOption
-newDeploymentReadyOption'  customize = (DeploymentReadyOption <<< customize) { "actionOnTimeout": (NullOrUndefined Nothing), "waitTimeInMinutes": (NullOrUndefined Nothing) }
+newDeploymentReadyOption' :: ( { "actionOnTimeout" :: Maybe (DeploymentReadyAction) , "waitTimeInMinutes" :: Maybe (Duration) } -> {"actionOnTimeout" :: Maybe (DeploymentReadyAction) , "waitTimeInMinutes" :: Maybe (Duration) } ) -> DeploymentReadyOption
+newDeploymentReadyOption'  customize = (DeploymentReadyOption <<< customize) { "actionOnTimeout": Nothing, "waitTimeInMinutes": Nothing }
 
 
 
@@ -1462,8 +1461,8 @@ instance encodeDeploymentStatusMessageList :: Encode DeploymentStatusMessageList
 
 -- | <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
 newtype DeploymentStyle = DeploymentStyle 
-  { "deploymentType" :: NullOrUndefined (DeploymentType)
-  , "deploymentOption" :: NullOrUndefined (DeploymentOption)
+  { "deploymentType" :: Maybe (DeploymentType)
+  , "deploymentOption" :: Maybe (DeploymentOption)
   }
 derive instance newtypeDeploymentStyle :: Newtype DeploymentStyle _
 derive instance repGenericDeploymentStyle :: Generic DeploymentStyle _
@@ -1473,12 +1472,12 @@ instance encodeDeploymentStyle :: Encode DeploymentStyle where encode = genericE
 
 -- | Constructs DeploymentStyle from required parameters
 newDeploymentStyle :: DeploymentStyle
-newDeploymentStyle  = DeploymentStyle { "deploymentOption": (NullOrUndefined Nothing), "deploymentType": (NullOrUndefined Nothing) }
+newDeploymentStyle  = DeploymentStyle { "deploymentOption": Nothing, "deploymentType": Nothing }
 
 -- | Constructs DeploymentStyle's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeploymentStyle' :: ( { "deploymentType" :: NullOrUndefined (DeploymentType) , "deploymentOption" :: NullOrUndefined (DeploymentOption) } -> {"deploymentType" :: NullOrUndefined (DeploymentType) , "deploymentOption" :: NullOrUndefined (DeploymentOption) } ) -> DeploymentStyle
-newDeploymentStyle'  customize = (DeploymentStyle <<< customize) { "deploymentOption": (NullOrUndefined Nothing), "deploymentType": (NullOrUndefined Nothing) }
+newDeploymentStyle' :: ( { "deploymentType" :: Maybe (DeploymentType) , "deploymentOption" :: Maybe (DeploymentOption) } -> {"deploymentType" :: Maybe (DeploymentType) , "deploymentOption" :: Maybe (DeploymentOption) } ) -> DeploymentStyle
+newDeploymentStyle'  customize = (DeploymentStyle <<< customize) { "deploymentOption": Nothing, "deploymentType": Nothing }
 
 
 
@@ -1551,10 +1550,10 @@ instance encodeDescriptionTooLongException :: Encode DescriptionTooLongException
 
 -- | <p>Diagnostic information about executable scripts that are part of a deployment.</p>
 newtype Diagnostics = Diagnostics 
-  { "errorCode" :: NullOrUndefined (LifecycleErrorCode)
-  , "scriptName" :: NullOrUndefined (ScriptName)
-  , "message" :: NullOrUndefined (LifecycleMessage)
-  , "logTail" :: NullOrUndefined (LogTail)
+  { "errorCode" :: Maybe (LifecycleErrorCode)
+  , "scriptName" :: Maybe (ScriptName)
+  , "message" :: Maybe (LifecycleMessage)
+  , "logTail" :: Maybe (LogTail)
   }
 derive instance newtypeDiagnostics :: Newtype Diagnostics _
 derive instance repGenericDiagnostics :: Generic Diagnostics _
@@ -1564,12 +1563,12 @@ instance encodeDiagnostics :: Encode Diagnostics where encode = genericEncode op
 
 -- | Constructs Diagnostics from required parameters
 newDiagnostics :: Diagnostics
-newDiagnostics  = Diagnostics { "errorCode": (NullOrUndefined Nothing), "logTail": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing), "scriptName": (NullOrUndefined Nothing) }
+newDiagnostics  = Diagnostics { "errorCode": Nothing, "logTail": Nothing, "message": Nothing, "scriptName": Nothing }
 
 -- | Constructs Diagnostics's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDiagnostics' :: ( { "errorCode" :: NullOrUndefined (LifecycleErrorCode) , "scriptName" :: NullOrUndefined (ScriptName) , "message" :: NullOrUndefined (LifecycleMessage) , "logTail" :: NullOrUndefined (LogTail) } -> {"errorCode" :: NullOrUndefined (LifecycleErrorCode) , "scriptName" :: NullOrUndefined (ScriptName) , "message" :: NullOrUndefined (LifecycleMessage) , "logTail" :: NullOrUndefined (LogTail) } ) -> Diagnostics
-newDiagnostics'  customize = (Diagnostics <<< customize) { "errorCode": (NullOrUndefined Nothing), "logTail": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing), "scriptName": (NullOrUndefined Nothing) }
+newDiagnostics' :: ( { "errorCode" :: Maybe (LifecycleErrorCode) , "scriptName" :: Maybe (ScriptName) , "message" :: Maybe (LifecycleMessage) , "logTail" :: Maybe (LogTail) } -> {"errorCode" :: Maybe (LifecycleErrorCode) , "scriptName" :: Maybe (ScriptName) , "message" :: Maybe (LifecycleMessage) , "logTail" :: Maybe (LogTail) } ) -> Diagnostics
+newDiagnostics'  customize = (Diagnostics <<< customize) { "errorCode": Nothing, "logTail": Nothing, "message": Nothing, "scriptName": Nothing }
 
 
 
@@ -1584,9 +1583,9 @@ instance encodeDuration :: Encode Duration where encode = genericEncode options
 
 -- | <p>Information about an EC2 tag filter.</p>
 newtype EC2TagFilter = EC2TagFilter 
-  { "Key" :: NullOrUndefined (Key)
-  , "Value" :: NullOrUndefined (Value)
-  , "Type" :: NullOrUndefined (EC2TagFilterType)
+  { "Key" :: Maybe (Key)
+  , "Value" :: Maybe (Value)
+  , "Type" :: Maybe (EC2TagFilterType)
   }
 derive instance newtypeEC2TagFilter :: Newtype EC2TagFilter _
 derive instance repGenericEC2TagFilter :: Generic EC2TagFilter _
@@ -1596,12 +1595,12 @@ instance encodeEC2TagFilter :: Encode EC2TagFilter where encode = genericEncode 
 
 -- | Constructs EC2TagFilter from required parameters
 newEC2TagFilter :: EC2TagFilter
-newEC2TagFilter  = EC2TagFilter { "Key": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newEC2TagFilter  = EC2TagFilter { "Key": Nothing, "Type": Nothing, "Value": Nothing }
 
 -- | Constructs EC2TagFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEC2TagFilter' :: ( { "Key" :: NullOrUndefined (Key) , "Value" :: NullOrUndefined (Value) , "Type" :: NullOrUndefined (EC2TagFilterType) } -> {"Key" :: NullOrUndefined (Key) , "Value" :: NullOrUndefined (Value) , "Type" :: NullOrUndefined (EC2TagFilterType) } ) -> EC2TagFilter
-newEC2TagFilter'  customize = (EC2TagFilter <<< customize) { "Key": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newEC2TagFilter' :: ( { "Key" :: Maybe (Key) , "Value" :: Maybe (Value) , "Type" :: Maybe (EC2TagFilterType) } -> {"Key" :: Maybe (Key) , "Value" :: Maybe (Value) , "Type" :: Maybe (EC2TagFilterType) } ) -> EC2TagFilter
+newEC2TagFilter'  customize = (EC2TagFilter <<< customize) { "Key": Nothing, "Type": Nothing, "Value": Nothing }
 
 
 
@@ -1625,7 +1624,7 @@ instance encodeEC2TagFilterType :: Encode EC2TagFilterType where encode = generi
 
 -- | <p>Information about groups of EC2 instance tags.</p>
 newtype EC2TagSet = EC2TagSet 
-  { "ec2TagSetList" :: NullOrUndefined (EC2TagSetList)
+  { "ec2TagSetList" :: Maybe (EC2TagSetList)
   }
 derive instance newtypeEC2TagSet :: Newtype EC2TagSet _
 derive instance repGenericEC2TagSet :: Generic EC2TagSet _
@@ -1635,12 +1634,12 @@ instance encodeEC2TagSet :: Encode EC2TagSet where encode = genericEncode option
 
 -- | Constructs EC2TagSet from required parameters
 newEC2TagSet :: EC2TagSet
-newEC2TagSet  = EC2TagSet { "ec2TagSetList": (NullOrUndefined Nothing) }
+newEC2TagSet  = EC2TagSet { "ec2TagSetList": Nothing }
 
 -- | Constructs EC2TagSet's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEC2TagSet' :: ( { "ec2TagSetList" :: NullOrUndefined (EC2TagSetList) } -> {"ec2TagSetList" :: NullOrUndefined (EC2TagSetList) } ) -> EC2TagSet
-newEC2TagSet'  customize = (EC2TagSet <<< customize) { "ec2TagSetList": (NullOrUndefined Nothing) }
+newEC2TagSet' :: ( { "ec2TagSetList" :: Maybe (EC2TagSetList) } -> {"ec2TagSetList" :: Maybe (EC2TagSetList) } ) -> EC2TagSet
+newEC2TagSet'  customize = (EC2TagSet <<< customize) { "ec2TagSetList": Nothing }
 
 
 
@@ -1655,7 +1654,7 @@ instance encodeEC2TagSetList :: Encode EC2TagSetList where encode = genericEncod
 
 -- | <p>Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.</p>
 newtype ELBInfo = ELBInfo 
-  { "name" :: NullOrUndefined (ELBName)
+  { "name" :: Maybe (ELBName)
   }
 derive instance newtypeELBInfo :: Newtype ELBInfo _
 derive instance repGenericELBInfo :: Generic ELBInfo _
@@ -1665,12 +1664,12 @@ instance encodeELBInfo :: Encode ELBInfo where encode = genericEncode options
 
 -- | Constructs ELBInfo from required parameters
 newELBInfo :: ELBInfo
-newELBInfo  = ELBInfo { "name": (NullOrUndefined Nothing) }
+newELBInfo  = ELBInfo { "name": Nothing }
 
 -- | Constructs ELBInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newELBInfo' :: ( { "name" :: NullOrUndefined (ELBName) } -> {"name" :: NullOrUndefined (ELBName) } ) -> ELBInfo
-newELBInfo'  customize = (ELBInfo <<< customize) { "name": (NullOrUndefined Nothing) }
+newELBInfo' :: ( { "name" :: Maybe (ELBName) } -> {"name" :: Maybe (ELBName) } ) -> ELBInfo
+newELBInfo'  customize = (ELBInfo <<< customize) { "name": Nothing }
 
 
 
@@ -1712,8 +1711,8 @@ instance encodeErrorCode :: Encode ErrorCode where encode = genericEncode option
 
 -- | <p>Information about a deployment error.</p>
 newtype ErrorInformation = ErrorInformation 
-  { "code" :: NullOrUndefined (ErrorCode)
-  , "message" :: NullOrUndefined (ErrorMessage)
+  { "code" :: Maybe (ErrorCode)
+  , "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeErrorInformation :: Newtype ErrorInformation _
 derive instance repGenericErrorInformation :: Generic ErrorInformation _
@@ -1723,12 +1722,12 @@ instance encodeErrorInformation :: Encode ErrorInformation where encode = generi
 
 -- | Constructs ErrorInformation from required parameters
 newErrorInformation :: ErrorInformation
-newErrorInformation  = ErrorInformation { "code": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing) }
+newErrorInformation  = ErrorInformation { "code": Nothing, "message": Nothing }
 
 -- | Constructs ErrorInformation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newErrorInformation' :: ( { "code" :: NullOrUndefined (ErrorCode) , "message" :: NullOrUndefined (ErrorMessage) } -> {"code" :: NullOrUndefined (ErrorCode) , "message" :: NullOrUndefined (ErrorMessage) } ) -> ErrorInformation
-newErrorInformation'  customize = (ErrorInformation <<< customize) { "code": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing) }
+newErrorInformation' :: ( { "code" :: Maybe (ErrorCode) , "message" :: Maybe (ErrorMessage) } -> {"code" :: Maybe (ErrorCode) , "message" :: Maybe (ErrorMessage) } ) -> ErrorInformation
+newErrorInformation'  customize = (ErrorInformation <<< customize) { "code": Nothing, "message": Nothing }
 
 
 
@@ -1752,11 +1751,11 @@ instance encodeFileExistsBehavior :: Encode FileExistsBehavior where encode = ge
 
 -- | <p>Information about an application revision.</p>
 newtype GenericRevisionInfo = GenericRevisionInfo 
-  { "description" :: NullOrUndefined (Description)
-  , "deploymentGroups" :: NullOrUndefined (DeploymentGroupsList)
-  , "firstUsedTime" :: NullOrUndefined (Types.Timestamp)
-  , "lastUsedTime" :: NullOrUndefined (Types.Timestamp)
-  , "registerTime" :: NullOrUndefined (Types.Timestamp)
+  { "description" :: Maybe (Description)
+  , "deploymentGroups" :: Maybe (DeploymentGroupsList)
+  , "firstUsedTime" :: Maybe (Types.Timestamp)
+  , "lastUsedTime" :: Maybe (Types.Timestamp)
+  , "registerTime" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeGenericRevisionInfo :: Newtype GenericRevisionInfo _
 derive instance repGenericGenericRevisionInfo :: Generic GenericRevisionInfo _
@@ -1766,12 +1765,12 @@ instance encodeGenericRevisionInfo :: Encode GenericRevisionInfo where encode = 
 
 -- | Constructs GenericRevisionInfo from required parameters
 newGenericRevisionInfo :: GenericRevisionInfo
-newGenericRevisionInfo  = GenericRevisionInfo { "deploymentGroups": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "firstUsedTime": (NullOrUndefined Nothing), "lastUsedTime": (NullOrUndefined Nothing), "registerTime": (NullOrUndefined Nothing) }
+newGenericRevisionInfo  = GenericRevisionInfo { "deploymentGroups": Nothing, "description": Nothing, "firstUsedTime": Nothing, "lastUsedTime": Nothing, "registerTime": Nothing }
 
 -- | Constructs GenericRevisionInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGenericRevisionInfo' :: ( { "description" :: NullOrUndefined (Description) , "deploymentGroups" :: NullOrUndefined (DeploymentGroupsList) , "firstUsedTime" :: NullOrUndefined (Types.Timestamp) , "lastUsedTime" :: NullOrUndefined (Types.Timestamp) , "registerTime" :: NullOrUndefined (Types.Timestamp) } -> {"description" :: NullOrUndefined (Description) , "deploymentGroups" :: NullOrUndefined (DeploymentGroupsList) , "firstUsedTime" :: NullOrUndefined (Types.Timestamp) , "lastUsedTime" :: NullOrUndefined (Types.Timestamp) , "registerTime" :: NullOrUndefined (Types.Timestamp) } ) -> GenericRevisionInfo
-newGenericRevisionInfo'  customize = (GenericRevisionInfo <<< customize) { "deploymentGroups": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "firstUsedTime": (NullOrUndefined Nothing), "lastUsedTime": (NullOrUndefined Nothing), "registerTime": (NullOrUndefined Nothing) }
+newGenericRevisionInfo' :: ( { "description" :: Maybe (Description) , "deploymentGroups" :: Maybe (DeploymentGroupsList) , "firstUsedTime" :: Maybe (Types.Timestamp) , "lastUsedTime" :: Maybe (Types.Timestamp) , "registerTime" :: Maybe (Types.Timestamp) } -> {"description" :: Maybe (Description) , "deploymentGroups" :: Maybe (DeploymentGroupsList) , "firstUsedTime" :: Maybe (Types.Timestamp) , "lastUsedTime" :: Maybe (Types.Timestamp) , "registerTime" :: Maybe (Types.Timestamp) } ) -> GenericRevisionInfo
+newGenericRevisionInfo'  customize = (GenericRevisionInfo <<< customize) { "deploymentGroups": Nothing, "description": Nothing, "firstUsedTime": Nothing, "lastUsedTime": Nothing, "registerTime": Nothing }
 
 
 
@@ -1798,7 +1797,7 @@ newGetApplicationInput' _applicationName customize = (GetApplicationInput <<< cu
 
 -- | <p>Represents the output of a GetApplication operation.</p>
 newtype GetApplicationOutput = GetApplicationOutput 
-  { "application" :: NullOrUndefined (ApplicationInfo)
+  { "application" :: Maybe (ApplicationInfo)
   }
 derive instance newtypeGetApplicationOutput :: Newtype GetApplicationOutput _
 derive instance repGenericGetApplicationOutput :: Generic GetApplicationOutput _
@@ -1808,12 +1807,12 @@ instance encodeGetApplicationOutput :: Encode GetApplicationOutput where encode 
 
 -- | Constructs GetApplicationOutput from required parameters
 newGetApplicationOutput :: GetApplicationOutput
-newGetApplicationOutput  = GetApplicationOutput { "application": (NullOrUndefined Nothing) }
+newGetApplicationOutput  = GetApplicationOutput { "application": Nothing }
 
 -- | Constructs GetApplicationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetApplicationOutput' :: ( { "application" :: NullOrUndefined (ApplicationInfo) } -> {"application" :: NullOrUndefined (ApplicationInfo) } ) -> GetApplicationOutput
-newGetApplicationOutput'  customize = (GetApplicationOutput <<< customize) { "application": (NullOrUndefined Nothing) }
+newGetApplicationOutput' :: ( { "application" :: Maybe (ApplicationInfo) } -> {"application" :: Maybe (ApplicationInfo) } ) -> GetApplicationOutput
+newGetApplicationOutput'  customize = (GetApplicationOutput <<< customize) { "application": Nothing }
 
 
 
@@ -1841,9 +1840,9 @@ newGetApplicationRevisionInput' _applicationName _revision customize = (GetAppli
 
 -- | <p>Represents the output of a GetApplicationRevision operation.</p>
 newtype GetApplicationRevisionOutput = GetApplicationRevisionOutput 
-  { "applicationName" :: NullOrUndefined (ApplicationName)
-  , "revision" :: NullOrUndefined (RevisionLocation)
-  , "revisionInfo" :: NullOrUndefined (GenericRevisionInfo)
+  { "applicationName" :: Maybe (ApplicationName)
+  , "revision" :: Maybe (RevisionLocation)
+  , "revisionInfo" :: Maybe (GenericRevisionInfo)
   }
 derive instance newtypeGetApplicationRevisionOutput :: Newtype GetApplicationRevisionOutput _
 derive instance repGenericGetApplicationRevisionOutput :: Generic GetApplicationRevisionOutput _
@@ -1853,12 +1852,12 @@ instance encodeGetApplicationRevisionOutput :: Encode GetApplicationRevisionOutp
 
 -- | Constructs GetApplicationRevisionOutput from required parameters
 newGetApplicationRevisionOutput :: GetApplicationRevisionOutput
-newGetApplicationRevisionOutput  = GetApplicationRevisionOutput { "applicationName": (NullOrUndefined Nothing), "revision": (NullOrUndefined Nothing), "revisionInfo": (NullOrUndefined Nothing) }
+newGetApplicationRevisionOutput  = GetApplicationRevisionOutput { "applicationName": Nothing, "revision": Nothing, "revisionInfo": Nothing }
 
 -- | Constructs GetApplicationRevisionOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetApplicationRevisionOutput' :: ( { "applicationName" :: NullOrUndefined (ApplicationName) , "revision" :: NullOrUndefined (RevisionLocation) , "revisionInfo" :: NullOrUndefined (GenericRevisionInfo) } -> {"applicationName" :: NullOrUndefined (ApplicationName) , "revision" :: NullOrUndefined (RevisionLocation) , "revisionInfo" :: NullOrUndefined (GenericRevisionInfo) } ) -> GetApplicationRevisionOutput
-newGetApplicationRevisionOutput'  customize = (GetApplicationRevisionOutput <<< customize) { "applicationName": (NullOrUndefined Nothing), "revision": (NullOrUndefined Nothing), "revisionInfo": (NullOrUndefined Nothing) }
+newGetApplicationRevisionOutput' :: ( { "applicationName" :: Maybe (ApplicationName) , "revision" :: Maybe (RevisionLocation) , "revisionInfo" :: Maybe (GenericRevisionInfo) } -> {"applicationName" :: Maybe (ApplicationName) , "revision" :: Maybe (RevisionLocation) , "revisionInfo" :: Maybe (GenericRevisionInfo) } ) -> GetApplicationRevisionOutput
+newGetApplicationRevisionOutput'  customize = (GetApplicationRevisionOutput <<< customize) { "applicationName": Nothing, "revision": Nothing, "revisionInfo": Nothing }
 
 
 
@@ -1885,7 +1884,7 @@ newGetDeploymentConfigInput' _deploymentConfigName customize = (GetDeploymentCon
 
 -- | <p>Represents the output of a GetDeploymentConfig operation.</p>
 newtype GetDeploymentConfigOutput = GetDeploymentConfigOutput 
-  { "deploymentConfigInfo" :: NullOrUndefined (DeploymentConfigInfo)
+  { "deploymentConfigInfo" :: Maybe (DeploymentConfigInfo)
   }
 derive instance newtypeGetDeploymentConfigOutput :: Newtype GetDeploymentConfigOutput _
 derive instance repGenericGetDeploymentConfigOutput :: Generic GetDeploymentConfigOutput _
@@ -1895,12 +1894,12 @@ instance encodeGetDeploymentConfigOutput :: Encode GetDeploymentConfigOutput whe
 
 -- | Constructs GetDeploymentConfigOutput from required parameters
 newGetDeploymentConfigOutput :: GetDeploymentConfigOutput
-newGetDeploymentConfigOutput  = GetDeploymentConfigOutput { "deploymentConfigInfo": (NullOrUndefined Nothing) }
+newGetDeploymentConfigOutput  = GetDeploymentConfigOutput { "deploymentConfigInfo": Nothing }
 
 -- | Constructs GetDeploymentConfigOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDeploymentConfigOutput' :: ( { "deploymentConfigInfo" :: NullOrUndefined (DeploymentConfigInfo) } -> {"deploymentConfigInfo" :: NullOrUndefined (DeploymentConfigInfo) } ) -> GetDeploymentConfigOutput
-newGetDeploymentConfigOutput'  customize = (GetDeploymentConfigOutput <<< customize) { "deploymentConfigInfo": (NullOrUndefined Nothing) }
+newGetDeploymentConfigOutput' :: ( { "deploymentConfigInfo" :: Maybe (DeploymentConfigInfo) } -> {"deploymentConfigInfo" :: Maybe (DeploymentConfigInfo) } ) -> GetDeploymentConfigOutput
+newGetDeploymentConfigOutput'  customize = (GetDeploymentConfigOutput <<< customize) { "deploymentConfigInfo": Nothing }
 
 
 
@@ -1928,7 +1927,7 @@ newGetDeploymentGroupInput' _applicationName _deploymentGroupName customize = (G
 
 -- | <p>Represents the output of a GetDeploymentGroup operation.</p>
 newtype GetDeploymentGroupOutput = GetDeploymentGroupOutput 
-  { "deploymentGroupInfo" :: NullOrUndefined (DeploymentGroupInfo)
+  { "deploymentGroupInfo" :: Maybe (DeploymentGroupInfo)
   }
 derive instance newtypeGetDeploymentGroupOutput :: Newtype GetDeploymentGroupOutput _
 derive instance repGenericGetDeploymentGroupOutput :: Generic GetDeploymentGroupOutput _
@@ -1938,12 +1937,12 @@ instance encodeGetDeploymentGroupOutput :: Encode GetDeploymentGroupOutput where
 
 -- | Constructs GetDeploymentGroupOutput from required parameters
 newGetDeploymentGroupOutput :: GetDeploymentGroupOutput
-newGetDeploymentGroupOutput  = GetDeploymentGroupOutput { "deploymentGroupInfo": (NullOrUndefined Nothing) }
+newGetDeploymentGroupOutput  = GetDeploymentGroupOutput { "deploymentGroupInfo": Nothing }
 
 -- | Constructs GetDeploymentGroupOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDeploymentGroupOutput' :: ( { "deploymentGroupInfo" :: NullOrUndefined (DeploymentGroupInfo) } -> {"deploymentGroupInfo" :: NullOrUndefined (DeploymentGroupInfo) } ) -> GetDeploymentGroupOutput
-newGetDeploymentGroupOutput'  customize = (GetDeploymentGroupOutput <<< customize) { "deploymentGroupInfo": (NullOrUndefined Nothing) }
+newGetDeploymentGroupOutput' :: ( { "deploymentGroupInfo" :: Maybe (DeploymentGroupInfo) } -> {"deploymentGroupInfo" :: Maybe (DeploymentGroupInfo) } ) -> GetDeploymentGroupOutput
+newGetDeploymentGroupOutput'  customize = (GetDeploymentGroupOutput <<< customize) { "deploymentGroupInfo": Nothing }
 
 
 
@@ -1992,7 +1991,7 @@ newGetDeploymentInstanceInput' _deploymentId _instanceId customize = (GetDeploym
 
 -- | <p>Represents the output of a GetDeploymentInstance operation.</p>
 newtype GetDeploymentInstanceOutput = GetDeploymentInstanceOutput 
-  { "instanceSummary" :: NullOrUndefined (InstanceSummary)
+  { "instanceSummary" :: Maybe (InstanceSummary)
   }
 derive instance newtypeGetDeploymentInstanceOutput :: Newtype GetDeploymentInstanceOutput _
 derive instance repGenericGetDeploymentInstanceOutput :: Generic GetDeploymentInstanceOutput _
@@ -2002,18 +2001,18 @@ instance encodeGetDeploymentInstanceOutput :: Encode GetDeploymentInstanceOutput
 
 -- | Constructs GetDeploymentInstanceOutput from required parameters
 newGetDeploymentInstanceOutput :: GetDeploymentInstanceOutput
-newGetDeploymentInstanceOutput  = GetDeploymentInstanceOutput { "instanceSummary": (NullOrUndefined Nothing) }
+newGetDeploymentInstanceOutput  = GetDeploymentInstanceOutput { "instanceSummary": Nothing }
 
 -- | Constructs GetDeploymentInstanceOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDeploymentInstanceOutput' :: ( { "instanceSummary" :: NullOrUndefined (InstanceSummary) } -> {"instanceSummary" :: NullOrUndefined (InstanceSummary) } ) -> GetDeploymentInstanceOutput
-newGetDeploymentInstanceOutput'  customize = (GetDeploymentInstanceOutput <<< customize) { "instanceSummary": (NullOrUndefined Nothing) }
+newGetDeploymentInstanceOutput' :: ( { "instanceSummary" :: Maybe (InstanceSummary) } -> {"instanceSummary" :: Maybe (InstanceSummary) } ) -> GetDeploymentInstanceOutput
+newGetDeploymentInstanceOutput'  customize = (GetDeploymentInstanceOutput <<< customize) { "instanceSummary": Nothing }
 
 
 
 -- | <p>Represents the output of a GetDeployment operation.</p>
 newtype GetDeploymentOutput = GetDeploymentOutput 
-  { "deploymentInfo" :: NullOrUndefined (DeploymentInfo)
+  { "deploymentInfo" :: Maybe (DeploymentInfo)
   }
 derive instance newtypeGetDeploymentOutput :: Newtype GetDeploymentOutput _
 derive instance repGenericGetDeploymentOutput :: Generic GetDeploymentOutput _
@@ -2023,12 +2022,12 @@ instance encodeGetDeploymentOutput :: Encode GetDeploymentOutput where encode = 
 
 -- | Constructs GetDeploymentOutput from required parameters
 newGetDeploymentOutput :: GetDeploymentOutput
-newGetDeploymentOutput  = GetDeploymentOutput { "deploymentInfo": (NullOrUndefined Nothing) }
+newGetDeploymentOutput  = GetDeploymentOutput { "deploymentInfo": Nothing }
 
 -- | Constructs GetDeploymentOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDeploymentOutput' :: ( { "deploymentInfo" :: NullOrUndefined (DeploymentInfo) } -> {"deploymentInfo" :: NullOrUndefined (DeploymentInfo) } ) -> GetDeploymentOutput
-newGetDeploymentOutput'  customize = (GetDeploymentOutput <<< customize) { "deploymentInfo": (NullOrUndefined Nothing) }
+newGetDeploymentOutput' :: ( { "deploymentInfo" :: Maybe (DeploymentInfo) } -> {"deploymentInfo" :: Maybe (DeploymentInfo) } ) -> GetDeploymentOutput
+newGetDeploymentOutput'  customize = (GetDeploymentOutput <<< customize) { "deploymentInfo": Nothing }
 
 
 
@@ -2055,7 +2054,7 @@ newGetOnPremisesInstanceInput' _instanceName customize = (GetOnPremisesInstanceI
 
 -- | <p>Represents the output of a GetOnPremisesInstance operation.</p>
 newtype GetOnPremisesInstanceOutput = GetOnPremisesInstanceOutput 
-  { "instanceInfo" :: NullOrUndefined (InstanceInfo)
+  { "instanceInfo" :: Maybe (InstanceInfo)
   }
 derive instance newtypeGetOnPremisesInstanceOutput :: Newtype GetOnPremisesInstanceOutput _
 derive instance repGenericGetOnPremisesInstanceOutput :: Generic GetOnPremisesInstanceOutput _
@@ -2065,12 +2064,12 @@ instance encodeGetOnPremisesInstanceOutput :: Encode GetOnPremisesInstanceOutput
 
 -- | Constructs GetOnPremisesInstanceOutput from required parameters
 newGetOnPremisesInstanceOutput :: GetOnPremisesInstanceOutput
-newGetOnPremisesInstanceOutput  = GetOnPremisesInstanceOutput { "instanceInfo": (NullOrUndefined Nothing) }
+newGetOnPremisesInstanceOutput  = GetOnPremisesInstanceOutput { "instanceInfo": Nothing }
 
 -- | Constructs GetOnPremisesInstanceOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetOnPremisesInstanceOutput' :: ( { "instanceInfo" :: NullOrUndefined (InstanceInfo) } -> {"instanceInfo" :: NullOrUndefined (InstanceInfo) } ) -> GetOnPremisesInstanceOutput
-newGetOnPremisesInstanceOutput'  customize = (GetOnPremisesInstanceOutput <<< customize) { "instanceInfo": (NullOrUndefined Nothing) }
+newGetOnPremisesInstanceOutput' :: ( { "instanceInfo" :: Maybe (InstanceInfo) } -> {"instanceInfo" :: Maybe (InstanceInfo) } ) -> GetOnPremisesInstanceOutput
+newGetOnPremisesInstanceOutput'  customize = (GetOnPremisesInstanceOutput <<< customize) { "instanceInfo": Nothing }
 
 
 
@@ -2114,8 +2113,8 @@ instance encodeGitHubAccountTokenNameRequiredException :: Encode GitHubAccountTo
 
 -- | <p>Information about the location of application artifacts stored in GitHub.</p>
 newtype GitHubLocation = GitHubLocation 
-  { "repository" :: NullOrUndefined (Repository)
-  , "commitId" :: NullOrUndefined (CommitId)
+  { "repository" :: Maybe (Repository)
+  , "commitId" :: Maybe (CommitId)
   }
 derive instance newtypeGitHubLocation :: Newtype GitHubLocation _
 derive instance repGenericGitHubLocation :: Generic GitHubLocation _
@@ -2125,12 +2124,12 @@ instance encodeGitHubLocation :: Encode GitHubLocation where encode = genericEnc
 
 -- | Constructs GitHubLocation from required parameters
 newGitHubLocation :: GitHubLocation
-newGitHubLocation  = GitHubLocation { "commitId": (NullOrUndefined Nothing), "repository": (NullOrUndefined Nothing) }
+newGitHubLocation  = GitHubLocation { "commitId": Nothing, "repository": Nothing }
 
 -- | Constructs GitHubLocation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGitHubLocation' :: ( { "repository" :: NullOrUndefined (Repository) , "commitId" :: NullOrUndefined (CommitId) } -> {"repository" :: NullOrUndefined (Repository) , "commitId" :: NullOrUndefined (CommitId) } ) -> GitHubLocation
-newGitHubLocation'  customize = (GitHubLocation <<< customize) { "commitId": (NullOrUndefined Nothing), "repository": (NullOrUndefined Nothing) }
+newGitHubLocation' :: ( { "repository" :: Maybe (Repository) , "commitId" :: Maybe (CommitId) } -> {"repository" :: Maybe (Repository) , "commitId" :: Maybe (CommitId) } ) -> GitHubLocation
+newGitHubLocation'  customize = (GitHubLocation <<< customize) { "commitId": Nothing, "repository": Nothing }
 
 
 
@@ -2145,7 +2144,7 @@ instance encodeGreenFleetProvisioningAction :: Encode GreenFleetProvisioningActi
 
 -- | <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
 newtype GreenFleetProvisioningOption = GreenFleetProvisioningOption 
-  { "action" :: NullOrUndefined (GreenFleetProvisioningAction)
+  { "action" :: Maybe (GreenFleetProvisioningAction)
   }
 derive instance newtypeGreenFleetProvisioningOption :: Newtype GreenFleetProvisioningOption _
 derive instance repGenericGreenFleetProvisioningOption :: Generic GreenFleetProvisioningOption _
@@ -2155,12 +2154,12 @@ instance encodeGreenFleetProvisioningOption :: Encode GreenFleetProvisioningOpti
 
 -- | Constructs GreenFleetProvisioningOption from required parameters
 newGreenFleetProvisioningOption :: GreenFleetProvisioningOption
-newGreenFleetProvisioningOption  = GreenFleetProvisioningOption { "action": (NullOrUndefined Nothing) }
+newGreenFleetProvisioningOption  = GreenFleetProvisioningOption { "action": Nothing }
 
 -- | Constructs GreenFleetProvisioningOption's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGreenFleetProvisioningOption' :: ( { "action" :: NullOrUndefined (GreenFleetProvisioningAction) } -> {"action" :: NullOrUndefined (GreenFleetProvisioningAction) } ) -> GreenFleetProvisioningOption
-newGreenFleetProvisioningOption'  customize = (GreenFleetProvisioningOption <<< customize) { "action": (NullOrUndefined Nothing) }
+newGreenFleetProvisioningOption' :: ( { "action" :: Maybe (GreenFleetProvisioningAction) } -> {"action" :: Maybe (GreenFleetProvisioningAction) } ) -> GreenFleetProvisioningOption
+newGreenFleetProvisioningOption'  customize = (GreenFleetProvisioningOption <<< customize) { "action": Nothing }
 
 
 
@@ -2280,13 +2279,13 @@ instance encodeInstanceIdRequiredException :: Encode InstanceIdRequiredException
 
 -- | <p>Information about an on-premises instance.</p>
 newtype InstanceInfo = InstanceInfo 
-  { "instanceName" :: NullOrUndefined (InstanceName)
-  , "iamSessionArn" :: NullOrUndefined (IamSessionArn)
-  , "iamUserArn" :: NullOrUndefined (IamUserArn)
-  , "instanceArn" :: NullOrUndefined (InstanceArn)
-  , "registerTime" :: NullOrUndefined (Types.Timestamp)
-  , "deregisterTime" :: NullOrUndefined (Types.Timestamp)
-  , "tags" :: NullOrUndefined (TagList)
+  { "instanceName" :: Maybe (InstanceName)
+  , "iamSessionArn" :: Maybe (IamSessionArn)
+  , "iamUserArn" :: Maybe (IamUserArn)
+  , "instanceArn" :: Maybe (InstanceArn)
+  , "registerTime" :: Maybe (Types.Timestamp)
+  , "deregisterTime" :: Maybe (Types.Timestamp)
+  , "tags" :: Maybe (TagList)
   }
 derive instance newtypeInstanceInfo :: Newtype InstanceInfo _
 derive instance repGenericInstanceInfo :: Generic InstanceInfo _
@@ -2296,12 +2295,12 @@ instance encodeInstanceInfo :: Encode InstanceInfo where encode = genericEncode 
 
 -- | Constructs InstanceInfo from required parameters
 newInstanceInfo :: InstanceInfo
-newInstanceInfo  = InstanceInfo { "deregisterTime": (NullOrUndefined Nothing), "iamSessionArn": (NullOrUndefined Nothing), "iamUserArn": (NullOrUndefined Nothing), "instanceArn": (NullOrUndefined Nothing), "instanceName": (NullOrUndefined Nothing), "registerTime": (NullOrUndefined Nothing), "tags": (NullOrUndefined Nothing) }
+newInstanceInfo  = InstanceInfo { "deregisterTime": Nothing, "iamSessionArn": Nothing, "iamUserArn": Nothing, "instanceArn": Nothing, "instanceName": Nothing, "registerTime": Nothing, "tags": Nothing }
 
 -- | Constructs InstanceInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceInfo' :: ( { "instanceName" :: NullOrUndefined (InstanceName) , "iamSessionArn" :: NullOrUndefined (IamSessionArn) , "iamUserArn" :: NullOrUndefined (IamUserArn) , "instanceArn" :: NullOrUndefined (InstanceArn) , "registerTime" :: NullOrUndefined (Types.Timestamp) , "deregisterTime" :: NullOrUndefined (Types.Timestamp) , "tags" :: NullOrUndefined (TagList) } -> {"instanceName" :: NullOrUndefined (InstanceName) , "iamSessionArn" :: NullOrUndefined (IamSessionArn) , "iamUserArn" :: NullOrUndefined (IamUserArn) , "instanceArn" :: NullOrUndefined (InstanceArn) , "registerTime" :: NullOrUndefined (Types.Timestamp) , "deregisterTime" :: NullOrUndefined (Types.Timestamp) , "tags" :: NullOrUndefined (TagList) } ) -> InstanceInfo
-newInstanceInfo'  customize = (InstanceInfo <<< customize) { "deregisterTime": (NullOrUndefined Nothing), "iamSessionArn": (NullOrUndefined Nothing), "iamUserArn": (NullOrUndefined Nothing), "instanceArn": (NullOrUndefined Nothing), "instanceName": (NullOrUndefined Nothing), "registerTime": (NullOrUndefined Nothing), "tags": (NullOrUndefined Nothing) }
+newInstanceInfo' :: ( { "instanceName" :: Maybe (InstanceName) , "iamSessionArn" :: Maybe (IamSessionArn) , "iamUserArn" :: Maybe (IamUserArn) , "instanceArn" :: Maybe (InstanceArn) , "registerTime" :: Maybe (Types.Timestamp) , "deregisterTime" :: Maybe (Types.Timestamp) , "tags" :: Maybe (TagList) } -> {"instanceName" :: Maybe (InstanceName) , "iamSessionArn" :: Maybe (IamSessionArn) , "iamUserArn" :: Maybe (IamUserArn) , "instanceArn" :: Maybe (InstanceArn) , "registerTime" :: Maybe (Types.Timestamp) , "deregisterTime" :: Maybe (Types.Timestamp) , "tags" :: Maybe (TagList) } ) -> InstanceInfo
+newInstanceInfo'  customize = (InstanceInfo <<< customize) { "deregisterTime": Nothing, "iamSessionArn": Nothing, "iamUserArn": Nothing, "instanceArn": Nothing, "instanceName": Nothing, "registerTime": Nothing, "tags": Nothing }
 
 
 
@@ -2392,12 +2391,12 @@ instance encodeInstanceStatusList :: Encode InstanceStatusList where encode = ge
 
 -- | <p>Information about an instance in a deployment.</p>
 newtype InstanceSummary = InstanceSummary 
-  { "deploymentId" :: NullOrUndefined (DeploymentId)
-  , "instanceId" :: NullOrUndefined (InstanceId)
-  , "status" :: NullOrUndefined (InstanceStatus)
-  , "lastUpdatedAt" :: NullOrUndefined (Types.Timestamp)
-  , "lifecycleEvents" :: NullOrUndefined (LifecycleEventList)
-  , "instanceType" :: NullOrUndefined (InstanceType)
+  { "deploymentId" :: Maybe (DeploymentId)
+  , "instanceId" :: Maybe (InstanceId)
+  , "status" :: Maybe (InstanceStatus)
+  , "lastUpdatedAt" :: Maybe (Types.Timestamp)
+  , "lifecycleEvents" :: Maybe (LifecycleEventList)
+  , "instanceType" :: Maybe (InstanceType)
   }
 derive instance newtypeInstanceSummary :: Newtype InstanceSummary _
 derive instance repGenericInstanceSummary :: Generic InstanceSummary _
@@ -2407,12 +2406,12 @@ instance encodeInstanceSummary :: Encode InstanceSummary where encode = genericE
 
 -- | Constructs InstanceSummary from required parameters
 newInstanceSummary :: InstanceSummary
-newInstanceSummary  = InstanceSummary { "deploymentId": (NullOrUndefined Nothing), "instanceId": (NullOrUndefined Nothing), "instanceType": (NullOrUndefined Nothing), "lastUpdatedAt": (NullOrUndefined Nothing), "lifecycleEvents": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newInstanceSummary  = InstanceSummary { "deploymentId": Nothing, "instanceId": Nothing, "instanceType": Nothing, "lastUpdatedAt": Nothing, "lifecycleEvents": Nothing, "status": Nothing }
 
 -- | Constructs InstanceSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceSummary' :: ( { "deploymentId" :: NullOrUndefined (DeploymentId) , "instanceId" :: NullOrUndefined (InstanceId) , "status" :: NullOrUndefined (InstanceStatus) , "lastUpdatedAt" :: NullOrUndefined (Types.Timestamp) , "lifecycleEvents" :: NullOrUndefined (LifecycleEventList) , "instanceType" :: NullOrUndefined (InstanceType) } -> {"deploymentId" :: NullOrUndefined (DeploymentId) , "instanceId" :: NullOrUndefined (InstanceId) , "status" :: NullOrUndefined (InstanceStatus) , "lastUpdatedAt" :: NullOrUndefined (Types.Timestamp) , "lifecycleEvents" :: NullOrUndefined (LifecycleEventList) , "instanceType" :: NullOrUndefined (InstanceType) } ) -> InstanceSummary
-newInstanceSummary'  customize = (InstanceSummary <<< customize) { "deploymentId": (NullOrUndefined Nothing), "instanceId": (NullOrUndefined Nothing), "instanceType": (NullOrUndefined Nothing), "lastUpdatedAt": (NullOrUndefined Nothing), "lifecycleEvents": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newInstanceSummary' :: ( { "deploymentId" :: Maybe (DeploymentId) , "instanceId" :: Maybe (InstanceId) , "status" :: Maybe (InstanceStatus) , "lastUpdatedAt" :: Maybe (Types.Timestamp) , "lifecycleEvents" :: Maybe (LifecycleEventList) , "instanceType" :: Maybe (InstanceType) } -> {"deploymentId" :: Maybe (DeploymentId) , "instanceId" :: Maybe (InstanceId) , "status" :: Maybe (InstanceStatus) , "lastUpdatedAt" :: Maybe (Types.Timestamp) , "lifecycleEvents" :: Maybe (LifecycleEventList) , "instanceType" :: Maybe (InstanceType) } ) -> InstanceSummary
+newInstanceSummary'  customize = (InstanceSummary <<< customize) { "deploymentId": Nothing, "instanceId": Nothing, "instanceType": Nothing, "lastUpdatedAt": Nothing, "lifecycleEvents": Nothing, "status": Nothing }
 
 
 
@@ -2923,10 +2922,10 @@ instance encodeKey :: Encode Key where encode = genericEncode options
 
 -- | <p>Information about the most recent attempted or successful deployment to a deployment group.</p>
 newtype LastDeploymentInfo = LastDeploymentInfo 
-  { "deploymentId" :: NullOrUndefined (DeploymentId)
-  , "status" :: NullOrUndefined (DeploymentStatus)
-  , "endTime" :: NullOrUndefined (Types.Timestamp)
-  , "createTime" :: NullOrUndefined (Types.Timestamp)
+  { "deploymentId" :: Maybe (DeploymentId)
+  , "status" :: Maybe (DeploymentStatus)
+  , "endTime" :: Maybe (Types.Timestamp)
+  , "createTime" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeLastDeploymentInfo :: Newtype LastDeploymentInfo _
 derive instance repGenericLastDeploymentInfo :: Generic LastDeploymentInfo _
@@ -2936,12 +2935,12 @@ instance encodeLastDeploymentInfo :: Encode LastDeploymentInfo where encode = ge
 
 -- | Constructs LastDeploymentInfo from required parameters
 newLastDeploymentInfo :: LastDeploymentInfo
-newLastDeploymentInfo  = LastDeploymentInfo { "createTime": (NullOrUndefined Nothing), "deploymentId": (NullOrUndefined Nothing), "endTime": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newLastDeploymentInfo  = LastDeploymentInfo { "createTime": Nothing, "deploymentId": Nothing, "endTime": Nothing, "status": Nothing }
 
 -- | Constructs LastDeploymentInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLastDeploymentInfo' :: ( { "deploymentId" :: NullOrUndefined (DeploymentId) , "status" :: NullOrUndefined (DeploymentStatus) , "endTime" :: NullOrUndefined (Types.Timestamp) , "createTime" :: NullOrUndefined (Types.Timestamp) } -> {"deploymentId" :: NullOrUndefined (DeploymentId) , "status" :: NullOrUndefined (DeploymentStatus) , "endTime" :: NullOrUndefined (Types.Timestamp) , "createTime" :: NullOrUndefined (Types.Timestamp) } ) -> LastDeploymentInfo
-newLastDeploymentInfo'  customize = (LastDeploymentInfo <<< customize) { "createTime": (NullOrUndefined Nothing), "deploymentId": (NullOrUndefined Nothing), "endTime": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newLastDeploymentInfo' :: ( { "deploymentId" :: Maybe (DeploymentId) , "status" :: Maybe (DeploymentStatus) , "endTime" :: Maybe (Types.Timestamp) , "createTime" :: Maybe (Types.Timestamp) } -> {"deploymentId" :: Maybe (DeploymentId) , "status" :: Maybe (DeploymentStatus) , "endTime" :: Maybe (Types.Timestamp) , "createTime" :: Maybe (Types.Timestamp) } ) -> LastDeploymentInfo
+newLastDeploymentInfo'  customize = (LastDeploymentInfo <<< customize) { "createTime": Nothing, "deploymentId": Nothing, "endTime": Nothing, "status": Nothing }
 
 
 
@@ -2956,11 +2955,11 @@ instance encodeLifecycleErrorCode :: Encode LifecycleErrorCode where encode = ge
 
 -- | <p>Information about a deployment lifecycle event.</p>
 newtype LifecycleEvent = LifecycleEvent 
-  { "lifecycleEventName" :: NullOrUndefined (LifecycleEventName)
-  , "diagnostics" :: NullOrUndefined (Diagnostics)
-  , "startTime" :: NullOrUndefined (Types.Timestamp)
-  , "endTime" :: NullOrUndefined (Types.Timestamp)
-  , "status" :: NullOrUndefined (LifecycleEventStatus)
+  { "lifecycleEventName" :: Maybe (LifecycleEventName)
+  , "diagnostics" :: Maybe (Diagnostics)
+  , "startTime" :: Maybe (Types.Timestamp)
+  , "endTime" :: Maybe (Types.Timestamp)
+  , "status" :: Maybe (LifecycleEventStatus)
   }
 derive instance newtypeLifecycleEvent :: Newtype LifecycleEvent _
 derive instance repGenericLifecycleEvent :: Generic LifecycleEvent _
@@ -2970,12 +2969,12 @@ instance encodeLifecycleEvent :: Encode LifecycleEvent where encode = genericEnc
 
 -- | Constructs LifecycleEvent from required parameters
 newLifecycleEvent :: LifecycleEvent
-newLifecycleEvent  = LifecycleEvent { "diagnostics": (NullOrUndefined Nothing), "endTime": (NullOrUndefined Nothing), "lifecycleEventName": (NullOrUndefined Nothing), "startTime": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newLifecycleEvent  = LifecycleEvent { "diagnostics": Nothing, "endTime": Nothing, "lifecycleEventName": Nothing, "startTime": Nothing, "status": Nothing }
 
 -- | Constructs LifecycleEvent's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLifecycleEvent' :: ( { "lifecycleEventName" :: NullOrUndefined (LifecycleEventName) , "diagnostics" :: NullOrUndefined (Diagnostics) , "startTime" :: NullOrUndefined (Types.Timestamp) , "endTime" :: NullOrUndefined (Types.Timestamp) , "status" :: NullOrUndefined (LifecycleEventStatus) } -> {"lifecycleEventName" :: NullOrUndefined (LifecycleEventName) , "diagnostics" :: NullOrUndefined (Diagnostics) , "startTime" :: NullOrUndefined (Types.Timestamp) , "endTime" :: NullOrUndefined (Types.Timestamp) , "status" :: NullOrUndefined (LifecycleEventStatus) } ) -> LifecycleEvent
-newLifecycleEvent'  customize = (LifecycleEvent <<< customize) { "diagnostics": (NullOrUndefined Nothing), "endTime": (NullOrUndefined Nothing), "lifecycleEventName": (NullOrUndefined Nothing), "startTime": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newLifecycleEvent' :: ( { "lifecycleEventName" :: Maybe (LifecycleEventName) , "diagnostics" :: Maybe (Diagnostics) , "startTime" :: Maybe (Types.Timestamp) , "endTime" :: Maybe (Types.Timestamp) , "status" :: Maybe (LifecycleEventStatus) } -> {"lifecycleEventName" :: Maybe (LifecycleEventName) , "diagnostics" :: Maybe (Diagnostics) , "startTime" :: Maybe (Types.Timestamp) , "endTime" :: Maybe (Types.Timestamp) , "status" :: Maybe (LifecycleEventStatus) } ) -> LifecycleEvent
+newLifecycleEvent'  customize = (LifecycleEvent <<< customize) { "diagnostics": Nothing, "endTime": Nothing, "lifecycleEventName": Nothing, "startTime": Nothing, "status": Nothing }
 
 
 
@@ -3047,12 +3046,12 @@ instance encodeLifecycleMessage :: Encode LifecycleMessage where encode = generi
 -- | <p>Represents the input of a ListApplicationRevisions operation.</p>
 newtype ListApplicationRevisionsInput = ListApplicationRevisionsInput 
   { "applicationName" :: (ApplicationName)
-  , "sortBy" :: NullOrUndefined (ApplicationRevisionSortBy)
-  , "sortOrder" :: NullOrUndefined (SortOrder)
-  , "s3Bucket" :: NullOrUndefined (S3Bucket)
-  , "s3KeyPrefix" :: NullOrUndefined (S3Key)
-  , "deployed" :: NullOrUndefined (ListStateFilterAction)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  , "sortBy" :: Maybe (ApplicationRevisionSortBy)
+  , "sortOrder" :: Maybe (SortOrder)
+  , "s3Bucket" :: Maybe (S3Bucket)
+  , "s3KeyPrefix" :: Maybe (S3Key)
+  , "deployed" :: Maybe (ListStateFilterAction)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListApplicationRevisionsInput :: Newtype ListApplicationRevisionsInput _
 derive instance repGenericListApplicationRevisionsInput :: Generic ListApplicationRevisionsInput _
@@ -3062,19 +3061,19 @@ instance encodeListApplicationRevisionsInput :: Encode ListApplicationRevisionsI
 
 -- | Constructs ListApplicationRevisionsInput from required parameters
 newListApplicationRevisionsInput :: ApplicationName -> ListApplicationRevisionsInput
-newListApplicationRevisionsInput _applicationName = ListApplicationRevisionsInput { "applicationName": _applicationName, "deployed": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing), "s3Bucket": (NullOrUndefined Nothing), "s3KeyPrefix": (NullOrUndefined Nothing), "sortBy": (NullOrUndefined Nothing), "sortOrder": (NullOrUndefined Nothing) }
+newListApplicationRevisionsInput _applicationName = ListApplicationRevisionsInput { "applicationName": _applicationName, "deployed": Nothing, "nextToken": Nothing, "s3Bucket": Nothing, "s3KeyPrefix": Nothing, "sortBy": Nothing, "sortOrder": Nothing }
 
 -- | Constructs ListApplicationRevisionsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListApplicationRevisionsInput' :: ApplicationName -> ( { "applicationName" :: (ApplicationName) , "sortBy" :: NullOrUndefined (ApplicationRevisionSortBy) , "sortOrder" :: NullOrUndefined (SortOrder) , "s3Bucket" :: NullOrUndefined (S3Bucket) , "s3KeyPrefix" :: NullOrUndefined (S3Key) , "deployed" :: NullOrUndefined (ListStateFilterAction) , "nextToken" :: NullOrUndefined (NextToken) } -> {"applicationName" :: (ApplicationName) , "sortBy" :: NullOrUndefined (ApplicationRevisionSortBy) , "sortOrder" :: NullOrUndefined (SortOrder) , "s3Bucket" :: NullOrUndefined (S3Bucket) , "s3KeyPrefix" :: NullOrUndefined (S3Key) , "deployed" :: NullOrUndefined (ListStateFilterAction) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListApplicationRevisionsInput
-newListApplicationRevisionsInput' _applicationName customize = (ListApplicationRevisionsInput <<< customize) { "applicationName": _applicationName, "deployed": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing), "s3Bucket": (NullOrUndefined Nothing), "s3KeyPrefix": (NullOrUndefined Nothing), "sortBy": (NullOrUndefined Nothing), "sortOrder": (NullOrUndefined Nothing) }
+newListApplicationRevisionsInput' :: ApplicationName -> ( { "applicationName" :: (ApplicationName) , "sortBy" :: Maybe (ApplicationRevisionSortBy) , "sortOrder" :: Maybe (SortOrder) , "s3Bucket" :: Maybe (S3Bucket) , "s3KeyPrefix" :: Maybe (S3Key) , "deployed" :: Maybe (ListStateFilterAction) , "nextToken" :: Maybe (NextToken) } -> {"applicationName" :: (ApplicationName) , "sortBy" :: Maybe (ApplicationRevisionSortBy) , "sortOrder" :: Maybe (SortOrder) , "s3Bucket" :: Maybe (S3Bucket) , "s3KeyPrefix" :: Maybe (S3Key) , "deployed" :: Maybe (ListStateFilterAction) , "nextToken" :: Maybe (NextToken) } ) -> ListApplicationRevisionsInput
+newListApplicationRevisionsInput' _applicationName customize = (ListApplicationRevisionsInput <<< customize) { "applicationName": _applicationName, "deployed": Nothing, "nextToken": Nothing, "s3Bucket": Nothing, "s3KeyPrefix": Nothing, "sortBy": Nothing, "sortOrder": Nothing }
 
 
 
 -- | <p>Represents the output of a ListApplicationRevisions operation.</p>
 newtype ListApplicationRevisionsOutput = ListApplicationRevisionsOutput 
-  { "revisions" :: NullOrUndefined (RevisionLocationList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "revisions" :: Maybe (RevisionLocationList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListApplicationRevisionsOutput :: Newtype ListApplicationRevisionsOutput _
 derive instance repGenericListApplicationRevisionsOutput :: Generic ListApplicationRevisionsOutput _
@@ -3084,18 +3083,18 @@ instance encodeListApplicationRevisionsOutput :: Encode ListApplicationRevisions
 
 -- | Constructs ListApplicationRevisionsOutput from required parameters
 newListApplicationRevisionsOutput :: ListApplicationRevisionsOutput
-newListApplicationRevisionsOutput  = ListApplicationRevisionsOutput { "nextToken": (NullOrUndefined Nothing), "revisions": (NullOrUndefined Nothing) }
+newListApplicationRevisionsOutput  = ListApplicationRevisionsOutput { "nextToken": Nothing, "revisions": Nothing }
 
 -- | Constructs ListApplicationRevisionsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListApplicationRevisionsOutput' :: ( { "revisions" :: NullOrUndefined (RevisionLocationList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"revisions" :: NullOrUndefined (RevisionLocationList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListApplicationRevisionsOutput
-newListApplicationRevisionsOutput'  customize = (ListApplicationRevisionsOutput <<< customize) { "nextToken": (NullOrUndefined Nothing), "revisions": (NullOrUndefined Nothing) }
+newListApplicationRevisionsOutput' :: ( { "revisions" :: Maybe (RevisionLocationList) , "nextToken" :: Maybe (NextToken) } -> {"revisions" :: Maybe (RevisionLocationList) , "nextToken" :: Maybe (NextToken) } ) -> ListApplicationRevisionsOutput
+newListApplicationRevisionsOutput'  customize = (ListApplicationRevisionsOutput <<< customize) { "nextToken": Nothing, "revisions": Nothing }
 
 
 
 -- | <p>Represents the input of a ListApplications operation.</p>
 newtype ListApplicationsInput = ListApplicationsInput 
-  { "nextToken" :: NullOrUndefined (NextToken)
+  { "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListApplicationsInput :: Newtype ListApplicationsInput _
 derive instance repGenericListApplicationsInput :: Generic ListApplicationsInput _
@@ -3105,19 +3104,19 @@ instance encodeListApplicationsInput :: Encode ListApplicationsInput where encod
 
 -- | Constructs ListApplicationsInput from required parameters
 newListApplicationsInput :: ListApplicationsInput
-newListApplicationsInput  = ListApplicationsInput { "nextToken": (NullOrUndefined Nothing) }
+newListApplicationsInput  = ListApplicationsInput { "nextToken": Nothing }
 
 -- | Constructs ListApplicationsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListApplicationsInput' :: ( { "nextToken" :: NullOrUndefined (NextToken) } -> {"nextToken" :: NullOrUndefined (NextToken) } ) -> ListApplicationsInput
-newListApplicationsInput'  customize = (ListApplicationsInput <<< customize) { "nextToken": (NullOrUndefined Nothing) }
+newListApplicationsInput' :: ( { "nextToken" :: Maybe (NextToken) } -> {"nextToken" :: Maybe (NextToken) } ) -> ListApplicationsInput
+newListApplicationsInput'  customize = (ListApplicationsInput <<< customize) { "nextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a ListApplications operation.</p>
 newtype ListApplicationsOutput = ListApplicationsOutput 
-  { "applications" :: NullOrUndefined (ApplicationsList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "applications" :: Maybe (ApplicationsList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListApplicationsOutput :: Newtype ListApplicationsOutput _
 derive instance repGenericListApplicationsOutput :: Generic ListApplicationsOutput _
@@ -3127,18 +3126,18 @@ instance encodeListApplicationsOutput :: Encode ListApplicationsOutput where enc
 
 -- | Constructs ListApplicationsOutput from required parameters
 newListApplicationsOutput :: ListApplicationsOutput
-newListApplicationsOutput  = ListApplicationsOutput { "applications": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListApplicationsOutput  = ListApplicationsOutput { "applications": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListApplicationsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListApplicationsOutput' :: ( { "applications" :: NullOrUndefined (ApplicationsList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"applications" :: NullOrUndefined (ApplicationsList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListApplicationsOutput
-newListApplicationsOutput'  customize = (ListApplicationsOutput <<< customize) { "applications": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListApplicationsOutput' :: ( { "applications" :: Maybe (ApplicationsList) , "nextToken" :: Maybe (NextToken) } -> {"applications" :: Maybe (ApplicationsList) , "nextToken" :: Maybe (NextToken) } ) -> ListApplicationsOutput
+newListApplicationsOutput'  customize = (ListApplicationsOutput <<< customize) { "applications": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the input of a ListDeploymentConfigs operation.</p>
 newtype ListDeploymentConfigsInput = ListDeploymentConfigsInput 
-  { "nextToken" :: NullOrUndefined (NextToken)
+  { "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDeploymentConfigsInput :: Newtype ListDeploymentConfigsInput _
 derive instance repGenericListDeploymentConfigsInput :: Generic ListDeploymentConfigsInput _
@@ -3148,19 +3147,19 @@ instance encodeListDeploymentConfigsInput :: Encode ListDeploymentConfigsInput w
 
 -- | Constructs ListDeploymentConfigsInput from required parameters
 newListDeploymentConfigsInput :: ListDeploymentConfigsInput
-newListDeploymentConfigsInput  = ListDeploymentConfigsInput { "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentConfigsInput  = ListDeploymentConfigsInput { "nextToken": Nothing }
 
 -- | Constructs ListDeploymentConfigsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDeploymentConfigsInput' :: ( { "nextToken" :: NullOrUndefined (NextToken) } -> {"nextToken" :: NullOrUndefined (NextToken) } ) -> ListDeploymentConfigsInput
-newListDeploymentConfigsInput'  customize = (ListDeploymentConfigsInput <<< customize) { "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentConfigsInput' :: ( { "nextToken" :: Maybe (NextToken) } -> {"nextToken" :: Maybe (NextToken) } ) -> ListDeploymentConfigsInput
+newListDeploymentConfigsInput'  customize = (ListDeploymentConfigsInput <<< customize) { "nextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a ListDeploymentConfigs operation.</p>
 newtype ListDeploymentConfigsOutput = ListDeploymentConfigsOutput 
-  { "deploymentConfigsList" :: NullOrUndefined (DeploymentConfigsList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "deploymentConfigsList" :: Maybe (DeploymentConfigsList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDeploymentConfigsOutput :: Newtype ListDeploymentConfigsOutput _
 derive instance repGenericListDeploymentConfigsOutput :: Generic ListDeploymentConfigsOutput _
@@ -3170,19 +3169,19 @@ instance encodeListDeploymentConfigsOutput :: Encode ListDeploymentConfigsOutput
 
 -- | Constructs ListDeploymentConfigsOutput from required parameters
 newListDeploymentConfigsOutput :: ListDeploymentConfigsOutput
-newListDeploymentConfigsOutput  = ListDeploymentConfigsOutput { "deploymentConfigsList": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentConfigsOutput  = ListDeploymentConfigsOutput { "deploymentConfigsList": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListDeploymentConfigsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDeploymentConfigsOutput' :: ( { "deploymentConfigsList" :: NullOrUndefined (DeploymentConfigsList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"deploymentConfigsList" :: NullOrUndefined (DeploymentConfigsList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListDeploymentConfigsOutput
-newListDeploymentConfigsOutput'  customize = (ListDeploymentConfigsOutput <<< customize) { "deploymentConfigsList": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentConfigsOutput' :: ( { "deploymentConfigsList" :: Maybe (DeploymentConfigsList) , "nextToken" :: Maybe (NextToken) } -> {"deploymentConfigsList" :: Maybe (DeploymentConfigsList) , "nextToken" :: Maybe (NextToken) } ) -> ListDeploymentConfigsOutput
+newListDeploymentConfigsOutput'  customize = (ListDeploymentConfigsOutput <<< customize) { "deploymentConfigsList": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the input of a ListDeploymentGroups operation.</p>
 newtype ListDeploymentGroupsInput = ListDeploymentGroupsInput 
   { "applicationName" :: (ApplicationName)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDeploymentGroupsInput :: Newtype ListDeploymentGroupsInput _
 derive instance repGenericListDeploymentGroupsInput :: Generic ListDeploymentGroupsInput _
@@ -3192,20 +3191,20 @@ instance encodeListDeploymentGroupsInput :: Encode ListDeploymentGroupsInput whe
 
 -- | Constructs ListDeploymentGroupsInput from required parameters
 newListDeploymentGroupsInput :: ApplicationName -> ListDeploymentGroupsInput
-newListDeploymentGroupsInput _applicationName = ListDeploymentGroupsInput { "applicationName": _applicationName, "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentGroupsInput _applicationName = ListDeploymentGroupsInput { "applicationName": _applicationName, "nextToken": Nothing }
 
 -- | Constructs ListDeploymentGroupsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDeploymentGroupsInput' :: ApplicationName -> ( { "applicationName" :: (ApplicationName) , "nextToken" :: NullOrUndefined (NextToken) } -> {"applicationName" :: (ApplicationName) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListDeploymentGroupsInput
-newListDeploymentGroupsInput' _applicationName customize = (ListDeploymentGroupsInput <<< customize) { "applicationName": _applicationName, "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentGroupsInput' :: ApplicationName -> ( { "applicationName" :: (ApplicationName) , "nextToken" :: Maybe (NextToken) } -> {"applicationName" :: (ApplicationName) , "nextToken" :: Maybe (NextToken) } ) -> ListDeploymentGroupsInput
+newListDeploymentGroupsInput' _applicationName customize = (ListDeploymentGroupsInput <<< customize) { "applicationName": _applicationName, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a ListDeploymentGroups operation.</p>
 newtype ListDeploymentGroupsOutput = ListDeploymentGroupsOutput 
-  { "applicationName" :: NullOrUndefined (ApplicationName)
-  , "deploymentGroups" :: NullOrUndefined (DeploymentGroupsList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "applicationName" :: Maybe (ApplicationName)
+  , "deploymentGroups" :: Maybe (DeploymentGroupsList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDeploymentGroupsOutput :: Newtype ListDeploymentGroupsOutput _
 derive instance repGenericListDeploymentGroupsOutput :: Generic ListDeploymentGroupsOutput _
@@ -3215,21 +3214,21 @@ instance encodeListDeploymentGroupsOutput :: Encode ListDeploymentGroupsOutput w
 
 -- | Constructs ListDeploymentGroupsOutput from required parameters
 newListDeploymentGroupsOutput :: ListDeploymentGroupsOutput
-newListDeploymentGroupsOutput  = ListDeploymentGroupsOutput { "applicationName": (NullOrUndefined Nothing), "deploymentGroups": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentGroupsOutput  = ListDeploymentGroupsOutput { "applicationName": Nothing, "deploymentGroups": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListDeploymentGroupsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDeploymentGroupsOutput' :: ( { "applicationName" :: NullOrUndefined (ApplicationName) , "deploymentGroups" :: NullOrUndefined (DeploymentGroupsList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"applicationName" :: NullOrUndefined (ApplicationName) , "deploymentGroups" :: NullOrUndefined (DeploymentGroupsList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListDeploymentGroupsOutput
-newListDeploymentGroupsOutput'  customize = (ListDeploymentGroupsOutput <<< customize) { "applicationName": (NullOrUndefined Nothing), "deploymentGroups": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentGroupsOutput' :: ( { "applicationName" :: Maybe (ApplicationName) , "deploymentGroups" :: Maybe (DeploymentGroupsList) , "nextToken" :: Maybe (NextToken) } -> {"applicationName" :: Maybe (ApplicationName) , "deploymentGroups" :: Maybe (DeploymentGroupsList) , "nextToken" :: Maybe (NextToken) } ) -> ListDeploymentGroupsOutput
+newListDeploymentGroupsOutput'  customize = (ListDeploymentGroupsOutput <<< customize) { "applicationName": Nothing, "deploymentGroups": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the input of a ListDeploymentInstances operation.</p>
 newtype ListDeploymentInstancesInput = ListDeploymentInstancesInput 
   { "deploymentId" :: (DeploymentId)
-  , "nextToken" :: NullOrUndefined (NextToken)
-  , "instanceStatusFilter" :: NullOrUndefined (InstanceStatusList)
-  , "instanceTypeFilter" :: NullOrUndefined (InstanceTypeList)
+  , "nextToken" :: Maybe (NextToken)
+  , "instanceStatusFilter" :: Maybe (InstanceStatusList)
+  , "instanceTypeFilter" :: Maybe (InstanceTypeList)
   }
 derive instance newtypeListDeploymentInstancesInput :: Newtype ListDeploymentInstancesInput _
 derive instance repGenericListDeploymentInstancesInput :: Generic ListDeploymentInstancesInput _
@@ -3239,19 +3238,19 @@ instance encodeListDeploymentInstancesInput :: Encode ListDeploymentInstancesInp
 
 -- | Constructs ListDeploymentInstancesInput from required parameters
 newListDeploymentInstancesInput :: DeploymentId -> ListDeploymentInstancesInput
-newListDeploymentInstancesInput _deploymentId = ListDeploymentInstancesInput { "deploymentId": _deploymentId, "instanceStatusFilter": (NullOrUndefined Nothing), "instanceTypeFilter": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentInstancesInput _deploymentId = ListDeploymentInstancesInput { "deploymentId": _deploymentId, "instanceStatusFilter": Nothing, "instanceTypeFilter": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListDeploymentInstancesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDeploymentInstancesInput' :: DeploymentId -> ( { "deploymentId" :: (DeploymentId) , "nextToken" :: NullOrUndefined (NextToken) , "instanceStatusFilter" :: NullOrUndefined (InstanceStatusList) , "instanceTypeFilter" :: NullOrUndefined (InstanceTypeList) } -> {"deploymentId" :: (DeploymentId) , "nextToken" :: NullOrUndefined (NextToken) , "instanceStatusFilter" :: NullOrUndefined (InstanceStatusList) , "instanceTypeFilter" :: NullOrUndefined (InstanceTypeList) } ) -> ListDeploymentInstancesInput
-newListDeploymentInstancesInput' _deploymentId customize = (ListDeploymentInstancesInput <<< customize) { "deploymentId": _deploymentId, "instanceStatusFilter": (NullOrUndefined Nothing), "instanceTypeFilter": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentInstancesInput' :: DeploymentId -> ( { "deploymentId" :: (DeploymentId) , "nextToken" :: Maybe (NextToken) , "instanceStatusFilter" :: Maybe (InstanceStatusList) , "instanceTypeFilter" :: Maybe (InstanceTypeList) } -> {"deploymentId" :: (DeploymentId) , "nextToken" :: Maybe (NextToken) , "instanceStatusFilter" :: Maybe (InstanceStatusList) , "instanceTypeFilter" :: Maybe (InstanceTypeList) } ) -> ListDeploymentInstancesInput
+newListDeploymentInstancesInput' _deploymentId customize = (ListDeploymentInstancesInput <<< customize) { "deploymentId": _deploymentId, "instanceStatusFilter": Nothing, "instanceTypeFilter": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a ListDeploymentInstances operation.</p>
 newtype ListDeploymentInstancesOutput = ListDeploymentInstancesOutput 
-  { "instancesList" :: NullOrUndefined (InstancesList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "instancesList" :: Maybe (InstancesList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDeploymentInstancesOutput :: Newtype ListDeploymentInstancesOutput _
 derive instance repGenericListDeploymentInstancesOutput :: Generic ListDeploymentInstancesOutput _
@@ -3261,22 +3260,22 @@ instance encodeListDeploymentInstancesOutput :: Encode ListDeploymentInstancesOu
 
 -- | Constructs ListDeploymentInstancesOutput from required parameters
 newListDeploymentInstancesOutput :: ListDeploymentInstancesOutput
-newListDeploymentInstancesOutput  = ListDeploymentInstancesOutput { "instancesList": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentInstancesOutput  = ListDeploymentInstancesOutput { "instancesList": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListDeploymentInstancesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDeploymentInstancesOutput' :: ( { "instancesList" :: NullOrUndefined (InstancesList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"instancesList" :: NullOrUndefined (InstancesList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListDeploymentInstancesOutput
-newListDeploymentInstancesOutput'  customize = (ListDeploymentInstancesOutput <<< customize) { "instancesList": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentInstancesOutput' :: ( { "instancesList" :: Maybe (InstancesList) , "nextToken" :: Maybe (NextToken) } -> {"instancesList" :: Maybe (InstancesList) , "nextToken" :: Maybe (NextToken) } ) -> ListDeploymentInstancesOutput
+newListDeploymentInstancesOutput'  customize = (ListDeploymentInstancesOutput <<< customize) { "instancesList": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the input of a ListDeployments operation.</p>
 newtype ListDeploymentsInput = ListDeploymentsInput 
-  { "applicationName" :: NullOrUndefined (ApplicationName)
-  , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName)
-  , "includeOnlyStatuses" :: NullOrUndefined (DeploymentStatusList)
-  , "createTimeRange" :: NullOrUndefined (TimeRange)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "applicationName" :: Maybe (ApplicationName)
+  , "deploymentGroupName" :: Maybe (DeploymentGroupName)
+  , "includeOnlyStatuses" :: Maybe (DeploymentStatusList)
+  , "createTimeRange" :: Maybe (TimeRange)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDeploymentsInput :: Newtype ListDeploymentsInput _
 derive instance repGenericListDeploymentsInput :: Generic ListDeploymentsInput _
@@ -3286,19 +3285,19 @@ instance encodeListDeploymentsInput :: Encode ListDeploymentsInput where encode 
 
 -- | Constructs ListDeploymentsInput from required parameters
 newListDeploymentsInput :: ListDeploymentsInput
-newListDeploymentsInput  = ListDeploymentsInput { "applicationName": (NullOrUndefined Nothing), "createTimeRange": (NullOrUndefined Nothing), "deploymentGroupName": (NullOrUndefined Nothing), "includeOnlyStatuses": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentsInput  = ListDeploymentsInput { "applicationName": Nothing, "createTimeRange": Nothing, "deploymentGroupName": Nothing, "includeOnlyStatuses": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListDeploymentsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDeploymentsInput' :: ( { "applicationName" :: NullOrUndefined (ApplicationName) , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName) , "includeOnlyStatuses" :: NullOrUndefined (DeploymentStatusList) , "createTimeRange" :: NullOrUndefined (TimeRange) , "nextToken" :: NullOrUndefined (NextToken) } -> {"applicationName" :: NullOrUndefined (ApplicationName) , "deploymentGroupName" :: NullOrUndefined (DeploymentGroupName) , "includeOnlyStatuses" :: NullOrUndefined (DeploymentStatusList) , "createTimeRange" :: NullOrUndefined (TimeRange) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListDeploymentsInput
-newListDeploymentsInput'  customize = (ListDeploymentsInput <<< customize) { "applicationName": (NullOrUndefined Nothing), "createTimeRange": (NullOrUndefined Nothing), "deploymentGroupName": (NullOrUndefined Nothing), "includeOnlyStatuses": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentsInput' :: ( { "applicationName" :: Maybe (ApplicationName) , "deploymentGroupName" :: Maybe (DeploymentGroupName) , "includeOnlyStatuses" :: Maybe (DeploymentStatusList) , "createTimeRange" :: Maybe (TimeRange) , "nextToken" :: Maybe (NextToken) } -> {"applicationName" :: Maybe (ApplicationName) , "deploymentGroupName" :: Maybe (DeploymentGroupName) , "includeOnlyStatuses" :: Maybe (DeploymentStatusList) , "createTimeRange" :: Maybe (TimeRange) , "nextToken" :: Maybe (NextToken) } ) -> ListDeploymentsInput
+newListDeploymentsInput'  customize = (ListDeploymentsInput <<< customize) { "applicationName": Nothing, "createTimeRange": Nothing, "deploymentGroupName": Nothing, "includeOnlyStatuses": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a ListDeployments operation.</p>
 newtype ListDeploymentsOutput = ListDeploymentsOutput 
-  { "deployments" :: NullOrUndefined (DeploymentsList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "deployments" :: Maybe (DeploymentsList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDeploymentsOutput :: Newtype ListDeploymentsOutput _
 derive instance repGenericListDeploymentsOutput :: Generic ListDeploymentsOutput _
@@ -3308,18 +3307,18 @@ instance encodeListDeploymentsOutput :: Encode ListDeploymentsOutput where encod
 
 -- | Constructs ListDeploymentsOutput from required parameters
 newListDeploymentsOutput :: ListDeploymentsOutput
-newListDeploymentsOutput  = ListDeploymentsOutput { "deployments": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentsOutput  = ListDeploymentsOutput { "deployments": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListDeploymentsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDeploymentsOutput' :: ( { "deployments" :: NullOrUndefined (DeploymentsList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"deployments" :: NullOrUndefined (DeploymentsList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListDeploymentsOutput
-newListDeploymentsOutput'  customize = (ListDeploymentsOutput <<< customize) { "deployments": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListDeploymentsOutput' :: ( { "deployments" :: Maybe (DeploymentsList) , "nextToken" :: Maybe (NextToken) } -> {"deployments" :: Maybe (DeploymentsList) , "nextToken" :: Maybe (NextToken) } ) -> ListDeploymentsOutput
+newListDeploymentsOutput'  customize = (ListDeploymentsOutput <<< customize) { "deployments": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the input of a ListGitHubAccountTokenNames operation.</p>
 newtype ListGitHubAccountTokenNamesInput = ListGitHubAccountTokenNamesInput 
-  { "nextToken" :: NullOrUndefined (NextToken)
+  { "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListGitHubAccountTokenNamesInput :: Newtype ListGitHubAccountTokenNamesInput _
 derive instance repGenericListGitHubAccountTokenNamesInput :: Generic ListGitHubAccountTokenNamesInput _
@@ -3329,19 +3328,19 @@ instance encodeListGitHubAccountTokenNamesInput :: Encode ListGitHubAccountToken
 
 -- | Constructs ListGitHubAccountTokenNamesInput from required parameters
 newListGitHubAccountTokenNamesInput :: ListGitHubAccountTokenNamesInput
-newListGitHubAccountTokenNamesInput  = ListGitHubAccountTokenNamesInput { "nextToken": (NullOrUndefined Nothing) }
+newListGitHubAccountTokenNamesInput  = ListGitHubAccountTokenNamesInput { "nextToken": Nothing }
 
 -- | Constructs ListGitHubAccountTokenNamesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListGitHubAccountTokenNamesInput' :: ( { "nextToken" :: NullOrUndefined (NextToken) } -> {"nextToken" :: NullOrUndefined (NextToken) } ) -> ListGitHubAccountTokenNamesInput
-newListGitHubAccountTokenNamesInput'  customize = (ListGitHubAccountTokenNamesInput <<< customize) { "nextToken": (NullOrUndefined Nothing) }
+newListGitHubAccountTokenNamesInput' :: ( { "nextToken" :: Maybe (NextToken) } -> {"nextToken" :: Maybe (NextToken) } ) -> ListGitHubAccountTokenNamesInput
+newListGitHubAccountTokenNamesInput'  customize = (ListGitHubAccountTokenNamesInput <<< customize) { "nextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a ListGitHubAccountTokenNames operation.</p>
 newtype ListGitHubAccountTokenNamesOutput = ListGitHubAccountTokenNamesOutput 
-  { "tokenNameList" :: NullOrUndefined (GitHubAccountTokenNameList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "tokenNameList" :: Maybe (GitHubAccountTokenNameList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListGitHubAccountTokenNamesOutput :: Newtype ListGitHubAccountTokenNamesOutput _
 derive instance repGenericListGitHubAccountTokenNamesOutput :: Generic ListGitHubAccountTokenNamesOutput _
@@ -3351,20 +3350,20 @@ instance encodeListGitHubAccountTokenNamesOutput :: Encode ListGitHubAccountToke
 
 -- | Constructs ListGitHubAccountTokenNamesOutput from required parameters
 newListGitHubAccountTokenNamesOutput :: ListGitHubAccountTokenNamesOutput
-newListGitHubAccountTokenNamesOutput  = ListGitHubAccountTokenNamesOutput { "nextToken": (NullOrUndefined Nothing), "tokenNameList": (NullOrUndefined Nothing) }
+newListGitHubAccountTokenNamesOutput  = ListGitHubAccountTokenNamesOutput { "nextToken": Nothing, "tokenNameList": Nothing }
 
 -- | Constructs ListGitHubAccountTokenNamesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListGitHubAccountTokenNamesOutput' :: ( { "tokenNameList" :: NullOrUndefined (GitHubAccountTokenNameList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"tokenNameList" :: NullOrUndefined (GitHubAccountTokenNameList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListGitHubAccountTokenNamesOutput
-newListGitHubAccountTokenNamesOutput'  customize = (ListGitHubAccountTokenNamesOutput <<< customize) { "nextToken": (NullOrUndefined Nothing), "tokenNameList": (NullOrUndefined Nothing) }
+newListGitHubAccountTokenNamesOutput' :: ( { "tokenNameList" :: Maybe (GitHubAccountTokenNameList) , "nextToken" :: Maybe (NextToken) } -> {"tokenNameList" :: Maybe (GitHubAccountTokenNameList) , "nextToken" :: Maybe (NextToken) } ) -> ListGitHubAccountTokenNamesOutput
+newListGitHubAccountTokenNamesOutput'  customize = (ListGitHubAccountTokenNamesOutput <<< customize) { "nextToken": Nothing, "tokenNameList": Nothing }
 
 
 
 -- | <p>Represents the input of a ListOnPremisesInstances operation.</p>
 newtype ListOnPremisesInstancesInput = ListOnPremisesInstancesInput 
-  { "registrationStatus" :: NullOrUndefined (RegistrationStatus)
-  , "tagFilters" :: NullOrUndefined (TagFilterList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "registrationStatus" :: Maybe (RegistrationStatus)
+  , "tagFilters" :: Maybe (TagFilterList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListOnPremisesInstancesInput :: Newtype ListOnPremisesInstancesInput _
 derive instance repGenericListOnPremisesInstancesInput :: Generic ListOnPremisesInstancesInput _
@@ -3374,19 +3373,19 @@ instance encodeListOnPremisesInstancesInput :: Encode ListOnPremisesInstancesInp
 
 -- | Constructs ListOnPremisesInstancesInput from required parameters
 newListOnPremisesInstancesInput :: ListOnPremisesInstancesInput
-newListOnPremisesInstancesInput  = ListOnPremisesInstancesInput { "nextToken": (NullOrUndefined Nothing), "registrationStatus": (NullOrUndefined Nothing), "tagFilters": (NullOrUndefined Nothing) }
+newListOnPremisesInstancesInput  = ListOnPremisesInstancesInput { "nextToken": Nothing, "registrationStatus": Nothing, "tagFilters": Nothing }
 
 -- | Constructs ListOnPremisesInstancesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListOnPremisesInstancesInput' :: ( { "registrationStatus" :: NullOrUndefined (RegistrationStatus) , "tagFilters" :: NullOrUndefined (TagFilterList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"registrationStatus" :: NullOrUndefined (RegistrationStatus) , "tagFilters" :: NullOrUndefined (TagFilterList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListOnPremisesInstancesInput
-newListOnPremisesInstancesInput'  customize = (ListOnPremisesInstancesInput <<< customize) { "nextToken": (NullOrUndefined Nothing), "registrationStatus": (NullOrUndefined Nothing), "tagFilters": (NullOrUndefined Nothing) }
+newListOnPremisesInstancesInput' :: ( { "registrationStatus" :: Maybe (RegistrationStatus) , "tagFilters" :: Maybe (TagFilterList) , "nextToken" :: Maybe (NextToken) } -> {"registrationStatus" :: Maybe (RegistrationStatus) , "tagFilters" :: Maybe (TagFilterList) , "nextToken" :: Maybe (NextToken) } ) -> ListOnPremisesInstancesInput
+newListOnPremisesInstancesInput'  customize = (ListOnPremisesInstancesInput <<< customize) { "nextToken": Nothing, "registrationStatus": Nothing, "tagFilters": Nothing }
 
 
 
 -- | <p>Represents the output of list on-premises instances operation.</p>
 newtype ListOnPremisesInstancesOutput = ListOnPremisesInstancesOutput 
-  { "instanceNames" :: NullOrUndefined (InstanceNameList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "instanceNames" :: Maybe (InstanceNameList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListOnPremisesInstancesOutput :: Newtype ListOnPremisesInstancesOutput _
 derive instance repGenericListOnPremisesInstancesOutput :: Generic ListOnPremisesInstancesOutput _
@@ -3396,12 +3395,12 @@ instance encodeListOnPremisesInstancesOutput :: Encode ListOnPremisesInstancesOu
 
 -- | Constructs ListOnPremisesInstancesOutput from required parameters
 newListOnPremisesInstancesOutput :: ListOnPremisesInstancesOutput
-newListOnPremisesInstancesOutput  = ListOnPremisesInstancesOutput { "instanceNames": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListOnPremisesInstancesOutput  = ListOnPremisesInstancesOutput { "instanceNames": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListOnPremisesInstancesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListOnPremisesInstancesOutput' :: ( { "instanceNames" :: NullOrUndefined (InstanceNameList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"instanceNames" :: NullOrUndefined (InstanceNameList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListOnPremisesInstancesOutput
-newListOnPremisesInstancesOutput'  customize = (ListOnPremisesInstancesOutput <<< customize) { "instanceNames": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListOnPremisesInstancesOutput' :: ( { "instanceNames" :: Maybe (InstanceNameList) , "nextToken" :: Maybe (NextToken) } -> {"instanceNames" :: Maybe (InstanceNameList) , "nextToken" :: Maybe (NextToken) } ) -> ListOnPremisesInstancesOutput
+newListOnPremisesInstancesOutput'  customize = (ListOnPremisesInstancesOutput <<< customize) { "instanceNames": Nothing, "nextToken": Nothing }
 
 
 
@@ -3416,8 +3415,8 @@ instance encodeListStateFilterAction :: Encode ListStateFilterAction where encod
 
 -- | <p>Information about the Elastic Load Balancing load balancer or target group used in a deployment.</p>
 newtype LoadBalancerInfo = LoadBalancerInfo 
-  { "elbInfoList" :: NullOrUndefined (ELBInfoList)
-  , "targetGroupInfoList" :: NullOrUndefined (TargetGroupInfoList)
+  { "elbInfoList" :: Maybe (ELBInfoList)
+  , "targetGroupInfoList" :: Maybe (TargetGroupInfoList)
   }
 derive instance newtypeLoadBalancerInfo :: Newtype LoadBalancerInfo _
 derive instance repGenericLoadBalancerInfo :: Generic LoadBalancerInfo _
@@ -3427,12 +3426,12 @@ instance encodeLoadBalancerInfo :: Encode LoadBalancerInfo where encode = generi
 
 -- | Constructs LoadBalancerInfo from required parameters
 newLoadBalancerInfo :: LoadBalancerInfo
-newLoadBalancerInfo  = LoadBalancerInfo { "elbInfoList": (NullOrUndefined Nothing), "targetGroupInfoList": (NullOrUndefined Nothing) }
+newLoadBalancerInfo  = LoadBalancerInfo { "elbInfoList": Nothing, "targetGroupInfoList": Nothing }
 
 -- | Constructs LoadBalancerInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLoadBalancerInfo' :: ( { "elbInfoList" :: NullOrUndefined (ELBInfoList) , "targetGroupInfoList" :: NullOrUndefined (TargetGroupInfoList) } -> {"elbInfoList" :: NullOrUndefined (ELBInfoList) , "targetGroupInfoList" :: NullOrUndefined (TargetGroupInfoList) } ) -> LoadBalancerInfo
-newLoadBalancerInfo'  customize = (LoadBalancerInfo <<< customize) { "elbInfoList": (NullOrUndefined Nothing), "targetGroupInfoList": (NullOrUndefined Nothing) }
+newLoadBalancerInfo' :: ( { "elbInfoList" :: Maybe (ELBInfoList) , "targetGroupInfoList" :: Maybe (TargetGroupInfoList) } -> {"elbInfoList" :: Maybe (ELBInfoList) , "targetGroupInfoList" :: Maybe (TargetGroupInfoList) } ) -> LoadBalancerInfo
+newLoadBalancerInfo'  customize = (LoadBalancerInfo <<< customize) { "elbInfoList": Nothing, "targetGroupInfoList": Nothing }
 
 
 
@@ -3456,8 +3455,8 @@ instance encodeMessage :: Encode Message where encode = genericEncode options
 
 -- | <p>Information about minimum healthy instance.</p>
 newtype MinimumHealthyHosts = MinimumHealthyHosts 
-  { "value" :: NullOrUndefined (MinimumHealthyHostsValue)
-  , "type" :: NullOrUndefined (MinimumHealthyHostsType)
+  { "value" :: Maybe (MinimumHealthyHostsValue)
+  , "type" :: Maybe (MinimumHealthyHostsType)
   }
 derive instance newtypeMinimumHealthyHosts :: Newtype MinimumHealthyHosts _
 derive instance repGenericMinimumHealthyHosts :: Generic MinimumHealthyHosts _
@@ -3467,12 +3466,12 @@ instance encodeMinimumHealthyHosts :: Encode MinimumHealthyHosts where encode = 
 
 -- | Constructs MinimumHealthyHosts from required parameters
 newMinimumHealthyHosts :: MinimumHealthyHosts
-newMinimumHealthyHosts  = MinimumHealthyHosts { "type": (NullOrUndefined Nothing), "value": (NullOrUndefined Nothing) }
+newMinimumHealthyHosts  = MinimumHealthyHosts { "type": Nothing, "value": Nothing }
 
 -- | Constructs MinimumHealthyHosts's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMinimumHealthyHosts' :: ( { "value" :: NullOrUndefined (MinimumHealthyHostsValue) , "type" :: NullOrUndefined (MinimumHealthyHostsType) } -> {"value" :: NullOrUndefined (MinimumHealthyHostsValue) , "type" :: NullOrUndefined (MinimumHealthyHostsType) } ) -> MinimumHealthyHosts
-newMinimumHealthyHosts'  customize = (MinimumHealthyHosts <<< customize) { "type": (NullOrUndefined Nothing), "value": (NullOrUndefined Nothing) }
+newMinimumHealthyHosts' :: ( { "value" :: Maybe (MinimumHealthyHostsValue) , "type" :: Maybe (MinimumHealthyHostsType) } -> {"value" :: Maybe (MinimumHealthyHostsValue) , "type" :: Maybe (MinimumHealthyHostsType) } ) -> MinimumHealthyHosts
+newMinimumHealthyHosts'  customize = (MinimumHealthyHosts <<< customize) { "type": Nothing, "value": Nothing }
 
 
 
@@ -3524,7 +3523,7 @@ instance encodeNullableBoolean :: Encode NullableBoolean where encode = genericE
 
 -- | <p>Information about groups of on-premises instance tags.</p>
 newtype OnPremisesTagSet = OnPremisesTagSet 
-  { "onPremisesTagSetList" :: NullOrUndefined (OnPremisesTagSetList)
+  { "onPremisesTagSetList" :: Maybe (OnPremisesTagSetList)
   }
 derive instance newtypeOnPremisesTagSet :: Newtype OnPremisesTagSet _
 derive instance repGenericOnPremisesTagSet :: Generic OnPremisesTagSet _
@@ -3534,12 +3533,12 @@ instance encodeOnPremisesTagSet :: Encode OnPremisesTagSet where encode = generi
 
 -- | Constructs OnPremisesTagSet from required parameters
 newOnPremisesTagSet :: OnPremisesTagSet
-newOnPremisesTagSet  = OnPremisesTagSet { "onPremisesTagSetList": (NullOrUndefined Nothing) }
+newOnPremisesTagSet  = OnPremisesTagSet { "onPremisesTagSetList": Nothing }
 
 -- | Constructs OnPremisesTagSet's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOnPremisesTagSet' :: ( { "onPremisesTagSetList" :: NullOrUndefined (OnPremisesTagSetList) } -> {"onPremisesTagSetList" :: NullOrUndefined (OnPremisesTagSetList) } ) -> OnPremisesTagSet
-newOnPremisesTagSet'  customize = (OnPremisesTagSet <<< customize) { "onPremisesTagSetList": (NullOrUndefined Nothing) }
+newOnPremisesTagSet' :: ( { "onPremisesTagSetList" :: Maybe (OnPremisesTagSetList) } -> {"onPremisesTagSetList" :: Maybe (OnPremisesTagSetList) } ) -> OnPremisesTagSet
+newOnPremisesTagSet'  customize = (OnPremisesTagSet <<< customize) { "onPremisesTagSetList": Nothing }
 
 
 
@@ -3572,9 +3571,9 @@ instance encodePercentage :: Encode Percentage where encode = genericEncode opti
 
 
 newtype PutLifecycleEventHookExecutionStatusInput = PutLifecycleEventHookExecutionStatusInput 
-  { "deploymentId" :: NullOrUndefined (DeploymentId)
-  , "lifecycleEventHookExecutionId" :: NullOrUndefined (LifecycleEventHookExecutionId)
-  , "status" :: NullOrUndefined (LifecycleEventStatus)
+  { "deploymentId" :: Maybe (DeploymentId)
+  , "lifecycleEventHookExecutionId" :: Maybe (LifecycleEventHookExecutionId)
+  , "status" :: Maybe (LifecycleEventStatus)
   }
 derive instance newtypePutLifecycleEventHookExecutionStatusInput :: Newtype PutLifecycleEventHookExecutionStatusInput _
 derive instance repGenericPutLifecycleEventHookExecutionStatusInput :: Generic PutLifecycleEventHookExecutionStatusInput _
@@ -3584,17 +3583,17 @@ instance encodePutLifecycleEventHookExecutionStatusInput :: Encode PutLifecycleE
 
 -- | Constructs PutLifecycleEventHookExecutionStatusInput from required parameters
 newPutLifecycleEventHookExecutionStatusInput :: PutLifecycleEventHookExecutionStatusInput
-newPutLifecycleEventHookExecutionStatusInput  = PutLifecycleEventHookExecutionStatusInput { "deploymentId": (NullOrUndefined Nothing), "lifecycleEventHookExecutionId": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newPutLifecycleEventHookExecutionStatusInput  = PutLifecycleEventHookExecutionStatusInput { "deploymentId": Nothing, "lifecycleEventHookExecutionId": Nothing, "status": Nothing }
 
 -- | Constructs PutLifecycleEventHookExecutionStatusInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutLifecycleEventHookExecutionStatusInput' :: ( { "deploymentId" :: NullOrUndefined (DeploymentId) , "lifecycleEventHookExecutionId" :: NullOrUndefined (LifecycleEventHookExecutionId) , "status" :: NullOrUndefined (LifecycleEventStatus) } -> {"deploymentId" :: NullOrUndefined (DeploymentId) , "lifecycleEventHookExecutionId" :: NullOrUndefined (LifecycleEventHookExecutionId) , "status" :: NullOrUndefined (LifecycleEventStatus) } ) -> PutLifecycleEventHookExecutionStatusInput
-newPutLifecycleEventHookExecutionStatusInput'  customize = (PutLifecycleEventHookExecutionStatusInput <<< customize) { "deploymentId": (NullOrUndefined Nothing), "lifecycleEventHookExecutionId": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newPutLifecycleEventHookExecutionStatusInput' :: ( { "deploymentId" :: Maybe (DeploymentId) , "lifecycleEventHookExecutionId" :: Maybe (LifecycleEventHookExecutionId) , "status" :: Maybe (LifecycleEventStatus) } -> {"deploymentId" :: Maybe (DeploymentId) , "lifecycleEventHookExecutionId" :: Maybe (LifecycleEventHookExecutionId) , "status" :: Maybe (LifecycleEventStatus) } ) -> PutLifecycleEventHookExecutionStatusInput
+newPutLifecycleEventHookExecutionStatusInput'  customize = (PutLifecycleEventHookExecutionStatusInput <<< customize) { "deploymentId": Nothing, "lifecycleEventHookExecutionId": Nothing, "status": Nothing }
 
 
 
 newtype PutLifecycleEventHookExecutionStatusOutput = PutLifecycleEventHookExecutionStatusOutput 
-  { "lifecycleEventHookExecutionId" :: NullOrUndefined (LifecycleEventHookExecutionId)
+  { "lifecycleEventHookExecutionId" :: Maybe (LifecycleEventHookExecutionId)
   }
 derive instance newtypePutLifecycleEventHookExecutionStatusOutput :: Newtype PutLifecycleEventHookExecutionStatusOutput _
 derive instance repGenericPutLifecycleEventHookExecutionStatusOutput :: Generic PutLifecycleEventHookExecutionStatusOutput _
@@ -3604,19 +3603,19 @@ instance encodePutLifecycleEventHookExecutionStatusOutput :: Encode PutLifecycle
 
 -- | Constructs PutLifecycleEventHookExecutionStatusOutput from required parameters
 newPutLifecycleEventHookExecutionStatusOutput :: PutLifecycleEventHookExecutionStatusOutput
-newPutLifecycleEventHookExecutionStatusOutput  = PutLifecycleEventHookExecutionStatusOutput { "lifecycleEventHookExecutionId": (NullOrUndefined Nothing) }
+newPutLifecycleEventHookExecutionStatusOutput  = PutLifecycleEventHookExecutionStatusOutput { "lifecycleEventHookExecutionId": Nothing }
 
 -- | Constructs PutLifecycleEventHookExecutionStatusOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutLifecycleEventHookExecutionStatusOutput' :: ( { "lifecycleEventHookExecutionId" :: NullOrUndefined (LifecycleEventHookExecutionId) } -> {"lifecycleEventHookExecutionId" :: NullOrUndefined (LifecycleEventHookExecutionId) } ) -> PutLifecycleEventHookExecutionStatusOutput
-newPutLifecycleEventHookExecutionStatusOutput'  customize = (PutLifecycleEventHookExecutionStatusOutput <<< customize) { "lifecycleEventHookExecutionId": (NullOrUndefined Nothing) }
+newPutLifecycleEventHookExecutionStatusOutput' :: ( { "lifecycleEventHookExecutionId" :: Maybe (LifecycleEventHookExecutionId) } -> {"lifecycleEventHookExecutionId" :: Maybe (LifecycleEventHookExecutionId) } ) -> PutLifecycleEventHookExecutionStatusOutput
+newPutLifecycleEventHookExecutionStatusOutput'  customize = (PutLifecycleEventHookExecutionStatusOutput <<< customize) { "lifecycleEventHookExecutionId": Nothing }
 
 
 
 -- | <p>A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.</p>
 newtype RawString = RawString 
-  { "content" :: NullOrUndefined (RawStringContent)
-  , "sha256" :: NullOrUndefined (RawStringSha256)
+  { "content" :: Maybe (RawStringContent)
+  , "sha256" :: Maybe (RawStringSha256)
   }
 derive instance newtypeRawString :: Newtype RawString _
 derive instance repGenericRawString :: Generic RawString _
@@ -3626,12 +3625,12 @@ instance encodeRawString :: Encode RawString where encode = genericEncode option
 
 -- | Constructs RawString from required parameters
 newRawString :: RawString
-newRawString  = RawString { "content": (NullOrUndefined Nothing), "sha256": (NullOrUndefined Nothing) }
+newRawString  = RawString { "content": Nothing, "sha256": Nothing }
 
 -- | Constructs RawString's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRawString' :: ( { "content" :: NullOrUndefined (RawStringContent) , "sha256" :: NullOrUndefined (RawStringSha256) } -> {"content" :: NullOrUndefined (RawStringContent) , "sha256" :: NullOrUndefined (RawStringSha256) } ) -> RawString
-newRawString'  customize = (RawString <<< customize) { "content": (NullOrUndefined Nothing), "sha256": (NullOrUndefined Nothing) }
+newRawString' :: ( { "content" :: Maybe (RawStringContent) , "sha256" :: Maybe (RawStringSha256) } -> {"content" :: Maybe (RawStringContent) , "sha256" :: Maybe (RawStringSha256) } ) -> RawString
+newRawString'  customize = (RawString <<< customize) { "content": Nothing, "sha256": Nothing }
 
 
 
@@ -3656,7 +3655,7 @@ instance encodeRawStringSha256 :: Encode RawStringSha256 where encode = genericE
 -- | <p>Represents the input of a RegisterApplicationRevision operation.</p>
 newtype RegisterApplicationRevisionInput = RegisterApplicationRevisionInput 
   { "applicationName" :: (ApplicationName)
-  , "description" :: NullOrUndefined (Description)
+  , "description" :: Maybe (Description)
   , "revision" :: (RevisionLocation)
   }
 derive instance newtypeRegisterApplicationRevisionInput :: Newtype RegisterApplicationRevisionInput _
@@ -3667,20 +3666,20 @@ instance encodeRegisterApplicationRevisionInput :: Encode RegisterApplicationRev
 
 -- | Constructs RegisterApplicationRevisionInput from required parameters
 newRegisterApplicationRevisionInput :: ApplicationName -> RevisionLocation -> RegisterApplicationRevisionInput
-newRegisterApplicationRevisionInput _applicationName _revision = RegisterApplicationRevisionInput { "applicationName": _applicationName, "revision": _revision, "description": (NullOrUndefined Nothing) }
+newRegisterApplicationRevisionInput _applicationName _revision = RegisterApplicationRevisionInput { "applicationName": _applicationName, "revision": _revision, "description": Nothing }
 
 -- | Constructs RegisterApplicationRevisionInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterApplicationRevisionInput' :: ApplicationName -> RevisionLocation -> ( { "applicationName" :: (ApplicationName) , "description" :: NullOrUndefined (Description) , "revision" :: (RevisionLocation) } -> {"applicationName" :: (ApplicationName) , "description" :: NullOrUndefined (Description) , "revision" :: (RevisionLocation) } ) -> RegisterApplicationRevisionInput
-newRegisterApplicationRevisionInput' _applicationName _revision customize = (RegisterApplicationRevisionInput <<< customize) { "applicationName": _applicationName, "revision": _revision, "description": (NullOrUndefined Nothing) }
+newRegisterApplicationRevisionInput' :: ApplicationName -> RevisionLocation -> ( { "applicationName" :: (ApplicationName) , "description" :: Maybe (Description) , "revision" :: (RevisionLocation) } -> {"applicationName" :: (ApplicationName) , "description" :: Maybe (Description) , "revision" :: (RevisionLocation) } ) -> RegisterApplicationRevisionInput
+newRegisterApplicationRevisionInput' _applicationName _revision customize = (RegisterApplicationRevisionInput <<< customize) { "applicationName": _applicationName, "revision": _revision, "description": Nothing }
 
 
 
 -- | <p>Represents the input of the register on-premises instance operation.</p>
 newtype RegisterOnPremisesInstanceInput = RegisterOnPremisesInstanceInput 
   { "instanceName" :: (InstanceName)
-  , "iamSessionArn" :: NullOrUndefined (IamSessionArn)
-  , "iamUserArn" :: NullOrUndefined (IamUserArn)
+  , "iamSessionArn" :: Maybe (IamSessionArn)
+  , "iamUserArn" :: Maybe (IamUserArn)
   }
 derive instance newtypeRegisterOnPremisesInstanceInput :: Newtype RegisterOnPremisesInstanceInput _
 derive instance repGenericRegisterOnPremisesInstanceInput :: Generic RegisterOnPremisesInstanceInput _
@@ -3690,12 +3689,12 @@ instance encodeRegisterOnPremisesInstanceInput :: Encode RegisterOnPremisesInsta
 
 -- | Constructs RegisterOnPremisesInstanceInput from required parameters
 newRegisterOnPremisesInstanceInput :: InstanceName -> RegisterOnPremisesInstanceInput
-newRegisterOnPremisesInstanceInput _instanceName = RegisterOnPremisesInstanceInput { "instanceName": _instanceName, "iamSessionArn": (NullOrUndefined Nothing), "iamUserArn": (NullOrUndefined Nothing) }
+newRegisterOnPremisesInstanceInput _instanceName = RegisterOnPremisesInstanceInput { "instanceName": _instanceName, "iamSessionArn": Nothing, "iamUserArn": Nothing }
 
 -- | Constructs RegisterOnPremisesInstanceInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterOnPremisesInstanceInput' :: InstanceName -> ( { "instanceName" :: (InstanceName) , "iamSessionArn" :: NullOrUndefined (IamSessionArn) , "iamUserArn" :: NullOrUndefined (IamUserArn) } -> {"instanceName" :: (InstanceName) , "iamSessionArn" :: NullOrUndefined (IamSessionArn) , "iamUserArn" :: NullOrUndefined (IamUserArn) } ) -> RegisterOnPremisesInstanceInput
-newRegisterOnPremisesInstanceInput' _instanceName customize = (RegisterOnPremisesInstanceInput <<< customize) { "instanceName": _instanceName, "iamSessionArn": (NullOrUndefined Nothing), "iamUserArn": (NullOrUndefined Nothing) }
+newRegisterOnPremisesInstanceInput' :: InstanceName -> ( { "instanceName" :: (InstanceName) , "iamSessionArn" :: Maybe (IamSessionArn) , "iamUserArn" :: Maybe (IamUserArn) } -> {"instanceName" :: (InstanceName) , "iamSessionArn" :: Maybe (IamSessionArn) , "iamUserArn" :: Maybe (IamUserArn) } ) -> RegisterOnPremisesInstanceInput
+newRegisterOnPremisesInstanceInput' _instanceName customize = (RegisterOnPremisesInstanceInput <<< customize) { "instanceName": _instanceName, "iamSessionArn": Nothing, "iamUserArn": Nothing }
 
 
 
@@ -3761,8 +3760,8 @@ instance encodeRevisionDoesNotExistException :: Encode RevisionDoesNotExistExcep
 
 -- | <p>Information about an application revision.</p>
 newtype RevisionInfo = RevisionInfo 
-  { "revisionLocation" :: NullOrUndefined (RevisionLocation)
-  , "genericRevisionInfo" :: NullOrUndefined (GenericRevisionInfo)
+  { "revisionLocation" :: Maybe (RevisionLocation)
+  , "genericRevisionInfo" :: Maybe (GenericRevisionInfo)
   }
 derive instance newtypeRevisionInfo :: Newtype RevisionInfo _
 derive instance repGenericRevisionInfo :: Generic RevisionInfo _
@@ -3772,12 +3771,12 @@ instance encodeRevisionInfo :: Encode RevisionInfo where encode = genericEncode 
 
 -- | Constructs RevisionInfo from required parameters
 newRevisionInfo :: RevisionInfo
-newRevisionInfo  = RevisionInfo { "genericRevisionInfo": (NullOrUndefined Nothing), "revisionLocation": (NullOrUndefined Nothing) }
+newRevisionInfo  = RevisionInfo { "genericRevisionInfo": Nothing, "revisionLocation": Nothing }
 
 -- | Constructs RevisionInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRevisionInfo' :: ( { "revisionLocation" :: NullOrUndefined (RevisionLocation) , "genericRevisionInfo" :: NullOrUndefined (GenericRevisionInfo) } -> {"revisionLocation" :: NullOrUndefined (RevisionLocation) , "genericRevisionInfo" :: NullOrUndefined (GenericRevisionInfo) } ) -> RevisionInfo
-newRevisionInfo'  customize = (RevisionInfo <<< customize) { "genericRevisionInfo": (NullOrUndefined Nothing), "revisionLocation": (NullOrUndefined Nothing) }
+newRevisionInfo' :: ( { "revisionLocation" :: Maybe (RevisionLocation) , "genericRevisionInfo" :: Maybe (GenericRevisionInfo) } -> {"revisionLocation" :: Maybe (RevisionLocation) , "genericRevisionInfo" :: Maybe (GenericRevisionInfo) } ) -> RevisionInfo
+newRevisionInfo'  customize = (RevisionInfo <<< customize) { "genericRevisionInfo": Nothing, "revisionLocation": Nothing }
 
 
 
@@ -3792,10 +3791,10 @@ instance encodeRevisionInfoList :: Encode RevisionInfoList where encode = generi
 
 -- | <p>Information about the location of an application revision.</p>
 newtype RevisionLocation = RevisionLocation 
-  { "revisionType" :: NullOrUndefined (RevisionLocationType)
-  , "s3Location" :: NullOrUndefined (S3Location)
-  , "gitHubLocation" :: NullOrUndefined (GitHubLocation)
-  , "string" :: NullOrUndefined (RawString)
+  { "revisionType" :: Maybe (RevisionLocationType)
+  , "s3Location" :: Maybe (S3Location)
+  , "gitHubLocation" :: Maybe (GitHubLocation)
+  , "string" :: Maybe (RawString)
   }
 derive instance newtypeRevisionLocation :: Newtype RevisionLocation _
 derive instance repGenericRevisionLocation :: Generic RevisionLocation _
@@ -3805,12 +3804,12 @@ instance encodeRevisionLocation :: Encode RevisionLocation where encode = generi
 
 -- | Constructs RevisionLocation from required parameters
 newRevisionLocation :: RevisionLocation
-newRevisionLocation  = RevisionLocation { "gitHubLocation": (NullOrUndefined Nothing), "revisionType": (NullOrUndefined Nothing), "s3Location": (NullOrUndefined Nothing), "string": (NullOrUndefined Nothing) }
+newRevisionLocation  = RevisionLocation { "gitHubLocation": Nothing, "revisionType": Nothing, "s3Location": Nothing, "string": Nothing }
 
 -- | Constructs RevisionLocation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRevisionLocation' :: ( { "revisionType" :: NullOrUndefined (RevisionLocationType) , "s3Location" :: NullOrUndefined (S3Location) , "gitHubLocation" :: NullOrUndefined (GitHubLocation) , "string" :: NullOrUndefined (RawString) } -> {"revisionType" :: NullOrUndefined (RevisionLocationType) , "s3Location" :: NullOrUndefined (S3Location) , "gitHubLocation" :: NullOrUndefined (GitHubLocation) , "string" :: NullOrUndefined (RawString) } ) -> RevisionLocation
-newRevisionLocation'  customize = (RevisionLocation <<< customize) { "gitHubLocation": (NullOrUndefined Nothing), "revisionType": (NullOrUndefined Nothing), "s3Location": (NullOrUndefined Nothing), "string": (NullOrUndefined Nothing) }
+newRevisionLocation' :: ( { "revisionType" :: Maybe (RevisionLocationType) , "s3Location" :: Maybe (S3Location) , "gitHubLocation" :: Maybe (GitHubLocation) , "string" :: Maybe (RawString) } -> {"revisionType" :: Maybe (RevisionLocationType) , "s3Location" :: Maybe (S3Location) , "gitHubLocation" :: Maybe (GitHubLocation) , "string" :: Maybe (RawString) } ) -> RevisionLocation
+newRevisionLocation'  customize = (RevisionLocation <<< customize) { "gitHubLocation": Nothing, "revisionType": Nothing, "s3Location": Nothing, "string": Nothing }
 
 
 
@@ -3863,9 +3862,9 @@ instance encodeRoleRequiredException :: Encode RoleRequiredException where encod
 
 -- | <p>Information about a deployment rollback.</p>
 newtype RollbackInfo = RollbackInfo 
-  { "rollbackDeploymentId" :: NullOrUndefined (DeploymentId)
-  , "rollbackTriggeringDeploymentId" :: NullOrUndefined (DeploymentId)
-  , "rollbackMessage" :: NullOrUndefined (Description)
+  { "rollbackDeploymentId" :: Maybe (DeploymentId)
+  , "rollbackTriggeringDeploymentId" :: Maybe (DeploymentId)
+  , "rollbackMessage" :: Maybe (Description)
   }
 derive instance newtypeRollbackInfo :: Newtype RollbackInfo _
 derive instance repGenericRollbackInfo :: Generic RollbackInfo _
@@ -3875,12 +3874,12 @@ instance encodeRollbackInfo :: Encode RollbackInfo where encode = genericEncode 
 
 -- | Constructs RollbackInfo from required parameters
 newRollbackInfo :: RollbackInfo
-newRollbackInfo  = RollbackInfo { "rollbackDeploymentId": (NullOrUndefined Nothing), "rollbackMessage": (NullOrUndefined Nothing), "rollbackTriggeringDeploymentId": (NullOrUndefined Nothing) }
+newRollbackInfo  = RollbackInfo { "rollbackDeploymentId": Nothing, "rollbackMessage": Nothing, "rollbackTriggeringDeploymentId": Nothing }
 
 -- | Constructs RollbackInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRollbackInfo' :: ( { "rollbackDeploymentId" :: NullOrUndefined (DeploymentId) , "rollbackTriggeringDeploymentId" :: NullOrUndefined (DeploymentId) , "rollbackMessage" :: NullOrUndefined (Description) } -> {"rollbackDeploymentId" :: NullOrUndefined (DeploymentId) , "rollbackTriggeringDeploymentId" :: NullOrUndefined (DeploymentId) , "rollbackMessage" :: NullOrUndefined (Description) } ) -> RollbackInfo
-newRollbackInfo'  customize = (RollbackInfo <<< customize) { "rollbackDeploymentId": (NullOrUndefined Nothing), "rollbackMessage": (NullOrUndefined Nothing), "rollbackTriggeringDeploymentId": (NullOrUndefined Nothing) }
+newRollbackInfo' :: ( { "rollbackDeploymentId" :: Maybe (DeploymentId) , "rollbackTriggeringDeploymentId" :: Maybe (DeploymentId) , "rollbackMessage" :: Maybe (Description) } -> {"rollbackDeploymentId" :: Maybe (DeploymentId) , "rollbackTriggeringDeploymentId" :: Maybe (DeploymentId) , "rollbackMessage" :: Maybe (Description) } ) -> RollbackInfo
+newRollbackInfo'  customize = (RollbackInfo <<< customize) { "rollbackDeploymentId": Nothing, "rollbackMessage": Nothing, "rollbackTriggeringDeploymentId": Nothing }
 
 
 
@@ -3904,11 +3903,11 @@ instance encodeS3Key :: Encode S3Key where encode = genericEncode options
 
 -- | <p>Information about the location of application artifacts stored in Amazon S3.</p>
 newtype S3Location = S3Location 
-  { "bucket" :: NullOrUndefined (S3Bucket)
-  , "key" :: NullOrUndefined (S3Key)
-  , "bundleType" :: NullOrUndefined (BundleType)
-  , "version" :: NullOrUndefined (VersionId)
-  , "eTag" :: NullOrUndefined (ETag)
+  { "bucket" :: Maybe (S3Bucket)
+  , "key" :: Maybe (S3Key)
+  , "bundleType" :: Maybe (BundleType)
+  , "version" :: Maybe (VersionId)
+  , "eTag" :: Maybe (ETag)
   }
 derive instance newtypeS3Location :: Newtype S3Location _
 derive instance repGenericS3Location :: Generic S3Location _
@@ -3918,12 +3917,12 @@ instance encodeS3Location :: Encode S3Location where encode = genericEncode opti
 
 -- | Constructs S3Location from required parameters
 newS3Location :: S3Location
-newS3Location  = S3Location { "bucket": (NullOrUndefined Nothing), "bundleType": (NullOrUndefined Nothing), "eTag": (NullOrUndefined Nothing), "key": (NullOrUndefined Nothing), "version": (NullOrUndefined Nothing) }
+newS3Location  = S3Location { "bucket": Nothing, "bundleType": Nothing, "eTag": Nothing, "key": Nothing, "version": Nothing }
 
 -- | Constructs S3Location's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newS3Location' :: ( { "bucket" :: NullOrUndefined (S3Bucket) , "key" :: NullOrUndefined (S3Key) , "bundleType" :: NullOrUndefined (BundleType) , "version" :: NullOrUndefined (VersionId) , "eTag" :: NullOrUndefined (ETag) } -> {"bucket" :: NullOrUndefined (S3Bucket) , "key" :: NullOrUndefined (S3Key) , "bundleType" :: NullOrUndefined (BundleType) , "version" :: NullOrUndefined (VersionId) , "eTag" :: NullOrUndefined (ETag) } ) -> S3Location
-newS3Location'  customize = (S3Location <<< customize) { "bucket": (NullOrUndefined Nothing), "bundleType": (NullOrUndefined Nothing), "eTag": (NullOrUndefined Nothing), "key": (NullOrUndefined Nothing), "version": (NullOrUndefined Nothing) }
+newS3Location' :: ( { "bucket" :: Maybe (S3Bucket) , "key" :: Maybe (S3Key) , "bundleType" :: Maybe (BundleType) , "version" :: Maybe (VersionId) , "eTag" :: Maybe (ETag) } -> {"bucket" :: Maybe (S3Bucket) , "key" :: Maybe (S3Key) , "bundleType" :: Maybe (BundleType) , "version" :: Maybe (VersionId) , "eTag" :: Maybe (ETag) } ) -> S3Location
+newS3Location'  customize = (S3Location <<< customize) { "bucket": Nothing, "bundleType": Nothing, "eTag": Nothing, "key": Nothing, "version": Nothing }
 
 
 
@@ -3937,7 +3936,7 @@ instance encodeScriptName :: Encode ScriptName where encode = genericEncode opti
 
 
 newtype SkipWaitTimeForInstanceTerminationInput = SkipWaitTimeForInstanceTerminationInput 
-  { "deploymentId" :: NullOrUndefined (DeploymentId)
+  { "deploymentId" :: Maybe (DeploymentId)
   }
 derive instance newtypeSkipWaitTimeForInstanceTerminationInput :: Newtype SkipWaitTimeForInstanceTerminationInput _
 derive instance repGenericSkipWaitTimeForInstanceTerminationInput :: Generic SkipWaitTimeForInstanceTerminationInput _
@@ -3947,12 +3946,12 @@ instance encodeSkipWaitTimeForInstanceTerminationInput :: Encode SkipWaitTimeFor
 
 -- | Constructs SkipWaitTimeForInstanceTerminationInput from required parameters
 newSkipWaitTimeForInstanceTerminationInput :: SkipWaitTimeForInstanceTerminationInput
-newSkipWaitTimeForInstanceTerminationInput  = SkipWaitTimeForInstanceTerminationInput { "deploymentId": (NullOrUndefined Nothing) }
+newSkipWaitTimeForInstanceTerminationInput  = SkipWaitTimeForInstanceTerminationInput { "deploymentId": Nothing }
 
 -- | Constructs SkipWaitTimeForInstanceTerminationInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSkipWaitTimeForInstanceTerminationInput' :: ( { "deploymentId" :: NullOrUndefined (DeploymentId) } -> {"deploymentId" :: NullOrUndefined (DeploymentId) } ) -> SkipWaitTimeForInstanceTerminationInput
-newSkipWaitTimeForInstanceTerminationInput'  customize = (SkipWaitTimeForInstanceTerminationInput <<< customize) { "deploymentId": (NullOrUndefined Nothing) }
+newSkipWaitTimeForInstanceTerminationInput' :: ( { "deploymentId" :: Maybe (DeploymentId) } -> {"deploymentId" :: Maybe (DeploymentId) } ) -> SkipWaitTimeForInstanceTerminationInput
+newSkipWaitTimeForInstanceTerminationInput'  customize = (SkipWaitTimeForInstanceTerminationInput <<< customize) { "deploymentId": Nothing }
 
 
 
@@ -3968,7 +3967,7 @@ instance encodeSortOrder :: Encode SortOrder where encode = genericEncode option
 -- | <p>Represents the input of a StopDeployment operation.</p>
 newtype StopDeploymentInput = StopDeploymentInput 
   { "deploymentId" :: (DeploymentId)
-  , "autoRollbackEnabled" :: NullOrUndefined (NullableBoolean)
+  , "autoRollbackEnabled" :: Maybe (NullableBoolean)
   }
 derive instance newtypeStopDeploymentInput :: Newtype StopDeploymentInput _
 derive instance repGenericStopDeploymentInput :: Generic StopDeploymentInput _
@@ -3978,19 +3977,19 @@ instance encodeStopDeploymentInput :: Encode StopDeploymentInput where encode = 
 
 -- | Constructs StopDeploymentInput from required parameters
 newStopDeploymentInput :: DeploymentId -> StopDeploymentInput
-newStopDeploymentInput _deploymentId = StopDeploymentInput { "deploymentId": _deploymentId, "autoRollbackEnabled": (NullOrUndefined Nothing) }
+newStopDeploymentInput _deploymentId = StopDeploymentInput { "deploymentId": _deploymentId, "autoRollbackEnabled": Nothing }
 
 -- | Constructs StopDeploymentInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStopDeploymentInput' :: DeploymentId -> ( { "deploymentId" :: (DeploymentId) , "autoRollbackEnabled" :: NullOrUndefined (NullableBoolean) } -> {"deploymentId" :: (DeploymentId) , "autoRollbackEnabled" :: NullOrUndefined (NullableBoolean) } ) -> StopDeploymentInput
-newStopDeploymentInput' _deploymentId customize = (StopDeploymentInput <<< customize) { "deploymentId": _deploymentId, "autoRollbackEnabled": (NullOrUndefined Nothing) }
+newStopDeploymentInput' :: DeploymentId -> ( { "deploymentId" :: (DeploymentId) , "autoRollbackEnabled" :: Maybe (NullableBoolean) } -> {"deploymentId" :: (DeploymentId) , "autoRollbackEnabled" :: Maybe (NullableBoolean) } ) -> StopDeploymentInput
+newStopDeploymentInput' _deploymentId customize = (StopDeploymentInput <<< customize) { "deploymentId": _deploymentId, "autoRollbackEnabled": Nothing }
 
 
 
 -- | <p>Represents the output of a StopDeployment operation.</p>
 newtype StopDeploymentOutput = StopDeploymentOutput 
-  { "status" :: NullOrUndefined (StopStatus)
-  , "statusMessage" :: NullOrUndefined (Message)
+  { "status" :: Maybe (StopStatus)
+  , "statusMessage" :: Maybe (Message)
   }
 derive instance newtypeStopDeploymentOutput :: Newtype StopDeploymentOutput _
 derive instance repGenericStopDeploymentOutput :: Generic StopDeploymentOutput _
@@ -4000,12 +3999,12 @@ instance encodeStopDeploymentOutput :: Encode StopDeploymentOutput where encode 
 
 -- | Constructs StopDeploymentOutput from required parameters
 newStopDeploymentOutput :: StopDeploymentOutput
-newStopDeploymentOutput  = StopDeploymentOutput { "status": (NullOrUndefined Nothing), "statusMessage": (NullOrUndefined Nothing) }
+newStopDeploymentOutput  = StopDeploymentOutput { "status": Nothing, "statusMessage": Nothing }
 
 -- | Constructs StopDeploymentOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStopDeploymentOutput' :: ( { "status" :: NullOrUndefined (StopStatus) , "statusMessage" :: NullOrUndefined (Message) } -> {"status" :: NullOrUndefined (StopStatus) , "statusMessage" :: NullOrUndefined (Message) } ) -> StopDeploymentOutput
-newStopDeploymentOutput'  customize = (StopDeploymentOutput <<< customize) { "status": (NullOrUndefined Nothing), "statusMessage": (NullOrUndefined Nothing) }
+newStopDeploymentOutput' :: ( { "status" :: Maybe (StopStatus) , "statusMessage" :: Maybe (Message) } -> {"status" :: Maybe (StopStatus) , "statusMessage" :: Maybe (Message) } ) -> StopDeploymentOutput
+newStopDeploymentOutput'  customize = (StopDeploymentOutput <<< customize) { "status": Nothing, "statusMessage": Nothing }
 
 
 
@@ -4020,8 +4019,8 @@ instance encodeStopStatus :: Encode StopStatus where encode = genericEncode opti
 
 -- | <p>Information about a tag.</p>
 newtype Tag = Tag 
-  { "Key" :: NullOrUndefined (Key)
-  , "Value" :: NullOrUndefined (Value)
+  { "Key" :: Maybe (Key)
+  , "Value" :: Maybe (Value)
   }
 derive instance newtypeTag :: Newtype Tag _
 derive instance repGenericTag :: Generic Tag _
@@ -4031,20 +4030,20 @@ instance encodeTag :: Encode Tag where encode = genericEncode options
 
 -- | Constructs Tag from required parameters
 newTag :: Tag
-newTag  = Tag { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag  = Tag { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs Tag's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTag' :: ( { "Key" :: NullOrUndefined (Key) , "Value" :: NullOrUndefined (Value) } -> {"Key" :: NullOrUndefined (Key) , "Value" :: NullOrUndefined (Value) } ) -> Tag
-newTag'  customize = (Tag <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag' :: ( { "Key" :: Maybe (Key) , "Value" :: Maybe (Value) } -> {"Key" :: Maybe (Key) , "Value" :: Maybe (Value) } ) -> Tag
+newTag'  customize = (Tag <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
 -- | <p>Information about an on-premises instance tag filter.</p>
 newtype TagFilter = TagFilter 
-  { "Key" :: NullOrUndefined (Key)
-  , "Value" :: NullOrUndefined (Value)
-  , "Type" :: NullOrUndefined (TagFilterType)
+  { "Key" :: Maybe (Key)
+  , "Value" :: Maybe (Value)
+  , "Type" :: Maybe (TagFilterType)
   }
 derive instance newtypeTagFilter :: Newtype TagFilter _
 derive instance repGenericTagFilter :: Generic TagFilter _
@@ -4054,12 +4053,12 @@ instance encodeTagFilter :: Encode TagFilter where encode = genericEncode option
 
 -- | Constructs TagFilter from required parameters
 newTagFilter :: TagFilter
-newTagFilter  = TagFilter { "Key": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTagFilter  = TagFilter { "Key": Nothing, "Type": Nothing, "Value": Nothing }
 
 -- | Constructs TagFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTagFilter' :: ( { "Key" :: NullOrUndefined (Key) , "Value" :: NullOrUndefined (Value) , "Type" :: NullOrUndefined (TagFilterType) } -> {"Key" :: NullOrUndefined (Key) , "Value" :: NullOrUndefined (Value) , "Type" :: NullOrUndefined (TagFilterType) } ) -> TagFilter
-newTagFilter'  customize = (TagFilter <<< customize) { "Key": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTagFilter' :: ( { "Key" :: Maybe (Key) , "Value" :: Maybe (Value) , "Type" :: Maybe (TagFilterType) } -> {"Key" :: Maybe (Key) , "Value" :: Maybe (Value) , "Type" :: Maybe (TagFilterType) } ) -> TagFilter
+newTagFilter'  customize = (TagFilter <<< customize) { "Key": Nothing, "Type": Nothing, "Value": Nothing }
 
 
 
@@ -4122,7 +4121,7 @@ instance encodeTagSetListLimitExceededException :: Encode TagSetListLimitExceede
 
 -- | <p>Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.</p>
 newtype TargetGroupInfo = TargetGroupInfo 
-  { "name" :: NullOrUndefined (TargetGroupName)
+  { "name" :: Maybe (TargetGroupName)
   }
 derive instance newtypeTargetGroupInfo :: Newtype TargetGroupInfo _
 derive instance repGenericTargetGroupInfo :: Generic TargetGroupInfo _
@@ -4132,12 +4131,12 @@ instance encodeTargetGroupInfo :: Encode TargetGroupInfo where encode = genericE
 
 -- | Constructs TargetGroupInfo from required parameters
 newTargetGroupInfo :: TargetGroupInfo
-newTargetGroupInfo  = TargetGroupInfo { "name": (NullOrUndefined Nothing) }
+newTargetGroupInfo  = TargetGroupInfo { "name": Nothing }
 
 -- | Constructs TargetGroupInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTargetGroupInfo' :: ( { "name" :: NullOrUndefined (TargetGroupName) } -> {"name" :: NullOrUndefined (TargetGroupName) } ) -> TargetGroupInfo
-newTargetGroupInfo'  customize = (TargetGroupInfo <<< customize) { "name": (NullOrUndefined Nothing) }
+newTargetGroupInfo' :: ( { "name" :: Maybe (TargetGroupName) } -> {"name" :: Maybe (TargetGroupName) } ) -> TargetGroupInfo
+newTargetGroupInfo'  customize = (TargetGroupInfo <<< customize) { "name": Nothing }
 
 
 
@@ -4161,9 +4160,9 @@ instance encodeTargetGroupName :: Encode TargetGroupName where encode = genericE
 
 -- | <p>Information about the instances to be used in the replacement environment in a blue/green deployment.</p>
 newtype TargetInstances = TargetInstances 
-  { "tagFilters" :: NullOrUndefined (EC2TagFilterList)
-  , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupNameList)
-  , "ec2TagSet" :: NullOrUndefined (EC2TagSet)
+  { "tagFilters" :: Maybe (EC2TagFilterList)
+  , "autoScalingGroups" :: Maybe (AutoScalingGroupNameList)
+  , "ec2TagSet" :: Maybe (EC2TagSet)
   }
 derive instance newtypeTargetInstances :: Newtype TargetInstances _
 derive instance repGenericTargetInstances :: Generic TargetInstances _
@@ -4173,12 +4172,12 @@ instance encodeTargetInstances :: Encode TargetInstances where encode = genericE
 
 -- | Constructs TargetInstances from required parameters
 newTargetInstances :: TargetInstances
-newTargetInstances  = TargetInstances { "autoScalingGroups": (NullOrUndefined Nothing), "ec2TagSet": (NullOrUndefined Nothing), "tagFilters": (NullOrUndefined Nothing) }
+newTargetInstances  = TargetInstances { "autoScalingGroups": Nothing, "ec2TagSet": Nothing, "tagFilters": Nothing }
 
 -- | Constructs TargetInstances's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTargetInstances' :: ( { "tagFilters" :: NullOrUndefined (EC2TagFilterList) , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupNameList) , "ec2TagSet" :: NullOrUndefined (EC2TagSet) } -> {"tagFilters" :: NullOrUndefined (EC2TagFilterList) , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupNameList) , "ec2TagSet" :: NullOrUndefined (EC2TagSet) } ) -> TargetInstances
-newTargetInstances'  customize = (TargetInstances <<< customize) { "autoScalingGroups": (NullOrUndefined Nothing), "ec2TagSet": (NullOrUndefined Nothing), "tagFilters": (NullOrUndefined Nothing) }
+newTargetInstances' :: ( { "tagFilters" :: Maybe (EC2TagFilterList) , "autoScalingGroups" :: Maybe (AutoScalingGroupNameList) , "ec2TagSet" :: Maybe (EC2TagSet) } -> {"tagFilters" :: Maybe (EC2TagFilterList) , "autoScalingGroups" :: Maybe (AutoScalingGroupNameList) , "ec2TagSet" :: Maybe (EC2TagSet) } ) -> TargetInstances
+newTargetInstances'  customize = (TargetInstances <<< customize) { "autoScalingGroups": Nothing, "ec2TagSet": Nothing, "tagFilters": Nothing }
 
 
 
@@ -4194,8 +4193,8 @@ instance encodeThrottlingException :: Encode ThrottlingException where encode = 
 
 -- | <p>A configuration that shifts traffic from one version of a Lambda function to another in two increments. The original and target Lambda function versions are specified in the deployment's AppSpec file.</p>
 newtype TimeBasedCanary = TimeBasedCanary 
-  { "canaryPercentage" :: NullOrUndefined (Percentage)
-  , "canaryInterval" :: NullOrUndefined (WaitTimeInMins)
+  { "canaryPercentage" :: Maybe (Percentage)
+  , "canaryInterval" :: Maybe (WaitTimeInMins)
   }
 derive instance newtypeTimeBasedCanary :: Newtype TimeBasedCanary _
 derive instance repGenericTimeBasedCanary :: Generic TimeBasedCanary _
@@ -4205,19 +4204,19 @@ instance encodeTimeBasedCanary :: Encode TimeBasedCanary where encode = genericE
 
 -- | Constructs TimeBasedCanary from required parameters
 newTimeBasedCanary :: TimeBasedCanary
-newTimeBasedCanary  = TimeBasedCanary { "canaryInterval": (NullOrUndefined Nothing), "canaryPercentage": (NullOrUndefined Nothing) }
+newTimeBasedCanary  = TimeBasedCanary { "canaryInterval": Nothing, "canaryPercentage": Nothing }
 
 -- | Constructs TimeBasedCanary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTimeBasedCanary' :: ( { "canaryPercentage" :: NullOrUndefined (Percentage) , "canaryInterval" :: NullOrUndefined (WaitTimeInMins) } -> {"canaryPercentage" :: NullOrUndefined (Percentage) , "canaryInterval" :: NullOrUndefined (WaitTimeInMins) } ) -> TimeBasedCanary
-newTimeBasedCanary'  customize = (TimeBasedCanary <<< customize) { "canaryInterval": (NullOrUndefined Nothing), "canaryPercentage": (NullOrUndefined Nothing) }
+newTimeBasedCanary' :: ( { "canaryPercentage" :: Maybe (Percentage) , "canaryInterval" :: Maybe (WaitTimeInMins) } -> {"canaryPercentage" :: Maybe (Percentage) , "canaryInterval" :: Maybe (WaitTimeInMins) } ) -> TimeBasedCanary
+newTimeBasedCanary'  customize = (TimeBasedCanary <<< customize) { "canaryInterval": Nothing, "canaryPercentage": Nothing }
 
 
 
 -- | <p>A configuration that shifts traffic from one version of a Lambda function to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions are specified in the deployment's AppSpec file.</p>
 newtype TimeBasedLinear = TimeBasedLinear 
-  { "linearPercentage" :: NullOrUndefined (Percentage)
-  , "linearInterval" :: NullOrUndefined (WaitTimeInMins)
+  { "linearPercentage" :: Maybe (Percentage)
+  , "linearInterval" :: Maybe (WaitTimeInMins)
   }
 derive instance newtypeTimeBasedLinear :: Newtype TimeBasedLinear _
 derive instance repGenericTimeBasedLinear :: Generic TimeBasedLinear _
@@ -4227,19 +4226,19 @@ instance encodeTimeBasedLinear :: Encode TimeBasedLinear where encode = genericE
 
 -- | Constructs TimeBasedLinear from required parameters
 newTimeBasedLinear :: TimeBasedLinear
-newTimeBasedLinear  = TimeBasedLinear { "linearInterval": (NullOrUndefined Nothing), "linearPercentage": (NullOrUndefined Nothing) }
+newTimeBasedLinear  = TimeBasedLinear { "linearInterval": Nothing, "linearPercentage": Nothing }
 
 -- | Constructs TimeBasedLinear's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTimeBasedLinear' :: ( { "linearPercentage" :: NullOrUndefined (Percentage) , "linearInterval" :: NullOrUndefined (WaitTimeInMins) } -> {"linearPercentage" :: NullOrUndefined (Percentage) , "linearInterval" :: NullOrUndefined (WaitTimeInMins) } ) -> TimeBasedLinear
-newTimeBasedLinear'  customize = (TimeBasedLinear <<< customize) { "linearInterval": (NullOrUndefined Nothing), "linearPercentage": (NullOrUndefined Nothing) }
+newTimeBasedLinear' :: ( { "linearPercentage" :: Maybe (Percentage) , "linearInterval" :: Maybe (WaitTimeInMins) } -> {"linearPercentage" :: Maybe (Percentage) , "linearInterval" :: Maybe (WaitTimeInMins) } ) -> TimeBasedLinear
+newTimeBasedLinear'  customize = (TimeBasedLinear <<< customize) { "linearInterval": Nothing, "linearPercentage": Nothing }
 
 
 
 -- | <p>Information about a time range.</p>
 newtype TimeRange = TimeRange 
-  { "start" :: NullOrUndefined (Types.Timestamp)
-  , "end" :: NullOrUndefined (Types.Timestamp)
+  { "start" :: Maybe (Types.Timestamp)
+  , "end" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeTimeRange :: Newtype TimeRange _
 derive instance repGenericTimeRange :: Generic TimeRange _
@@ -4249,20 +4248,20 @@ instance encodeTimeRange :: Encode TimeRange where encode = genericEncode option
 
 -- | Constructs TimeRange from required parameters
 newTimeRange :: TimeRange
-newTimeRange  = TimeRange { "end": (NullOrUndefined Nothing), "start": (NullOrUndefined Nothing) }
+newTimeRange  = TimeRange { "end": Nothing, "start": Nothing }
 
 -- | Constructs TimeRange's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTimeRange' :: ( { "start" :: NullOrUndefined (Types.Timestamp) , "end" :: NullOrUndefined (Types.Timestamp) } -> {"start" :: NullOrUndefined (Types.Timestamp) , "end" :: NullOrUndefined (Types.Timestamp) } ) -> TimeRange
-newTimeRange'  customize = (TimeRange <<< customize) { "end": (NullOrUndefined Nothing), "start": (NullOrUndefined Nothing) }
+newTimeRange' :: ( { "start" :: Maybe (Types.Timestamp) , "end" :: Maybe (Types.Timestamp) } -> {"start" :: Maybe (Types.Timestamp) , "end" :: Maybe (Types.Timestamp) } ) -> TimeRange
+newTimeRange'  customize = (TimeRange <<< customize) { "end": Nothing, "start": Nothing }
 
 
 
 -- | <p>The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment.</p>
 newtype TrafficRoutingConfig = TrafficRoutingConfig 
-  { "type" :: NullOrUndefined (TrafficRoutingType)
-  , "timeBasedCanary" :: NullOrUndefined (TimeBasedCanary)
-  , "timeBasedLinear" :: NullOrUndefined (TimeBasedLinear)
+  { "type" :: Maybe (TrafficRoutingType)
+  , "timeBasedCanary" :: Maybe (TimeBasedCanary)
+  , "timeBasedLinear" :: Maybe (TimeBasedLinear)
   }
 derive instance newtypeTrafficRoutingConfig :: Newtype TrafficRoutingConfig _
 derive instance repGenericTrafficRoutingConfig :: Generic TrafficRoutingConfig _
@@ -4272,12 +4271,12 @@ instance encodeTrafficRoutingConfig :: Encode TrafficRoutingConfig where encode 
 
 -- | Constructs TrafficRoutingConfig from required parameters
 newTrafficRoutingConfig :: TrafficRoutingConfig
-newTrafficRoutingConfig  = TrafficRoutingConfig { "timeBasedCanary": (NullOrUndefined Nothing), "timeBasedLinear": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newTrafficRoutingConfig  = TrafficRoutingConfig { "timeBasedCanary": Nothing, "timeBasedLinear": Nothing, "type": Nothing }
 
 -- | Constructs TrafficRoutingConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTrafficRoutingConfig' :: ( { "type" :: NullOrUndefined (TrafficRoutingType) , "timeBasedCanary" :: NullOrUndefined (TimeBasedCanary) , "timeBasedLinear" :: NullOrUndefined (TimeBasedLinear) } -> {"type" :: NullOrUndefined (TrafficRoutingType) , "timeBasedCanary" :: NullOrUndefined (TimeBasedCanary) , "timeBasedLinear" :: NullOrUndefined (TimeBasedLinear) } ) -> TrafficRoutingConfig
-newTrafficRoutingConfig'  customize = (TrafficRoutingConfig <<< customize) { "timeBasedCanary": (NullOrUndefined Nothing), "timeBasedLinear": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newTrafficRoutingConfig' :: ( { "type" :: Maybe (TrafficRoutingType) , "timeBasedCanary" :: Maybe (TimeBasedCanary) , "timeBasedLinear" :: Maybe (TimeBasedLinear) } -> {"type" :: Maybe (TrafficRoutingType) , "timeBasedCanary" :: Maybe (TimeBasedCanary) , "timeBasedLinear" :: Maybe (TimeBasedLinear) } ) -> TrafficRoutingConfig
+newTrafficRoutingConfig'  customize = (TrafficRoutingConfig <<< customize) { "timeBasedCanary": Nothing, "timeBasedLinear": Nothing, "type": Nothing }
 
 
 
@@ -4292,9 +4291,9 @@ instance encodeTrafficRoutingType :: Encode TrafficRoutingType where encode = ge
 
 -- | <p>Information about notification triggers for the deployment group.</p>
 newtype TriggerConfig = TriggerConfig 
-  { "triggerName" :: NullOrUndefined (TriggerName)
-  , "triggerTargetArn" :: NullOrUndefined (TriggerTargetArn)
-  , "triggerEvents" :: NullOrUndefined (TriggerEventTypeList)
+  { "triggerName" :: Maybe (TriggerName)
+  , "triggerTargetArn" :: Maybe (TriggerTargetArn)
+  , "triggerEvents" :: Maybe (TriggerEventTypeList)
   }
 derive instance newtypeTriggerConfig :: Newtype TriggerConfig _
 derive instance repGenericTriggerConfig :: Generic TriggerConfig _
@@ -4304,12 +4303,12 @@ instance encodeTriggerConfig :: Encode TriggerConfig where encode = genericEncod
 
 -- | Constructs TriggerConfig from required parameters
 newTriggerConfig :: TriggerConfig
-newTriggerConfig  = TriggerConfig { "triggerEvents": (NullOrUndefined Nothing), "triggerName": (NullOrUndefined Nothing), "triggerTargetArn": (NullOrUndefined Nothing) }
+newTriggerConfig  = TriggerConfig { "triggerEvents": Nothing, "triggerName": Nothing, "triggerTargetArn": Nothing }
 
 -- | Constructs TriggerConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTriggerConfig' :: ( { "triggerName" :: NullOrUndefined (TriggerName) , "triggerTargetArn" :: NullOrUndefined (TriggerTargetArn) , "triggerEvents" :: NullOrUndefined (TriggerEventTypeList) } -> {"triggerName" :: NullOrUndefined (TriggerName) , "triggerTargetArn" :: NullOrUndefined (TriggerTargetArn) , "triggerEvents" :: NullOrUndefined (TriggerEventTypeList) } ) -> TriggerConfig
-newTriggerConfig'  customize = (TriggerConfig <<< customize) { "triggerEvents": (NullOrUndefined Nothing), "triggerName": (NullOrUndefined Nothing), "triggerTargetArn": (NullOrUndefined Nothing) }
+newTriggerConfig' :: ( { "triggerName" :: Maybe (TriggerName) , "triggerTargetArn" :: Maybe (TriggerTargetArn) , "triggerEvents" :: Maybe (TriggerEventTypeList) } -> {"triggerName" :: Maybe (TriggerName) , "triggerTargetArn" :: Maybe (TriggerTargetArn) , "triggerEvents" :: Maybe (TriggerEventTypeList) } ) -> TriggerConfig
+newTriggerConfig'  customize = (TriggerConfig <<< customize) { "triggerEvents": Nothing, "triggerName": Nothing, "triggerTargetArn": Nothing }
 
 
 
@@ -4380,8 +4379,8 @@ instance encodeUnsupportedActionForDeploymentTypeException :: Encode Unsupported
 
 -- | <p>Represents the input of an UpdateApplication operation.</p>
 newtype UpdateApplicationInput = UpdateApplicationInput 
-  { "applicationName" :: NullOrUndefined (ApplicationName)
-  , "newApplicationName" :: NullOrUndefined (ApplicationName)
+  { "applicationName" :: Maybe (ApplicationName)
+  , "newApplicationName" :: Maybe (ApplicationName)
   }
 derive instance newtypeUpdateApplicationInput :: Newtype UpdateApplicationInput _
 derive instance repGenericUpdateApplicationInput :: Generic UpdateApplicationInput _
@@ -4391,12 +4390,12 @@ instance encodeUpdateApplicationInput :: Encode UpdateApplicationInput where enc
 
 -- | Constructs UpdateApplicationInput from required parameters
 newUpdateApplicationInput :: UpdateApplicationInput
-newUpdateApplicationInput  = UpdateApplicationInput { "applicationName": (NullOrUndefined Nothing), "newApplicationName": (NullOrUndefined Nothing) }
+newUpdateApplicationInput  = UpdateApplicationInput { "applicationName": Nothing, "newApplicationName": Nothing }
 
 -- | Constructs UpdateApplicationInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateApplicationInput' :: ( { "applicationName" :: NullOrUndefined (ApplicationName) , "newApplicationName" :: NullOrUndefined (ApplicationName) } -> {"applicationName" :: NullOrUndefined (ApplicationName) , "newApplicationName" :: NullOrUndefined (ApplicationName) } ) -> UpdateApplicationInput
-newUpdateApplicationInput'  customize = (UpdateApplicationInput <<< customize) { "applicationName": (NullOrUndefined Nothing), "newApplicationName": (NullOrUndefined Nothing) }
+newUpdateApplicationInput' :: ( { "applicationName" :: Maybe (ApplicationName) , "newApplicationName" :: Maybe (ApplicationName) } -> {"applicationName" :: Maybe (ApplicationName) , "newApplicationName" :: Maybe (ApplicationName) } ) -> UpdateApplicationInput
+newUpdateApplicationInput'  customize = (UpdateApplicationInput <<< customize) { "applicationName": Nothing, "newApplicationName": Nothing }
 
 
 
@@ -4404,20 +4403,20 @@ newUpdateApplicationInput'  customize = (UpdateApplicationInput <<< customize) {
 newtype UpdateDeploymentGroupInput = UpdateDeploymentGroupInput 
   { "applicationName" :: (ApplicationName)
   , "currentDeploymentGroupName" :: (DeploymentGroupName)
-  , "newDeploymentGroupName" :: NullOrUndefined (DeploymentGroupName)
-  , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName)
-  , "ec2TagFilters" :: NullOrUndefined (EC2TagFilterList)
-  , "onPremisesInstanceTagFilters" :: NullOrUndefined (TagFilterList)
-  , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupNameList)
-  , "serviceRoleArn" :: NullOrUndefined (Role)
-  , "triggerConfigurations" :: NullOrUndefined (TriggerConfigList)
-  , "alarmConfiguration" :: NullOrUndefined (AlarmConfiguration)
-  , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration)
-  , "deploymentStyle" :: NullOrUndefined (DeploymentStyle)
-  , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration)
-  , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo)
-  , "ec2TagSet" :: NullOrUndefined (EC2TagSet)
-  , "onPremisesTagSet" :: NullOrUndefined (OnPremisesTagSet)
+  , "newDeploymentGroupName" :: Maybe (DeploymentGroupName)
+  , "deploymentConfigName" :: Maybe (DeploymentConfigName)
+  , "ec2TagFilters" :: Maybe (EC2TagFilterList)
+  , "onPremisesInstanceTagFilters" :: Maybe (TagFilterList)
+  , "autoScalingGroups" :: Maybe (AutoScalingGroupNameList)
+  , "serviceRoleArn" :: Maybe (Role)
+  , "triggerConfigurations" :: Maybe (TriggerConfigList)
+  , "alarmConfiguration" :: Maybe (AlarmConfiguration)
+  , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration)
+  , "deploymentStyle" :: Maybe (DeploymentStyle)
+  , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration)
+  , "loadBalancerInfo" :: Maybe (LoadBalancerInfo)
+  , "ec2TagSet" :: Maybe (EC2TagSet)
+  , "onPremisesTagSet" :: Maybe (OnPremisesTagSet)
   }
 derive instance newtypeUpdateDeploymentGroupInput :: Newtype UpdateDeploymentGroupInput _
 derive instance repGenericUpdateDeploymentGroupInput :: Generic UpdateDeploymentGroupInput _
@@ -4427,18 +4426,18 @@ instance encodeUpdateDeploymentGroupInput :: Encode UpdateDeploymentGroupInput w
 
 -- | Constructs UpdateDeploymentGroupInput from required parameters
 newUpdateDeploymentGroupInput :: ApplicationName -> DeploymentGroupName -> UpdateDeploymentGroupInput
-newUpdateDeploymentGroupInput _applicationName _currentDeploymentGroupName = UpdateDeploymentGroupInput { "applicationName": _applicationName, "currentDeploymentGroupName": _currentDeploymentGroupName, "alarmConfiguration": (NullOrUndefined Nothing), "autoRollbackConfiguration": (NullOrUndefined Nothing), "autoScalingGroups": (NullOrUndefined Nothing), "blueGreenDeploymentConfiguration": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "deploymentStyle": (NullOrUndefined Nothing), "ec2TagFilters": (NullOrUndefined Nothing), "ec2TagSet": (NullOrUndefined Nothing), "loadBalancerInfo": (NullOrUndefined Nothing), "newDeploymentGroupName": (NullOrUndefined Nothing), "onPremisesInstanceTagFilters": (NullOrUndefined Nothing), "onPremisesTagSet": (NullOrUndefined Nothing), "serviceRoleArn": (NullOrUndefined Nothing), "triggerConfigurations": (NullOrUndefined Nothing) }
+newUpdateDeploymentGroupInput _applicationName _currentDeploymentGroupName = UpdateDeploymentGroupInput { "applicationName": _applicationName, "currentDeploymentGroupName": _currentDeploymentGroupName, "alarmConfiguration": Nothing, "autoRollbackConfiguration": Nothing, "autoScalingGroups": Nothing, "blueGreenDeploymentConfiguration": Nothing, "deploymentConfigName": Nothing, "deploymentStyle": Nothing, "ec2TagFilters": Nothing, "ec2TagSet": Nothing, "loadBalancerInfo": Nothing, "newDeploymentGroupName": Nothing, "onPremisesInstanceTagFilters": Nothing, "onPremisesTagSet": Nothing, "serviceRoleArn": Nothing, "triggerConfigurations": Nothing }
 
 -- | Constructs UpdateDeploymentGroupInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateDeploymentGroupInput' :: ApplicationName -> DeploymentGroupName -> ( { "applicationName" :: (ApplicationName) , "currentDeploymentGroupName" :: (DeploymentGroupName) , "newDeploymentGroupName" :: NullOrUndefined (DeploymentGroupName) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "ec2TagFilters" :: NullOrUndefined (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: NullOrUndefined (TagFilterList) , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupNameList) , "serviceRoleArn" :: NullOrUndefined (Role) , "triggerConfigurations" :: NullOrUndefined (TriggerConfigList) , "alarmConfiguration" :: NullOrUndefined (AlarmConfiguration) , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration) , "deploymentStyle" :: NullOrUndefined (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo) , "ec2TagSet" :: NullOrUndefined (EC2TagSet) , "onPremisesTagSet" :: NullOrUndefined (OnPremisesTagSet) } -> {"applicationName" :: (ApplicationName) , "currentDeploymentGroupName" :: (DeploymentGroupName) , "newDeploymentGroupName" :: NullOrUndefined (DeploymentGroupName) , "deploymentConfigName" :: NullOrUndefined (DeploymentConfigName) , "ec2TagFilters" :: NullOrUndefined (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: NullOrUndefined (TagFilterList) , "autoScalingGroups" :: NullOrUndefined (AutoScalingGroupNameList) , "serviceRoleArn" :: NullOrUndefined (Role) , "triggerConfigurations" :: NullOrUndefined (TriggerConfigList) , "alarmConfiguration" :: NullOrUndefined (AlarmConfiguration) , "autoRollbackConfiguration" :: NullOrUndefined (AutoRollbackConfiguration) , "deploymentStyle" :: NullOrUndefined (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: NullOrUndefined (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: NullOrUndefined (LoadBalancerInfo) , "ec2TagSet" :: NullOrUndefined (EC2TagSet) , "onPremisesTagSet" :: NullOrUndefined (OnPremisesTagSet) } ) -> UpdateDeploymentGroupInput
-newUpdateDeploymentGroupInput' _applicationName _currentDeploymentGroupName customize = (UpdateDeploymentGroupInput <<< customize) { "applicationName": _applicationName, "currentDeploymentGroupName": _currentDeploymentGroupName, "alarmConfiguration": (NullOrUndefined Nothing), "autoRollbackConfiguration": (NullOrUndefined Nothing), "autoScalingGroups": (NullOrUndefined Nothing), "blueGreenDeploymentConfiguration": (NullOrUndefined Nothing), "deploymentConfigName": (NullOrUndefined Nothing), "deploymentStyle": (NullOrUndefined Nothing), "ec2TagFilters": (NullOrUndefined Nothing), "ec2TagSet": (NullOrUndefined Nothing), "loadBalancerInfo": (NullOrUndefined Nothing), "newDeploymentGroupName": (NullOrUndefined Nothing), "onPremisesInstanceTagFilters": (NullOrUndefined Nothing), "onPremisesTagSet": (NullOrUndefined Nothing), "serviceRoleArn": (NullOrUndefined Nothing), "triggerConfigurations": (NullOrUndefined Nothing) }
+newUpdateDeploymentGroupInput' :: ApplicationName -> DeploymentGroupName -> ( { "applicationName" :: (ApplicationName) , "currentDeploymentGroupName" :: (DeploymentGroupName) , "newDeploymentGroupName" :: Maybe (DeploymentGroupName) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "ec2TagFilters" :: Maybe (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: Maybe (TagFilterList) , "autoScalingGroups" :: Maybe (AutoScalingGroupNameList) , "serviceRoleArn" :: Maybe (Role) , "triggerConfigurations" :: Maybe (TriggerConfigList) , "alarmConfiguration" :: Maybe (AlarmConfiguration) , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration) , "deploymentStyle" :: Maybe (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: Maybe (LoadBalancerInfo) , "ec2TagSet" :: Maybe (EC2TagSet) , "onPremisesTagSet" :: Maybe (OnPremisesTagSet) } -> {"applicationName" :: (ApplicationName) , "currentDeploymentGroupName" :: (DeploymentGroupName) , "newDeploymentGroupName" :: Maybe (DeploymentGroupName) , "deploymentConfigName" :: Maybe (DeploymentConfigName) , "ec2TagFilters" :: Maybe (EC2TagFilterList) , "onPremisesInstanceTagFilters" :: Maybe (TagFilterList) , "autoScalingGroups" :: Maybe (AutoScalingGroupNameList) , "serviceRoleArn" :: Maybe (Role) , "triggerConfigurations" :: Maybe (TriggerConfigList) , "alarmConfiguration" :: Maybe (AlarmConfiguration) , "autoRollbackConfiguration" :: Maybe (AutoRollbackConfiguration) , "deploymentStyle" :: Maybe (DeploymentStyle) , "blueGreenDeploymentConfiguration" :: Maybe (BlueGreenDeploymentConfiguration) , "loadBalancerInfo" :: Maybe (LoadBalancerInfo) , "ec2TagSet" :: Maybe (EC2TagSet) , "onPremisesTagSet" :: Maybe (OnPremisesTagSet) } ) -> UpdateDeploymentGroupInput
+newUpdateDeploymentGroupInput' _applicationName _currentDeploymentGroupName customize = (UpdateDeploymentGroupInput <<< customize) { "applicationName": _applicationName, "currentDeploymentGroupName": _currentDeploymentGroupName, "alarmConfiguration": Nothing, "autoRollbackConfiguration": Nothing, "autoScalingGroups": Nothing, "blueGreenDeploymentConfiguration": Nothing, "deploymentConfigName": Nothing, "deploymentStyle": Nothing, "ec2TagFilters": Nothing, "ec2TagSet": Nothing, "loadBalancerInfo": Nothing, "newDeploymentGroupName": Nothing, "onPremisesInstanceTagFilters": Nothing, "onPremisesTagSet": Nothing, "serviceRoleArn": Nothing, "triggerConfigurations": Nothing }
 
 
 
 -- | <p>Represents the output of an UpdateDeploymentGroup operation.</p>
 newtype UpdateDeploymentGroupOutput = UpdateDeploymentGroupOutput 
-  { "hooksNotCleanedUp" :: NullOrUndefined (AutoScalingGroupList)
+  { "hooksNotCleanedUp" :: Maybe (AutoScalingGroupList)
   }
 derive instance newtypeUpdateDeploymentGroupOutput :: Newtype UpdateDeploymentGroupOutput _
 derive instance repGenericUpdateDeploymentGroupOutput :: Generic UpdateDeploymentGroupOutput _
@@ -4448,12 +4447,12 @@ instance encodeUpdateDeploymentGroupOutput :: Encode UpdateDeploymentGroupOutput
 
 -- | Constructs UpdateDeploymentGroupOutput from required parameters
 newUpdateDeploymentGroupOutput :: UpdateDeploymentGroupOutput
-newUpdateDeploymentGroupOutput  = UpdateDeploymentGroupOutput { "hooksNotCleanedUp": (NullOrUndefined Nothing) }
+newUpdateDeploymentGroupOutput  = UpdateDeploymentGroupOutput { "hooksNotCleanedUp": Nothing }
 
 -- | Constructs UpdateDeploymentGroupOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateDeploymentGroupOutput' :: ( { "hooksNotCleanedUp" :: NullOrUndefined (AutoScalingGroupList) } -> {"hooksNotCleanedUp" :: NullOrUndefined (AutoScalingGroupList) } ) -> UpdateDeploymentGroupOutput
-newUpdateDeploymentGroupOutput'  customize = (UpdateDeploymentGroupOutput <<< customize) { "hooksNotCleanedUp": (NullOrUndefined Nothing) }
+newUpdateDeploymentGroupOutput' :: ( { "hooksNotCleanedUp" :: Maybe (AutoScalingGroupList) } -> {"hooksNotCleanedUp" :: Maybe (AutoScalingGroupList) } ) -> UpdateDeploymentGroupOutput
+newUpdateDeploymentGroupOutput'  customize = (UpdateDeploymentGroupOutput <<< customize) { "hooksNotCleanedUp": Nothing }
 
 
 
